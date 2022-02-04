@@ -12,7 +12,7 @@ def fk_dh(theta1: int, theta2: int, theta3: int, theta4: int, eff: list):
     :param theta4: 3rd link rotation angle
     :param eff: End effector dimensions
 
-    :return: alpha; xyz_pos_link3; xyz_pos_link2; xyz_pos_link1: Orientation and list of xyz positions of each link end
+    :return: alpha; xyz_pos_link3; xyz_pos_link2; xyz_pos_link1; status: Orientation and list of xyz positions of each link end
 
     """
     try:
@@ -93,19 +93,20 @@ def fk_dh(theta1: int, theta2: int, theta3: int, theta4: int, eff: list):
         # End effector orientation
         z_ef = round(matrix_t1234[2, 3]) - round(z2)
         alpha = math.degrees(math.asin(z_ef / l4))
-        print("Success")
-        return round(alpha), xyz_pos_link3, xyz_pos_link2, xyz_pos_link1
+        status = "Success"
+        return round(alpha), xyz_pos_link3, xyz_pos_link2, xyz_pos_link1, status
 
     except ZeroDivisionError:
-        print('L4 dimension needs to be greater then 0')
-        return 0, [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]
+        status = 'L4 dimension needs to be greater then 0'
+        return 0, [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], status
 
     except:
-        print('Something went wrong.')
-        return 0, [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0]
+        status = 'Something went wrong.'
+        return 0, [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], status
 
     finally:
         print('Forward kinematics calculations ended')
 
-#test
-print(fk_dh(90, 90, 0, 0, [54, 0]))
+
+# test
+# print(fk_dh(0, 90, 0, 0, [54, 0]))
