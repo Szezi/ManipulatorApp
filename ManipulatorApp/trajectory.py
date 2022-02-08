@@ -40,7 +40,7 @@ def path_generator(table: list):
         if home_position[2] == 'config_1':
             generated_path_home = home_values[0]
         elif home_position[2] == 'config_2':
-            generated_path_home = home_values[0]
+            generated_path_home = home_values[1]
         else:
             status = 'Unexpected value of config param'
             raise ValueError(status)
@@ -88,17 +88,23 @@ def path_generator(table: list):
                         alfa = alfa + orient_step
 
                         path_to_servos = IK.ik_geo(path_line[n][0], path_line[n][1], path_line[n][2], alfa, eff)
+                        # Checking if generated points are in working area
 
-                        if config == 'config_1':
-                            # print(path_to_servos[0])
-                            path_to_append = [str(command), path_to_servos[0], float(time / sample)]
-                            generated_path.append(path_to_append)
-                        elif config == 'config_2':
-                            # print(path_to_servos[1])
-                            path_to_append = [str(command), path_to_servos[1], float(time / sample)]
-                            generated_path.append(path_to_append)
+                        if path_to_servos[2][2] == 'Calculations ended successfully':
+                            # Checking position config and generating path
+                            if config == 'config_1':
+                                # print(path_to_servos[0])
+                                path_to_append = [str(command), path_to_servos[0], float(time / sample)]
+                                generated_path.append(path_to_append)
+                            elif config == 'config_2':
+                                # print(path_to_servos[1])
+                                path_to_append = [str(command), path_to_servos[1], float(time / sample)]
+                                generated_path.append(path_to_append)
+                            else:
+                                status = 'Unexpected value of config param'
+                                raise ValueError(status)
                         else:
-                            status = 'Unexpected value of config param'
+                            status = 'Error: Path outside the working Area. Line %d' % row_index
                             raise ValueError(status)
 
                 elif traj == 'p2p':
@@ -108,43 +114,50 @@ def path_generator(table: list):
                     # print(start_values)
                     # print(end_values)
 
-                    if config_start == 'config_1':
-                        start_pos_values = start_values[0].copy()
-                    elif config_start == 'config_2':
-                        start_pos_values = start_values[1].copy()
+                    # Checking if generated points are in working area
+                    if end_values[2][2] == 'Calculations ended successfully':
+                        # Checking start position config
+                        if config_start == 'config_1':
+                            start_pos_values = start_values[0].copy()
+                        elif config_start == 'config_2':
+                            start_pos_values = start_values[1].copy()
+                        else:
+                            status = 'Unexpected value of config param'
+                            raise ValueError(status)
+                        # print(start_pos_values)
+                        # Checking end position config
+                        if config == 'config_1':
+                            values_difference = [end_values[0][0] - start_pos_values[0],
+                                                 end_values[0][1] - start_pos_values[1],
+                                                 end_values[0][2] - start_pos_values[2],
+                                                 end_values[0][3] - start_pos_values[3]]
+                        elif config == 'config_2':
+                            values_difference = [end_values[1][0] - start_pos_values[0],
+                                                 end_values[1][1] - start_pos_values[1],
+                                                 end_values[1][2] - start_pos_values[2],
+                                                 end_values[1][3] - start_pos_values[3]]
+                        else:
+                            status = 'Unexpected value of config param.'
+                            raise ValueError(status)
+                        # print(values_difference)
+                        values_step = [x / sample for x in values_difference]
+                        # print(values_step)
+
+                        # Generating path
+                        for n in range(0, sample):
+                            path_to_servos = [round(start_pos_values[0] + values_step[0], 2),
+                                              round(start_pos_values[1] + values_step[1], 2),
+                                              round(start_pos_values[2] + values_step[2], 2),
+                                              round(start_pos_values[3] + values_step[3], 2)]
+                            # print(path_to_servos)
+
+                            start_pos_values = path_to_servos
+
+                            path_to_append = [str(command), path_to_servos, float(time / sample)]
+                            generated_path.append(path_to_append)
                     else:
-                        status = 'Unexpected value of config param'
+                        status = 'Error: Path outside the working Area. Line %d' % row_index
                         raise ValueError(status)
-                    # print(start_pos_values)
-                    if config == 'config_1':
-                        values_difference = [end_values[0][0] - start_pos_values[0],
-                                             end_values[0][1] - start_pos_values[1],
-                                             end_values[0][2] - start_pos_values[2],
-                                             end_values[0][3] - start_pos_values[3]]
-                    elif config == 'config_2':
-                        values_difference = [end_values[1][0] - start_pos_values[0],
-                                             end_values[1][1] - start_pos_values[1],
-                                             end_values[1][2] - start_pos_values[2],
-                                             end_values[1][3] - start_pos_values[3]]
-                    else:
-                        status = 'Unexpected value of config param.'
-                        raise ValueError(status)
-                    # print(values_difference)
-                    values_step = [x / sample for x in values_difference]
-                    # print(values_step)
-
-                    for n in range(0, sample):
-                        path_to_servos = [round(start_pos_values[0] + values_step[0], 2),
-                                          round(start_pos_values[1] + values_step[1], 2),
-                                          round(start_pos_values[2] + values_step[2], 2),
-                                          round(start_pos_values[3] + values_step[3], 2)]
-                        # print(path_to_servos)
-
-                        start_pos_values = path_to_servos
-
-                        path_to_append = [str(command), path_to_servos, float(time / sample)]
-                        generated_path.append(path_to_append)
-
                 else:
                     status = 'Unexpected value of trajectory param.'
                     raise ValueError(status)
@@ -172,11 +185,12 @@ def path_generator(table: list):
 
 
 # [command, traj, config, end_points, time]
-test_array = [['home', 'p2p', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
-              ['move', 'p2p', 'config_1', [0, 0, 472, 90], 3.0, [54, 0]],
+test_array = [['home', 'cp_linear', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
+              ['move', 'cp_linear', 'config_1', [0, 0, 472, 90], 3.0, [54, 0]],
               ['home', 'cp_linear', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
               ['wait', '', '', [0, 0, 0, 0], 10.0, [54, 0]]]
 
 test = path_generator(test_array)
 print(*test[0], sep='\n')
 print(test[1])
+
