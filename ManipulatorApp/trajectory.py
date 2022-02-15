@@ -45,7 +45,7 @@ def path_generator(table: list):
             status = 'Unexpected value of config param'
             raise ValueError(status)
 
-        generated_path = ['home', generated_path_home, float(home_position[4])]
+        generated_path = [['home', generated_path_home, float(home_position[4])]]
 
         for row_index in range(1, len(table)):
             # [command, traj, config, end_points, time, eff]
@@ -185,12 +185,12 @@ def path_generator(table: list):
 
 
 # [command, traj, config, end_points, time]
-test_array = [['home', 'cp_linear', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
-              ['move', 'cp_linear', 'config_1', [0, 0, 472, 90], 3.0, [54, 0]],
-              ['home', 'cp_linear', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
-              ['wait', '', '', [0, 0, 0, 0], 10.0, [54, 0]]]
-
-test = path_generator(test_array)
-print(*test[0], sep='\n')
-print(test[1])
+# test_array = [['home', 'cp_linear', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
+#               ['move', 'cp_linear', 'config_1', [0, 0, 472, 90], 3.0, [54, 0]],
+#               ['home', 'cp_linear', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
+#               ['wait', '', '', [0, 0, 0, 0], 10.0, [54, 0]]]
+#
+# test = path_generator(test_array)
+# print(*test[0], sep='\n')
+# print(test[1])
 

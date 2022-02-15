@@ -1,16 +1,25 @@
-# This is a sample Python script.
+import trajectory
+import os
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    # [command, traj, config, end_points, time]
+    test_array = [['home', 'cp_linear', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
+                  ['move', 'cp_linear', 'config_1', [0, 0, 472, 90], 3.0, [54, 0]],
+                  ['home', 'cp_linear', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
+                  ['wait', '', '', [0, 0, 0, 0], 10.0, [54, 0]]]
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    test_path = trajectory.path_generator(test_array)
+
+    test_path_data = test_path[0].copy()
+    test_path_status = test_path[1]
+
+    file_path = r'C:\Users\SZILING\Desktop\ManipulatorApp\data'
+
+    try:
+        with open(os.path.join(file_path, 'test_path.txt'), 'w', encoding='utf-8') as f:
+            f.write('[command, [theta0, theta1, theta2, theta3], time]' + '\n')
+            for element in test_path_data:
+                f.write(str(element) + '\n')
+            f.write(test_path_status)
+    except:
+        print('Sth went wrong')
