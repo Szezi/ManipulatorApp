@@ -45,7 +45,7 @@ def path_generator(table: list):
             status = 'Unexpected value of config param'
             raise ValueError(status)
 
-        generated_path = [['home', generated_path_home, float(home_position[4])]]
+        generated_path = [['home', generated_path_home[0], generated_path_home[1], generated_path_home[2], generated_path_home[3], float(home_position[4])]]
 
         for row_index in range(1, len(table)):
             # [command, traj, config, end_points, time, eff]
@@ -94,11 +94,11 @@ def path_generator(table: list):
                             # Checking position config and generating path
                             if config == 'config_1':
                                 # print(path_to_servos[0])
-                                path_to_append = [str(command), path_to_servos[0], float(time / sample)]
+                                path_to_append = [command, path_to_servos[0][0], path_to_servos[0][1], path_to_servos[0][2], path_to_servos[0][3], float(time / sample)]
                                 generated_path.append(path_to_append)
                             elif config == 'config_2':
                                 # print(path_to_servos[1])
-                                path_to_append = [str(command), path_to_servos[1], float(time / sample)]
+                                path_to_append = [command, path_to_servos[1][0], path_to_servos[1][1], path_to_servos[1][2], path_to_servos[1][3], float(time / sample)]
                                 generated_path.append(path_to_append)
                             else:
                                 status = 'Unexpected value of config param'
@@ -153,7 +153,7 @@ def path_generator(table: list):
 
                             start_pos_values = path_to_servos
 
-                            path_to_append = [str(command), path_to_servos, float(time / sample)]
+                            path_to_append = [command, path_to_servos[0], path_to_servos[1], path_to_servos[2], path_to_servos[3], float(time / sample)]
                             generated_path.append(path_to_append)
                     else:
                         status = 'Error: Path outside the working Area. Line %d' % row_index
@@ -163,7 +163,7 @@ def path_generator(table: list):
                     raise ValueError(status)
 
             elif command == 'wait':
-                path_to_append = [str(command), generated_path[-1][1], float(time)]
+                path_to_append = [command, generated_path[-1][1], generated_path[-1][2], generated_path[-1][3], generated_path[-1][4], float(time)]
                 generated_path.append(path_to_append)
 
             else:
