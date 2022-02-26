@@ -3,6 +3,7 @@ import datetime as dt
 import numpy as np
 import IK
 
+
 def cp_linear(p_start: list, p_finish: list, n=10):
     """
     Produces linear interpolation between two 3D points
@@ -46,10 +47,13 @@ def path_generator(table: list):
             status = 'Unexpected value of config param'
             raise ValueError(status)
 
-        generated_path = [['home', generated_path_home[0], generated_path_home[1], generated_path_home[2], generated_path_home[3], float(home_position[4])]]
+        index = 0
+        generated_path = [
+            [index, 'home', generated_path_home[0], generated_path_home[1], generated_path_home[2], generated_path_home[3],
+             float(home_position[4])]]
 
         for row_index in range(1, len(table)):
-            # [command, traj, config, end_points, time, eff]
+            # [index, command, traj, config, end_points, time, eff]
             command = table[row_index][0]
             traj = table[row_index][1]
             config = table[row_index][2]
@@ -84,6 +88,9 @@ def path_generator(table: list):
                     else:
                         orient_step = (alfa - alfa_start) / sample
 
+                    # Increment index
+                    index += 1
+
                     # Calculating inverse kinematics of each line in path_line and appending to generated_path
                     for n in range(0, sample):
                         alfa = alfa + orient_step
@@ -95,11 +102,13 @@ def path_generator(table: list):
                             # Checking position config and generating path
                             if config == 'config_1':
                                 # print(path_to_servos[0])
-                                path_to_append = [command, path_to_servos[0][0], path_to_servos[0][1], path_to_servos[0][2], path_to_servos[0][3], float(time / sample)]
+                                path_to_append = [index, command, path_to_servos[0][0], path_to_servos[0][1],
+                                                  path_to_servos[0][2], path_to_servos[0][3], float(time / sample)]
                                 generated_path.append(path_to_append)
                             elif config == 'config_2':
                                 # print(path_to_servos[1])
-                                path_to_append = [command, path_to_servos[1][0], path_to_servos[1][1], path_to_servos[1][2], path_to_servos[1][3], float(time / sample)]
+                                path_to_append = [index, command, path_to_servos[1][0], path_to_servos[1][1],
+                                                  path_to_servos[1][2], path_to_servos[1][3], float(time / sample)]
                                 generated_path.append(path_to_append)
                             else:
                                 status = 'Unexpected value of config param'
@@ -114,6 +123,9 @@ def path_generator(table: list):
                     end_values = list(IK.ik_geo(end_points[0], end_points[1], end_points[2], alfa, eff))
                     # print(start_values)
                     # print(end_values)
+
+                    # Increment index
+                    index += 1
 
                     # Checking if generated points are in working area
                     if end_values[2][2] == 'Calculations ended successfully':
@@ -154,7 +166,8 @@ def path_generator(table: list):
 
                             start_pos_values = path_to_servos
 
-                            path_to_append = [command, path_to_servos[0], path_to_servos[1], path_to_servos[2], path_to_servos[3], float(time / sample)]
+                            path_to_append = [index, command, path_to_servos[0], path_to_servos[1], path_to_servos[2],
+                                              path_to_servos[3], float(time / sample)]
                             generated_path.append(path_to_append)
                     else:
                         status = 'Error: Path outside the working Area. Line %d' % row_index
@@ -164,7 +177,11 @@ def path_generator(table: list):
                     raise ValueError(status)
 
             elif command == 'wait':
-                path_to_append = [command, generated_path[-1][1], generated_path[-1][2], generated_path[-1][3], generated_path[-1][4], float(time)]
+                # Increment index
+                index += 1
+
+                path_to_append = [index, command, generated_path[-1][2], generated_path[-1][3], generated_path[-1][4],
+                                  generated_path[-1][4], float(time)]
                 generated_path.append(path_to_append)
 
             else:
@@ -175,11 +192,11 @@ def path_generator(table: list):
         return generated_path, status
 
     except ValueError as status:
-        return ['error', [0.0, 0.0, 0.0, 0.0], 0.0], str(status)
+        return [0, 'error', 0.0, 0.0, 0.0, 0.0, 0.0], str(status)
 
     except:
         status = 'Something went wrong'
-        return ['error', [0.0, 0.0, 0.0, 0.0], 0.0], status
+        return [0, 'error', 0.0, 0.0, 0.0, 0.0, 0.0], status
 
     finally:
         print('Generating path - Ended')
@@ -204,7 +221,7 @@ def write_generated_path_to_file(array: list, file_path: str, file_name: str, fi
     try:
         # Opening file using contex manager and write each element from generated path to file.
         with open(os.path.join(file_path, file_name + file_date + file_format), 'w', encoding='utf-8') as file:
-            file.write("['command', theta0, theta1, theta2, theta3, time]" + '\n')
+            file.write("[index, 'command', theta0, theta1, theta2, theta3, time]" + '\n')
             for element in path_data:
                 file.write(str(element) + '\n')
             file.write(path_status)
@@ -230,7 +247,8 @@ def read_generated_path_from_file(file_path: str):
             path = [line.rstrip() for line in file]
             for elem in path[:-1]:
                 element = elem.split(', ')
-                element[0] = element[0][2:-1]
+                element[0] = element[0][1:]
+                element[1] = element[1][1:-1]
                 element[-1] = element[-1][:-1]
                 path_from_file.append(element)
     except FileNotFoundError:
@@ -239,3 +257,31 @@ def read_generated_path_from_file(file_path: str):
         print('Sth went wrong during reading the file')
     return path_from_file
 
+
+class RoboticMove(object):
+    """ The class contains methods that generate the next and previous lines from a file with robotic path. """
+
+    def __init__(self, generated_path):
+        self.list_len = len(generated_path)
+        self.generated_path = iter(generated_path)
+        self.index = -1
+        self.history = []
+
+    def __iter__(self):
+        return self
+
+    def next(self):
+        self.index += 1
+        if self.index >= self.list_len:
+            raise StopIteration
+        else:
+            line = next(self.generated_path)
+            self.history.append(line)
+            return line
+
+    def prev(self):
+        self.index -= 1
+        if self.index == -1:
+            raise StopIteration
+        else:
+            return self.history[self.index]
