@@ -1,45 +1,125 @@
-import trajectory
-import communication as comm
-import time
+import sys
+import platform
+from PySide2 import QtCore, QtGui, QtWidgets
+from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect,
+                            QSize, QTime, QUrl, Qt, QEvent)
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence,
+                           QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
+from PySide2.QtWidgets import *
 
-if __name__ == '__main__':
-    # [command, traj, config, end_points, time]
-    test_array = [['home', 'cp_linear', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
-                  ['move', 'cp_linear', 'config_1', [0, 0, 472, 90], 3.0, [54, 0]],
-                  ['home', 'cp_linear', 'config_1', [0, 0, 460, 90], 3.0, [54, 0]],
-                  ['wait', '', '', [0, 0, 0, 0], 10.0, [54, 0]]]
-
-    file_path_write = r'C:\Users\SZILING\Desktop\ManipulatorApp\data'
-    file_name_write = 'generated_path_'
-    file_format_write = '.txt'
-
-    # trajectory.write_generated_path_to_file(test_array, file_path_write, file_name_write, file_format_write)
-
-    # file_path_read = r'C:\Users\SZILING\Desktop\ManipulatorApp\data\test_path.txt'
-    # read_path = trajectory.read_generated_path_from_file(file_path_read)
-    # print(read_path)
-    #
-    # test1 = trajectory.RoboticMove(read_path)
-    # print('-1--------1-----1-------1-------1')
-    # print(test1.next())
-    # print(test1.next())
-    # print(test1.next())
-    # print(test1.next())
-    # print(test1.next())
-    # print('------------')
-    # print(test1.prev())
-    # print(test1.next())
-    # print(test1.prev())
+# GUI FUNCTIONS
+from ManipulatorApp.ui.ui_ManipulatorApp import Ui_MainWindow
+from ManipulatorApp.ui.ui_functions import *
 
 
-    while True:
-        Robot = comm.RobotComm('d:8:s', 'd:9:s', 'd:10:s', 'd:11:s', 'd:12:s', 'd:13:s')
-        Robot.start()
-        print(Robot.servos_read())
-        Robot.servos_write(90,95,90,90,90,90)
-        time.sleep(2)
-        Robot.servos_write(90,75,60,60,90,90)
-        time.sleep(1)
-        Robot.servos_write(90,95,90,90,90,90)
-        time.sleep(2)
-        Robot.stop()
+class MainWindow(QMainWindow):
+    def __init__(self):
+        QMainWindow.__init__(self, None)
+        self.dragPos = None
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self)
+
+        # ==> START PAGE
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+        UIFunctions.select_standard_menu(self, "btn_home")
+
+        # MENU
+        ################################################################################################################
+        self.ui.btn_lista.clicked.connect(lambda: UIFunctions.toggleMenu(self, 230, True))
+
+        # MENU 1 HOME
+        self.ui.btn_home.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_home))
+        self.ui.btn_home.clicked.connect(lambda: UIFunctions.label_page(self, "HOME"))
+        self.ui.btn_home.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_home"))
+
+        # MENU 2 FK
+        self.ui.btn_fk.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_fk))
+        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.label_page(self, "FORWARD KINEMATICS"))
+        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_fk"))
+
+        # MENU 3 IK
+        self.ui.btn_ik.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_ik))
+        self.ui.btn_ik.clicked.connect(lambda: UIFunctions.label_page(self, "INVERSE KINEMATICS"))
+        self.ui.btn_ik.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_ik"))
+
+        # MENU 4 MANUAL
+        self.ui.btn_manual.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_manual))
+        self.ui.btn_manual.clicked.connect(lambda: UIFunctions.label_page(self, "MANUAL MODE"))
+        self.ui.btn_manual.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_manual"))
+
+        # MENU 5 AUTO
+        self.ui.btn_auto.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_automatic))
+        self.ui.btn_auto.clicked.connect(lambda: UIFunctions.label_page(self, "AUTOMATIC MODE"))
+        self.ui.btn_auto.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_auto"))
+
+        # MENU 6 SETTINGS
+        self.ui.btn_settings.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_settings))
+        self.ui.btn_settings.clicked.connect(lambda: UIFunctions.label_page(self, "SETTINGS"))
+        self.ui.btn_settings.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_settings"))
+
+        # Pages
+        ################################################################################################################
+
+        # HOME
+        self.ui.btn_home_FK.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_fk))
+        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.label_page(self, "FORWARD KINEMATICS"))
+        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_fk"))
+
+        self.ui.btn_home_IK.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_ik))
+        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.label_page(self, "INVERSE KINEMATICS"))
+        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_ik"))
+
+        self.ui.btn_home_manual.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_manual))
+        self.ui.btn_manual.clicked.connect(lambda: UIFunctions.label_page(self, "MANUAL MODE"))
+        self.ui.btn_manual.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_manual"))
+
+        self.ui.btn_home_auto.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_automatic))
+        self.ui.btn_home_auto.clicked.connect(lambda: UIFunctions.label_page(self, "AUTOMATIC MODE"))
+        self.ui.btn_home_auto.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_auto"))
+
+        self.ui.btn_home_settings.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_settings))
+        self.ui.btn_home_settings.clicked.connect(lambda: UIFunctions.label_page(self, "SETTINGS"))
+        self.ui.btn_home_settings.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_settings"))
+
+        self.ui.btn_home_info.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_settings))
+        self.ui.btn_home_info.clicked.connect(lambda: self.ui.tabWidget_6.setCurrentIndex(0))
+        self.ui.btn_home_info.clicked.connect(lambda: UIFunctions.label_page(self, "SETTINGS"))
+        self.ui.btn_home_info.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_settings"))
+
+        ################################################################################################################
+
+        # MOVE WINDOW
+        def move_window(event):
+            # RESTORE BEFORE MOVE
+            if UIFunctions.returnStatus == 1:
+                UIFunctions.maximize_restore(self)
+
+            # IF LEFT CLICK MOVE WINDOW
+            if event.buttons() == Qt.LeftButton:
+                self.move(self.pos() + event.globalPos() - self.dragPos)
+                self.dragPos = event.globalPos()
+                event.accept()
+
+        # SET TITLE BAR
+        self.ui.frame_top.mouseMoveEvent = move_window
+
+        # ==> SET UI DEFINITIONS
+        UIFunctions.uiDefinitions(self)
+
+        # SHOW ==> MAIN WINDOW
+        ########################################################################
+        self.show()
+
+    # APP EVENTS
+    ########################################################################
+    def mousePressEvent(self, event):
+        self.dragPos = event.globalPos()
+
+
+GUI = MainWindow
+
+
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = GUI()
+    sys.exit(app.exec_())
