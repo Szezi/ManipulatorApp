@@ -8,8 +8,7 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFo
 from PySide2.QtWidgets import *
 
 # GUI FUNCTIONS
-from ManipulatorApp.ui.ui_ManipulatorApp import Ui_MainWindow
-from ManipulatorApp.ui.ui_functions import *
+from app_modules import *
 
 
 class MainWindow(QMainWindow):
@@ -85,6 +84,14 @@ class MainWindow(QMainWindow):
         self.ui.btn_home_info.clicked.connect(lambda: self.ui.tabWidget_6.setCurrentIndex(0))
         self.ui.btn_home_info.clicked.connect(lambda: UIFunctions.label_page(self, "SETTINGS"))
         self.ui.btn_home_info.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_settings"))
+
+        # FK
+        self.ui.horizontalSlider_fk_s1.valueChanged.connect(lambda: AppFunctions.page_fk(self))
+        self.ui.horizontalSlider_fk_s1_2.valueChanged.connect(lambda: AppFunctions.page_fk(self))
+        self.ui.horizontalSlider_fk_s1_3.valueChanged.connect(lambda: AppFunctions.page_fk(self))
+        self.ui.horizontalSlider_fk_s1_4.valueChanged.connect(lambda: AppFunctions.page_fk(self))
+        self.ui.horizontalSlider_fk_s1_5.valueChanged.connect(lambda: AppFunctions.page_fk(self))
+        self.ui.horizontalSlider_fk_s1_6.valueChanged.connect(lambda: AppFunctions.page_fk(self))
 
         ################################################################################################################
 
