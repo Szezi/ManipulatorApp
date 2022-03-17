@@ -12,9 +12,9 @@ from PySide2.QtCore import *
 from PySide2.QtGui import *
 from PySide2.QtWidgets import *
 
-from ManipulatorApp.mplwidget import MplWidget
-
+from ManipulatorApp.modules.mplwidget import MplWidget
 from ManipulatorApp.ui.icons import icons_rc
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -59,26 +59,25 @@ class Ui_MainWindow(object):
         self.btn_lista.setSizePolicy(sizePolicy)
         self.btn_lista.setMinimumSize(QSize(0, 0))
         self.btn_lista.setStyleSheet(u"QPushButton {\n"
-"	\n"
-"	background-image: url(:/24x24/24x24/icons8-activity-feed-50.png);\n"
-"	background-position: left center;\n"
-"	background-repeat: no-reperat;\n"
-"	border: none;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	border-left: 25px solid rgb(35, 35, 35);\n"
-"\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"	border-left: 25px solid rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"	border-left: 25px solid rgb(85, 170, 255);\n"
-"}")
+                                     "	\n"
+                                     "	background-image: url(:/24x24/24x24/icons8-activity-feed-50.png);\n"
+                                     "	background-position: left center;\n"
+                                     "	background-repeat: no-reperat;\n"
+                                     "	border: none;\n"
+                                     "	background-color: rgb(35, 35, 35);\n"
+                                     "	border-left: 25px solid rgb(35, 35, 35);\n"
+                                     "\n"
+                                     "}\n"
+                                     "QPushButton:hover {\n"
+                                     "	background-color: rgb(61, 61, 61);\n"
+                                     "	border-left: 25px solid rgb(61, 61, 61);\n"
+                                     "}\n"
+                                     "QPushButton:pressed {	\n"
+                                     "	background-color: rgb(85, 170, 255);\n"
+                                     "	border-left: 25px solid rgb(85, 170, 255);\n"
+                                     "}")
 
         self.verticalLayout_2.addWidget(self.btn_lista)
-
 
         self.horizontalLayout.addWidget(self.frame_top_lista)
 
@@ -114,9 +113,9 @@ class Ui_MainWindow(object):
         self.frame_name_logo.setObjectName(u"frame_name_logo")
         self.frame_name_logo.setMaximumSize(QSize(30, 30))
         self.frame_name_logo.setStyleSheet(u"background: transparent;\n"
-"background-image: url(:/24x24/24x24/icons8-robot-50.png);\n"
-"background-position: center;\n"
-"background-repeat: no-repeat;")
+                                           "background-image: url(:/24x24/24x24/icons8-robot-50.png);\n"
+                                           "background-position: center;\n"
+                                           "background-repeat: no-repeat;")
         self.frame_name_logo.setFrameShape(QFrame.NoFrame)
         self.frame_name_logo.setFrameShadow(QFrame.Raised)
 
@@ -131,11 +130,10 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.label_name.setFont(font)
         self.label_name.setStyleSheet(u"background: transparent;\n"
-"color: rgb(222, 222, 222);\n"
-"margin-left: 5px;")
+                                      "color: rgb(222, 222, 222);\n"
+                                      "margin-left: 5px;")
 
         self.horizontalLayout_10.addWidget(self.label_name)
-
 
         self.horizontalLayout_4.addWidget(self.frame_name)
 
@@ -156,15 +154,15 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_min.sizePolicy().hasHeightForWidth())
         self.btn_min.setSizePolicy(sizePolicy1)
         self.btn_min.setStyleSheet(u"QPushButton {	\n"
-"	border: none;\n"
-"	background-color: transparent;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(35, 35, 35);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                   "	border: none;\n"
+                                   "	background-color: transparent;\n"
+                                   "}\n"
+                                   "QPushButton:hover {\n"
+                                   "	background-color: rgb(35, 35, 35);\n"
+                                   "}\n"
+                                   "QPushButton:pressed {	\n"
+                                   "	background-color: rgb(85, 170, 255);\n"
+                                   "}")
         icon = QIcon()
         icon.addFile(u":/20x20/20x20/cil-window-minimize.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_min.setIcon(icon)
@@ -177,15 +175,15 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_max.sizePolicy().hasHeightForWidth())
         self.btn_max.setSizePolicy(sizePolicy1)
         self.btn_max.setStyleSheet(u"QPushButton {	\n"
-"	border: none;\n"
-"	background-color: transparent;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(35, 35, 35);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                   "	border: none;\n"
+                                   "	background-color: transparent;\n"
+                                   "}\n"
+                                   "QPushButton:hover {\n"
+                                   "	background-color: rgb(35, 35, 35);\n"
+                                   "}\n"
+                                   "QPushButton:pressed {	\n"
+                                   "	background-color: rgb(85, 170, 255);\n"
+                                   "}")
         icon1 = QIcon()
         icon1.addFile(u":/20x20/20x20/cil-window-maximize.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_max.setIcon(icon1)
@@ -198,15 +196,15 @@ class Ui_MainWindow(object):
         sizePolicy1.setHeightForWidth(self.btn_close.sizePolicy().hasHeightForWidth())
         self.btn_close.setSizePolicy(sizePolicy1)
         self.btn_close.setStyleSheet(u"QPushButton {	\n"
-"	border: none;\n"
-"	background-color: transparent;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(35, 35, 35);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                     "	border: none;\n"
+                                     "	background-color: transparent;\n"
+                                     "}\n"
+                                     "QPushButton:hover {\n"
+                                     "	background-color: rgb(35, 35, 35);\n"
+                                     "}\n"
+                                     "QPushButton:pressed {	\n"
+                                     "	background-color: rgb(85, 170, 255);\n"
+                                     "}")
         icon2 = QIcon()
         icon2.addFile(u":/20x20/20x20/cil-x.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_close.setIcon(icon2)
@@ -214,9 +212,7 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_5.addWidget(self.btn_close)
 
-
         self.horizontalLayout_4.addWidget(self.frame_btn)
-
 
         self.verticalLayout_8.addWidget(self.frame_top_right2)
 
@@ -241,16 +237,13 @@ class Ui_MainWindow(object):
         font1.setWeight(75)
         self.label_top_info_2.setFont(font1)
         self.label_top_info_2.setStyleSheet(u"color: rgb(222, 222, 222);")
-        self.label_top_info_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_top_info_2.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
 
         self.horizontalLayout_8.addWidget(self.label_top_info_2)
 
-
         self.verticalLayout_8.addWidget(self.frame_top_info, 0, Qt.AlignRight)
 
-
         self.horizontalLayout.addWidget(self.frame_top_right)
-
 
         self.verticalLayout.addWidget(self.frame_top)
 
@@ -295,24 +288,24 @@ class Ui_MainWindow(object):
         self.btn_home.setFont(font2)
         self.btn_home.setLayoutDirection(Qt.LeftToRight)
         self.btn_home.setStyleSheet(u"QPushButton {	\n"
-"	background-image: url(:/24x24/24x24/icons8-four-squares-50.png);\n"
-"	background-position:left center;\n"
-"    background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	border-left: 25px solid rgb(35, 35, 35);\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	text-align: left;\n"
-"	padding-left: 45px;\n"
-"	color: rgb(222, 222, 222);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"	border-left: 25px solid rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"	border-left: 25px solid rgb(85, 170, 255);\n"
-"}")
+                                    "	background-image: url(:/24x24/24x24/icons8-four-squares-50.png);\n"
+                                    "	background-position:left center;\n"
+                                    "    background-repeat: no-repeat;\n"
+                                    "	border: none;\n"
+                                    "	border-left: 25px solid rgb(35, 35, 35);\n"
+                                    "	background-color: rgb(35, 35, 35);\n"
+                                    "	text-align: left;\n"
+                                    "	padding-left: 45px;\n"
+                                    "	color: rgb(222, 222, 222);\n"
+                                    "}\n"
+                                    "QPushButton:hover {\n"
+                                    "	background-color: rgb(61, 61, 61);\n"
+                                    "	border-left: 25px solid rgb(61, 61, 61);\n"
+                                    "}\n"
+                                    "QPushButton:pressed {	\n"
+                                    "	background-color: rgb(85, 170, 255);\n"
+                                    "	border-left: 25px solid rgb(85, 170, 255);\n"
+                                    "}")
 
         self.verticalLayout_4.addWidget(self.btn_home)
 
@@ -324,24 +317,24 @@ class Ui_MainWindow(object):
         self.btn_fk.setFont(font2)
         self.btn_fk.setLayoutDirection(Qt.LeftToRight)
         self.btn_fk.setStyleSheet(u"QPushButton {	\n"
-"	background-image: url(:/others/24x24/icons_fk.png);\n"
-"	background-position:left center;\n"
-"    background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	border-left: 25px solid rgb(35, 35, 35);\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	text-align: left;\n"
-"	padding-left: 45px;\n"
-"	color: rgb(222, 222, 222);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"	border-left: 25px solid rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"	border-left: 25px solid rgb(85, 170, 255);\n"
-"}")
+                                  "	background-image: url(:/others/24x24/icons_fk.png);\n"
+                                  "	background-position:left center;\n"
+                                  "    background-repeat: no-repeat;\n"
+                                  "	border: none;\n"
+                                  "	border-left: 25px solid rgb(35, 35, 35);\n"
+                                  "	background-color: rgb(35, 35, 35);\n"
+                                  "	text-align: left;\n"
+                                  "	padding-left: 45px;\n"
+                                  "	color: rgb(222, 222, 222);\n"
+                                  "}\n"
+                                  "QPushButton:hover {\n"
+                                  "	background-color: rgb(61, 61, 61);\n"
+                                  "	border-left: 25px solid rgb(61, 61, 61);\n"
+                                  "}\n"
+                                  "QPushButton:pressed {	\n"
+                                  "	background-color: rgb(85, 170, 255);\n"
+                                  "	border-left: 25px solid rgb(85, 170, 255);\n"
+                                  "}")
 
         self.verticalLayout_4.addWidget(self.btn_fk)
 
@@ -353,24 +346,24 @@ class Ui_MainWindow(object):
         self.btn_ik.setFont(font2)
         self.btn_ik.setLayoutDirection(Qt.LeftToRight)
         self.btn_ik.setStyleSheet(u"QPushButton {	\n"
-"	background-image: url(:/others/24x24/icons_Ik.png);\n"
-"	background-position:left center;\n"
-"    background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	border-left: 25px solid rgb(35, 35, 35);\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	text-align: left;\n"
-"	padding-left: 45px;\n"
-"	color: rgb(222, 222, 222);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"	border-left: 25px solid rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"	border-left: 25px solid rgb(85, 170, 255);\n"
-"}")
+                                  "	background-image: url(:/others/24x24/icons_Ik.png);\n"
+                                  "	background-position:left center;\n"
+                                  "    background-repeat: no-repeat;\n"
+                                  "	border: none;\n"
+                                  "	border-left: 25px solid rgb(35, 35, 35);\n"
+                                  "	background-color: rgb(35, 35, 35);\n"
+                                  "	text-align: left;\n"
+                                  "	padding-left: 45px;\n"
+                                  "	color: rgb(222, 222, 222);\n"
+                                  "}\n"
+                                  "QPushButton:hover {\n"
+                                  "	background-color: rgb(61, 61, 61);\n"
+                                  "	border-left: 25px solid rgb(61, 61, 61);\n"
+                                  "}\n"
+                                  "QPushButton:pressed {	\n"
+                                  "	background-color: rgb(85, 170, 255);\n"
+                                  "	border-left: 25px solid rgb(85, 170, 255);\n"
+                                  "}")
 
         self.verticalLayout_4.addWidget(self.btn_ik)
 
@@ -382,24 +375,24 @@ class Ui_MainWindow(object):
         self.btn_manual.setFont(font2)
         self.btn_manual.setLayoutDirection(Qt.LeftToRight)
         self.btn_manual.setStyleSheet(u"QPushButton {	\n"
-"	background-image: url(:/24x24/24x24/icons8-manual-50.png);\n"
-"	background-position:left center;\n"
-"    background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	border-left: 25px solid rgb(35, 35, 35);\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	text-align: left;\n"
-"	padding-left: 45px;\n"
-"	color: rgb(222, 222, 222);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"	border-left: 25px solid rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"	border-left: 25px solid rgb(85, 170, 255);\n"
-"}")
+                                      "	background-image: url(:/24x24/24x24/icons8-manual-50.png);\n"
+                                      "	background-position:left center;\n"
+                                      "    background-repeat: no-repeat;\n"
+                                      "	border: none;\n"
+                                      "	border-left: 25px solid rgb(35, 35, 35);\n"
+                                      "	background-color: rgb(35, 35, 35);\n"
+                                      "	text-align: left;\n"
+                                      "	padding-left: 45px;\n"
+                                      "	color: rgb(222, 222, 222);\n"
+                                      "}\n"
+                                      "QPushButton:hover {\n"
+                                      "	background-color: rgb(61, 61, 61);\n"
+                                      "	border-left: 25px solid rgb(61, 61, 61);\n"
+                                      "}\n"
+                                      "QPushButton:pressed {	\n"
+                                      "	background-color: rgb(85, 170, 255);\n"
+                                      "	border-left: 25px solid rgb(85, 170, 255);\n"
+                                      "}")
 
         self.verticalLayout_4.addWidget(self.btn_manual)
 
@@ -411,27 +404,26 @@ class Ui_MainWindow(object):
         self.btn_auto.setFont(font2)
         self.btn_auto.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto.setStyleSheet(u"QPushButton {	\n"
-"	background-image: url(:/24x24/24x24/icons8-automatic-50.png);\n"
-"	background-position:left center;\n"
-"    background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	border-left: 25px solid rgb(35, 35, 35);\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	text-align: left;\n"
-"	padding-left: 45px;\n"
-"	color: rgb(222, 222, 222);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"	border-left: 25px solid rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"	border-left: 25px solid rgb(85, 170, 255);\n"
-"}")
+                                    "	background-image: url(:/24x24/24x24/icons8-automatic-50.png);\n"
+                                    "	background-position:left center;\n"
+                                    "    background-repeat: no-repeat;\n"
+                                    "	border: none;\n"
+                                    "	border-left: 25px solid rgb(35, 35, 35);\n"
+                                    "	background-color: rgb(35, 35, 35);\n"
+                                    "	text-align: left;\n"
+                                    "	padding-left: 45px;\n"
+                                    "	color: rgb(222, 222, 222);\n"
+                                    "}\n"
+                                    "QPushButton:hover {\n"
+                                    "	background-color: rgb(61, 61, 61);\n"
+                                    "	border-left: 25px solid rgb(61, 61, 61);\n"
+                                    "}\n"
+                                    "QPushButton:pressed {	\n"
+                                    "	background-color: rgb(85, 170, 255);\n"
+                                    "	border-left: 25px solid rgb(85, 170, 255);\n"
+                                    "}")
 
         self.verticalLayout_4.addWidget(self.btn_auto)
-
 
         self.verticalLayout_3.addWidget(self.frame_menu_top, 0, Qt.AlignTop)
 
@@ -451,29 +443,27 @@ class Ui_MainWindow(object):
         self.btn_settings.setFont(font2)
         self.btn_settings.setLayoutDirection(Qt.LeftToRight)
         self.btn_settings.setStyleSheet(u"QPushButton {	\n"
-"	background-image: url(:/24x24/24x24/icons8-adjust-50.png);\n"
-"	background-position:left center;\n"
-"    background-repeat: no-repeat;\n"
-"	border: none;\n"
-"	border-left: 25px solid rgb(35, 35, 35);\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	text-align: left;\n"
-"	padding-left: 45px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"	border-left: 25px solid rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"	border-left: 25px solid rgb(85, 170, 255);\n"
-"}")
+                                        "	background-image: url(:/24x24/24x24/icons8-adjust-50.png);\n"
+                                        "	background-position:left center;\n"
+                                        "    background-repeat: no-repeat;\n"
+                                        "	border: none;\n"
+                                        "	border-left: 25px solid rgb(35, 35, 35);\n"
+                                        "	background-color: rgb(35, 35, 35);\n"
+                                        "	text-align: left;\n"
+                                        "	padding-left: 45px;\n"
+                                        "}\n"
+                                        "QPushButton:hover {\n"
+                                        "	background-color: rgb(61, 61, 61);\n"
+                                        "	border-left: 25px solid rgb(61, 61, 61);\n"
+                                        "}\n"
+                                        "QPushButton:pressed {	\n"
+                                        "	background-color: rgb(85, 170, 255);\n"
+                                        "	border-left: 25px solid rgb(85, 170, 255);\n"
+                                        "}")
 
         self.verticalLayout_5.addWidget(self.btn_settings)
 
-
         self.verticalLayout_3.addWidget(self.frame_menu_bottom)
-
 
         self.horizontalLayout_2.addWidget(self.frame_menu)
 
@@ -533,19 +523,19 @@ class Ui_MainWindow(object):
         self.btn_home_manual.setFont(font3)
         self.btn_home_manual.setLayoutDirection(Qt.LeftToRight)
         self.btn_home_manual.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                           "	color: rgb(222, 222, 222);\n"
+                                           "    border: 2px solid #555;\n"
+                                           "    border-radius: 25px;\n"
+                                           "    border-style: outset;\n"
+                                           "	background-color: rgb(35, 35, 35);\n"
+                                           "    padding: 5px;\n"
+                                           "}\n"
+                                           "QPushButton:hover {\n"
+                                           "	background-color: rgb(61, 61, 61);\n"
+                                           "}\n"
+                                           "QPushButton:pressed {	\n"
+                                           "	background-color: rgb(85, 170, 255);\n"
+                                           "}")
 
         self.gridLayout.addWidget(self.btn_home_manual, 1, 0, 1, 1)
 
@@ -558,19 +548,19 @@ class Ui_MainWindow(object):
         self.btn_home_IK.setFont(font3)
         self.btn_home_IK.setLayoutDirection(Qt.LeftToRight)
         self.btn_home_IK.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                       "	color: rgb(222, 222, 222);\n"
+                                       "    border: 2px solid #555;\n"
+                                       "    border-radius: 25px;\n"
+                                       "    border-style: outset;\n"
+                                       "	background-color: rgb(35, 35, 35);\n"
+                                       "    padding: 5px;\n"
+                                       "}\n"
+                                       "QPushButton:hover {\n"
+                                       "	background-color: rgb(61, 61, 61);\n"
+                                       "}\n"
+                                       "QPushButton:pressed {	\n"
+                                       "	background-color: rgb(85, 170, 255);\n"
+                                       "}")
 
         self.gridLayout.addWidget(self.btn_home_IK, 0, 1, 1, 1)
 
@@ -585,19 +575,19 @@ class Ui_MainWindow(object):
         self.btn_home_FK.setFont(font3)
         self.btn_home_FK.setLayoutDirection(Qt.LeftToRight)
         self.btn_home_FK.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                       "	color: rgb(222, 222, 222);\n"
+                                       "    border: 2px solid #555;\n"
+                                       "    border-radius: 25px;\n"
+                                       "    border-style: outset;\n"
+                                       "	background-color: rgb(35, 35, 35);\n"
+                                       "    padding: 5px;\n"
+                                       "}\n"
+                                       "QPushButton:hover {\n"
+                                       "	background-color: rgb(61, 61, 61);\n"
+                                       "}\n"
+                                       "QPushButton:pressed {	\n"
+                                       "	background-color: rgb(85, 170, 255);\n"
+                                       "}")
 
         self.gridLayout.addWidget(self.btn_home_FK, 0, 0, 1, 1)
 
@@ -610,19 +600,19 @@ class Ui_MainWindow(object):
         self.btn_home_info.setFont(font3)
         self.btn_home_info.setLayoutDirection(Qt.LeftToRight)
         self.btn_home_info.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                         "	color: rgb(222, 222, 222);\n"
+                                         "    border: 2px solid #555;\n"
+                                         "    border-radius: 25px;\n"
+                                         "    border-style: outset;\n"
+                                         "	background-color: rgb(35, 35, 35);\n"
+                                         "    padding: 5px;\n"
+                                         "}\n"
+                                         "QPushButton:hover {\n"
+                                         "	background-color: rgb(61, 61, 61);\n"
+                                         "}\n"
+                                         "QPushButton:pressed {	\n"
+                                         "	background-color: rgb(85, 170, 255);\n"
+                                         "}")
 
         self.gridLayout.addWidget(self.btn_home_info, 2, 1, 1, 1)
 
@@ -635,19 +625,19 @@ class Ui_MainWindow(object):
         self.btn_home_settings.setFont(font3)
         self.btn_home_settings.setLayoutDirection(Qt.LeftToRight)
         self.btn_home_settings.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                             "	color: rgb(222, 222, 222);\n"
+                                             "    border: 2px solid #555;\n"
+                                             "    border-radius: 25px;\n"
+                                             "    border-style: outset;\n"
+                                             "	background-color: rgb(35, 35, 35);\n"
+                                             "    padding: 5px;\n"
+                                             "}\n"
+                                             "QPushButton:hover {\n"
+                                             "	background-color: rgb(61, 61, 61);\n"
+                                             "}\n"
+                                             "QPushButton:pressed {	\n"
+                                             "	background-color: rgb(85, 170, 255);\n"
+                                             "}")
 
         self.gridLayout.addWidget(self.btn_home_settings, 2, 0, 1, 1)
 
@@ -660,22 +650,21 @@ class Ui_MainWindow(object):
         self.btn_home_auto.setFont(font3)
         self.btn_home_auto.setLayoutDirection(Qt.LeftToRight)
         self.btn_home_auto.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius:25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                         "	color: rgb(222, 222, 222);\n"
+                                         "    border: 2px solid #555;\n"
+                                         "    border-radius:25px;\n"
+                                         "    border-style: outset;\n"
+                                         "	background-color: rgb(35, 35, 35);\n"
+                                         "    padding: 5px;\n"
+                                         "}\n"
+                                         "QPushButton:hover {\n"
+                                         "	background-color: rgb(61, 61, 61);\n"
+                                         "}\n"
+                                         "QPushButton:pressed {	\n"
+                                         "	background-color: rgb(85, 170, 255);\n"
+                                         "}")
 
         self.gridLayout.addWidget(self.btn_home_auto, 1, 1, 1, 1)
-
 
         self.horizontalLayout_7.addWidget(self.frame_home_shortcuts)
 
@@ -724,16 +713,16 @@ class Ui_MainWindow(object):
         self.radioButton_home_effector.setContextMenuPolicy(Qt.NoContextMenu)
         self.radioButton_home_effector.setLayoutDirection(Qt.LeftToRight)
         self.radioButton_home_effector.setStyleSheet(u"QRadioButton::indicator:checked {\n"
-"    background-color:       green;\n"
-"    border:                 2px solid white;\n"
-"	border-radius:          7px;\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:unchecked {\n"
-"    background-color:       red;\n"
-"    border:                 2px solid white;\n"
-"	border-radius:          7px;\n"
-"}")
+                                                     "    background-color:       green;\n"
+                                                     "    border:                 2px solid white;\n"
+                                                     "	border-radius:          7px;\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QRadioButton::indicator:unchecked {\n"
+                                                     "    background-color:       red;\n"
+                                                     "    border:                 2px solid white;\n"
+                                                     "	border-radius:          7px;\n"
+                                                     "}")
         self.radioButton_home_effector.setCheckable(True)
         self.radioButton_home_effector.setChecked(False)
         self.radioButton_home_effector.setAutoRepeat(False)
@@ -755,16 +744,16 @@ class Ui_MainWindow(object):
         self.radioButton_home_comm.setContextMenuPolicy(Qt.NoContextMenu)
         self.radioButton_home_comm.setLayoutDirection(Qt.LeftToRight)
         self.radioButton_home_comm.setStyleSheet(u"QRadioButton::indicator:checked {\n"
-"    background-color:       green;\n"
-"    border:                 2px solid white;\n"
-"	border-radius:          7px;\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:unchecked {\n"
-"    background-color:       red;\n"
-"    border:                 2px solid white;\n"
-"	border-radius:          7px;\n"
-"}")
+                                                 "    background-color:       green;\n"
+                                                 "    border:                 2px solid white;\n"
+                                                 "	border-radius:          7px;\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QRadioButton::indicator:unchecked {\n"
+                                                 "    background-color:       red;\n"
+                                                 "    border:                 2px solid white;\n"
+                                                 "	border-radius:          7px;\n"
+                                                 "}")
         self.radioButton_home_comm.setChecked(True)
         self.radioButton_home_comm.setAutoExclusive(False)
 
@@ -775,7 +764,7 @@ class Ui_MainWindow(object):
         self.label_home_port.setMinimumSize(QSize(250, 50))
         self.label_home_port.setMaximumSize(QSize(400, 50))
         self.label_home_port.setFont(font4)
-        self.label_home_port.setAlignment(Qt.AlignJustify|Qt.AlignVCenter)
+        self.label_home_port.setAlignment(Qt.AlignJustify | Qt.AlignVCenter)
 
         self.gridLayout_3.addWidget(self.label_home_port, 1, 0, 1, 1)
 
@@ -817,7 +806,7 @@ class Ui_MainWindow(object):
         self.logo_home_robot.setMaximumSize(QSize(50, 50))
         self.logo_home_robot.setLayoutDirection(Qt.RightToLeft)
         self.logo_home_robot.setStyleSheet(u"background-image: url(:/50x50/50x50/icons8-robot-50.png);")
-        self.logo_home_robot.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.logo_home_robot.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
 
         self.gridLayout_3.addWidget(self.logo_home_robot, 4, 2, 1, 1)
 
@@ -832,10 +821,9 @@ class Ui_MainWindow(object):
         self.label_home_pos.setFont(font5)
         self.label_home_pos.setLayoutDirection(Qt.LeftToRight)
         self.label_home_pos.setStyleSheet(u"color: rgb(222, 222, 222);")
-        self.label_home_pos.setAlignment(Qt.AlignJustify|Qt.AlignVCenter)
+        self.label_home_pos.setAlignment(Qt.AlignJustify | Qt.AlignVCenter)
 
         self.gridLayout_3.addWidget(self.label_home_pos, 4, 0, 1, 1)
-
 
         self.verticalLayout_9.addWidget(self.frame_home_info_top)
 
@@ -901,9 +889,7 @@ class Ui_MainWindow(object):
 
         self.gridLayout_2.addWidget(self.lcdNumber_home_actual_Z, 4, 2, 1, 1)
 
-
         self.verticalLayout_9.addWidget(self.frame_home_info_bottom)
-
 
         self.horizontalLayout_7.addWidget(self.frame_home_info)
 
@@ -960,26 +946,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_fk_s1.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_fk_s1.setLayoutDirection(Qt.LeftToRight)
         self.horizontalSlider_fk_s1.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                  "    border-radius: 9px;  \n"
+                                                  "	height: 18px;\n"
+                                                  "	margin: 0px;\n"
+                                                  "	background-color: rgb(61, 61, 61);\n"
+                                                  "}\n"
+                                                  "\n"
+                                                  "QSlider::handle:horizontal {\n"
+                                                  "    background-color: rgb(85, 170, 255);\n"
+                                                  "    border: none;\n"
+                                                  "    height: 18px;\n"
+                                                  "    width: 18px;\n"
+                                                  "    margin: 0px;\n"
+                                                  "	border-radius: 9px;\n"
+                                                  "}\n"
+                                                  "QSlider::handle:horizontal:hover {\n"
+                                                  "    background-color: rgb(105, 180, 255);\n"
+                                                  "}\n"
+                                                  "QSlider::handle:horizontal:pressed {\n"
+                                                  "    background-color: rgb(65, 130, 195);\n"
+                                                  "}")
         self.horizontalSlider_fk_s1.setMinimum(-90)
         self.horizontalSlider_fk_s1.setMaximum(90)
         self.horizontalSlider_fk_s1.setOrientation(Qt.Horizontal)
@@ -1025,26 +1011,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_fk_s1_2.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_fk_s1_2.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_fk_s1_2.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_fk_s1_2.setMinimum(-90)
         self.horizontalSlider_fk_s1_2.setMaximum(90)
         self.horizontalSlider_fk_s1_2.setOrientation(Qt.Horizontal)
@@ -1088,26 +1074,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_fk_s1_4.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_fk_s1_4.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_fk_s1_4.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_fk_s1_4.setMinimum(-90)
         self.horizontalSlider_fk_s1_4.setMaximum(90)
         self.horizontalSlider_fk_s1_4.setOrientation(Qt.Horizontal)
@@ -1125,26 +1111,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_fk_s1_3.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_fk_s1_3.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_fk_s1_3.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_fk_s1_3.setMinimum(-90)
         self.horizontalSlider_fk_s1_3.setMaximum(90)
         self.horizontalSlider_fk_s1_3.setOrientation(Qt.Horizontal)
@@ -1162,26 +1148,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_fk_s1_5.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_fk_s1_5.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_fk_s1_5.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_fk_s1_5.setMinimum(-90)
         self.horizontalSlider_fk_s1_5.setMaximum(90)
         self.horizontalSlider_fk_s1_5.setOrientation(Qt.Horizontal)
@@ -1217,26 +1203,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_fk_s1_6.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_fk_s1_6.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_fk_s1_6.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_fk_s1_6.setMinimum(-90)
         self.horizontalSlider_fk_s1_6.setMaximum(90)
         self.horizontalSlider_fk_s1_6.setOrientation(Qt.Horizontal)
@@ -1277,9 +1263,9 @@ class Ui_MainWindow(object):
         font6.setPointSize(4)
         self.lcdNumber_fk_s1.setFont(font6)
         self.lcdNumber_fk_s1.setStyleSheet(u"QLCDNumber{\n"
-"  border: none;\n"
-"  color: rgb(255, 255, 255);\n"
-"}")
+                                           "  border: none;\n"
+                                           "  color: rgb(255, 255, 255);\n"
+                                           "}")
 
         self.gridLayout_6.addWidget(self.lcdNumber_fk_s1, 1, 0, 1, 1)
 
@@ -1314,7 +1300,6 @@ class Ui_MainWindow(object):
         self.tabWidget.addTab(self.tab_fk_info, icon4, "")
 
         self.gridLayout_4.addWidget(self.tabWidget, 0, 0, 1, 1)
-
 
         self.gridLayout_5.addWidget(self.frame_fk_input, 0, 0, 3, 1)
 
@@ -1394,7 +1379,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_16.addWidget(self.lcdnumber_dh_Z_2, 2, 2, 1, 1)
 
-
         self.gridLayout_5.addWidget(self.frame_fk_results, 2, 1, 1, 1)
 
         self.MplWidget_fk = MplWidget(self.page_fk)
@@ -1458,26 +1442,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_ik_x.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_ik_x.setLayoutDirection(Qt.LeftToRight)
         self.horizontalSlider_ik_x.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                 "    border-radius: 9px;  \n"
+                                                 "	height: 18px;\n"
+                                                 "	margin: 0px;\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QSlider::handle:horizontal {\n"
+                                                 "    background-color: rgb(85, 170, 255);\n"
+                                                 "    border: none;\n"
+                                                 "    height: 18px;\n"
+                                                 "    width: 18px;\n"
+                                                 "    margin: 0px;\n"
+                                                 "	border-radius: 9px;\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:hover {\n"
+                                                 "    background-color: rgb(105, 180, 255);\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:pressed {\n"
+                                                 "    background-color: rgb(65, 130, 195);\n"
+                                                 "}")
         self.horizontalSlider_ik_x.setMinimum(-90)
         self.horizontalSlider_ik_x.setMaximum(90)
         self.horizontalSlider_ik_x.setOrientation(Qt.Horizontal)
@@ -1531,26 +1515,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_ik_y.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_ik_y.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_ik_y.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                 "    border-radius: 9px;  \n"
+                                                 "	height: 18px;\n"
+                                                 "	margin: 0px;\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QSlider::handle:horizontal {\n"
+                                                 "    background-color: rgb(85, 170, 255);\n"
+                                                 "    border: none;\n"
+                                                 "    height: 18px;\n"
+                                                 "    width: 18px;\n"
+                                                 "    margin: 0px;\n"
+                                                 "	border-radius: 9px;\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:hover {\n"
+                                                 "    background-color: rgb(105, 180, 255);\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:pressed {\n"
+                                                 "    background-color: rgb(65, 130, 195);\n"
+                                                 "}")
         self.horizontalSlider_ik_y.setMinimum(-90)
         self.horizontalSlider_ik_y.setMaximum(90)
         self.horizontalSlider_ik_y.setOrientation(Qt.Horizontal)
@@ -1571,9 +1555,9 @@ class Ui_MainWindow(object):
         self.lcdNumber_ik_x.setMaximumSize(QSize(50, 50))
         self.lcdNumber_ik_x.setFont(font6)
         self.lcdNumber_ik_x.setStyleSheet(u"QLCDNumber{\n"
-"  border: none;\n"
-"  color: rgb(255, 255, 255);\n"
-"}")
+                                          "  border: none;\n"
+                                          "  color: rgb(255, 255, 255);\n"
+                                          "}")
 
         self.gridLayout_12.addWidget(self.lcdNumber_ik_x, 1, 0, 1, 1)
 
@@ -1594,26 +1578,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_ik_z.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_ik_z.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_ik_z.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                 "    border-radius: 9px;  \n"
+                                                 "	height: 18px;\n"
+                                                 "	margin: 0px;\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QSlider::handle:horizontal {\n"
+                                                 "    background-color: rgb(85, 170, 255);\n"
+                                                 "    border: none;\n"
+                                                 "    height: 18px;\n"
+                                                 "    width: 18px;\n"
+                                                 "    margin: 0px;\n"
+                                                 "	border-radius: 9px;\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:hover {\n"
+                                                 "    background-color: rgb(105, 180, 255);\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:pressed {\n"
+                                                 "    background-color: rgb(65, 130, 195);\n"
+                                                 "}")
         self.horizontalSlider_ik_z.setMinimum(-90)
         self.horizontalSlider_ik_z.setMaximum(90)
         self.horizontalSlider_ik_z.setOrientation(Qt.Horizontal)
@@ -1642,26 +1626,26 @@ class Ui_MainWindow(object):
         self.verticalSlider.setMinimumSize(QSize(0, 200))
         self.verticalSlider.setMaximumSize(QSize(16777215, 400))
         self.verticalSlider.setStyleSheet(u"QSlider::groove:vertical {\n"
-"    border-radius: 9px;  \n"
-"	widtht: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:vertical {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:vertical:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:vertical:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                          "    border-radius: 9px;  \n"
+                                          "	widtht: 18px;\n"
+                                          "	margin: 0px;\n"
+                                          "	background-color: rgb(61, 61, 61);\n"
+                                          "}\n"
+                                          "\n"
+                                          "QSlider::handle:vertical {\n"
+                                          "    background-color: rgb(85, 170, 255);\n"
+                                          "    border: none;\n"
+                                          "    height: 18px;\n"
+                                          "    width: 18px;\n"
+                                          "    margin: 0px;\n"
+                                          "	border-radius: 9px;\n"
+                                          "}\n"
+                                          "QSlider::handle:vertical:hover {\n"
+                                          "    background-color: rgb(105, 180, 255);\n"
+                                          "}\n"
+                                          "QSlider::handle:vertical:pressed {\n"
+                                          "    background-color: rgb(65, 130, 195);\n"
+                                          "}")
         self.verticalSlider.setMinimum(-90)
         self.verticalSlider.setMaximum(90)
         self.verticalSlider.setPageStep(5)
@@ -1693,7 +1677,7 @@ class Ui_MainWindow(object):
         self.label_ik_efektor_2.setMaximumSize(QSize(250, 150))
         self.label_ik_efektor_2.setPixmap(QPixmap(u":/others/others/vis_orientaction.png"))
         self.label_ik_efektor_2.setScaledContents(True)
-        self.label_ik_efektor_2.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_ik_efektor_2.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
 
         self.gridLayout_10.addWidget(self.label_ik_efektor_2, 1, 0, 1, 1)
 
@@ -1704,7 +1688,6 @@ class Ui_MainWindow(object):
         self.tabWidget_3.addTab(self.tab_fk_info_3, icon4, "")
 
         self.gridLayout_9.addWidget(self.tabWidget_3, 0, 0, 1, 1)
-
 
         self.gridLayout_11.addWidget(self.frame_ik_input, 0, 0, 2, 1)
 
@@ -1975,7 +1958,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_18.addWidget(self.tabWidget_4, 0, 0, 1, 1)
 
-
         self.gridLayout_11.addWidget(self.frame_ik_results, 1, 1, 1, 1)
 
         self.stackedWidget.addWidget(self.page_ik)
@@ -2025,9 +2007,9 @@ class Ui_MainWindow(object):
         self.lcdNumber_j_s1.setMaximumSize(QSize(50, 50))
         self.lcdNumber_j_s1.setFont(font6)
         self.lcdNumber_j_s1.setStyleSheet(u"QLCDNumber{\n"
-"  border: none;\n"
-"  color: rgb(255, 255, 255);\n"
-"}")
+                                          "  border: none;\n"
+                                          "  color: rgb(255, 255, 255);\n"
+                                          "}")
 
         self.gridLayout_20.addWidget(self.lcdNumber_j_s1, 1, 0, 1, 1)
 
@@ -2039,26 +2021,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_j_s1.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_j_s1.setLayoutDirection(Qt.LeftToRight)
         self.horizontalSlider_j_s1.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                 "    border-radius: 9px;  \n"
+                                                 "	height: 18px;\n"
+                                                 "	margin: 0px;\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QSlider::handle:horizontal {\n"
+                                                 "    background-color: rgb(85, 170, 255);\n"
+                                                 "    border: none;\n"
+                                                 "    height: 18px;\n"
+                                                 "    width: 18px;\n"
+                                                 "    margin: 0px;\n"
+                                                 "	border-radius: 9px;\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:hover {\n"
+                                                 "    background-color: rgb(105, 180, 255);\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:pressed {\n"
+                                                 "    background-color: rgb(65, 130, 195);\n"
+                                                 "}")
         self.horizontalSlider_j_s1.setMinimum(-90)
         self.horizontalSlider_j_s1.setMaximum(90)
         self.horizontalSlider_j_s1.setOrientation(Qt.Horizontal)
@@ -2094,26 +2076,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_j_s2.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_j_s2.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_j_s2.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                 "    border-radius: 9px;  \n"
+                                                 "	height: 18px;\n"
+                                                 "	margin: 0px;\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QSlider::handle:horizontal {\n"
+                                                 "    background-color: rgb(85, 170, 255);\n"
+                                                 "    border: none;\n"
+                                                 "    height: 18px;\n"
+                                                 "    width: 18px;\n"
+                                                 "    margin: 0px;\n"
+                                                 "	border-radius: 9px;\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:hover {\n"
+                                                 "    background-color: rgb(105, 180, 255);\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:pressed {\n"
+                                                 "    background-color: rgb(65, 130, 195);\n"
+                                                 "}")
         self.horizontalSlider_j_s2.setMinimum(-90)
         self.horizontalSlider_j_s2.setMaximum(90)
         self.horizontalSlider_j_s2.setOrientation(Qt.Horizontal)
@@ -2149,26 +2131,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_j_s3.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_j_s3.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_j_s3.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                 "    border-radius: 9px;  \n"
+                                                 "	height: 18px;\n"
+                                                 "	margin: 0px;\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QSlider::handle:horizontal {\n"
+                                                 "    background-color: rgb(85, 170, 255);\n"
+                                                 "    border: none;\n"
+                                                 "    height: 18px;\n"
+                                                 "    width: 18px;\n"
+                                                 "    margin: 0px;\n"
+                                                 "	border-radius: 9px;\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:hover {\n"
+                                                 "    background-color: rgb(105, 180, 255);\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:pressed {\n"
+                                                 "    background-color: rgb(65, 130, 195);\n"
+                                                 "}")
         self.horizontalSlider_j_s3.setMinimum(-90)
         self.horizontalSlider_j_s3.setMaximum(90)
         self.horizontalSlider_j_s3.setOrientation(Qt.Horizontal)
@@ -2204,26 +2186,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_j_s4.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_j_s4.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_j_s4.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                 "    border-radius: 9px;  \n"
+                                                 "	height: 18px;\n"
+                                                 "	margin: 0px;\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QSlider::handle:horizontal {\n"
+                                                 "    background-color: rgb(85, 170, 255);\n"
+                                                 "    border: none;\n"
+                                                 "    height: 18px;\n"
+                                                 "    width: 18px;\n"
+                                                 "    margin: 0px;\n"
+                                                 "	border-radius: 9px;\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:hover {\n"
+                                                 "    background-color: rgb(105, 180, 255);\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:pressed {\n"
+                                                 "    background-color: rgb(65, 130, 195);\n"
+                                                 "}")
         self.horizontalSlider_j_s4.setMinimum(-90)
         self.horizontalSlider_j_s4.setMaximum(90)
         self.horizontalSlider_j_s4.setOrientation(Qt.Horizontal)
@@ -2259,26 +2241,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_j_s5.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_j_s5.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_j_s5.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                 "    border-radius: 9px;  \n"
+                                                 "	height: 18px;\n"
+                                                 "	margin: 0px;\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QSlider::handle:horizontal {\n"
+                                                 "    background-color: rgb(85, 170, 255);\n"
+                                                 "    border: none;\n"
+                                                 "    height: 18px;\n"
+                                                 "    width: 18px;\n"
+                                                 "    margin: 0px;\n"
+                                                 "	border-radius: 9px;\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:hover {\n"
+                                                 "    background-color: rgb(105, 180, 255);\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:pressed {\n"
+                                                 "    background-color: rgb(65, 130, 195);\n"
+                                                 "}")
         self.horizontalSlider_j_s5.setMinimum(-90)
         self.horizontalSlider_j_s5.setMaximum(90)
         self.horizontalSlider_j_s5.setOrientation(Qt.Horizontal)
@@ -2314,26 +2296,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_j_s6.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_j_s6.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_j_s6.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                 "    border-radius: 9px;  \n"
+                                                 "	height: 18px;\n"
+                                                 "	margin: 0px;\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "\n"
+                                                 "QSlider::handle:horizontal {\n"
+                                                 "    background-color: rgb(85, 170, 255);\n"
+                                                 "    border: none;\n"
+                                                 "    height: 18px;\n"
+                                                 "    width: 18px;\n"
+                                                 "    margin: 0px;\n"
+                                                 "	border-radius: 9px;\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:hover {\n"
+                                                 "    background-color: rgb(105, 180, 255);\n"
+                                                 "}\n"
+                                                 "QSlider::handle:horizontal:pressed {\n"
+                                                 "    background-color: rgb(65, 130, 195);\n"
+                                                 "}")
         self.horizontalSlider_j_s6.setMinimum(-90)
         self.horizontalSlider_j_s6.setMaximum(90)
         self.horizontalSlider_j_s6.setOrientation(Qt.Horizontal)
@@ -2371,26 +2353,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_manual_x.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_manual_x.setLayoutDirection(Qt.LeftToRight)
         self.horizontalSlider_manual_x.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                     "    border-radius: 9px;  \n"
+                                                     "	height: 18px;\n"
+                                                     "	margin: 0px;\n"
+                                                     "	background-color: rgb(61, 61, 61);\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QSlider::handle:horizontal {\n"
+                                                     "    background-color: rgb(85, 170, 255);\n"
+                                                     "    border: none;\n"
+                                                     "    height: 18px;\n"
+                                                     "    width: 18px;\n"
+                                                     "    margin: 0px;\n"
+                                                     "	border-radius: 9px;\n"
+                                                     "}\n"
+                                                     "QSlider::handle:horizontal:hover {\n"
+                                                     "    background-color: rgb(105, 180, 255);\n"
+                                                     "}\n"
+                                                     "QSlider::handle:horizontal:pressed {\n"
+                                                     "    background-color: rgb(65, 130, 195);\n"
+                                                     "}")
         self.horizontalSlider_manual_x.setMinimum(-90)
         self.horizontalSlider_manual_x.setMaximum(90)
         self.horizontalSlider_manual_x.setOrientation(Qt.Horizontal)
@@ -2444,26 +2426,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_manual_y.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_manual_y.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_manual_y.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                     "    border-radius: 9px;  \n"
+                                                     "	height: 18px;\n"
+                                                     "	margin: 0px;\n"
+                                                     "	background-color: rgb(61, 61, 61);\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QSlider::handle:horizontal {\n"
+                                                     "    background-color: rgb(85, 170, 255);\n"
+                                                     "    border: none;\n"
+                                                     "    height: 18px;\n"
+                                                     "    width: 18px;\n"
+                                                     "    margin: 0px;\n"
+                                                     "	border-radius: 9px;\n"
+                                                     "}\n"
+                                                     "QSlider::handle:horizontal:hover {\n"
+                                                     "    background-color: rgb(105, 180, 255);\n"
+                                                     "}\n"
+                                                     "QSlider::handle:horizontal:pressed {\n"
+                                                     "    background-color: rgb(65, 130, 195);\n"
+                                                     "}")
         self.horizontalSlider_manual_y.setMinimum(-90)
         self.horizontalSlider_manual_y.setMaximum(90)
         self.horizontalSlider_manual_y.setOrientation(Qt.Horizontal)
@@ -2484,9 +2466,9 @@ class Ui_MainWindow(object):
         self.lcdNumber_manual_x.setMaximumSize(QSize(50, 50))
         self.lcdNumber_manual_x.setFont(font6)
         self.lcdNumber_manual_x.setStyleSheet(u"QLCDNumber{\n"
-"  border: none;\n"
-"  color: rgb(255, 255, 255);\n"
-"}")
+                                              "  border: none;\n"
+                                              "  color: rgb(255, 255, 255);\n"
+                                              "}")
 
         self.gridLayout_19.addWidget(self.lcdNumber_manual_x, 1, 0, 1, 1)
 
@@ -2507,26 +2489,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_manual_z.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_manual_z.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_manual_z.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                     "    border-radius: 9px;  \n"
+                                                     "	height: 18px;\n"
+                                                     "	margin: 0px;\n"
+                                                     "	background-color: rgb(61, 61, 61);\n"
+                                                     "}\n"
+                                                     "\n"
+                                                     "QSlider::handle:horizontal {\n"
+                                                     "    background-color: rgb(85, 170, 255);\n"
+                                                     "    border: none;\n"
+                                                     "    height: 18px;\n"
+                                                     "    width: 18px;\n"
+                                                     "    margin: 0px;\n"
+                                                     "	border-radius: 9px;\n"
+                                                     "}\n"
+                                                     "QSlider::handle:horizontal:hover {\n"
+                                                     "    background-color: rgb(105, 180, 255);\n"
+                                                     "}\n"
+                                                     "QSlider::handle:horizontal:pressed {\n"
+                                                     "    background-color: rgb(65, 130, 195);\n"
+                                                     "}")
         self.horizontalSlider_manual_z.setMinimum(-90)
         self.horizontalSlider_manual_z.setMaximum(90)
         self.horizontalSlider_manual_z.setOrientation(Qt.Horizontal)
@@ -2552,26 +2534,26 @@ class Ui_MainWindow(object):
         self.verticalSlider_manual_orient.setMinimumSize(QSize(0, 200))
         self.verticalSlider_manual_orient.setMaximumSize(QSize(16777215, 400))
         self.verticalSlider_manual_orient.setStyleSheet(u"QSlider::groove:vertical {\n"
-"    border-radius: 9px;  \n"
-"	widtht: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:vertical {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:vertical:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:vertical:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                        "    border-radius: 9px;  \n"
+                                                        "	widtht: 18px;\n"
+                                                        "	margin: 0px;\n"
+                                                        "	background-color: rgb(61, 61, 61);\n"
+                                                        "}\n"
+                                                        "\n"
+                                                        "QSlider::handle:vertical {\n"
+                                                        "    background-color: rgb(85, 170, 255);\n"
+                                                        "    border: none;\n"
+                                                        "    height: 18px;\n"
+                                                        "    width: 18px;\n"
+                                                        "    margin: 0px;\n"
+                                                        "	border-radius: 9px;\n"
+                                                        "}\n"
+                                                        "QSlider::handle:vertical:hover {\n"
+                                                        "    background-color: rgb(105, 180, 255);\n"
+                                                        "}\n"
+                                                        "QSlider::handle:vertical:pressed {\n"
+                                                        "    background-color: rgb(65, 130, 195);\n"
+                                                        "}")
         self.verticalSlider_manual_orient.setMinimum(-90)
         self.verticalSlider_manual_orient.setMaximum(90)
         self.verticalSlider_manual_orient.setPageStep(5)
@@ -2583,7 +2565,6 @@ class Ui_MainWindow(object):
         self.tabWidget_5.addTab(self.tab_manual_xyz, icon3, "")
 
         self.gridLayout_21.addWidget(self.tabWidget_5, 0, 0, 1, 1)
-
 
         self.gridLayout_15.addWidget(self.frame_manual_input, 0, 0, 2, 1)
 
@@ -2603,7 +2584,6 @@ class Ui_MainWindow(object):
         self.MplWidget_ik_2.setMinimumSize(QSize(440, 300))
 
         self.gridLayout_23.addWidget(self.MplWidget_ik_2, 0, 0, 1, 1)
-
 
         self.gridLayout_15.addWidget(self.frame_manual_mpl, 0, 1, 1, 1)
 
@@ -2679,7 +2659,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_22.addWidget(self.lcdNumber_manual_actual_Z, 2, 2, 1, 1)
 
-
         self.gridLayout_15.addWidget(self.frame_manual_actual, 1, 1, 1, 1)
 
         self.stackedWidget.addWidget(self.page_manual)
@@ -2715,20 +2694,20 @@ class Ui_MainWindow(object):
         self.btn_auto_add_actual_2.setFont(font3)
         self.btn_auto_add_actual_2.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_add_actual_2.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 15px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"	image: url(:/24x24/24x24/icons8-add-50.png);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                                 "	color: rgb(222, 222, 222);\n"
+                                                 "    border: 2px solid #555;\n"
+                                                 "    border-radius: 15px;\n"
+                                                 "    border-style: outset;\n"
+                                                 "	background-color: rgb(35, 35, 35);\n"
+                                                 "    padding: 5px;\n"
+                                                 "	image: url(:/24x24/24x24/icons8-add-50.png);\n"
+                                                 "}\n"
+                                                 "QPushButton:hover {\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "QPushButton:pressed {	\n"
+                                                 "	background-color: rgb(85, 170, 255);\n"
+                                                 "}")
         self.btn_auto_add_actual_2.setCheckable(True)
         self.btn_auto_add_actual_2.setChecked(True)
 
@@ -2743,20 +2722,20 @@ class Ui_MainWindow(object):
         self.btn_auto_add_actual.setFont(font3)
         self.btn_auto_add_actual.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_add_actual.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 15px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"	image: url(:/24x24/24x24/icons8-add-50.png);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                               "	color: rgb(222, 222, 222);\n"
+                                               "    border: 2px solid #555;\n"
+                                               "    border-radius: 15px;\n"
+                                               "    border-style: outset;\n"
+                                               "	background-color: rgb(35, 35, 35);\n"
+                                               "    padding: 5px;\n"
+                                               "	image: url(:/24x24/24x24/icons8-add-50.png);\n"
+                                               "}\n"
+                                               "QPushButton:hover {\n"
+                                               "	background-color: rgb(61, 61, 61);\n"
+                                               "}\n"
+                                               "QPushButton:pressed {	\n"
+                                               "	background-color: rgb(85, 170, 255);\n"
+                                               "}")
         self.btn_auto_add_actual.setCheckable(True)
         self.btn_auto_add_actual.setChecked(True)
 
@@ -2779,26 +2758,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_s6.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_auto_s6.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_auto_s6.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_auto_s6.setMinimum(-90)
         self.horizontalSlider_auto_s6.setMaximum(90)
         self.horizontalSlider_auto_s6.setOrientation(Qt.Horizontal)
@@ -2816,26 +2795,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_s5.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_auto_s5.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_auto_s5.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_auto_s5.setMinimum(-90)
         self.horizontalSlider_auto_s5.setMaximum(90)
         self.horizontalSlider_auto_s5.setOrientation(Qt.Horizontal)
@@ -2863,26 +2842,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_orient.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_auto_orient.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_auto_orient.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                        "    border-radius: 9px;  \n"
+                                                        "	height: 18px;\n"
+                                                        "	margin: 0px;\n"
+                                                        "	background-color: rgb(61, 61, 61);\n"
+                                                        "}\n"
+                                                        "\n"
+                                                        "QSlider::handle:horizontal {\n"
+                                                        "    background-color: rgb(85, 170, 255);\n"
+                                                        "    border: none;\n"
+                                                        "    height: 18px;\n"
+                                                        "    width: 18px;\n"
+                                                        "    margin: 0px;\n"
+                                                        "	border-radius: 9px;\n"
+                                                        "}\n"
+                                                        "QSlider::handle:horizontal:hover {\n"
+                                                        "    background-color: rgb(105, 180, 255);\n"
+                                                        "}\n"
+                                                        "QSlider::handle:horizontal:pressed {\n"
+                                                        "    background-color: rgb(65, 130, 195);\n"
+                                                        "}")
         self.horizontalSlider_auto_orient.setMinimum(-90)
         self.horizontalSlider_auto_orient.setMaximum(90)
         self.horizontalSlider_auto_orient.setOrientation(Qt.Horizontal)
@@ -2909,26 +2888,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_s1.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_auto_s1.setLayoutDirection(Qt.LeftToRight)
         self.horizontalSlider_auto_s1.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_auto_s1.setMinimum(-90)
         self.horizontalSlider_auto_s1.setMaximum(90)
         self.horizontalSlider_auto_s1.setOrientation(Qt.Horizontal)
@@ -2945,7 +2924,7 @@ class Ui_MainWindow(object):
         self.label_autoadd.setSizePolicy(sizePolicy3)
         self.label_autoadd.setMinimumSize(QSize(200, 25))
         self.label_autoadd.setMaximumSize(QSize(16777215, 25))
-        self.label_autoadd.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.label_autoadd.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
 
         self.gridLayout_29.addWidget(self.label_autoadd, 8, 3, 1, 1)
 
@@ -2992,26 +2971,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_s3.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_auto_s3.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_auto_s3.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_auto_s3.setMinimum(-90)
         self.horizontalSlider_auto_s3.setMaximum(90)
         self.horizontalSlider_auto_s3.setOrientation(Qt.Horizontal)
@@ -3029,26 +3008,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_z.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_auto_z.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_auto_z.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                   "    border-radius: 9px;  \n"
+                                                   "	height: 18px;\n"
+                                                   "	margin: 0px;\n"
+                                                   "	background-color: rgb(61, 61, 61);\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QSlider::handle:horizontal {\n"
+                                                   "    background-color: rgb(85, 170, 255);\n"
+                                                   "    border: none;\n"
+                                                   "    height: 18px;\n"
+                                                   "    width: 18px;\n"
+                                                   "    margin: 0px;\n"
+                                                   "	border-radius: 9px;\n"
+                                                   "}\n"
+                                                   "QSlider::handle:horizontal:hover {\n"
+                                                   "    background-color: rgb(105, 180, 255);\n"
+                                                   "}\n"
+                                                   "QSlider::handle:horizontal:pressed {\n"
+                                                   "    background-color: rgb(65, 130, 195);\n"
+                                                   "}")
         self.horizontalSlider_auto_z.setMinimum(-90)
         self.horizontalSlider_auto_z.setMaximum(90)
         self.horizontalSlider_auto_z.setOrientation(Qt.Horizontal)
@@ -3076,26 +3055,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_s2.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_auto_s2.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_auto_s2.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_auto_s2.setMinimum(-90)
         self.horizontalSlider_auto_s2.setMaximum(90)
         self.horizontalSlider_auto_s2.setOrientation(Qt.Horizontal)
@@ -3142,9 +3121,9 @@ class Ui_MainWindow(object):
         self.lcdNumber_auto_s1.setMaximumSize(QSize(50, 50))
         self.lcdNumber_auto_s1.setFont(font6)
         self.lcdNumber_auto_s1.setStyleSheet(u"QLCDNumber{\n"
-"  border: none;\n"
-"  color: rgb(255, 255, 255);\n"
-"}")
+                                             "  border: none;\n"
+                                             "  color: rgb(255, 255, 255);\n"
+                                             "}")
 
         self.gridLayout_29.addWidget(self.lcdNumber_auto_s1, 1, 0, 1, 1)
 
@@ -3163,26 +3142,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_s4.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_auto_s4.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_auto_s4.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                    "    border-radius: 9px;  \n"
+                                                    "	height: 18px;\n"
+                                                    "	margin: 0px;\n"
+                                                    "	background-color: rgb(61, 61, 61);\n"
+                                                    "}\n"
+                                                    "\n"
+                                                    "QSlider::handle:horizontal {\n"
+                                                    "    background-color: rgb(85, 170, 255);\n"
+                                                    "    border: none;\n"
+                                                    "    height: 18px;\n"
+                                                    "    width: 18px;\n"
+                                                    "    margin: 0px;\n"
+                                                    "	border-radius: 9px;\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:hover {\n"
+                                                    "    background-color: rgb(105, 180, 255);\n"
+                                                    "}\n"
+                                                    "QSlider::handle:horizontal:pressed {\n"
+                                                    "    background-color: rgb(65, 130, 195);\n"
+                                                    "}")
         self.horizontalSlider_auto_s4.setMinimum(-90)
         self.horizontalSlider_auto_s4.setMaximum(90)
         self.horizontalSlider_auto_s4.setOrientation(Qt.Horizontal)
@@ -3199,9 +3178,9 @@ class Ui_MainWindow(object):
         self.lcdNumber_auto_x.setMaximumSize(QSize(50, 50))
         self.lcdNumber_auto_x.setFont(font6)
         self.lcdNumber_auto_x.setStyleSheet(u"QLCDNumber{\n"
-"  border: none;\n"
-"  color: rgb(255, 255, 255);\n"
-"}")
+                                            "  border: none;\n"
+                                            "  color: rgb(255, 255, 255);\n"
+                                            "}")
 
         self.gridLayout_29.addWidget(self.lcdNumber_auto_x, 1, 2, 1, 1)
 
@@ -3249,26 +3228,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_x.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_auto_x.setLayoutDirection(Qt.LeftToRight)
         self.horizontalSlider_auto_x.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                   "    border-radius: 9px;  \n"
+                                                   "	height: 18px;\n"
+                                                   "	margin: 0px;\n"
+                                                   "	background-color: rgb(61, 61, 61);\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QSlider::handle:horizontal {\n"
+                                                   "    background-color: rgb(85, 170, 255);\n"
+                                                   "    border: none;\n"
+                                                   "    height: 18px;\n"
+                                                   "    width: 18px;\n"
+                                                   "    margin: 0px;\n"
+                                                   "	border-radius: 9px;\n"
+                                                   "}\n"
+                                                   "QSlider::handle:horizontal:hover {\n"
+                                                   "    background-color: rgb(105, 180, 255);\n"
+                                                   "}\n"
+                                                   "QSlider::handle:horizontal:pressed {\n"
+                                                   "    background-color: rgb(65, 130, 195);\n"
+                                                   "}")
         self.horizontalSlider_auto_x.setMinimum(-90)
         self.horizontalSlider_auto_x.setMaximum(90)
         self.horizontalSlider_auto_x.setOrientation(Qt.Horizontal)
@@ -3294,26 +3273,26 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_y.setMinimumSize(QSize(200, 0))
         self.horizontalSlider_auto_y.setMaximumSize(QSize(16777215, 16777215))
         self.horizontalSlider_auto_y.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
+                                                   "    border-radius: 9px;  \n"
+                                                   "	height: 18px;\n"
+                                                   "	margin: 0px;\n"
+                                                   "	background-color: rgb(61, 61, 61);\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QSlider::handle:horizontal {\n"
+                                                   "    background-color: rgb(85, 170, 255);\n"
+                                                   "    border: none;\n"
+                                                   "    height: 18px;\n"
+                                                   "    width: 18px;\n"
+                                                   "    margin: 0px;\n"
+                                                   "	border-radius: 9px;\n"
+                                                   "}\n"
+                                                   "QSlider::handle:horizontal:hover {\n"
+                                                   "    background-color: rgb(105, 180, 255);\n"
+                                                   "}\n"
+                                                   "QSlider::handle:horizontal:pressed {\n"
+                                                   "    background-color: rgb(65, 130, 195);\n"
+                                                   "}")
         self.horizontalSlider_auto_y.setMinimum(-90)
         self.horizontalSlider_auto_y.setMaximum(90)
         self.horizontalSlider_auto_y.setOrientation(Qt.Horizontal)
@@ -3338,7 +3317,7 @@ class Ui_MainWindow(object):
         self.label_auto_home.setSizePolicy(sizePolicy3)
         self.label_auto_home.setMinimumSize(QSize(200, 25))
         self.label_auto_home.setMaximumSize(QSize(16777215, 25))
-        self.label_auto_home.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.label_auto_home.setAlignment(Qt.AlignLeading | Qt.AlignLeft | Qt.AlignVCenter)
 
         self.gridLayout_29.addWidget(self.label_auto_home, 10, 3, 1, 1)
 
@@ -3451,7 +3430,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_28.addWidget(self.tabWidget_7, 0, 0, 1, 1)
 
-
         self.verticalLayout_12.addWidget(self.frame_2)
 
         self.frame = QFrame(self.page_automatic)
@@ -3470,19 +3448,19 @@ class Ui_MainWindow(object):
         self.btn_auto_prev.setFont(font3)
         self.btn_auto_prev.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_prev.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(114, 255, 144);\n"
-"}")
+                                         "	color: rgb(222, 222, 222);\n"
+                                         "    border: 2px solid #555;\n"
+                                         "    border-radius: 25px;\n"
+                                         "    border-style: outset;\n"
+                                         "	background-color: rgb(35, 35, 35);\n"
+                                         "    padding: 5px;\n"
+                                         "}\n"
+                                         "QPushButton:hover {\n"
+                                         "	background-color: rgb(85, 170, 255);\n"
+                                         "}\n"
+                                         "QPushButton:pressed {	\n"
+                                         "	background-color: rgb(114, 255, 144);\n"
+                                         "}")
         self.btn_auto_prev.setCheckable(True)
         self.btn_auto_prev.setChecked(True)
 
@@ -3497,20 +3475,20 @@ class Ui_MainWindow(object):
         self.btn_auto_start.setFont(font3)
         self.btn_auto_start.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_start.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 50px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"	image: url(:/24x24/24x24/icons8-start-50.png);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(114, 255, 142);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                          "	color: rgb(222, 222, 222);\n"
+                                          "    border: 2px solid #555;\n"
+                                          "    border-radius: 50px;\n"
+                                          "    border-style: outset;\n"
+                                          "	background-color: rgb(35, 35, 35);\n"
+                                          "    padding: 5px;\n"
+                                          "	image: url(:/24x24/24x24/icons8-start-50.png);\n"
+                                          "}\n"
+                                          "QPushButton:hover {\n"
+                                          "	background-color: rgb(114, 255, 142);\n"
+                                          "}\n"
+                                          "QPushButton:pressed {	\n"
+                                          "	background-color: rgb(85, 170, 255);\n"
+                                          "}")
         self.btn_auto_start.setCheckable(True)
         self.btn_auto_start.setChecked(True)
 
@@ -3525,19 +3503,19 @@ class Ui_MainWindow(object):
         self.btn_auto_next.setFont(font3)
         self.btn_auto_next.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_next.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(114, 255, 144);\n"
-"}")
+                                         "	color: rgb(222, 222, 222);\n"
+                                         "    border: 2px solid #555;\n"
+                                         "    border-radius: 25px;\n"
+                                         "    border-style: outset;\n"
+                                         "	background-color: rgb(35, 35, 35);\n"
+                                         "    padding: 5px;\n"
+                                         "}\n"
+                                         "QPushButton:hover {\n"
+                                         "	background-color: rgb(85, 170, 255);\n"
+                                         "}\n"
+                                         "QPushButton:pressed {	\n"
+                                         "	background-color: rgb(114, 255, 144);\n"
+                                         "}")
         self.btn_auto_next.setCheckable(True)
         self.btn_auto_next.setChecked(True)
 
@@ -3552,19 +3530,19 @@ class Ui_MainWindow(object):
         self.btn_auto_stop.setFont(font3)
         self.btn_auto_stop.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_stop.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(255, 129, 131);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                         "	color: rgb(222, 222, 222);\n"
+                                         "    border: 2px solid #555;\n"
+                                         "    border-radius: 25px;\n"
+                                         "    border-style: outset;\n"
+                                         "	background-color: rgb(35, 35, 35);\n"
+                                         "    padding: 5px;\n"
+                                         "}\n"
+                                         "QPushButton:hover {\n"
+                                         "	background-color: rgb(255, 129, 131);\n"
+                                         "}\n"
+                                         "QPushButton:pressed {	\n"
+                                         "	background-color: rgb(85, 170, 255);\n"
+                                         "}")
         icon5 = QIcon()
         icon5.addFile(u":/24x24/24x24/icons8-stop-circled-50.png", QSize(), QIcon.Normal, QIcon.Off)
         self.btn_auto_stop.setIcon(icon5)
@@ -3592,19 +3570,19 @@ class Ui_MainWindow(object):
         self.btn_auto_Add_path_gen.setFont(font3)
         self.btn_auto_Add_path_gen.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_Add_path_gen.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                                 "	color: rgb(222, 222, 222);\n"
+                                                 "    border: 2px solid #555;\n"
+                                                 "    border-radius: 25px;\n"
+                                                 "    border-style: outset;\n"
+                                                 "	background-color: rgb(35, 35, 35);\n"
+                                                 "    padding: 5px;\n"
+                                                 "}\n"
+                                                 "QPushButton:hover {\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "QPushButton:pressed {	\n"
+                                                 "	background-color: rgb(85, 170, 255);\n"
+                                                 "}")
         self.btn_auto_Add_path_gen.setCheckable(True)
         self.btn_auto_Add_path_gen.setChecked(True)
 
@@ -3619,19 +3597,19 @@ class Ui_MainWindow(object):
         self.btn_auto_Add_path_read.setFont(font3)
         self.btn_auto_Add_path_read.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_Add_path_read.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                                  "	color: rgb(222, 222, 222);\n"
+                                                  "    border: 2px solid #555;\n"
+                                                  "    border-radius: 25px;\n"
+                                                  "    border-style: outset;\n"
+                                                  "	background-color: rgb(35, 35, 35);\n"
+                                                  "    padding: 5px;\n"
+                                                  "}\n"
+                                                  "QPushButton:hover {\n"
+                                                  "	background-color: rgb(61, 61, 61);\n"
+                                                  "}\n"
+                                                  "QPushButton:pressed {	\n"
+                                                  "	background-color: rgb(85, 170, 255);\n"
+                                                  "}")
         self.btn_auto_Add_path_read.setCheckable(True)
         self.btn_auto_Add_path_read.setChecked(True)
 
@@ -3660,20 +3638,20 @@ class Ui_MainWindow(object):
         self.btn_auto_add_empty.setFont(font3)
         self.btn_auto_add_empty.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_add_empty.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"	image: url(:/24x24/24x24/icons8-add-50.png);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                              "	color: rgb(222, 222, 222);\n"
+                                              "    border: 2px solid #555;\n"
+                                              "    border-radius: 25px;\n"
+                                              "    border-style: outset;\n"
+                                              "	background-color: rgb(35, 35, 35);\n"
+                                              "    padding: 5px;\n"
+                                              "	image: url(:/24x24/24x24/icons8-add-50.png);\n"
+                                              "}\n"
+                                              "QPushButton:hover {\n"
+                                              "	background-color: rgb(61, 61, 61);\n"
+                                              "}\n"
+                                              "QPushButton:pressed {	\n"
+                                              "	background-color: rgb(85, 170, 255);\n"
+                                              "}")
 
         self.gridLayout_7.addWidget(self.btn_auto_add_empty, 0, 10, 1, 1)
 
@@ -3686,20 +3664,20 @@ class Ui_MainWindow(object):
         self.btn_auto_delete.setFont(font3)
         self.btn_auto_delete.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_delete.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"	image: url(:/24x24/24x24/icons8-cancel-50.png);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                           "	color: rgb(222, 222, 222);\n"
+                                           "    border: 2px solid #555;\n"
+                                           "    border-radius: 25px;\n"
+                                           "    border-style: outset;\n"
+                                           "	background-color: rgb(35, 35, 35);\n"
+                                           "    padding: 5px;\n"
+                                           "	image: url(:/24x24/24x24/icons8-cancel-50.png);\n"
+                                           "}\n"
+                                           "QPushButton:hover {\n"
+                                           "	background-color: rgb(61, 61, 61);\n"
+                                           "}\n"
+                                           "QPushButton:pressed {	\n"
+                                           "	background-color: rgb(85, 170, 255);\n"
+                                           "}")
 
         self.gridLayout_7.addWidget(self.btn_auto_delete, 0, 11, 1, 1)
 
@@ -3735,19 +3713,19 @@ class Ui_MainWindow(object):
         self.btn_auto_Add_wait.setFont(font3)
         self.btn_auto_Add_wait.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_Add_wait.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                             "	color: rgb(222, 222, 222);\n"
+                                             "    border: 2px solid #555;\n"
+                                             "    border-radius: 25px;\n"
+                                             "    border-style: outset;\n"
+                                             "	background-color: rgb(35, 35, 35);\n"
+                                             "    padding: 5px;\n"
+                                             "}\n"
+                                             "QPushButton:hover {\n"
+                                             "	background-color: rgb(61, 61, 61);\n"
+                                             "}\n"
+                                             "QPushButton:pressed {	\n"
+                                             "	background-color: rgb(85, 170, 255);\n"
+                                             "}")
         self.btn_auto_Add_wait.setCheckable(True)
         self.btn_auto_Add_wait.setChecked(True)
 
@@ -3762,19 +3740,19 @@ class Ui_MainWindow(object):
         self.btn_auto_Add_safe.setFont(font3)
         self.btn_auto_Add_safe.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_Add_safe.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                             "	color: rgb(222, 222, 222);\n"
+                                             "    border: 2px solid #555;\n"
+                                             "    border-radius: 25px;\n"
+                                             "    border-style: outset;\n"
+                                             "	background-color: rgb(35, 35, 35);\n"
+                                             "    padding: 5px;\n"
+                                             "}\n"
+                                             "QPushButton:hover {\n"
+                                             "	background-color: rgb(61, 61, 61);\n"
+                                             "}\n"
+                                             "QPushButton:pressed {	\n"
+                                             "	background-color: rgb(85, 170, 255);\n"
+                                             "}")
         self.btn_auto_Add_safe.setCheckable(True)
         self.btn_auto_Add_safe.setChecked(True)
 
@@ -3803,17 +3781,17 @@ class Ui_MainWindow(object):
         self.btn_auto_add_actual_3.setFont(font9)
         self.btn_auto_add_actual_3.setLayoutDirection(Qt.LeftToRight)
         self.btn_auto_add_actual_3.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border-style: outset;\n"
-"	background-color: transparent;\n"
-"	image: url(:/50x50/50x50/icons8-application-window-50.png);\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                                 "	color: rgb(222, 222, 222);\n"
+                                                 "    border-style: outset;\n"
+                                                 "	background-color: transparent;\n"
+                                                 "	image: url(:/50x50/50x50/icons8-application-window-50.png);\n"
+                                                 "}\n"
+                                                 "QPushButton:hover {\n"
+                                                 "	background-color: rgb(61, 61, 61);\n"
+                                                 "}\n"
+                                                 "QPushButton:pressed {	\n"
+                                                 "	background-color: rgb(85, 170, 255);\n"
+                                                 "}")
         self.btn_auto_add_actual_3.setCheckable(True)
         self.btn_auto_add_actual_3.setChecked(True)
 
@@ -3824,7 +3802,6 @@ class Ui_MainWindow(object):
         self.lineEdit.setMinimumSize(QSize(200, 0))
 
         self.gridLayout_7.addWidget(self.lineEdit, 2, 4, 1, 4)
-
 
         self.verticalLayout_12.addWidget(self.frame)
 
@@ -3910,7 +3887,7 @@ class Ui_MainWindow(object):
         self.label_home_port_2.setMinimumSize(QSize(250, 50))
         self.label_home_port_2.setMaximumSize(QSize(400, 50))
         self.label_home_port_2.setFont(font4)
-        self.label_home_port_2.setAlignment(Qt.AlignJustify|Qt.AlignVCenter)
+        self.label_home_port_2.setAlignment(Qt.AlignJustify | Qt.AlignVCenter)
 
         self.gridLayout_24.addWidget(self.label_home_port_2, 0, 5, 1, 2)
 
@@ -3936,16 +3913,16 @@ class Ui_MainWindow(object):
         self.radioButton_home_comm_2.setContextMenuPolicy(Qt.NoContextMenu)
         self.radioButton_home_comm_2.setLayoutDirection(Qt.LeftToRight)
         self.radioButton_home_comm_2.setStyleSheet(u"QRadioButton::indicator:checked {\n"
-"    background-color:       green;\n"
-"    border:                 2px solid white;\n"
-"	border-radius:          7px;\n"
-"}\n"
-"\n"
-"QRadioButton::indicator:unchecked {\n"
-"    background-color:       red;\n"
-"    border:                 2px solid white;\n"
-"	border-radius:          7px;\n"
-"}")
+                                                   "    background-color:       green;\n"
+                                                   "    border:                 2px solid white;\n"
+                                                   "	border-radius:          7px;\n"
+                                                   "}\n"
+                                                   "\n"
+                                                   "QRadioButton::indicator:unchecked {\n"
+                                                   "    background-color:       red;\n"
+                                                   "    border:                 2px solid white;\n"
+                                                   "	border-radius:          7px;\n"
+                                                   "}")
         self.radioButton_home_comm_2.setChecked(True)
         self.radioButton_home_comm_2.setAutoExclusive(False)
 
@@ -3972,19 +3949,19 @@ class Ui_MainWindow(object):
         self.btn_kal_set_0.setFont(font3)
         self.btn_kal_set_0.setLayoutDirection(Qt.LeftToRight)
         self.btn_kal_set_0.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(114, 255, 142);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                         "	color: rgb(222, 222, 222);\n"
+                                         "    border: 2px solid #555;\n"
+                                         "    border-radius: 25px;\n"
+                                         "    border-style: outset;\n"
+                                         "	background-color: rgb(35, 35, 35);\n"
+                                         "    padding: 5px;\n"
+                                         "}\n"
+                                         "QPushButton:hover {\n"
+                                         "	background-color: rgb(114, 255, 142);\n"
+                                         "}\n"
+                                         "QPushButton:pressed {	\n"
+                                         "	background-color: rgb(85, 170, 255);\n"
+                                         "}")
         self.btn_kal_set_0.setCheckable(True)
         self.btn_kal_set_0.setChecked(True)
 
@@ -4019,18 +3996,18 @@ class Ui_MainWindow(object):
         self.spinBox_kal_s1.setMinimumSize(QSize(50, 50))
         self.spinBox_kal_s1.setMaximumSize(QSize(50, 50))
         self.spinBox_kal_s1.setStyleSheet(u"QSpinBox {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QSpinBox:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSpinBox:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}\n"
-"")
+                                          "    border-radius: 9px;  \n"
+                                          "	height: 18px;\n"
+                                          "	margin: 0px;\n"
+                                          "	background-color: rgb(61, 61, 61);\n"
+                                          "}\n"
+                                          "QSpinBox:hover {\n"
+                                          "    background-color: rgb(105, 180, 255);\n"
+                                          "}\n"
+                                          "QSpinBox:pressed {\n"
+                                          "    background-color: rgb(65, 130, 195);\n"
+                                          "}\n"
+                                          "")
         self.spinBox_kal_s1.setAlignment(Qt.AlignCenter)
         self.spinBox_kal_s1.setMinimum(-10)
         self.spinBox_kal_s1.setMaximum(10)
@@ -4050,18 +4027,18 @@ class Ui_MainWindow(object):
         self.spinBox_kal_s2.setMinimumSize(QSize(50, 50))
         self.spinBox_kal_s2.setMaximumSize(QSize(50, 50))
         self.spinBox_kal_s2.setStyleSheet(u"QSpinBox {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QSpinBox:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSpinBox:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}\n"
-"")
+                                          "    border-radius: 9px;  \n"
+                                          "	height: 18px;\n"
+                                          "	margin: 0px;\n"
+                                          "	background-color: rgb(61, 61, 61);\n"
+                                          "}\n"
+                                          "QSpinBox:hover {\n"
+                                          "    background-color: rgb(105, 180, 255);\n"
+                                          "}\n"
+                                          "QSpinBox:pressed {\n"
+                                          "    background-color: rgb(65, 130, 195);\n"
+                                          "}\n"
+                                          "")
         self.spinBox_kal_s2.setAlignment(Qt.AlignCenter)
         self.spinBox_kal_s2.setMinimum(-5)
         self.spinBox_kal_s2.setMaximum(5)
@@ -4081,18 +4058,18 @@ class Ui_MainWindow(object):
         self.spinBox_kal_s3.setMinimumSize(QSize(50, 50))
         self.spinBox_kal_s3.setMaximumSize(QSize(50, 50))
         self.spinBox_kal_s3.setStyleSheet(u"QSpinBox {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QSpinBox:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSpinBox:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}\n"
-"")
+                                          "    border-radius: 9px;  \n"
+                                          "	height: 18px;\n"
+                                          "	margin: 0px;\n"
+                                          "	background-color: rgb(61, 61, 61);\n"
+                                          "}\n"
+                                          "QSpinBox:hover {\n"
+                                          "    background-color: rgb(105, 180, 255);\n"
+                                          "}\n"
+                                          "QSpinBox:pressed {\n"
+                                          "    background-color: rgb(65, 130, 195);\n"
+                                          "}\n"
+                                          "")
         self.spinBox_kal_s3.setAlignment(Qt.AlignCenter)
         self.spinBox_kal_s3.setMinimum(-5)
         self.spinBox_kal_s3.setMaximum(5)
@@ -4112,18 +4089,18 @@ class Ui_MainWindow(object):
         self.spinBox_kal_s4.setMinimumSize(QSize(50, 50))
         self.spinBox_kal_s4.setMaximumSize(QSize(50, 50))
         self.spinBox_kal_s4.setStyleSheet(u"QSpinBox {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QSpinBox:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSpinBox:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}\n"
-"")
+                                          "    border-radius: 9px;  \n"
+                                          "	height: 18px;\n"
+                                          "	margin: 0px;\n"
+                                          "	background-color: rgb(61, 61, 61);\n"
+                                          "}\n"
+                                          "QSpinBox:hover {\n"
+                                          "    background-color: rgb(105, 180, 255);\n"
+                                          "}\n"
+                                          "QSpinBox:pressed {\n"
+                                          "    background-color: rgb(65, 130, 195);\n"
+                                          "}\n"
+                                          "")
         self.spinBox_kal_s4.setAlignment(Qt.AlignCenter)
         self.spinBox_kal_s4.setMinimum(-5)
         self.spinBox_kal_s4.setMaximum(5)
@@ -4143,18 +4120,18 @@ class Ui_MainWindow(object):
         self.spinBox_kal_s5.setMinimumSize(QSize(50, 50))
         self.spinBox_kal_s5.setMaximumSize(QSize(50, 50))
         self.spinBox_kal_s5.setStyleSheet(u"QSpinBox {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QSpinBox:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSpinBox:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}\n"
-"")
+                                          "    border-radius: 9px;  \n"
+                                          "	height: 18px;\n"
+                                          "	margin: 0px;\n"
+                                          "	background-color: rgb(61, 61, 61);\n"
+                                          "}\n"
+                                          "QSpinBox:hover {\n"
+                                          "    background-color: rgb(105, 180, 255);\n"
+                                          "}\n"
+                                          "QSpinBox:pressed {\n"
+                                          "    background-color: rgb(65, 130, 195);\n"
+                                          "}\n"
+                                          "")
         self.spinBox_kal_s5.setAlignment(Qt.AlignCenter)
         self.spinBox_kal_s5.setMinimum(-5)
         self.spinBox_kal_s5.setMaximum(5)
@@ -4174,18 +4151,18 @@ class Ui_MainWindow(object):
         self.spinBox_kal_s6.setMinimumSize(QSize(50, 50))
         self.spinBox_kal_s6.setMaximumSize(QSize(50, 50))
         self.spinBox_kal_s6.setStyleSheet(u"QSpinBox {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QSpinBox:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSpinBox:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}\n"
-"")
+                                          "    border-radius: 9px;  \n"
+                                          "	height: 18px;\n"
+                                          "	margin: 0px;\n"
+                                          "	background-color: rgb(61, 61, 61);\n"
+                                          "}\n"
+                                          "QSpinBox:hover {\n"
+                                          "    background-color: rgb(105, 180, 255);\n"
+                                          "}\n"
+                                          "QSpinBox:pressed {\n"
+                                          "    background-color: rgb(65, 130, 195);\n"
+                                          "}\n"
+                                          "")
         self.spinBox_kal_s6.setAlignment(Qt.AlignCenter)
         self.spinBox_kal_s6.setMinimum(-5)
         self.spinBox_kal_s6.setMaximum(5)
@@ -4203,18 +4180,18 @@ class Ui_MainWindow(object):
         self.spinBox_kal2_ef.setMinimumSize(QSize(100, 50))
         self.spinBox_kal2_ef.setMaximumSize(QSize(100, 50))
         self.spinBox_kal2_ef.setStyleSheet(u"QSpinBox {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QSpinBox:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSpinBox:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}\n"
-"")
+                                           "    border-radius: 9px;  \n"
+                                           "	height: 18px;\n"
+                                           "	margin: 0px;\n"
+                                           "	background-color: rgb(61, 61, 61);\n"
+                                           "}\n"
+                                           "QSpinBox:hover {\n"
+                                           "    background-color: rgb(105, 180, 255);\n"
+                                           "}\n"
+                                           "QSpinBox:pressed {\n"
+                                           "    background-color: rgb(65, 130, 195);\n"
+                                           "}\n"
+                                           "")
         self.spinBox_kal2_ef.setAlignment(Qt.AlignCenter)
         self.spinBox_kal2_ef.setMinimum(0)
         self.spinBox_kal2_ef.setMaximum(200)
@@ -4227,18 +4204,18 @@ class Ui_MainWindow(object):
         self.spinBox_kal2_ef_2.setMinimumSize(QSize(100, 50))
         self.spinBox_kal2_ef_2.setMaximumSize(QSize(100, 50))
         self.spinBox_kal2_ef_2.setStyleSheet(u"QSpinBox {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QSpinBox:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSpinBox:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}\n"
-"")
+                                             "    border-radius: 9px;  \n"
+                                             "	height: 18px;\n"
+                                             "	margin: 0px;\n"
+                                             "	background-color: rgb(61, 61, 61);\n"
+                                             "}\n"
+                                             "QSpinBox:hover {\n"
+                                             "    background-color: rgb(105, 180, 255);\n"
+                                             "}\n"
+                                             "QSpinBox:pressed {\n"
+                                             "    background-color: rgb(65, 130, 195);\n"
+                                             "}\n"
+                                             "")
         self.spinBox_kal2_ef_2.setAlignment(Qt.AlignCenter)
         self.spinBox_kal2_ef_2.setMinimum(0)
         self.spinBox_kal2_ef_2.setMaximum(50)
@@ -4284,19 +4261,19 @@ class Ui_MainWindow(object):
         self.btn_kal2_set_2.setFont(font3)
         self.btn_kal2_set_2.setLayoutDirection(Qt.LeftToRight)
         self.btn_kal2_set_2.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(114, 255, 142);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                          "	color: rgb(222, 222, 222);\n"
+                                          "    border: 2px solid #555;\n"
+                                          "    border-radius: 25px;\n"
+                                          "    border-style: outset;\n"
+                                          "	background-color: rgb(35, 35, 35);\n"
+                                          "    padding: 5px;\n"
+                                          "}\n"
+                                          "QPushButton:hover {\n"
+                                          "	background-color: rgb(114, 255, 142);\n"
+                                          "}\n"
+                                          "QPushButton:pressed {	\n"
+                                          "	background-color: rgb(85, 170, 255);\n"
+                                          "}")
         self.btn_kal2_set_2.setCheckable(True)
         self.btn_kal2_set_2.setChecked(True)
 
@@ -4318,19 +4295,19 @@ class Ui_MainWindow(object):
         self.btn_kal2_set_1.setFont(font3)
         self.btn_kal2_set_1.setLayoutDirection(Qt.LeftToRight)
         self.btn_kal2_set_1.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(114, 255, 142);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
+                                          "	color: rgb(222, 222, 222);\n"
+                                          "    border: 2px solid #555;\n"
+                                          "    border-radius: 25px;\n"
+                                          "    border-style: outset;\n"
+                                          "	background-color: rgb(35, 35, 35);\n"
+                                          "    padding: 5px;\n"
+                                          "}\n"
+                                          "QPushButton:hover {\n"
+                                          "	background-color: rgb(114, 255, 142);\n"
+                                          "}\n"
+                                          "QPushButton:pressed {	\n"
+                                          "	background-color: rgb(85, 170, 255);\n"
+                                          "}")
         self.btn_kal2_set_1.setCheckable(True)
         self.btn_kal2_set_1.setChecked(True)
 
@@ -4378,9 +4355,7 @@ class Ui_MainWindow(object):
 
         self.verticalLayout_7.addWidget(self.logo)
 
-
         self.horizontalLayout_9.addWidget(self.frame_logo, 0, Qt.AlignBottom)
-
 
         self.verticalLayout_6.addWidget(self.frame_stackedWidget)
 
@@ -4430,7 +4405,7 @@ class Ui_MainWindow(object):
         self.foot_label_ver = QLabel(self.frame_foot)
         self.foot_label_ver.setObjectName(u"foot_label_ver")
         self.foot_label_ver.setMinimumSize(QSize(50, 0))
-        self.foot_label_ver.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.foot_label_ver.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
 
         self.horizontalLayout_3.addWidget(self.foot_label_ver)
 
@@ -4447,19 +4422,15 @@ class Ui_MainWindow(object):
         self.label_foot_grip = QLabel(self.frame_grip)
         self.label_foot_grip.setObjectName(u"label_foot_grip")
         self.label_foot_grip.setMinimumSize(QSize(0, 0))
-        self.label_foot_grip.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
+        self.label_foot_grip.setAlignment(Qt.AlignRight | Qt.AlignTrailing | Qt.AlignVCenter)
 
         self.horizontalLayout_6.addWidget(self.label_foot_grip)
 
-
         self.horizontalLayout_3.addWidget(self.frame_grip)
-
 
         self.verticalLayout_6.addWidget(self.frame_foot)
 
-
         self.horizontalLayout_2.addWidget(self.frame_screens)
-
 
         self.verticalLayout.addWidget(self.frame_content)
 
@@ -4505,25 +4476,25 @@ class Ui_MainWindow(object):
         self.tabWidget_7.setCurrentIndex(0)
         self.tabWidget_6.setCurrentIndex(1)
 
-
         QMetaObject.connectSlotsByName(MainWindow)
+
     # setupUi
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
         self.btn_lista.setText("")
         self.label_name.setText(QCoreApplication.translate("MainWindow", u"ManipulatorApp", None))
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_min.setToolTip(QCoreApplication.translate("MainWindow", u"Minimize", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_min.setText("")
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_max.setToolTip(QCoreApplication.translate("MainWindow", u"Maximize", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_max.setText("")
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_close.setToolTip(QCoreApplication.translate("MainWindow", u"Close", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_close.setText("")
         self.label_top_info_2.setText(QCoreApplication.translate("MainWindow", u"| HOME", None))
         self.btn_home.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
@@ -4538,15 +4509,19 @@ class Ui_MainWindow(object):
         self.btn_home_info.setText(QCoreApplication.translate("MainWindow", u"About", None))
         self.btn_home_settings.setText(QCoreApplication.translate("MainWindow", u"Settings", None))
         self.btn_home_auto.setText(QCoreApplication.translate("MainWindow", u"Automatic", None))
-#if QT_CONFIG(tooltip)
-        self.radioButton_home_effector.setToolTip(QCoreApplication.translate("MainWindow", u"Po\u0142\u0105czenie PC <-> Arduino", None))
-#endif // QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
+        self.radioButton_home_effector.setToolTip(
+            QCoreApplication.translate("MainWindow", u"Po\u0142\u0105czenie PC <-> Arduino", None))
+        # endif // QT_CONFIG(tooltip)
         self.radioButton_home_effector.setText(QCoreApplication.translate("MainWindow", u"Effector present", None))
-#if QT_CONFIG(tooltip)
-        self.radioButton_home_comm.setToolTip(QCoreApplication.translate("MainWindow", u"Po\u0142\u0105czenie PC <-> Arduino", None))
-#endif // QT_CONFIG(tooltip)
-        self.radioButton_home_comm.setText(QCoreApplication.translate("MainWindow", u"Communication with board start / exit", None))
-        self.label_home_port.setText(QCoreApplication.translate("MainWindow", u"Communication on port COM: 'COM3'", None))
+        # if QT_CONFIG(tooltip)
+        self.radioButton_home_comm.setToolTip(
+            QCoreApplication.translate("MainWindow", u"Po\u0142\u0105czenie PC <-> Arduino", None))
+        # endif // QT_CONFIG(tooltip)
+        self.radioButton_home_comm.setText(
+            QCoreApplication.translate("MainWindow", u"Communication with board start / exit", None))
+        self.label_home_port.setText(
+            QCoreApplication.translate("MainWindow", u"Communication on port COM: 'COM3'", None))
         self.logo_home_effector.setText("")
         self.logo_home_arduino_2.setText("")
         self.logo_home_arduino.setText("")
@@ -4561,21 +4536,26 @@ class Ui_MainWindow(object):
         self.label_fk_s3.setText(QCoreApplication.translate("MainWindow", u"S4 - LINK 3", None))
         self.label_fk_s5.setText(QCoreApplication.translate("MainWindow", u"S5 - EFFECTOR MOVE", None))
         self.label_fk_s6.setText(QCoreApplication.translate("MainWindow", u"S6 - EFFECTOR ACTION", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_fk_joint), QCoreApplication.translate("MainWindow", u"Joints", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_fk_joint),
+                                  QCoreApplication.translate("MainWindow", u"Joints", None))
         self.label_dh_rys_3.setText("")
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_fk_info), QCoreApplication.translate("MainWindow", u"Info", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_fk_info),
+                                  QCoreApplication.translate("MainWindow", u"Info", None))
         self.label_dh_X_2.setText(QCoreApplication.translate("MainWindow", u"X", None))
-        self.label_dh_wynik_2.setText(QCoreApplication.translate("MainWindow", u"Calculated XYZ end effector position", None))
+        self.label_dh_wynik_2.setText(
+            QCoreApplication.translate("MainWindow", u"Calculated XYZ end effector position", None))
         self.label_dh_Z_2.setText(QCoreApplication.translate("MainWindow", u"Z", None))
         self.label_dh_Y_2.setText(QCoreApplication.translate("MainWindow", u"Y", None))
         self.label_ik_orient.setText(QCoreApplication.translate("MainWindow", u"ORIENTATION", None))
         self.label_ik_y.setText(QCoreApplication.translate("MainWindow", u"Y-AXIS", None))
         self.label_ik_z.setText(QCoreApplication.translate("MainWindow", u"Z-AXIS", None))
         self.label_ik_x.setText(QCoreApplication.translate("MainWindow", u"X-AXIS", None))
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_ik_joint), QCoreApplication.translate("MainWindow", u"XYZ", None))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_ik_joint),
+                                    QCoreApplication.translate("MainWindow", u"XYZ", None))
         self.label_dh_rys_5.setText("")
         self.label_ik_efektor_2.setText("")
-        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_fk_info_3), QCoreApplication.translate("MainWindow", u"Info", None))
+        self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_fk_info_3),
+                                    QCoreApplication.translate("MainWindow", u"Info", None))
         self.label_ik_1.setText(QCoreApplication.translate("MainWindow", u"Calculated joints values - CONFIG. 1", None))
         self.label_s1_ik.setText(QCoreApplication.translate("MainWindow", u"S1 - BASE", None))
         self.label_s2_ik.setText(QCoreApplication.translate("MainWindow", u"S2 - JOINT 1", None))
@@ -4583,7 +4563,8 @@ class Ui_MainWindow(object):
         self.label_s4_ik.setText(QCoreApplication.translate("MainWindow", u"S4 - JOINT 3", None))
         self.label_s5_ik.setText(QCoreApplication.translate("MainWindow", u"S5 - EFFECTOR MOVE", None))
         self.label_s6_ik.setText(QCoreApplication.translate("MainWindow", u"S6 - EFFECTOR ACTION", None))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.config1), QCoreApplication.translate("MainWindow", u"Config1", None))
+        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.config1),
+                                    QCoreApplication.translate("MainWindow", u"Config1", None))
         self.label_ik_2.setText(QCoreApplication.translate("MainWindow", u"Calculated joints values - CONFIG. 2", None))
         self.label_s1_ik_2.setText(QCoreApplication.translate("MainWindow", u"S1 - BASE", None))
         self.label_s2_ik_2.setText(QCoreApplication.translate("MainWindow", u"S2 - JOINT 1", None))
@@ -4591,30 +4572,35 @@ class Ui_MainWindow(object):
         self.label_s4_ik_2.setText(QCoreApplication.translate("MainWindow", u"S4 - JOINT 3", None))
         self.label_s5_ik_2.setText(QCoreApplication.translate("MainWindow", u"S5 - EFFECTOR MOVE", None))
         self.label_s6_ik_2.setText(QCoreApplication.translate("MainWindow", u"S6 - EFFECTOR ACTION", None))
-        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.config2), QCoreApplication.translate("MainWindow", u"Config2", None))
+        self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.config2),
+                                    QCoreApplication.translate("MainWindow", u"Config2", None))
         self.label_j_s1.setText(QCoreApplication.translate("MainWindow", u"S1 - BASE", None))
         self.label_j_s2.setText(QCoreApplication.translate("MainWindow", u"S2 - LINK 1", None))
         self.label_j_s3.setText(QCoreApplication.translate("MainWindow", u"S3 - LINK 2", None))
         self.label_j_s4.setText(QCoreApplication.translate("MainWindow", u"S4 - LINK 3", None))
         self.label_j_s5.setText(QCoreApplication.translate("MainWindow", u"S5 - EFFECTOR MOVE", None))
         self.label_j_s6.setText(QCoreApplication.translate("MainWindow", u"S6 - EFFECTOR ACTION", None))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_manual_joints), QCoreApplication.translate("MainWindow", u"Joints", None))
+        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_manual_joints),
+                                    QCoreApplication.translate("MainWindow", u"Joints", None))
         self.label_manual_orient.setText(QCoreApplication.translate("MainWindow", u"ORIENTATION", None))
         self.label_manual_y.setText(QCoreApplication.translate("MainWindow", u"Y-AXIS", None))
         self.label_manual_z.setText(QCoreApplication.translate("MainWindow", u"Z-AXIS", None))
         self.label_manual_x.setText(QCoreApplication.translate("MainWindow", u"X-AXIS", None))
-        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_manual_xyz), QCoreApplication.translate("MainWindow", u"XYZ", None))
+        self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_manual_xyz),
+                                    QCoreApplication.translate("MainWindow", u"XYZ", None))
         self.label_manual_actual.setText(QCoreApplication.translate("MainWindow", u"Actual xyz robot position", None))
         self.label_manual_actual_X.setText(QCoreApplication.translate("MainWindow", u"X", None))
         self.label_manual_actual_Y.setText(QCoreApplication.translate("MainWindow", u"Y", None))
         self.label_manual_actual_Z.setText(QCoreApplication.translate("MainWindow", u"Z", None))
-#if QT_CONFIG(tooltip)
-        self.btn_auto_add_actual_2.setToolTip(QCoreApplication.translate("MainWindow", u"Dodaj bie\u017c\u0105c\u0105 pozycje", None))
-#endif // QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
+        self.btn_auto_add_actual_2.setToolTip(
+            QCoreApplication.translate("MainWindow", u"Dodaj bie\u017c\u0105c\u0105 pozycje", None))
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_add_actual_2.setText("")
-#if QT_CONFIG(tooltip)
-        self.btn_auto_add_actual.setToolTip(QCoreApplication.translate("MainWindow", u"Dodaj bie\u017c\u0105c\u0105 pozycje", None))
-#endif // QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
+        self.btn_auto_add_actual.setToolTip(
+            QCoreApplication.translate("MainWindow", u"Dodaj bie\u017c\u0105c\u0105 pozycje", None))
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_add_actual.setText("")
         self.label_j_s5_2.setText(QCoreApplication.translate("MainWindow", u"S5 - EFFECTOR MOVE", None))
         self.label_j_s3_2.setText(QCoreApplication.translate("MainWindow", u"S3 - LINK 2", None))
@@ -4628,7 +4614,8 @@ class Ui_MainWindow(object):
         self.label_auto_y.setText(QCoreApplication.translate("MainWindow", u"Y-AXIS", None))
         self.label_j_s1_2.setText(QCoreApplication.translate("MainWindow", u"S1 - BASE", None))
         self.label_auto_home.setText(QCoreApplication.translate("MainWindow", u"SET HOME POSITION", None))
-        self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.Frame_auto_movement), QCoreApplication.translate("MainWindow", u"Movement", None))
+        self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.Frame_auto_movement),
+                                    QCoreApplication.translate("MainWindow", u"Movement", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Command", None));
         ___qtablewidgetitem1 = self.tableWidget.horizontalHeaderItem(1)
@@ -4668,136 +4655,146 @@ class Ui_MainWindow(object):
         ___qtablewidgetitem16.setText(QCoreApplication.translate("MainWindow", u"3.0", None));
         self.tableWidget.setSortingEnabled(__sortingEnabled)
 
-        self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.Frame_auto_table), QCoreApplication.translate("MainWindow", u"Table", None))
-        self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.Frame_auto_visu), QCoreApplication.translate("MainWindow", u"Visualisation", None))
-#if QT_CONFIG(tooltip)
+        self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.Frame_auto_table),
+                                    QCoreApplication.translate("MainWindow", u"Table", None))
+        self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.Frame_auto_visu),
+                                    QCoreApplication.translate("MainWindow", u"Visualisation", None))
+        # if QT_CONFIG(tooltip)
         self.btn_auto_prev.setToolTip(QCoreApplication.translate("MainWindow", u"Prev", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_prev.setText(QCoreApplication.translate("MainWindow", u"<", None))
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_auto_start.setToolTip(QCoreApplication.translate("MainWindow", u"START", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_start.setText("")
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_auto_next.setToolTip(QCoreApplication.translate("MainWindow", u"Next", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_next.setText(QCoreApplication.translate("MainWindow", u">", None))
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_auto_stop.setToolTip(QCoreApplication.translate("MainWindow", u"STOP", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_stop.setText("")
         self.comboBox_auto_sim_servo.setItemText(0, QCoreApplication.translate("MainWindow", u"SIM", None))
         self.comboBox_auto_sim_servo.setItemText(1, QCoreApplication.translate("MainWindow", u"SERVOS", None))
 
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.comboBox_auto_sim_servo.setToolTip(QCoreApplication.translate("MainWindow", u"Sim / Servos", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_auto_Add_path_gen.setToolTip(QCoreApplication.translate("MainWindow", u"Generate path", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_Add_path_gen.setText(QCoreApplication.translate("MainWindow", u"Gen.", None))
-#if QT_CONFIG(tooltip)
-        self.btn_auto_Add_path_read.setToolTip(QCoreApplication.translate("MainWindow", u"Read path from file .txt", None))
-#endif // QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
+        self.btn_auto_Add_path_read.setToolTip(
+            QCoreApplication.translate("MainWindow", u"Read path from file .txt", None))
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_Add_path_read.setText(QCoreApplication.translate("MainWindow", u"Read", None))
         self.comboBox_auto_command.setItemText(0, QCoreApplication.translate("MainWindow", u"home", None))
         self.comboBox_auto_command.setItemText(1, QCoreApplication.translate("MainWindow", u"move", None))
         self.comboBox_auto_command.setItemText(2, QCoreApplication.translate("MainWindow", u"wait", None))
 
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.comboBox_auto_command.setToolTip(QCoreApplication.translate("MainWindow", u"Command", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_auto_add_empty.setToolTip(QCoreApplication.translate("MainWindow", u"Add row", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_add_empty.setText("")
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_auto_delete.setToolTip(QCoreApplication.translate("MainWindow", u"Delete row", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_delete.setText("")
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.spinBox.setToolTip(QCoreApplication.translate("MainWindow", u"Loop", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.comboBox_auto_traj.setItemText(0, QCoreApplication.translate("MainWindow", u"p2p", None))
         self.comboBox_auto_traj.setItemText(1, QCoreApplication.translate("MainWindow", u"cp_linear", None))
 
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.comboBox_auto_traj.setToolTip(QCoreApplication.translate("MainWindow", u"Trajectory", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_auto_Add_wait.setToolTip(QCoreApplication.translate("MainWindow", u"Add Wait position", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_Add_wait.setText(QCoreApplication.translate("MainWindow", u"WAIT", None))
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_auto_Add_safe.setToolTip(QCoreApplication.translate("MainWindow", u"Add Home position", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_Add_safe.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
         self.comboBox_auto_config.setItemText(0, QCoreApplication.translate("MainWindow", u"config_1", None))
         self.comboBox_auto_config.setItemText(1, QCoreApplication.translate("MainWindow", u"config_2", None))
 
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.comboBox_auto_config.setToolTip(QCoreApplication.translate("MainWindow", u"Robot config", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
-        self.btn_auto_add_actual_3.setToolTip(QCoreApplication.translate("MainWindow", u"Dodaj bie\u017c\u0105c\u0105 pozycje", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
+        self.btn_auto_add_actual_3.setToolTip(
+            QCoreApplication.translate("MainWindow", u"Dodaj bie\u017c\u0105c\u0105 pozycje", None))
+        # endif // QT_CONFIG(tooltip)
         self.btn_auto_add_actual_3.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"Path", None))
-        self.info.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Autor: in\u017c. Daniel Sziling</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Technologies used:</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-in"
-                        "dent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Python 3.7 + PySide2</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Arduino MEGA 2560</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Dimensions of the manipulator elements:</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margi"
-                        "n-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Base height: 	118mm</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 1 length: 	150mm</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 2 length: 	150mm</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 3 length: 	  54mm (wrist)</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-bloc"
-                        "k-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Mass of individual elements with servos:</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 1: 		217g</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 2:		141g</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 3:		  23g</span></p>\n"
-"<p style=\"-qt-paragraph-type:e"
-                        "mpty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Servomotors:		Moment:</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Base: 		MG996R	13kg/cm</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 1: 		DS3218	20kg/cm</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span sty"
-                        "le=\" color:#ffffff;\">Link 2: 		MG996R	13kg/cm</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 3: 		MG996R	13kg/cm</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Effector movement: 	SG92R	2,5kg/cm</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Effector action: 	SG92R	2,5kg/cm</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
+        self.info.setHtml(QCoreApplication.translate("MainWindow",
+                                                     u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+                                                     "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+                                                     "p, li { white-space: pre-wrap; }\n"
+                                                     "</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Autor: in\u017c. Daniel Sziling</span></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Technologies used:</span></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-in"
+                                                     "dent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Python 3.7 + PySide2</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Arduino MEGA 2560</span></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Dimensions of the manipulator elements:</span></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+                                                     "<p style=\" margin-top:0px; margi"
+                                                     "n-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Base height: 	118mm</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 1 length: 	150mm</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 2 length: 	150mm</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 3 length: 	  54mm (wrist)</span></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-bloc"
+                                                     "k-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Mass of individual elements with servos:</span></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 1: 		217g</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 2:		141g</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 3:		  23g</span></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:e"
+                                                     "mpty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Servomotors:		Moment:</span></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Base: 		MG996R	13kg/cm</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 1: 		DS3218	20kg/cm</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span sty"
+                                                     "le=\" color:#ffffff;\">Link 2: 		MG996R	13kg/cm</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Link 3: 		MG996R	13kg/cm</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Effector movement: 	SG92R	2,5kg/cm</span></p>\n"
+                                                     "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ffffff;\">Effector action: 	SG92R	2,5kg/cm</span></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#ffffff;\"><br /></p>\n"
+                                                     "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>",
+                                                     None))
         self.label_3.setText("")
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_info), QCoreApplication.translate("MainWindow", u"About", None))
+        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_info),
+                                    QCoreApplication.translate("MainWindow", u"About", None))
         self.label_com_rys.setText("")
         self.logo_home_arduino_4.setText("")
-        self.label_home_port_2.setText(QCoreApplication.translate("MainWindow", u"Communication on port COM: 'COM3'", None))
+        self.label_home_port_2.setText(
+            QCoreApplication.translate("MainWindow", u"Communication on port COM: 'COM3'", None))
         self.logo_home_arduino_3.setText("")
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.radioButton_home_comm_2.setToolTip(QCoreApplication.translate("MainWindow", u"Comm. PC <-> Arduino", None))
-#endif // QT_CONFIG(tooltip)
-        self.radioButton_home_comm_2.setText(QCoreApplication.translate("MainWindow", u"Communication with board start / exit", None))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_com), QCoreApplication.translate("MainWindow", u"Communication", None))
+        # endif // QT_CONFIG(tooltip)
+        self.radioButton_home_comm_2.setText(
+            QCoreApplication.translate("MainWindow", u"Communication with board start / exit", None))
+        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_com),
+                                    QCoreApplication.translate("MainWindow", u"Communication", None))
         self.label_kal_kal.setText(QCoreApplication.translate("MainWindow", u"Robotic Arm Calibration", None))
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_kal_set_0.setToolTip(QCoreApplication.translate("MainWindow", u"Calibrate", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_kal_set_0.setText(QCoreApplication.translate("MainWindow", u"SET", None))
         self.label_kal_rys.setText("")
         self.label_kal_s1.setText(QCoreApplication.translate("MainWindow", u"Serwo base", None))
@@ -4806,28 +4803,30 @@ class Ui_MainWindow(object):
         self.label_kal_s4.setText(QCoreApplication.translate("MainWindow", u"Serwo link 3", None))
         self.label_kal_s5.setText(QCoreApplication.translate("MainWindow", u"Serwo effector movement", None))
         self.label_kal_s6.setText(QCoreApplication.translate("MainWindow", u"Serwo effector action", None))
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_kalibracja), QCoreApplication.translate("MainWindow", u"Calibration", None))
-#if QT_CONFIG(tooltip)
+        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_kalibracja),
+                                    QCoreApplication.translate("MainWindow", u"Calibration", None))
+        # if QT_CONFIG(tooltip)
         self.spinBox_kal2_ef_2.setToolTip(QCoreApplication.translate("MainWindow", u"Max 50 mm", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.label_kal2_ef_4.setText(QCoreApplication.translate("MainWindow", u"Pen holder", None))
-        self.checkBox_kal2_ef.setText(QCoreApplication.translate("MainWindow", u"Has the effector been installed?", None))
+        self.checkBox_kal2_ef.setText(
+            QCoreApplication.translate("MainWindow", u"Has the effector been installed?", None))
         self.label_kal2_ef.setText(QCoreApplication.translate("MainWindow", u"L [mm]", None))
         self.label_kal2_ef_2.setText(QCoreApplication.translate("MainWindow", u"H [mm]", None))
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_kal2_set_2.setToolTip(QCoreApplication.translate("MainWindow", u"Pen holder dimensions", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_kal2_set_2.setText(QCoreApplication.translate("MainWindow", u"SET", None))
         self.label_kal2_ef_3.setText(QCoreApplication.translate("MainWindow", u"Gripper", None))
-#if QT_CONFIG(tooltip)
+        # if QT_CONFIG(tooltip)
         self.btn_kal2_set_1.setToolTip(QCoreApplication.translate("MainWindow", u"Gripper dimensions", None))
-#endif // QT_CONFIG(tooltip)
+        # endif // QT_CONFIG(tooltip)
         self.btn_kal2_set_1.setText(QCoreApplication.translate("MainWindow", u"SET", None))
         self.label_kal_rys_2.setText("")
-        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_kalibracja2), QCoreApplication.translate("MainWindow", u"Effector", None))
+        self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_kalibracja2),
+                                    QCoreApplication.translate("MainWindow", u"Effector", None))
         self.logo.setText("")
         self.foot_label_log.setText("")
         self.foot_label_ver.setText(QCoreApplication.translate("MainWindow", u"ver. 1.0", None))
         self.label_foot_grip.setText(QCoreApplication.translate("MainWindow", u".:", None))
     # retranslateUi
-
