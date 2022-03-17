@@ -1,7 +1,7 @@
 import os
 import datetime as dt
 import numpy as np
-import IK
+from ManipulatorApp.modules import IK
 
 
 def cp_linear(p_start: list, p_finish: list, n=10):

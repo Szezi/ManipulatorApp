@@ -1,7 +1,7 @@
 from PySide2.QtWidgets import *
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
-import trajectory
+from ManipulatorApp.modules import trajectory
 
 
 class MplWidget(QWidget):
