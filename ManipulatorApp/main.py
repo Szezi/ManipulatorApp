@@ -61,16 +61,16 @@ class MainWindow(QMainWindow):
 
         # HOME
         self.ui.btn_home_FK.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_fk))
-        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.label_page(self, "FORWARD KINEMATICS"))
-        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_fk"))
+        self.ui.btn_home_FK.clicked.connect(lambda: UIFunctions.label_page(self, "FORWARD KINEMATICS"))
+        self.ui.btn_home_FK.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_fk"))
 
         self.ui.btn_home_IK.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_ik))
-        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.label_page(self, "INVERSE KINEMATICS"))
-        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_ik"))
+        self.ui.btn_home_IK.clicked.connect(lambda: UIFunctions.label_page(self, "INVERSE KINEMATICS"))
+        self.ui.btn_home_IK.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_ik"))
 
         self.ui.btn_home_manual.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_manual))
-        self.ui.btn_manual.clicked.connect(lambda: UIFunctions.label_page(self, "MANUAL MODE"))
-        self.ui.btn_manual.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_manual"))
+        self.ui.btn_home_manual.clicked.connect(lambda: UIFunctions.label_page(self, "MANUAL MODE"))
+        self.ui.btn_home_manual.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_manual"))
 
         self.ui.btn_home_auto.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_automatic))
         self.ui.btn_home_auto.clicked.connect(lambda: UIFunctions.label_page(self, "AUTOMATIC MODE"))
@@ -92,6 +92,13 @@ class MainWindow(QMainWindow):
         self.ui.horizontalSlider_fk_s1_4.valueChanged.connect(lambda: AppFunctions.page_fk(self))
         self.ui.horizontalSlider_fk_s1_5.valueChanged.connect(lambda: AppFunctions.page_fk(self))
         self.ui.horizontalSlider_fk_s1_6.valueChanged.connect(lambda: AppFunctions.page_fk(self))
+
+        # IK
+        self.ui.horizontalSlider_ik_x.valueChanged.connect(lambda: AppFunctions.page_ik(self))
+        self.ui.horizontalSlider_ik_y.valueChanged.connect(lambda: AppFunctions.page_ik(self))
+        self.ui.horizontalSlider_ik_z.valueChanged.connect(lambda: AppFunctions.page_ik(self))
+        self.ui.verticalSlider.valueChanged.connect(lambda: AppFunctions.page_ik(self))
+
 
         ################################################################################################################
 
