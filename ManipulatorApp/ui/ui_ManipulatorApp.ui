@@ -983,7 +983,7 @@ QPushButton:pressed {
              <item>
               <widget class="QStackedWidget" name="stackedWidget">
                <property name="currentIndex">
-                <number>4</number>
+                <number>3</number>
                </property>
                <widget class="QWidget" name="page_home">
                 <property name="layoutDirection">
@@ -2250,9 +2250,15 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>0</number>
                           </property>
                           <property name="maximum">
+                           <number>180</number>
+                          </property>
+                          <property name="value">
+                           <number>90</number>
+                          </property>
+                          <property name="sliderPosition">
                            <number>90</number>
                           </property>
                           <property name="orientation">
@@ -3207,10 +3213,10 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>-500</number>
                           </property>
                           <property name="maximum">
-                           <number>90</number>
+                           <number>500</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -3367,10 +3373,10 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>-500</number>
                           </property>
                           <property name="maximum">
-                           <number>90</number>
+                           <number>500</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -3504,10 +3510,16 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>-500</number>
                           </property>
                           <property name="maximum">
-                           <number>90</number>
+                           <number>500</number>
+                          </property>
+                          <property name="value">
+                           <number>472</number>
+                          </property>
+                          <property name="sliderPosition">
+                           <number>472</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -3596,6 +3608,9 @@ QSlider::handle:vertical:pressed {
                           </property>
                           <property name="pageStep">
                            <number>5</number>
+                          </property>
+                          <property name="sliderPosition">
+                           <number>90</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Vertical</enum>
@@ -3774,7 +3789,7 @@ QSlider::handle:vertical:pressed {
                        <enum>QTabWidget::Triangular</enum>
                       </property>
                       <property name="currentIndex">
-                       <number>1</number>
+                       <number>0</number>
                       </property>
                       <property name="usesScrollButtons">
                        <bool>false</bool>
@@ -3787,33 +3802,6 @@ QSlider::handle:vertical:pressed {
                         <string>Config1</string>
                        </attribute>
                        <layout class="QGridLayout" name="gridLayout_13">
-                        <item row="0" column="0" colspan="3">
-                         <widget class="QLabel" name="label_ik_1">
-                          <property name="minimumSize">
-                           <size>
-                            <width>300</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>350</width>
-                            <height>100</height>
-                           </size>
-                          </property>
-                          <property name="font">
-                           <font>
-                            <pointsize>12</pointsize>
-                           </font>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">color: rgb(222, 222, 222);</string>
-                          </property>
-                          <property name="text">
-                           <string>Calculated joints values - CONFIG. 1</string>
-                          </property>
-                         </widget>
-                        </item>
                         <item row="1" column="0">
                          <widget class="QLCDNumber" name="lcdNumber_ik_s1">
                           <property name="minimumSize">
@@ -3858,6 +3846,33 @@ QSlider::handle:vertical:pressed {
                           </property>
                          </widget>
                         </item>
+                        <item row="0" column="0" colspan="3">
+                         <widget class="QLabel" name="label_ik_1">
+                          <property name="minimumSize">
+                           <size>
+                            <width>300</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>350</width>
+                            <height>100</height>
+                           </size>
+                          </property>
+                          <property name="font">
+                           <font>
+                            <pointsize>12</pointsize>
+                           </font>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">color: rgb(222, 222, 222);</string>
+                          </property>
+                          <property name="text">
+                           <string>Calculated joints values - CONFIG. 1</string>
+                          </property>
+                         </widget>
+                        </item>
                         <item row="1" column="2">
                          <widget class="QLabel" name="label_s2_ik">
                           <property name="sizePolicy">
@@ -3883,41 +3898,6 @@ QSlider::handle:vertical:pressed {
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="1" column="3">
-                         <widget class="QLCDNumber" name="lcdNumber_ik_s2">
-                          <property name="minimumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="smallDecimalPoint">
-                           <bool>false</bool>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="2" column="0">
-                         <widget class="QLCDNumber" name="lcdNumber_ik_s3">
-                          <property name="minimumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
                           </property>
                          </widget>
                         </item>
@@ -3949,6 +3929,57 @@ QSlider::handle:vertical:pressed {
                           </property>
                          </widget>
                         </item>
+                        <item row="2" column="0">
+                         <widget class="QLCDNumber" name="lcdNumber_ik_s3">
+                          <property name="minimumSize">
+                           <size>
+                            <width>50</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>50</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="1" column="3">
+                         <widget class="QLCDNumber" name="lcdNumber_ik_s2">
+                          <property name="minimumSize">
+                           <size>
+                            <width>50</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>50</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="smallDecimalPoint">
+                           <bool>false</bool>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="2" column="3">
+                         <widget class="QLCDNumber" name="lcdNumber_ik_s4">
+                          <property name="minimumSize">
+                           <size>
+                            <width>50</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>50</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                         </widget>
+                        </item>
                         <item row="2" column="2">
                          <widget class="QLabel" name="label_s4_ik">
                           <property name="sizePolicy">
@@ -3974,110 +4005,6 @@ QSlider::handle:vertical:pressed {
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="2" column="3">
-                         <widget class="QLCDNumber" name="lcdNumber_ik_s4">
-                          <property name="minimumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="3" column="0">
-                         <widget class="QLCDNumber" name="lcdNumber_ik_s5">
-                          <property name="minimumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="3" column="1">
-                         <widget class="QLabel" name="label_s5_ik">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="minimumSize">
-                           <size>
-                            <width>150</width>
-                            <height>25</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>16777215</width>
-                            <height>25</height>
-                           </size>
-                          </property>
-                          <property name="text">
-                           <string>S5 - EFFECTOR MOVE</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="3" column="2">
-                         <widget class="QLabel" name="label_s6_ik">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="minimumSize">
-                           <size>
-                            <width>150</width>
-                            <height>25</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>16777215</width>
-                            <height>25</height>
-                           </size>
-                          </property>
-                          <property name="text">
-                           <string>S6 - EFFECTOR ACTION</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="3" column="3">
-                         <widget class="QLCDNumber" name="lcdNumber_ik_s6">
-                          <property name="minimumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
                           </property>
                          </widget>
                         </item>
@@ -4222,31 +4149,19 @@ QSlider::handle:vertical:pressed {
                           </property>
                          </widget>
                         </item>
-                        <item row="2" column="1">
-                         <widget class="QLabel" name="label_s3_ik_2">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
+                        <item row="2" column="3">
+                         <widget class="QLCDNumber" name="lcdNumber_ik_s4_2">
                           <property name="minimumSize">
                            <size>
-                            <width>150</width>
-                            <height>25</height>
+                            <width>50</width>
+                            <height>50</height>
                            </size>
                           </property>
                           <property name="maximumSize">
                            <size>
-                            <width>16777215</width>
-                            <height>25</height>
+                            <width>50</width>
+                            <height>50</height>
                            </size>
-                          </property>
-                          <property name="text">
-                           <string>S3 - JOINT 2</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignCenter</set>
                           </property>
                          </widget>
                         </item>
@@ -4278,40 +4193,8 @@ QSlider::handle:vertical:pressed {
                           </property>
                          </widget>
                         </item>
-                        <item row="2" column="3">
-                         <widget class="QLCDNumber" name="lcdNumber_ik_s4_2">
-                          <property name="minimumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="3" column="0">
-                         <widget class="QLCDNumber" name="lcdNumber_ik_s5_2">
-                          <property name="minimumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="3" column="1">
-                         <widget class="QLabel" name="label_s5_ik_2">
+                        <item row="2" column="1">
+                         <widget class="QLabel" name="label_s3_ik_2">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                             <horstretch>0</horstretch>
@@ -4331,54 +4214,10 @@ QSlider::handle:vertical:pressed {
                            </size>
                           </property>
                           <property name="text">
-                           <string>S5 - EFFECTOR MOVE</string>
+                           <string>S3 - JOINT 2</string>
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="3" column="2">
-                         <widget class="QLabel" name="label_s6_ik_2">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="minimumSize">
-                           <size>
-                            <width>150</width>
-                            <height>25</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>16777215</width>
-                            <height>25</height>
-                           </size>
-                          </property>
-                          <property name="text">
-                           <string>S6 - EFFECTOR ACTION</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="3" column="3">
-                         <widget class="QLCDNumber" name="lcdNumber_ik_s6_2">
-                          <property name="minimumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
                           </property>
                          </widget>
                         </item>
@@ -4453,7 +4292,7 @@ QSlider::handle:vertical:pressed {
                        <enum>QTabWidget::Triangular</enum>
                       </property>
                       <property name="currentIndex">
-                       <number>0</number>
+                       <number>1</number>
                       </property>
                       <property name="elideMode">
                        <enum>Qt::ElideNone</enum>
@@ -4694,9 +4533,12 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>0</number>
                           </property>
                           <property name="maximum">
+                           <number>180</number>
+                          </property>
+                          <property name="sliderPosition">
                            <number>90</number>
                           </property>
                           <property name="orientation">
@@ -5270,10 +5112,10 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>-500</number>
                           </property>
                           <property name="maximum">
-                           <number>90</number>
+                           <number>500</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -5430,10 +5272,10 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>-500</number>
                           </property>
                           <property name="maximum">
-                           <number>90</number>
+                           <number>500</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -5567,10 +5409,13 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>-500</number>
                           </property>
                           <property name="maximum">
-                           <number>90</number>
+                           <number>500</number>
+                          </property>
+                          <property name="sliderPosition">
+                           <number>472</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -5659,6 +5504,9 @@ QSlider::handle:vertical:pressed {
                           </property>
                           <property name="pageStep">
                            <number>5</number>
+                          </property>
+                          <property name="sliderPosition">
+                           <number>90</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Vertical</enum>
