@@ -35,21 +35,25 @@ class MainWindow(QMainWindow):
         self.ui.btn_fk.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_fk))
         self.ui.btn_fk.clicked.connect(lambda: UIFunctions.label_page(self, "FORWARD KINEMATICS"))
         self.ui.btn_fk.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_fk"))
+        self.ui.btn_fk.clicked.connect(lambda: AppFunctions.page_fk(self))
 
         # MENU 3 IK
         self.ui.btn_ik.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_ik))
         self.ui.btn_ik.clicked.connect(lambda: UIFunctions.label_page(self, "INVERSE KINEMATICS"))
         self.ui.btn_ik.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_ik"))
+        self.ui.btn_ik.clicked.connect(lambda: AppFunctions.page_ik(self))
 
         # MENU 4 MANUAL
         self.ui.btn_manual.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_manual))
         self.ui.btn_manual.clicked.connect(lambda: UIFunctions.label_page(self, "MANUAL MODE"))
         self.ui.btn_manual.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_manual"))
+        self.ui.btn_manual.clicked.connect(lambda: AppFunctions.page_manual(self))
 
         # MENU 5 AUTO
         self.ui.btn_auto.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_automatic))
         self.ui.btn_auto.clicked.connect(lambda: UIFunctions.label_page(self, "AUTOMATIC MODE"))
         self.ui.btn_auto.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_auto"))
+        self.ui.btn_auto.clicked.connect(lambda: AppFunctions.page_automatic(self))
 
         # MENU 6 SETTINGS
         self.ui.btn_settings.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_settings))
@@ -63,18 +67,22 @@ class MainWindow(QMainWindow):
         self.ui.btn_home_FK.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_fk))
         self.ui.btn_home_FK.clicked.connect(lambda: UIFunctions.label_page(self, "FORWARD KINEMATICS"))
         self.ui.btn_home_FK.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_fk"))
+        self.ui.btn_home_FK.clicked.connect(lambda: AppFunctions.page_fk(self))
 
         self.ui.btn_home_IK.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_ik))
         self.ui.btn_home_IK.clicked.connect(lambda: UIFunctions.label_page(self, "INVERSE KINEMATICS"))
         self.ui.btn_home_IK.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_ik"))
+        self.ui.btn_home_IK.clicked.connect(lambda: AppFunctions.page_ik(self))
 
         self.ui.btn_home_manual.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_manual))
         self.ui.btn_home_manual.clicked.connect(lambda: UIFunctions.label_page(self, "MANUAL MODE"))
         self.ui.btn_home_manual.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_manual"))
+        self.ui.btn_home_manual.clicked.connect(lambda: AppFunctions.page_manual(self))
 
         self.ui.btn_home_auto.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_automatic))
         self.ui.btn_home_auto.clicked.connect(lambda: UIFunctions.label_page(self, "AUTOMATIC MODE"))
         self.ui.btn_home_auto.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_auto"))
+        self.ui.btn_home_auto.clicked.connect(lambda: AppFunctions.page_automatic(self))
 
         self.ui.btn_home_settings.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_settings))
         self.ui.btn_home_settings.clicked.connect(lambda: UIFunctions.label_page(self, "SETTINGS"))
@@ -99,6 +107,17 @@ class MainWindow(QMainWindow):
         self.ui.horizontalSlider_ik_z.valueChanged.connect(lambda: AppFunctions.page_ik(self))
         self.ui.verticalSlider.valueChanged.connect(lambda: AppFunctions.page_ik(self))
 
+        # Manual_mode
+        self.ui.horizontalSlider_j_s1.valueChanged.connect(lambda: AppFunctions.page_manual(self))
+        self.ui.horizontalSlider_j_s2.valueChanged.connect(lambda: AppFunctions.page_manual(self))
+        self.ui.horizontalSlider_j_s3.valueChanged.connect(lambda: AppFunctions.page_manual(self))
+        self.ui.horizontalSlider_j_s4.valueChanged.connect(lambda: AppFunctions.page_manual(self))
+        self.ui.horizontalSlider_j_s5.valueChanged.connect(lambda: AppFunctions.page_manual(self))
+        self.ui.horizontalSlider_j_s6.valueChanged.connect(lambda: AppFunctions.page_manual(self))
+        self.ui.horizontalSlider_manual_x.valueChanged.connect(lambda: AppFunctions.page_manual(self))
+        self.ui.horizontalSlider_manual_y.valueChanged.connect(lambda: AppFunctions.page_manual(self))
+        self.ui.horizontalSlider_manual_z.valueChanged.connect(lambda: AppFunctions.page_manual(self))
+        self.ui.verticalSlider_manual_orient.valueChanged.connect(lambda: AppFunctions.page_manual(self))
 
         ################################################################################################################
 
