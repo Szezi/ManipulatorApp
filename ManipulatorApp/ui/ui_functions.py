@@ -119,3 +119,31 @@ class UIFunctions(MainWindow):
     @staticmethod
     def returnStatus():
         return GLOBAL_STATE
+
+    def page_fk_reset(self):
+        self.ui.horizontalSlider_fk_s1.setValue(0)
+        self.ui.horizontalSlider_fk_s1_2.setValue(90)
+        self.ui.horizontalSlider_fk_s1_3.setValue(0)
+        self.ui.horizontalSlider_fk_s1_4.setValue(0)
+        self.ui.horizontalSlider_fk_s1_5.setValue(0)
+        self.ui.horizontalSlider_fk_s1_6.setValue(0)
+
+    def page_ik_reset(self):
+        self.ui.horizontalSlider_ik_x.setValue(0)
+        self.ui.horizontalSlider_ik_y.setValue(0)
+        self.ui.horizontalSlider_ik_z.setValue(472)
+        self.ui.verticalSlider.setValue(90)
+
+    def page_manual_reset(self):
+        if self.ui.tab_manual_joints.isVisible():
+            self.ui.horizontalSlider_j_s1.setValue(0)
+            self.ui.horizontalSlider_j_s2.setValue(90)
+            self.ui.horizontalSlider_j_s3.setValue(0)
+            self.ui.horizontalSlider_j_s4.setValue(0)
+            self.ui.horizontalSlider_j_s5.setValue(0)
+            self.ui.horizontalSlider_j_s6.setValue(0)
+        elif self.ui.tab_manual_xyz.isVisible():
+            self.ui.horizontalSlider_manual_x.setValue(0)
+            self.ui.horizontalSlider_manual_y.setValue(0)
+            self.ui.horizontalSlider_manual_z.setValue(472)
+            self.ui.verticalSlider_manual_orient.setValue(90)

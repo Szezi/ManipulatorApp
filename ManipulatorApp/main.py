@@ -100,12 +100,16 @@ class MainWindow(QMainWindow):
         self.ui.horizontalSlider_fk_s1_4.valueChanged.connect(lambda: AppFunctions.page_fk(self))
         self.ui.horizontalSlider_fk_s1_5.valueChanged.connect(lambda: AppFunctions.page_fk(self))
         self.ui.horizontalSlider_fk_s1_6.valueChanged.connect(lambda: AppFunctions.page_fk(self))
+        self.ui.btn_fk_reset.clicked.connect(lambda: UIFunctions.page_fk_reset(self))
 
         # IK
         self.ui.horizontalSlider_ik_x.valueChanged.connect(lambda: AppFunctions.page_ik(self))
         self.ui.horizontalSlider_ik_y.valueChanged.connect(lambda: AppFunctions.page_ik(self))
         self.ui.horizontalSlider_ik_z.valueChanged.connect(lambda: AppFunctions.page_ik(self))
         self.ui.verticalSlider.valueChanged.connect(lambda: AppFunctions.page_ik(self))
+        self.ui.btn_ik_reset.clicked.connect(lambda: UIFunctions.page_ik_reset(self))
+        self.ui.btn_ik_reload_1.clicked.connect(lambda: AppFunctions.page_ik(self))
+        self.ui.btn_ik_reload_2.clicked.connect(lambda: AppFunctions.page_ik(self))
 
         # Manual_mode
         self.ui.horizontalSlider_j_s1.valueChanged.connect(lambda: AppFunctions.page_manual(self))
@@ -118,7 +122,8 @@ class MainWindow(QMainWindow):
         self.ui.horizontalSlider_manual_y.valueChanged.connect(lambda: AppFunctions.page_manual(self))
         self.ui.horizontalSlider_manual_z.valueChanged.connect(lambda: AppFunctions.page_manual(self))
         self.ui.verticalSlider_manual_orient.valueChanged.connect(lambda: AppFunctions.page_manual(self))
-
+        self.ui.btn_manual_reset_1.clicked.connect(lambda: UIFunctions.page_manual_reset(self))
+        self.ui.btn_manual_reset_2.clicked.connect(lambda: UIFunctions.page_manual_reset(self))
         ################################################################################################################
 
         # MOVE WINDOW
