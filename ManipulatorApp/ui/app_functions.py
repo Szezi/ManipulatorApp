@@ -4,6 +4,7 @@ from ManipulatorApp.main import *
 from ManipulatorApp.modules import FK
 from ManipulatorApp.modules import IK
 from ManipulatorApp.modules import trajectory
+from ManipulatorApp.modules import mplwidget
 
 
 class AppFunctions(MainWindow):
@@ -25,6 +26,7 @@ class AppFunctions(MainWindow):
         print(result)
 
         # Sim
+        self.ui.MplWidget_fk.mpl_draw(result[3], result[2], result[1])
 
     def page_ik(self):
         eff = [54, 0]
@@ -48,6 +50,12 @@ class AppFunctions(MainWindow):
         self.ui.lcdNumber_ik_s4_2.display((result_config2[3]))
 
         # Sim
+        if self.ui.tabWidget_4.currentIndex() == 0:
+            calculated = FK.fk_dh(result_config1[0], result_config1[1], result_config1[2], result_config1[3], eff)
+            self.ui.MplWidget_ik.mpl_draw(calculated[3], calculated[2], calculated[1])
+        elif self.ui.tabWidget_4.currentIndex() == 1:
+            calculated = FK.fk_dh(result_config2[0], result_config2[1], result_config2[2], result_config2[3], eff)
+            self.ui.MplWidget_ik.mpl_draw(calculated[3], calculated[2], calculated[1])
 
     def page_manual(self):
         eff = [54, 0]
@@ -72,10 +80,18 @@ class AppFunctions(MainWindow):
 
             value_manual_joints = IK.ik_geo(value_x, value_y, value_z, value_alpha, eff)
             print(value_manual_joints)
-            self.ui.horizontalSlider_j_s1.setValue(value_manual_joints[0][0])
-            self.ui.horizontalSlider_j_s2.setValue(value_manual_joints[0][1])
-            self.ui.horizontalSlider_j_s3.setValue(value_manual_joints[0][2])
-            self.ui.horizontalSlider_j_s4.setValue(value_manual_joints[0][3])
+
+            if self.ui.comboBox_auto_config_2.currentIndex() == 0:
+                index = 0
+            elif self.ui.comboBox_auto_config_2.currentIndex() == 1:
+                index = 1
+            else:
+                raise ValueError
+
+            self.ui.horizontalSlider_j_s1.setValue(value_manual_joints[index][0])
+            self.ui.horizontalSlider_j_s2.setValue(value_manual_joints[index][1])
+            self.ui.horizontalSlider_j_s3.setValue(value_manual_joints[index][2])
+            self.ui.horizontalSlider_j_s4.setValue(value_manual_joints[index][3])
 
         servo_1 = self.ui.horizontalSlider_j_s1.value()
         servo_2 = self.ui.horizontalSlider_j_s2.value()
@@ -84,7 +100,10 @@ class AppFunctions(MainWindow):
         servo_5 = self.ui.horizontalSlider_j_s5.value()
         servo_6 = self.ui.horizontalSlider_j_s6.value()
         # send values to servos
+
         # Sim
+        calculated = FK.fk_dh(servo_1, servo_2, servo_3, servo_4, eff)
+        self.ui.MplWidget_ik_2.mpl_draw(calculated[3], calculated[2], calculated[1])
 
     def page_automatic(self):
         pass
