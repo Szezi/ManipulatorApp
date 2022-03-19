@@ -1478,77 +1478,6 @@ class Ui_MainWindow(object):
         self.tab_ik_joint.setObjectName(u"tab_ik_joint")
         self.gridLayout_12 = QGridLayout(self.tab_ik_joint)
         self.gridLayout_12.setObjectName(u"gridLayout_12")
-        self.label_ik_x = QLabel(self.tab_ik_joint)
-        self.label_ik_x.setObjectName(u"label_ik_x")
-        sizePolicy3.setHeightForWidth(self.label_ik_x.sizePolicy().hasHeightForWidth())
-        self.label_ik_x.setSizePolicy(sizePolicy3)
-        self.label_ik_x.setMinimumSize(QSize(150, 25))
-        self.label_ik_x.setMaximumSize(QSize(16777215, 25))
-        self.label_ik_x.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_12.addWidget(self.label_ik_x, 0, 1, 1, 1)
-
-        self.lcdNumber_ik_x = QLCDNumber(self.tab_ik_joint)
-        self.lcdNumber_ik_x.setObjectName(u"lcdNumber_ik_x")
-        self.lcdNumber_ik_x.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_ik_x.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_ik_x.setFont(font6)
-        self.lcdNumber_ik_x.setStyleSheet(u"QLCDNumber{\n"
-"  border: none;\n"
-"  color: rgb(255, 255, 255);\n"
-"}")
-
-        self.gridLayout_12.addWidget(self.lcdNumber_ik_x, 1, 0, 1, 1)
-
-        self.horizontalSlider_ik_x = QSlider(self.tab_ik_joint)
-        self.horizontalSlider_ik_x.setObjectName(u"horizontalSlider_ik_x")
-        sizePolicy8.setHeightForWidth(self.horizontalSlider_ik_x.sizePolicy().hasHeightForWidth())
-        self.horizontalSlider_ik_x.setSizePolicy(sizePolicy8)
-        self.horizontalSlider_ik_x.setMinimumSize(QSize(200, 0))
-        self.horizontalSlider_ik_x.setMaximumSize(QSize(16777215, 16777215))
-        self.horizontalSlider_ik_x.setLayoutDirection(Qt.LeftToRight)
-        self.horizontalSlider_ik_x.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
-        self.horizontalSlider_ik_x.setMinimum(-472)
-        self.horizontalSlider_ik_x.setMaximum(472)
-        self.horizontalSlider_ik_x.setPageStep(5)
-        self.horizontalSlider_ik_x.setOrientation(Qt.Horizontal)
-        self.horizontalSlider_ik_x.setInvertedAppearance(False)
-        self.horizontalSlider_ik_x.setInvertedControls(False)
-        self.horizontalSlider_ik_x.setTickPosition(QSlider.NoTicks)
-        self.horizontalSlider_ik_x.setTickInterval(10)
-
-        self.gridLayout_12.addWidget(self.horizontalSlider_ik_x, 1, 1, 1, 1)
-
-        self.label_ik_y = QLabel(self.tab_ik_joint)
-        self.label_ik_y.setObjectName(u"label_ik_y")
-        sizePolicy3.setHeightForWidth(self.label_ik_y.sizePolicy().hasHeightForWidth())
-        self.label_ik_y.setSizePolicy(sizePolicy3)
-        self.label_ik_y.setMinimumSize(QSize(150, 25))
-        self.label_ik_y.setMaximumSize(QSize(16777215, 25))
-        self.label_ik_y.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_12.addWidget(self.label_ik_y, 2, 1, 1, 1)
-
         self.lcdNumber_ik_y = QLCDNumber(self.tab_ik_joint)
         self.lcdNumber_ik_y.setObjectName(u"lcdNumber_ik_y")
         self.lcdNumber_ik_y.setMinimumSize(QSize(30, 30))
@@ -1556,44 +1485,6 @@ class Ui_MainWindow(object):
         self.lcdNumber_ik_y.setFrameShape(QFrame.NoFrame)
 
         self.gridLayout_12.addWidget(self.lcdNumber_ik_y, 3, 0, 1, 1)
-
-        self.horizontalSlider_ik_y = QSlider(self.tab_ik_joint)
-        self.horizontalSlider_ik_y.setObjectName(u"horizontalSlider_ik_y")
-        sizePolicy8.setHeightForWidth(self.horizontalSlider_ik_y.sizePolicy().hasHeightForWidth())
-        self.horizontalSlider_ik_y.setSizePolicy(sizePolicy8)
-        self.horizontalSlider_ik_y.setMinimumSize(QSize(200, 0))
-        self.horizontalSlider_ik_y.setMaximumSize(QSize(16777215, 16777215))
-        self.horizontalSlider_ik_y.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
-        self.horizontalSlider_ik_y.setMinimum(-472)
-        self.horizontalSlider_ik_y.setMaximum(472)
-        self.horizontalSlider_ik_y.setPageStep(5)
-        self.horizontalSlider_ik_y.setOrientation(Qt.Horizontal)
-        self.horizontalSlider_ik_y.setInvertedAppearance(False)
-        self.horizontalSlider_ik_y.setInvertedControls(False)
-        self.horizontalSlider_ik_y.setTickPosition(QSlider.NoTicks)
-        self.horizontalSlider_ik_y.setTickInterval(10)
-
-        self.gridLayout_12.addWidget(self.horizontalSlider_ik_y, 3, 1, 1, 1)
 
         self.label_ik_z = QLabel(self.tab_ik_joint)
         self.label_ik_z.setObjectName(u"label_ik_z")
@@ -1604,6 +1495,16 @@ class Ui_MainWindow(object):
         self.label_ik_z.setAlignment(Qt.AlignCenter)
 
         self.gridLayout_12.addWidget(self.label_ik_z, 4, 1, 1, 1)
+
+        self.label_ik_y = QLabel(self.tab_ik_joint)
+        self.label_ik_y.setObjectName(u"label_ik_y")
+        sizePolicy3.setHeightForWidth(self.label_ik_y.sizePolicy().hasHeightForWidth())
+        self.label_ik_y.setSizePolicy(sizePolicy3)
+        self.label_ik_y.setMinimumSize(QSize(150, 25))
+        self.label_ik_y.setMaximumSize(QSize(16777215, 25))
+        self.label_ik_y.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_12.addWidget(self.label_ik_y, 2, 1, 1, 1)
 
         self.horizontalSlider_ik_z = QSlider(self.tab_ik_joint)
         self.horizontalSlider_ik_z.setObjectName(u"horizontalSlider_ik_z")
@@ -1645,46 +1546,53 @@ class Ui_MainWindow(object):
 
         self.gridLayout_12.addWidget(self.horizontalSlider_ik_z, 5, 1, 1, 1)
 
-        self.horizontalSpacer_3 = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.label_ik_orient = QLabel(self.tab_ik_joint)
+        self.label_ik_orient.setObjectName(u"label_ik_orient")
+        sizePolicy3.setHeightForWidth(self.label_ik_orient.sizePolicy().hasHeightForWidth())
+        self.label_ik_orient.setSizePolicy(sizePolicy3)
+        self.label_ik_orient.setMinimumSize(QSize(200, 25))
+        self.label_ik_orient.setMaximumSize(QSize(16777215, 25))
+        self.label_ik_orient.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_12.addItem(self.horizontalSpacer_3, 5, 2, 1, 1)
+        self.gridLayout_12.addWidget(self.label_ik_orient, 6, 1, 1, 1)
 
-        self.btn_ik_reset = QPushButton(self.tab_ik_joint)
-        self.btn_ik_reset.setObjectName(u"btn_ik_reset")
-        sizePolicy4.setHeightForWidth(self.btn_ik_reset.sizePolicy().hasHeightForWidth())
-        self.btn_ik_reset.setSizePolicy(sizePolicy4)
-        self.btn_ik_reset.setMinimumSize(QSize(30, 30))
-        self.btn_ik_reset.setMaximumSize(QSize(30, 30))
-        self.btn_ik_reset.setFont(font3)
-        self.btn_ik_reset.setLayoutDirection(Qt.LeftToRight)
-        self.btn_ik_reset.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 15px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"\n"
-"}\n"
-"QPushButton:hover {\n"
+        self.horizontalSlider_ik_y = QSlider(self.tab_ik_joint)
+        self.horizontalSlider_ik_y.setObjectName(u"horizontalSlider_ik_y")
+        sizePolicy8.setHeightForWidth(self.horizontalSlider_ik_y.sizePolicy().hasHeightForWidth())
+        self.horizontalSlider_ik_y.setSizePolicy(sizePolicy8)
+        self.horizontalSlider_ik_y.setMinimumSize(QSize(200, 0))
+        self.horizontalSlider_ik_y.setMaximumSize(QSize(16777215, 16777215))
+        self.horizontalSlider_ik_y.setStyleSheet(u"QSlider::groove:horizontal {\n"
+"    border-radius: 9px;  \n"
+"	height: 18px;\n"
+"	margin: 0px;\n"
 "	background-color: rgb(61, 61, 61);\n"
 "}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
+"\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: rgb(85, 170, 255);\n"
+"    border: none;\n"
+"    height: 18px;\n"
+"    width: 18px;\n"
+"    margin: 0px;\n"
+"	border-radius: 9px;\n"
+"}\n"
+"QSlider::handle:horizontal:hover {\n"
+"    background-color: rgb(105, 180, 255);\n"
+"}\n"
+"QSlider::handle:horizontal:pressed {\n"
+"    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.btn_ik_reset.setCheckable(True)
-        self.btn_ik_reset.setChecked(True)
+        self.horizontalSlider_ik_y.setMinimum(-472)
+        self.horizontalSlider_ik_y.setMaximum(472)
+        self.horizontalSlider_ik_y.setPageStep(5)
+        self.horizontalSlider_ik_y.setOrientation(Qt.Horizontal)
+        self.horizontalSlider_ik_y.setInvertedAppearance(False)
+        self.horizontalSlider_ik_y.setInvertedControls(False)
+        self.horizontalSlider_ik_y.setTickPosition(QSlider.NoTicks)
+        self.horizontalSlider_ik_y.setTickInterval(10)
 
-        self.gridLayout_12.addWidget(self.btn_ik_reset, 8, 2, 1, 1)
-
-        self.lcdNumber_ik_z = QLCDNumber(self.tab_ik_joint)
-        self.lcdNumber_ik_z.setObjectName(u"lcdNumber_ik_z")
-        self.lcdNumber_ik_z.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_ik_z.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_ik_z.setFrameShape(QFrame.NoFrame)
-        self.lcdNumber_ik_z.setProperty("value", 472.000000000000000)
-
-        self.gridLayout_12.addWidget(self.lcdNumber_ik_z, 5, 0, 1, 1)
+        self.gridLayout_12.addWidget(self.horizontalSlider_ik_y, 3, 1, 1, 1)
 
         self.verticalSlider = QSlider(self.tab_ik_joint)
         self.verticalSlider.setObjectName(u"verticalSlider")
@@ -1724,17 +1632,59 @@ class Ui_MainWindow(object):
         self.verticalSlider.setInvertedAppearance(True)
         self.verticalSlider.setInvertedControls(True)
 
-        self.gridLayout_12.addWidget(self.verticalSlider, 6, 2, 1, 1)
+        self.gridLayout_12.addWidget(self.verticalSlider, 6, 3, 1, 1)
 
-        self.label_ik_orient = QLabel(self.tab_ik_joint)
-        self.label_ik_orient.setObjectName(u"label_ik_orient")
-        sizePolicy3.setHeightForWidth(self.label_ik_orient.sizePolicy().hasHeightForWidth())
-        self.label_ik_orient.setSizePolicy(sizePolicy3)
-        self.label_ik_orient.setMinimumSize(QSize(200, 25))
-        self.label_ik_orient.setMaximumSize(QSize(16777215, 25))
-        self.label_ik_orient.setAlignment(Qt.AlignCenter)
+        self.horizontalSpacer_3 = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
-        self.gridLayout_12.addWidget(self.label_ik_orient, 6, 1, 1, 1)
+        self.gridLayout_12.addItem(self.horizontalSpacer_3, 5, 3, 1, 1)
+
+        self.horizontalSlider_ik_x = QSlider(self.tab_ik_joint)
+        self.horizontalSlider_ik_x.setObjectName(u"horizontalSlider_ik_x")
+        sizePolicy8.setHeightForWidth(self.horizontalSlider_ik_x.sizePolicy().hasHeightForWidth())
+        self.horizontalSlider_ik_x.setSizePolicy(sizePolicy8)
+        self.horizontalSlider_ik_x.setMinimumSize(QSize(200, 0))
+        self.horizontalSlider_ik_x.setMaximumSize(QSize(16777215, 16777215))
+        self.horizontalSlider_ik_x.setLayoutDirection(Qt.LeftToRight)
+        self.horizontalSlider_ik_x.setStyleSheet(u"QSlider::groove:horizontal {\n"
+"    border-radius: 9px;  \n"
+"	height: 18px;\n"
+"	margin: 0px;\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: rgb(85, 170, 255);\n"
+"    border: none;\n"
+"    height: 18px;\n"
+"    width: 18px;\n"
+"    margin: 0px;\n"
+"	border-radius: 9px;\n"
+"}\n"
+"QSlider::handle:horizontal:hover {\n"
+"    background-color: rgb(105, 180, 255);\n"
+"}\n"
+"QSlider::handle:horizontal:pressed {\n"
+"    background-color: rgb(65, 130, 195);\n"
+"}")
+        self.horizontalSlider_ik_x.setMinimum(-472)
+        self.horizontalSlider_ik_x.setMaximum(472)
+        self.horizontalSlider_ik_x.setPageStep(5)
+        self.horizontalSlider_ik_x.setOrientation(Qt.Horizontal)
+        self.horizontalSlider_ik_x.setInvertedAppearance(False)
+        self.horizontalSlider_ik_x.setInvertedControls(False)
+        self.horizontalSlider_ik_x.setTickPosition(QSlider.NoTicks)
+        self.horizontalSlider_ik_x.setTickInterval(10)
+
+        self.gridLayout_12.addWidget(self.horizontalSlider_ik_x, 1, 1, 1, 1)
+
+        self.lcdNumber_ik_z = QLCDNumber(self.tab_ik_joint)
+        self.lcdNumber_ik_z.setObjectName(u"lcdNumber_ik_z")
+        self.lcdNumber_ik_z.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_ik_z.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_ik_z.setFrameShape(QFrame.NoFrame)
+        self.lcdNumber_ik_z.setProperty("value", 472.000000000000000)
+
+        self.gridLayout_12.addWidget(self.lcdNumber_ik_z, 5, 0, 1, 1)
 
         self.lcdNumber_ik_orient = QLCDNumber(self.tab_ik_joint)
         self.lcdNumber_ik_orient.setObjectName(u"lcdNumber_ik_orient")
@@ -1744,6 +1694,56 @@ class Ui_MainWindow(object):
         self.lcdNumber_ik_orient.setProperty("value", 90.000000000000000)
 
         self.gridLayout_12.addWidget(self.lcdNumber_ik_orient, 6, 0, 1, 1)
+
+        self.lcdNumber_ik_x = QLCDNumber(self.tab_ik_joint)
+        self.lcdNumber_ik_x.setObjectName(u"lcdNumber_ik_x")
+        self.lcdNumber_ik_x.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_ik_x.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_ik_x.setFont(font6)
+        self.lcdNumber_ik_x.setStyleSheet(u"QLCDNumber{\n"
+"  border: none;\n"
+"  color: rgb(255, 255, 255);\n"
+"}")
+
+        self.gridLayout_12.addWidget(self.lcdNumber_ik_x, 1, 0, 1, 1)
+
+        self.label_ik_x = QLabel(self.tab_ik_joint)
+        self.label_ik_x.setObjectName(u"label_ik_x")
+        sizePolicy3.setHeightForWidth(self.label_ik_x.sizePolicy().hasHeightForWidth())
+        self.label_ik_x.setSizePolicy(sizePolicy3)
+        self.label_ik_x.setMinimumSize(QSize(150, 25))
+        self.label_ik_x.setMaximumSize(QSize(16777215, 25))
+        self.label_ik_x.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_12.addWidget(self.label_ik_x, 0, 1, 1, 1)
+
+        self.btn_ik_reset = QPushButton(self.tab_ik_joint)
+        self.btn_ik_reset.setObjectName(u"btn_ik_reset")
+        sizePolicy4.setHeightForWidth(self.btn_ik_reset.sizePolicy().hasHeightForWidth())
+        self.btn_ik_reset.setSizePolicy(sizePolicy4)
+        self.btn_ik_reset.setMinimumSize(QSize(30, 30))
+        self.btn_ik_reset.setMaximumSize(QSize(30, 30))
+        self.btn_ik_reset.setFont(font3)
+        self.btn_ik_reset.setLayoutDirection(Qt.LeftToRight)
+        self.btn_ik_reset.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 15px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_ik_reset.setCheckable(True)
+        self.btn_ik_reset.setChecked(True)
+
+        self.gridLayout_12.addWidget(self.btn_ik_reset, 7, 3, 1, 1)
 
         self.tabWidget_3.addTab(self.tab_ik_joint, icon3, "")
         self.tab_fk_info_3 = QWidget()
@@ -1806,6 +1806,9 @@ class Ui_MainWindow(object):
         self.gridLayout_18.setContentsMargins(0, 0, 0, 0)
         self.tabWidget_4 = QTabWidget(self.frame_ik_results)
         self.tabWidget_4.setObjectName(u"tabWidget_4")
+        sizePolicy3.setHeightForWidth(self.tabWidget_4.sizePolicy().hasHeightForWidth())
+        self.tabWidget_4.setSizePolicy(sizePolicy3)
+        self.tabWidget_4.setMinimumSize(QSize(440, 300))
         self.tabWidget_4.setTabPosition(QTabWidget.North)
         self.tabWidget_4.setTabShape(QTabWidget.Triangular)
         self.tabWidget_4.setUsesScrollButtons(False)
@@ -1895,6 +1898,36 @@ class Ui_MainWindow(object):
 
         self.gridLayout_13.addWidget(self.label_s4_ik, 2, 2, 1, 1)
 
+        self.btn_ik_reload_1 = QPushButton(self.config1)
+        self.btn_ik_reload_1.setObjectName(u"btn_ik_reload_1")
+        sizePolicy4.setHeightForWidth(self.btn_ik_reload_1.sizePolicy().hasHeightForWidth())
+        self.btn_ik_reload_1.setSizePolicy(sizePolicy4)
+        self.btn_ik_reload_1.setMinimumSize(QSize(30, 30))
+        self.btn_ik_reload_1.setMaximumSize(QSize(30, 30))
+        self.btn_ik_reload_1.setFont(font3)
+        self.btn_ik_reload_1.setLayoutDirection(Qt.LeftToRight)
+        self.btn_ik_reload_1.setAutoFillBackground(False)
+        self.btn_ik_reload_1.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 15px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"	image: url(:/16x16/16x16/icons8-replace-50.png);\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_ik_reload_1.setCheckable(True)
+        self.btn_ik_reload_1.setChecked(True)
+
+        self.gridLayout_13.addWidget(self.btn_ik_reload_1, 0, 3, 1, 1)
+
         self.tabWidget_4.addTab(self.config1, "")
         self.config2 = QWidget()
         self.config2.setObjectName(u"config2")
@@ -1914,7 +1947,7 @@ class Ui_MainWindow(object):
         self.lcdNumber_ik_s1_2.setMinimumSize(QSize(50, 50))
         self.lcdNumber_ik_s1_2.setMaximumSize(QSize(50, 50))
 
-        self.gridLayout_14.addWidget(self.lcdNumber_ik_s1_2, 1, 0, 1, 1)
+        self.gridLayout_14.addWidget(self.lcdNumber_ik_s1_2, 2, 0, 1, 1)
 
         self.label_s1_ik_2 = QLabel(self.config2)
         self.label_s1_ik_2.setObjectName(u"label_s1_ik_2")
@@ -1924,7 +1957,7 @@ class Ui_MainWindow(object):
         self.label_s1_ik_2.setMaximumSize(QSize(16777215, 25))
         self.label_s1_ik_2.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_14.addWidget(self.label_s1_ik_2, 1, 1, 1, 1)
+        self.gridLayout_14.addWidget(self.label_s1_ik_2, 2, 1, 1, 1)
 
         self.label_s2_ik_2 = QLabel(self.config2)
         self.label_s2_ik_2.setObjectName(u"label_s2_ik_2")
@@ -1934,7 +1967,7 @@ class Ui_MainWindow(object):
         self.label_s2_ik_2.setMaximumSize(QSize(16777215, 25))
         self.label_s2_ik_2.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_14.addWidget(self.label_s2_ik_2, 1, 2, 1, 1)
+        self.gridLayout_14.addWidget(self.label_s2_ik_2, 2, 2, 1, 1)
 
         self.lcdNumber_ik_s2_2 = QLCDNumber(self.config2)
         self.lcdNumber_ik_s2_2.setObjectName(u"lcdNumber_ik_s2_2")
@@ -1942,31 +1975,14 @@ class Ui_MainWindow(object):
         self.lcdNumber_ik_s2_2.setMaximumSize(QSize(50, 50))
         self.lcdNumber_ik_s2_2.setSmallDecimalPoint(False)
 
-        self.gridLayout_14.addWidget(self.lcdNumber_ik_s2_2, 1, 3, 1, 1)
+        self.gridLayout_14.addWidget(self.lcdNumber_ik_s2_2, 2, 3, 1, 1)
 
         self.lcdNumber_ik_s3_2 = QLCDNumber(self.config2)
         self.lcdNumber_ik_s3_2.setObjectName(u"lcdNumber_ik_s3_2")
         self.lcdNumber_ik_s3_2.setMinimumSize(QSize(50, 50))
         self.lcdNumber_ik_s3_2.setMaximumSize(QSize(50, 50))
 
-        self.gridLayout_14.addWidget(self.lcdNumber_ik_s3_2, 2, 0, 1, 1)
-
-        self.lcdNumber_ik_s4_2 = QLCDNumber(self.config2)
-        self.lcdNumber_ik_s4_2.setObjectName(u"lcdNumber_ik_s4_2")
-        self.lcdNumber_ik_s4_2.setMinimumSize(QSize(50, 50))
-        self.lcdNumber_ik_s4_2.setMaximumSize(QSize(50, 50))
-
-        self.gridLayout_14.addWidget(self.lcdNumber_ik_s4_2, 2, 3, 1, 1)
-
-        self.label_s4_ik_2 = QLabel(self.config2)
-        self.label_s4_ik_2.setObjectName(u"label_s4_ik_2")
-        sizePolicy12.setHeightForWidth(self.label_s4_ik_2.sizePolicy().hasHeightForWidth())
-        self.label_s4_ik_2.setSizePolicy(sizePolicy12)
-        self.label_s4_ik_2.setMinimumSize(QSize(150, 25))
-        self.label_s4_ik_2.setMaximumSize(QSize(16777215, 25))
-        self.label_s4_ik_2.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_14.addWidget(self.label_s4_ik_2, 2, 2, 1, 1)
+        self.gridLayout_14.addWidget(self.lcdNumber_ik_s3_2, 3, 0, 1, 1)
 
         self.label_s3_ik_2 = QLabel(self.config2)
         self.label_s3_ik_2.setObjectName(u"label_s3_ik_2")
@@ -1976,7 +1992,54 @@ class Ui_MainWindow(object):
         self.label_s3_ik_2.setMaximumSize(QSize(16777215, 25))
         self.label_s3_ik_2.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_14.addWidget(self.label_s3_ik_2, 2, 1, 1, 1)
+        self.gridLayout_14.addWidget(self.label_s3_ik_2, 3, 1, 1, 1)
+
+        self.label_s4_ik_2 = QLabel(self.config2)
+        self.label_s4_ik_2.setObjectName(u"label_s4_ik_2")
+        sizePolicy12.setHeightForWidth(self.label_s4_ik_2.sizePolicy().hasHeightForWidth())
+        self.label_s4_ik_2.setSizePolicy(sizePolicy12)
+        self.label_s4_ik_2.setMinimumSize(QSize(150, 25))
+        self.label_s4_ik_2.setMaximumSize(QSize(16777215, 25))
+        self.label_s4_ik_2.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_14.addWidget(self.label_s4_ik_2, 3, 2, 1, 1)
+
+        self.lcdNumber_ik_s4_2 = QLCDNumber(self.config2)
+        self.lcdNumber_ik_s4_2.setObjectName(u"lcdNumber_ik_s4_2")
+        self.lcdNumber_ik_s4_2.setMinimumSize(QSize(50, 50))
+        self.lcdNumber_ik_s4_2.setMaximumSize(QSize(50, 50))
+
+        self.gridLayout_14.addWidget(self.lcdNumber_ik_s4_2, 3, 3, 1, 1)
+
+        self.btn_ik_reload_2 = QPushButton(self.config2)
+        self.btn_ik_reload_2.setObjectName(u"btn_ik_reload_2")
+        sizePolicy4.setHeightForWidth(self.btn_ik_reload_2.sizePolicy().hasHeightForWidth())
+        self.btn_ik_reload_2.setSizePolicy(sizePolicy4)
+        self.btn_ik_reload_2.setMinimumSize(QSize(30, 30))
+        self.btn_ik_reload_2.setMaximumSize(QSize(30, 30))
+        self.btn_ik_reload_2.setFont(font3)
+        self.btn_ik_reload_2.setLayoutDirection(Qt.LeftToRight)
+        self.btn_ik_reload_2.setAutoFillBackground(False)
+        self.btn_ik_reload_2.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 15px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"	image: url(:/16x16/16x16/icons8-replace-50.png);\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_ik_reload_2.setCheckable(True)
+        self.btn_ik_reload_2.setChecked(True)
+
+        self.gridLayout_14.addWidget(self.btn_ik_reload_2, 0, 3, 1, 1)
 
         self.tabWidget_4.addTab(self.config2, "")
 
@@ -2399,6 +2462,16 @@ class Ui_MainWindow(object):
         self.tab_manual_xyz.setObjectName(u"tab_manual_xyz")
         self.gridLayout_8 = QGridLayout(self.tab_manual_xyz)
         self.gridLayout_8.setObjectName(u"gridLayout_8")
+        self.label_manual_x = QLabel(self.tab_manual_xyz)
+        self.label_manual_x.setObjectName(u"label_manual_x")
+        sizePolicy3.setHeightForWidth(self.label_manual_x.sizePolicy().hasHeightForWidth())
+        self.label_manual_x.setSizePolicy(sizePolicy3)
+        self.label_manual_x.setMinimumSize(QSize(150, 25))
+        self.label_manual_x.setMaximumSize(QSize(16777215, 25))
+        self.label_manual_x.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_8.addWidget(self.label_manual_x, 0, 1, 1, 1)
+
         self.lcdNumber_manual_x = QLCDNumber(self.tab_manual_xyz)
         self.lcdNumber_manual_x.setObjectName(u"lcdNumber_manual_x")
         self.lcdNumber_manual_x.setMinimumSize(QSize(30, 30))
@@ -2449,16 +2522,6 @@ class Ui_MainWindow(object):
         self.horizontalSlider_manual_x.setTickInterval(10)
 
         self.gridLayout_8.addWidget(self.horizontalSlider_manual_x, 1, 1, 1, 1)
-
-        self.label_manual_x = QLabel(self.tab_manual_xyz)
-        self.label_manual_x.setObjectName(u"label_manual_x")
-        sizePolicy3.setHeightForWidth(self.label_manual_x.sizePolicy().hasHeightForWidth())
-        self.label_manual_x.setSizePolicy(sizePolicy3)
-        self.label_manual_x.setMinimumSize(QSize(150, 25))
-        self.label_manual_x.setMaximumSize(QSize(16777215, 25))
-        self.label_manual_x.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_8.addWidget(self.label_manual_x, 0, 1, 1, 1)
 
         self.label_manual_y = QLabel(self.tab_manual_xyz)
         self.label_manual_y.setObjectName(u"label_manual_y")
@@ -2633,6 +2696,15 @@ class Ui_MainWindow(object):
         self.verticalSlider_manual_orient.setInvertedControls(True)
 
         self.gridLayout_8.addWidget(self.verticalSlider_manual_orient, 6, 2, 1, 1)
+
+        self.comboBox_auto_config_2 = QComboBox(self.tab_manual_xyz)
+        self.comboBox_auto_config_2.addItem("")
+        self.comboBox_auto_config_2.addItem("")
+        self.comboBox_auto_config_2.setObjectName(u"comboBox_auto_config_2")
+        self.comboBox_auto_config_2.setMinimumSize(QSize(100, 25))
+        self.comboBox_auto_config_2.setMaximumSize(QSize(16777215, 25))
+
+        self.gridLayout_8.addWidget(self.comboBox_auto_config_2, 7, 0, 1, 2)
 
         self.btn_manual_reset_2 = QPushButton(self.tab_manual_xyz)
         self.btn_manual_reset_2.setObjectName(u"btn_manual_reset_2")
@@ -4579,10 +4651,10 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_y.valueChanged.connect(self.lcdNumber_auto_y.display)
         self.horizontalSlider_auto_z.valueChanged.connect(self.lcdNumber_auto_z.display)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(0)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
-        self.tabWidget_4.setCurrentIndex(0)
+        self.tabWidget_4.setCurrentIndex(1)
         self.tabWidget_5.setCurrentIndex(0)
         self.tabWidget_7.setCurrentIndex(0)
         self.tabWidget_6.setCurrentIndex(0)
@@ -4654,14 +4726,14 @@ class Ui_MainWindow(object):
         self.label_dh_wynik_2.setText(QCoreApplication.translate("MainWindow", u"Calculated XYZ end effector position", None))
         self.label_dh_Z_2.setText(QCoreApplication.translate("MainWindow", u"Z", None))
         self.label_dh_Y_2.setText(QCoreApplication.translate("MainWindow", u"Y", None))
-        self.label_ik_x.setText(QCoreApplication.translate("MainWindow", u"X-AXIS", None))
-        self.label_ik_y.setText(QCoreApplication.translate("MainWindow", u"Y-AXIS", None))
         self.label_ik_z.setText(QCoreApplication.translate("MainWindow", u"Z-AXIS", None))
+        self.label_ik_y.setText(QCoreApplication.translate("MainWindow", u"Y-AXIS", None))
+        self.label_ik_orient.setText(QCoreApplication.translate("MainWindow", u"ORIENTATION", None))
+        self.label_ik_x.setText(QCoreApplication.translate("MainWindow", u"X-AXIS", None))
 #if QT_CONFIG(tooltip)
         self.btn_ik_reset.setToolTip(QCoreApplication.translate("MainWindow", u"Reset", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_ik_reset.setText(QCoreApplication.translate("MainWindow", u"R", None))
-        self.label_ik_orient.setText(QCoreApplication.translate("MainWindow", u"ORIENTATION", None))
         self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_ik_joint), QCoreApplication.translate("MainWindow", u"XYZ", None))
         self.label_dh_rys_5.setText("")
         self.label_ik_efektor_2.setText("")
@@ -4671,12 +4743,20 @@ class Ui_MainWindow(object):
         self.label_s2_ik.setText(QCoreApplication.translate("MainWindow", u"S2 - JOINT 1", None))
         self.label_s3_ik.setText(QCoreApplication.translate("MainWindow", u"S3 - JOINT 2", None))
         self.label_s4_ik.setText(QCoreApplication.translate("MainWindow", u"S4 - JOINT 3", None))
+#if QT_CONFIG(tooltip)
+        self.btn_ik_reload_1.setToolTip(QCoreApplication.translate("MainWindow", u"Update sim", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_ik_reload_1.setText("")
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.config1), QCoreApplication.translate("MainWindow", u"Config1", None))
         self.label_ik_2.setText(QCoreApplication.translate("MainWindow", u"Calculated joints values - CONFIG. 2", None))
         self.label_s1_ik_2.setText(QCoreApplication.translate("MainWindow", u"S1 - BASE", None))
         self.label_s2_ik_2.setText(QCoreApplication.translate("MainWindow", u"S2 - JOINT 1", None))
-        self.label_s4_ik_2.setText(QCoreApplication.translate("MainWindow", u"S4 - JOINT 3", None))
         self.label_s3_ik_2.setText(QCoreApplication.translate("MainWindow", u"S3 - JOINT 2", None))
+        self.label_s4_ik_2.setText(QCoreApplication.translate("MainWindow", u"S4 - JOINT 3", None))
+#if QT_CONFIG(tooltip)
+        self.btn_ik_reload_2.setToolTip(QCoreApplication.translate("MainWindow", u"Update sim", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_ik_reload_2.setText("")
         self.tabWidget_4.setTabText(self.tabWidget_4.indexOf(self.config2), QCoreApplication.translate("MainWindow", u"Config2", None))
         self.label_j_s1.setText(QCoreApplication.translate("MainWindow", u"S1 - BASE", None))
         self.label_j_s2.setText(QCoreApplication.translate("MainWindow", u"S2 - LINK 1", None))
@@ -4693,6 +4773,12 @@ class Ui_MainWindow(object):
         self.label_manual_y.setText(QCoreApplication.translate("MainWindow", u"Y-AXIS", None))
         self.label_manual_z.setText(QCoreApplication.translate("MainWindow", u"Z-AXIS", None))
         self.label_manual_orient.setText(QCoreApplication.translate("MainWindow", u"ORIENTATION", None))
+        self.comboBox_auto_config_2.setItemText(0, QCoreApplication.translate("MainWindow", u"config_1", None))
+        self.comboBox_auto_config_2.setItemText(1, QCoreApplication.translate("MainWindow", u"config_2", None))
+
+#if QT_CONFIG(tooltip)
+        self.comboBox_auto_config_2.setToolTip(QCoreApplication.translate("MainWindow", u"Robot config", None))
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.btn_manual_reset_2.setToolTip(QCoreApplication.translate("MainWindow", u"Reset", None))
 #endif // QT_CONFIG(tooltip)
