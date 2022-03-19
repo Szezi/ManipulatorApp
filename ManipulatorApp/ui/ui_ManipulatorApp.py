@@ -939,15 +939,19 @@ class Ui_MainWindow(object):
         self.tab_fk_joint.setObjectName(u"tab_fk_joint")
         self.gridLayout_6 = QGridLayout(self.tab_fk_joint)
         self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.label_fk_s1 = QLabel(self.tab_fk_joint)
-        self.label_fk_s1.setObjectName(u"label_fk_s1")
-        sizePolicy3.setHeightForWidth(self.label_fk_s1.sizePolicy().hasHeightForWidth())
-        self.label_fk_s1.setSizePolicy(sizePolicy3)
-        self.label_fk_s1.setMinimumSize(QSize(150, 25))
-        self.label_fk_s1.setMaximumSize(QSize(16777215, 25))
-        self.label_fk_s1.setAlignment(Qt.AlignCenter)
+        self.lcdNumber_fk_s1 = QLCDNumber(self.tab_fk_joint)
+        self.lcdNumber_fk_s1.setObjectName(u"lcdNumber_fk_s1")
+        self.lcdNumber_fk_s1.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_fk_s1.setMaximumSize(QSize(50, 50))
+        font6 = QFont()
+        font6.setPointSize(4)
+        self.lcdNumber_fk_s1.setFont(font6)
+        self.lcdNumber_fk_s1.setStyleSheet(u"QLCDNumber{\n"
+"  border: none;\n"
+"  color: rgb(255, 255, 255);\n"
+"}")
 
-        self.gridLayout_6.addWidget(self.label_fk_s1, 0, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.lcdNumber_fk_s1, 1, 0, 1, 1)
 
         self.horizontalSlider_fk_s1 = QSlider(self.tab_fk_joint)
         self.horizontalSlider_fk_s1.setObjectName(u"horizontalSlider_fk_s1")
@@ -982,6 +986,7 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalSlider_fk_s1.setMinimum(-90)
         self.horizontalSlider_fk_s1.setMaximum(90)
+        self.horizontalSlider_fk_s1.setPageStep(5)
         self.horizontalSlider_fk_s1.setOrientation(Qt.Horizontal)
         self.horizontalSlider_fk_s1.setInvertedAppearance(False)
         self.horizontalSlider_fk_s1.setInvertedControls(False)
@@ -990,15 +995,15 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.horizontalSlider_fk_s1, 1, 1, 1, 1)
 
-        self.label_fk_s2 = QLabel(self.tab_fk_joint)
-        self.label_fk_s2.setObjectName(u"label_fk_s2")
-        sizePolicy3.setHeightForWidth(self.label_fk_s2.sizePolicy().hasHeightForWidth())
-        self.label_fk_s2.setSizePolicy(sizePolicy3)
-        self.label_fk_s2.setMinimumSize(QSize(150, 25))
-        self.label_fk_s2.setMaximumSize(QSize(16777215, 25))
-        self.label_fk_s2.setAlignment(Qt.AlignCenter)
+        self.label_fk_s1 = QLabel(self.tab_fk_joint)
+        self.label_fk_s1.setObjectName(u"label_fk_s1")
+        sizePolicy3.setHeightForWidth(self.label_fk_s1.sizePolicy().hasHeightForWidth())
+        self.label_fk_s1.setSizePolicy(sizePolicy3)
+        self.label_fk_s1.setMinimumSize(QSize(150, 25))
+        self.label_fk_s1.setMaximumSize(QSize(16777215, 25))
+        self.label_fk_s1.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_6.addWidget(self.label_fk_s2, 2, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.label_fk_s1, 0, 1, 1, 1)
 
         self.label_fk_s4 = QLabel(self.tab_fk_joint)
         self.label_fk_s4.setObjectName(u"label_fk_s4")
@@ -1017,6 +1022,16 @@ class Ui_MainWindow(object):
         self.lcdNumber_fk_s3.setFrameShape(QFrame.NoFrame)
 
         self.gridLayout_6.addWidget(self.lcdNumber_fk_s3, 5, 0, 1, 1)
+
+        self.label_fk_s2 = QLabel(self.tab_fk_joint)
+        self.label_fk_s2.setObjectName(u"label_fk_s2")
+        sizePolicy3.setHeightForWidth(self.label_fk_s2.sizePolicy().hasHeightForWidth())
+        self.label_fk_s2.setSizePolicy(sizePolicy3)
+        self.label_fk_s2.setMinimumSize(QSize(150, 25))
+        self.label_fk_s2.setMaximumSize(QSize(16777215, 25))
+        self.label_fk_s2.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_6.addWidget(self.label_fk_s2, 2, 1, 1, 1)
 
         self.horizontalSlider_fk_s1_2 = QSlider(self.tab_fk_joint)
         self.horizontalSlider_fk_s1_2.setObjectName(u"horizontalSlider_fk_s1_2")
@@ -1047,6 +1062,7 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalSlider_fk_s1_2.setMinimum(0)
         self.horizontalSlider_fk_s1_2.setMaximum(180)
+        self.horizontalSlider_fk_s1_2.setPageStep(5)
         self.horizontalSlider_fk_s1_2.setValue(90)
         self.horizontalSlider_fk_s1_2.setSliderPosition(90)
         self.horizontalSlider_fk_s1_2.setOrientation(Qt.Horizontal)
@@ -1056,69 +1072,6 @@ class Ui_MainWindow(object):
         self.horizontalSlider_fk_s1_2.setTickInterval(10)
 
         self.gridLayout_6.addWidget(self.horizontalSlider_fk_s1_2, 3, 1, 1, 1)
-
-        self.lcdNumber_fk_s2 = QLCDNumber(self.tab_fk_joint)
-        self.lcdNumber_fk_s2.setObjectName(u"lcdNumber_fk_s2")
-        self.lcdNumber_fk_s2.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_fk_s2.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_fk_s2.setFrameShape(QFrame.NoFrame)
-
-        self.gridLayout_6.addWidget(self.lcdNumber_fk_s2, 3, 0, 1, 1)
-
-        self.lcdNumber_fk_s4 = QLCDNumber(self.tab_fk_joint)
-        self.lcdNumber_fk_s4.setObjectName(u"lcdNumber_fk_s4")
-        self.lcdNumber_fk_s4.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_fk_s4.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_fk_s4.setFrameShape(QFrame.NoFrame)
-
-        self.gridLayout_6.addWidget(self.lcdNumber_fk_s4, 7, 0, 1, 1)
-
-        self.label_fk_s3 = QLabel(self.tab_fk_joint)
-        self.label_fk_s3.setObjectName(u"label_fk_s3")
-        sizePolicy3.setHeightForWidth(self.label_fk_s3.sizePolicy().hasHeightForWidth())
-        self.label_fk_s3.setSizePolicy(sizePolicy3)
-        self.label_fk_s3.setMinimumSize(QSize(150, 25))
-        self.label_fk_s3.setMaximumSize(QSize(16777215, 25))
-        self.label_fk_s3.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_6.addWidget(self.label_fk_s3, 6, 1, 1, 1)
-
-        self.horizontalSlider_fk_s1_4 = QSlider(self.tab_fk_joint)
-        self.horizontalSlider_fk_s1_4.setObjectName(u"horizontalSlider_fk_s1_4")
-        sizePolicy8.setHeightForWidth(self.horizontalSlider_fk_s1_4.sizePolicy().hasHeightForWidth())
-        self.horizontalSlider_fk_s1_4.setSizePolicy(sizePolicy8)
-        self.horizontalSlider_fk_s1_4.setMinimumSize(QSize(200, 0))
-        self.horizontalSlider_fk_s1_4.setMaximumSize(QSize(16777215, 16777215))
-        self.horizontalSlider_fk_s1_4.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
-        self.horizontalSlider_fk_s1_4.setMinimum(-90)
-        self.horizontalSlider_fk_s1_4.setMaximum(90)
-        self.horizontalSlider_fk_s1_4.setOrientation(Qt.Horizontal)
-        self.horizontalSlider_fk_s1_4.setInvertedAppearance(False)
-        self.horizontalSlider_fk_s1_4.setInvertedControls(False)
-        self.horizontalSlider_fk_s1_4.setTickPosition(QSlider.NoTicks)
-        self.horizontalSlider_fk_s1_4.setTickInterval(10)
-
-        self.gridLayout_6.addWidget(self.horizontalSlider_fk_s1_4, 7, 1, 1, 1)
 
         self.horizontalSlider_fk_s1_3 = QSlider(self.tab_fk_joint)
         self.horizontalSlider_fk_s1_3.setObjectName(u"horizontalSlider_fk_s1_3")
@@ -1149,6 +1102,7 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalSlider_fk_s1_3.setMinimum(-90)
         self.horizontalSlider_fk_s1_3.setMaximum(90)
+        self.horizontalSlider_fk_s1_3.setPageStep(5)
         self.horizontalSlider_fk_s1_3.setOrientation(Qt.Horizontal)
         self.horizontalSlider_fk_s1_3.setInvertedAppearance(False)
         self.horizontalSlider_fk_s1_3.setInvertedControls(False)
@@ -1156,6 +1110,51 @@ class Ui_MainWindow(object):
         self.horizontalSlider_fk_s1_3.setTickInterval(10)
 
         self.gridLayout_6.addWidget(self.horizontalSlider_fk_s1_3, 5, 1, 1, 1)
+
+        self.lcdNumber_fk_s2 = QLCDNumber(self.tab_fk_joint)
+        self.lcdNumber_fk_s2.setObjectName(u"lcdNumber_fk_s2")
+        self.lcdNumber_fk_s2.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_fk_s2.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_fk_s2.setFrameShape(QFrame.NoFrame)
+        self.lcdNumber_fk_s2.setProperty("value", 90.000000000000000)
+
+        self.gridLayout_6.addWidget(self.lcdNumber_fk_s2, 3, 0, 1, 1)
+
+        self.lcdNumber_fk_s4 = QLCDNumber(self.tab_fk_joint)
+        self.lcdNumber_fk_s4.setObjectName(u"lcdNumber_fk_s4")
+        self.lcdNumber_fk_s4.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_fk_s4.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_fk_s4.setFrameShape(QFrame.NoFrame)
+
+        self.gridLayout_6.addWidget(self.lcdNumber_fk_s4, 7, 0, 1, 1)
+
+        self.label_fk_s3 = QLabel(self.tab_fk_joint)
+        self.label_fk_s3.setObjectName(u"label_fk_s3")
+        sizePolicy3.setHeightForWidth(self.label_fk_s3.sizePolicy().hasHeightForWidth())
+        self.label_fk_s3.setSizePolicy(sizePolicy3)
+        self.label_fk_s3.setMinimumSize(QSize(150, 25))
+        self.label_fk_s3.setMaximumSize(QSize(16777215, 25))
+        self.label_fk_s3.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_6.addWidget(self.label_fk_s3, 6, 1, 1, 1)
+
+        self.label_fk_s5 = QLabel(self.tab_fk_joint)
+        self.label_fk_s5.setObjectName(u"label_fk_s5")
+        sizePolicy3.setHeightForWidth(self.label_fk_s5.sizePolicy().hasHeightForWidth())
+        self.label_fk_s5.setSizePolicy(sizePolicy3)
+        self.label_fk_s5.setMinimumSize(QSize(150, 25))
+        self.label_fk_s5.setMaximumSize(QSize(16777215, 25))
+        self.label_fk_s5.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_6.addWidget(self.label_fk_s5, 8, 1, 1, 1)
+
+        self.lcdNumber_fk_s5 = QLCDNumber(self.tab_fk_joint)
+        self.lcdNumber_fk_s5.setObjectName(u"lcdNumber_fk_s5")
+        self.lcdNumber_fk_s5.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_fk_s5.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_fk_s5.setFrameShape(QFrame.NoFrame)
+
+        self.gridLayout_6.addWidget(self.lcdNumber_fk_s5, 9, 0, 1, 1)
 
         self.horizontalSlider_fk_s1_5 = QSlider(self.tab_fk_joint)
         self.horizontalSlider_fk_s1_5.setObjectName(u"horizontalSlider_fk_s1_5")
@@ -1186,6 +1185,7 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalSlider_fk_s1_5.setMinimum(-90)
         self.horizontalSlider_fk_s1_5.setMaximum(90)
+        self.horizontalSlider_fk_s1_5.setPageStep(5)
         self.horizontalSlider_fk_s1_5.setOrientation(Qt.Horizontal)
         self.horizontalSlider_fk_s1_5.setInvertedAppearance(False)
         self.horizontalSlider_fk_s1_5.setInvertedControls(False)
@@ -1194,23 +1194,53 @@ class Ui_MainWindow(object):
 
         self.gridLayout_6.addWidget(self.horizontalSlider_fk_s1_5, 9, 1, 1, 1)
 
-        self.lcdNumber_fk_s5 = QLCDNumber(self.tab_fk_joint)
-        self.lcdNumber_fk_s5.setObjectName(u"lcdNumber_fk_s5")
-        self.lcdNumber_fk_s5.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_fk_s5.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_fk_s5.setFrameShape(QFrame.NoFrame)
+        self.horizontalSlider_fk_s1_4 = QSlider(self.tab_fk_joint)
+        self.horizontalSlider_fk_s1_4.setObjectName(u"horizontalSlider_fk_s1_4")
+        sizePolicy8.setHeightForWidth(self.horizontalSlider_fk_s1_4.sizePolicy().hasHeightForWidth())
+        self.horizontalSlider_fk_s1_4.setSizePolicy(sizePolicy8)
+        self.horizontalSlider_fk_s1_4.setMinimumSize(QSize(200, 0))
+        self.horizontalSlider_fk_s1_4.setMaximumSize(QSize(16777215, 16777215))
+        self.horizontalSlider_fk_s1_4.setStyleSheet(u"QSlider::groove:horizontal {\n"
+"    border-radius: 9px;  \n"
+"	height: 18px;\n"
+"	margin: 0px;\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: rgb(85, 170, 255);\n"
+"    border: none;\n"
+"    height: 18px;\n"
+"    width: 18px;\n"
+"    margin: 0px;\n"
+"	border-radius: 9px;\n"
+"}\n"
+"QSlider::handle:horizontal:hover {\n"
+"    background-color: rgb(105, 180, 255);\n"
+"}\n"
+"QSlider::handle:horizontal:pressed {\n"
+"    background-color: rgb(65, 130, 195);\n"
+"}")
+        self.horizontalSlider_fk_s1_4.setMinimum(-90)
+        self.horizontalSlider_fk_s1_4.setMaximum(90)
+        self.horizontalSlider_fk_s1_4.setPageStep(5)
+        self.horizontalSlider_fk_s1_4.setOrientation(Qt.Horizontal)
+        self.horizontalSlider_fk_s1_4.setInvertedAppearance(False)
+        self.horizontalSlider_fk_s1_4.setInvertedControls(False)
+        self.horizontalSlider_fk_s1_4.setTickPosition(QSlider.NoTicks)
+        self.horizontalSlider_fk_s1_4.setTickInterval(10)
 
-        self.gridLayout_6.addWidget(self.lcdNumber_fk_s5, 9, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.horizontalSlider_fk_s1_4, 7, 1, 1, 1)
 
-        self.label_fk_s5 = QLabel(self.tab_fk_joint)
-        self.label_fk_s5.setObjectName(u"label_fk_s5")
-        sizePolicy3.setHeightForWidth(self.label_fk_s5.sizePolicy().hasHeightForWidth())
-        self.label_fk_s5.setSizePolicy(sizePolicy3)
-        self.label_fk_s5.setMinimumSize(QSize(150, 25))
-        self.label_fk_s5.setMaximumSize(QSize(16777215, 25))
-        self.label_fk_s5.setAlignment(Qt.AlignCenter)
+        self.label_fk_s6 = QLabel(self.tab_fk_joint)
+        self.label_fk_s6.setObjectName(u"label_fk_s6")
+        sizePolicy3.setHeightForWidth(self.label_fk_s6.sizePolicy().hasHeightForWidth())
+        self.label_fk_s6.setSizePolicy(sizePolicy3)
+        self.label_fk_s6.setMinimumSize(QSize(150, 25))
+        self.label_fk_s6.setMaximumSize(QSize(16777215, 25))
+        self.label_fk_s6.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_6.addWidget(self.label_fk_s5, 8, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.label_fk_s6, 10, 1, 1, 1)
 
         self.horizontalSlider_fk_s1_6 = QSlider(self.tab_fk_joint)
         self.horizontalSlider_fk_s1_6.setObjectName(u"horizontalSlider_fk_s1_6")
@@ -1241,27 +1271,14 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalSlider_fk_s1_6.setMinimum(-90)
         self.horizontalSlider_fk_s1_6.setMaximum(90)
+        self.horizontalSlider_fk_s1_6.setPageStep(5)
         self.horizontalSlider_fk_s1_6.setOrientation(Qt.Horizontal)
         self.horizontalSlider_fk_s1_6.setInvertedAppearance(False)
         self.horizontalSlider_fk_s1_6.setInvertedControls(False)
         self.horizontalSlider_fk_s1_6.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_fk_s1_6.setTickInterval(10)
 
-        self.gridLayout_6.addWidget(self.horizontalSlider_fk_s1_6, 11, 1, 1, 1)
-
-        self.horizontalSpacer = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
-
-        self.gridLayout_6.addItem(self.horizontalSpacer, 11, 2, 1, 1)
-
-        self.label_fk_s6 = QLabel(self.tab_fk_joint)
-        self.label_fk_s6.setObjectName(u"label_fk_s6")
-        sizePolicy3.setHeightForWidth(self.label_fk_s6.sizePolicy().hasHeightForWidth())
-        self.label_fk_s6.setSizePolicy(sizePolicy3)
-        self.label_fk_s6.setMinimumSize(QSize(150, 25))
-        self.label_fk_s6.setMaximumSize(QSize(16777215, 25))
-        self.label_fk_s6.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_6.addWidget(self.label_fk_s6, 10, 1, 1, 1)
+        self.gridLayout_6.addWidget(self.horizontalSlider_fk_s1_6, 12, 1, 1, 1)
 
         self.lcdNumber_fk_s6 = QLCDNumber(self.tab_fk_joint)
         self.lcdNumber_fk_s6.setObjectName(u"lcdNumber_fk_s6")
@@ -1269,21 +1286,39 @@ class Ui_MainWindow(object):
         self.lcdNumber_fk_s6.setMaximumSize(QSize(50, 50))
         self.lcdNumber_fk_s6.setFrameShape(QFrame.NoFrame)
 
-        self.gridLayout_6.addWidget(self.lcdNumber_fk_s6, 11, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.lcdNumber_fk_s6, 12, 0, 1, 1)
 
-        self.lcdNumber_fk_s1 = QLCDNumber(self.tab_fk_joint)
-        self.lcdNumber_fk_s1.setObjectName(u"lcdNumber_fk_s1")
-        self.lcdNumber_fk_s1.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_fk_s1.setMaximumSize(QSize(50, 50))
-        font6 = QFont()
-        font6.setPointSize(4)
-        self.lcdNumber_fk_s1.setFont(font6)
-        self.lcdNumber_fk_s1.setStyleSheet(u"QLCDNumber{\n"
-"  border: none;\n"
-"  color: rgb(255, 255, 255);\n"
+        self.btn_fk_reset = QPushButton(self.tab_fk_joint)
+        self.btn_fk_reset.setObjectName(u"btn_fk_reset")
+        sizePolicy4.setHeightForWidth(self.btn_fk_reset.sizePolicy().hasHeightForWidth())
+        self.btn_fk_reset.setSizePolicy(sizePolicy4)
+        self.btn_fk_reset.setMinimumSize(QSize(30, 30))
+        self.btn_fk_reset.setMaximumSize(QSize(30, 30))
+        self.btn_fk_reset.setFont(font3)
+        self.btn_fk_reset.setLayoutDirection(Qt.LeftToRight)
+        self.btn_fk_reset.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 15px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
 "}")
+        self.btn_fk_reset.setCheckable(True)
+        self.btn_fk_reset.setChecked(True)
 
-        self.gridLayout_6.addWidget(self.lcdNumber_fk_s1, 1, 0, 1, 1)
+        self.gridLayout_6.addWidget(self.btn_fk_reset, 14, 2, 1, 1)
+
+        self.horizontalSpacer = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.gridLayout_6.addItem(self.horizontalSpacer, 9, 2, 1, 1)
 
         icon3 = QIcon()
         icon3.addFile(u":/16x16/16x16/icons8-robot-50.png", QSize(), QIcon.Normal, QIcon.Off)
@@ -1392,7 +1427,8 @@ class Ui_MainWindow(object):
         self.lcdnumber_dh_Z_2.setMinimumSize(QSize(100, 50))
         self.lcdnumber_dh_Z_2.setMaximumSize(QSize(100, 50))
         self.lcdnumber_dh_Z_2.setSmallDecimalPoint(False)
-        self.lcdnumber_dh_Z_2.setProperty("value", 575.000000000000000)
+        self.lcdnumber_dh_Z_2.setProperty("value", 472.000000000000000)
+        self.lcdnumber_dh_Z_2.setProperty("intValue", 472)
 
         self.gridLayout_16.addWidget(self.lcdnumber_dh_Z_2, 2, 2, 1, 1)
 
@@ -1442,15 +1478,27 @@ class Ui_MainWindow(object):
         self.tab_ik_joint.setObjectName(u"tab_ik_joint")
         self.gridLayout_12 = QGridLayout(self.tab_ik_joint)
         self.gridLayout_12.setObjectName(u"gridLayout_12")
-        self.label_ik_orient = QLabel(self.tab_ik_joint)
-        self.label_ik_orient.setObjectName(u"label_ik_orient")
-        sizePolicy3.setHeightForWidth(self.label_ik_orient.sizePolicy().hasHeightForWidth())
-        self.label_ik_orient.setSizePolicy(sizePolicy3)
-        self.label_ik_orient.setMinimumSize(QSize(200, 25))
-        self.label_ik_orient.setMaximumSize(QSize(16777215, 25))
-        self.label_ik_orient.setAlignment(Qt.AlignCenter)
+        self.label_ik_x = QLabel(self.tab_ik_joint)
+        self.label_ik_x.setObjectName(u"label_ik_x")
+        sizePolicy3.setHeightForWidth(self.label_ik_x.sizePolicy().hasHeightForWidth())
+        self.label_ik_x.setSizePolicy(sizePolicy3)
+        self.label_ik_x.setMinimumSize(QSize(150, 25))
+        self.label_ik_x.setMaximumSize(QSize(16777215, 25))
+        self.label_ik_x.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_12.addWidget(self.label_ik_orient, 7, 1, 1, 1)
+        self.gridLayout_12.addWidget(self.label_ik_x, 0, 1, 1, 1)
+
+        self.lcdNumber_ik_x = QLCDNumber(self.tab_ik_joint)
+        self.lcdNumber_ik_x.setObjectName(u"lcdNumber_ik_x")
+        self.lcdNumber_ik_x.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_ik_x.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_ik_x.setFont(font6)
+        self.lcdNumber_ik_x.setStyleSheet(u"QLCDNumber{\n"
+"  border: none;\n"
+"  color: rgb(255, 255, 255);\n"
+"}")
+
+        self.gridLayout_12.addWidget(self.lcdNumber_ik_x, 1, 0, 1, 1)
 
         self.horizontalSlider_ik_x = QSlider(self.tab_ik_joint)
         self.horizontalSlider_ik_x.setObjectName(u"horizontalSlider_ik_x")
@@ -1480,8 +1528,9 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_ik_x.setMinimum(-500)
-        self.horizontalSlider_ik_x.setMaximum(500)
+        self.horizontalSlider_ik_x.setMinimum(-472)
+        self.horizontalSlider_ik_x.setMaximum(472)
+        self.horizontalSlider_ik_x.setPageStep(5)
         self.horizontalSlider_ik_x.setOrientation(Qt.Horizontal)
         self.horizontalSlider_ik_x.setInvertedAppearance(False)
         self.horizontalSlider_ik_x.setInvertedControls(False)
@@ -1489,22 +1538,6 @@ class Ui_MainWindow(object):
         self.horizontalSlider_ik_x.setTickInterval(10)
 
         self.gridLayout_12.addWidget(self.horizontalSlider_ik_x, 1, 1, 1, 1)
-
-        self.lcdNumber_ik_z = QLCDNumber(self.tab_ik_joint)
-        self.lcdNumber_ik_z.setObjectName(u"lcdNumber_ik_z")
-        self.lcdNumber_ik_z.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_ik_z.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_ik_z.setFrameShape(QFrame.NoFrame)
-
-        self.gridLayout_12.addWidget(self.lcdNumber_ik_z, 5, 0, 1, 1)
-
-        self.lcdNumber_ik_orient = QLCDNumber(self.tab_ik_joint)
-        self.lcdNumber_ik_orient.setObjectName(u"lcdNumber_ik_orient")
-        self.lcdNumber_ik_orient.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_ik_orient.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_ik_orient.setFrameShape(QFrame.NoFrame)
-
-        self.gridLayout_12.addWidget(self.lcdNumber_ik_orient, 7, 0, 1, 1)
 
         self.label_ik_y = QLabel(self.tab_ik_joint)
         self.label_ik_y.setObjectName(u"label_ik_y")
@@ -1516,15 +1549,13 @@ class Ui_MainWindow(object):
 
         self.gridLayout_12.addWidget(self.label_ik_y, 2, 1, 1, 1)
 
-        self.label_ik_z = QLabel(self.tab_ik_joint)
-        self.label_ik_z.setObjectName(u"label_ik_z")
-        sizePolicy3.setHeightForWidth(self.label_ik_z.sizePolicy().hasHeightForWidth())
-        self.label_ik_z.setSizePolicy(sizePolicy3)
-        self.label_ik_z.setMinimumSize(QSize(150, 25))
-        self.label_ik_z.setMaximumSize(QSize(16777215, 25))
-        self.label_ik_z.setAlignment(Qt.AlignCenter)
+        self.lcdNumber_ik_y = QLCDNumber(self.tab_ik_joint)
+        self.lcdNumber_ik_y.setObjectName(u"lcdNumber_ik_y")
+        self.lcdNumber_ik_y.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_ik_y.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_ik_y.setFrameShape(QFrame.NoFrame)
 
-        self.gridLayout_12.addWidget(self.label_ik_z, 4, 1, 1, 1)
+        self.gridLayout_12.addWidget(self.lcdNumber_ik_y, 3, 0, 1, 1)
 
         self.horizontalSlider_ik_y = QSlider(self.tab_ik_joint)
         self.horizontalSlider_ik_y.setObjectName(u"horizontalSlider_ik_y")
@@ -1553,8 +1584,9 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_ik_y.setMinimum(-500)
-        self.horizontalSlider_ik_y.setMaximum(500)
+        self.horizontalSlider_ik_y.setMinimum(-472)
+        self.horizontalSlider_ik_y.setMaximum(472)
+        self.horizontalSlider_ik_y.setPageStep(5)
         self.horizontalSlider_ik_y.setOrientation(Qt.Horizontal)
         self.horizontalSlider_ik_y.setInvertedAppearance(False)
         self.horizontalSlider_ik_y.setInvertedControls(False)
@@ -1563,31 +1595,15 @@ class Ui_MainWindow(object):
 
         self.gridLayout_12.addWidget(self.horizontalSlider_ik_y, 3, 1, 1, 1)
 
-        self.horizontalSpacer_3 = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.label_ik_z = QLabel(self.tab_ik_joint)
+        self.label_ik_z.setObjectName(u"label_ik_z")
+        sizePolicy3.setHeightForWidth(self.label_ik_z.sizePolicy().hasHeightForWidth())
+        self.label_ik_z.setSizePolicy(sizePolicy3)
+        self.label_ik_z.setMinimumSize(QSize(150, 25))
+        self.label_ik_z.setMaximumSize(QSize(16777215, 25))
+        self.label_ik_z.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_12.addItem(self.horizontalSpacer_3, 5, 2, 1, 1)
-
-        self.lcdNumber_ik_x = QLCDNumber(self.tab_ik_joint)
-        self.lcdNumber_ik_x.setObjectName(u"lcdNumber_ik_x")
-        self.lcdNumber_ik_x.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_ik_x.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_ik_x.setFont(font6)
-        self.lcdNumber_ik_x.setStyleSheet(u"QLCDNumber{\n"
-"  border: none;\n"
-"  color: rgb(255, 255, 255);\n"
-"}")
-
-        self.gridLayout_12.addWidget(self.lcdNumber_ik_x, 1, 0, 1, 1)
-
-        self.label_ik_x = QLabel(self.tab_ik_joint)
-        self.label_ik_x.setObjectName(u"label_ik_x")
-        sizePolicy3.setHeightForWidth(self.label_ik_x.sizePolicy().hasHeightForWidth())
-        self.label_ik_x.setSizePolicy(sizePolicy3)
-        self.label_ik_x.setMinimumSize(QSize(150, 25))
-        self.label_ik_x.setMaximumSize(QSize(16777215, 25))
-        self.label_ik_x.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_12.addWidget(self.label_ik_x, 0, 1, 1, 1)
+        self.gridLayout_12.addWidget(self.label_ik_z, 4, 1, 1, 1)
 
         self.horizontalSlider_ik_z = QSlider(self.tab_ik_joint)
         self.horizontalSlider_ik_z.setObjectName(u"horizontalSlider_ik_z")
@@ -1616,8 +1632,9 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_ik_z.setMinimum(-500)
-        self.horizontalSlider_ik_z.setMaximum(500)
+        self.horizontalSlider_ik_z.setMinimum(-472)
+        self.horizontalSlider_ik_z.setMaximum(472)
+        self.horizontalSlider_ik_z.setPageStep(5)
         self.horizontalSlider_ik_z.setValue(472)
         self.horizontalSlider_ik_z.setSliderPosition(472)
         self.horizontalSlider_ik_z.setOrientation(Qt.Horizontal)
@@ -1628,13 +1645,46 @@ class Ui_MainWindow(object):
 
         self.gridLayout_12.addWidget(self.horizontalSlider_ik_z, 5, 1, 1, 1)
 
-        self.lcdNumber_ik_y = QLCDNumber(self.tab_ik_joint)
-        self.lcdNumber_ik_y.setObjectName(u"lcdNumber_ik_y")
-        self.lcdNumber_ik_y.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_ik_y.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_ik_y.setFrameShape(QFrame.NoFrame)
+        self.horizontalSpacer_3 = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
-        self.gridLayout_12.addWidget(self.lcdNumber_ik_y, 3, 0, 1, 1)
+        self.gridLayout_12.addItem(self.horizontalSpacer_3, 5, 2, 1, 1)
+
+        self.btn_ik_reset = QPushButton(self.tab_ik_joint)
+        self.btn_ik_reset.setObjectName(u"btn_ik_reset")
+        sizePolicy4.setHeightForWidth(self.btn_ik_reset.sizePolicy().hasHeightForWidth())
+        self.btn_ik_reset.setSizePolicy(sizePolicy4)
+        self.btn_ik_reset.setMinimumSize(QSize(30, 30))
+        self.btn_ik_reset.setMaximumSize(QSize(30, 30))
+        self.btn_ik_reset.setFont(font3)
+        self.btn_ik_reset.setLayoutDirection(Qt.LeftToRight)
+        self.btn_ik_reset.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 15px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_ik_reset.setCheckable(True)
+        self.btn_ik_reset.setChecked(True)
+
+        self.gridLayout_12.addWidget(self.btn_ik_reset, 8, 2, 1, 1)
+
+        self.lcdNumber_ik_z = QLCDNumber(self.tab_ik_joint)
+        self.lcdNumber_ik_z.setObjectName(u"lcdNumber_ik_z")
+        self.lcdNumber_ik_z.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_ik_z.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_ik_z.setFrameShape(QFrame.NoFrame)
+        self.lcdNumber_ik_z.setProperty("value", 472.000000000000000)
+
+        self.gridLayout_12.addWidget(self.lcdNumber_ik_z, 5, 0, 1, 1)
 
         self.verticalSlider = QSlider(self.tab_ik_joint)
         self.verticalSlider.setObjectName(u"verticalSlider")
@@ -1671,9 +1721,29 @@ class Ui_MainWindow(object):
         self.verticalSlider.setPageStep(5)
         self.verticalSlider.setSliderPosition(90)
         self.verticalSlider.setOrientation(Qt.Vertical)
+        self.verticalSlider.setInvertedAppearance(True)
         self.verticalSlider.setInvertedControls(True)
 
-        self.gridLayout_12.addWidget(self.verticalSlider, 7, 2, 1, 1)
+        self.gridLayout_12.addWidget(self.verticalSlider, 6, 2, 1, 1)
+
+        self.label_ik_orient = QLabel(self.tab_ik_joint)
+        self.label_ik_orient.setObjectName(u"label_ik_orient")
+        sizePolicy3.setHeightForWidth(self.label_ik_orient.sizePolicy().hasHeightForWidth())
+        self.label_ik_orient.setSizePolicy(sizePolicy3)
+        self.label_ik_orient.setMinimumSize(QSize(200, 25))
+        self.label_ik_orient.setMaximumSize(QSize(16777215, 25))
+        self.label_ik_orient.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_12.addWidget(self.label_ik_orient, 6, 1, 1, 1)
+
+        self.lcdNumber_ik_orient = QLCDNumber(self.tab_ik_joint)
+        self.lcdNumber_ik_orient.setObjectName(u"lcdNumber_ik_orient")
+        self.lcdNumber_ik_orient.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_ik_orient.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_ik_orient.setFrameShape(QFrame.NoFrame)
+        self.lcdNumber_ik_orient.setProperty("value", 90.000000000000000)
+
+        self.gridLayout_12.addWidget(self.lcdNumber_ik_orient, 6, 0, 1, 1)
 
         self.tabWidget_3.addTab(self.tab_ik_joint, icon3, "")
         self.tab_fk_info_3 = QWidget()
@@ -1944,8 +2014,8 @@ class Ui_MainWindow(object):
         self.tabWidget_5.setTabBarAutoHide(False)
         self.tab_manual_joints = QWidget()
         self.tab_manual_joints.setObjectName(u"tab_manual_joints")
-        self.gridLayout_20 = QGridLayout(self.tab_manual_joints)
-        self.gridLayout_20.setObjectName(u"gridLayout_20")
+        self.gridLayout_17 = QGridLayout(self.tab_manual_joints)
+        self.gridLayout_17.setObjectName(u"gridLayout_17")
         self.label_j_s1 = QLabel(self.tab_manual_joints)
         self.label_j_s1.setObjectName(u"label_j_s1")
         sizePolicy3.setHeightForWidth(self.label_j_s1.sizePolicy().hasHeightForWidth())
@@ -1954,7 +2024,7 @@ class Ui_MainWindow(object):
         self.label_j_s1.setMaximumSize(QSize(16777215, 25))
         self.label_j_s1.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_20.addWidget(self.label_j_s1, 0, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.label_j_s1, 0, 1, 1, 1)
 
         self.lcdNumber_j_s1 = QLCDNumber(self.tab_manual_joints)
         self.lcdNumber_j_s1.setObjectName(u"lcdNumber_j_s1")
@@ -1966,7 +2036,7 @@ class Ui_MainWindow(object):
 "  color: rgb(255, 255, 255);\n"
 "}")
 
-        self.gridLayout_20.addWidget(self.lcdNumber_j_s1, 1, 0, 1, 1)
+        self.gridLayout_17.addWidget(self.lcdNumber_j_s1, 1, 0, 1, 1)
 
         self.horizontalSlider_j_s1 = QSlider(self.tab_manual_joints)
         self.horizontalSlider_j_s1.setObjectName(u"horizontalSlider_j_s1")
@@ -1998,13 +2068,14 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalSlider_j_s1.setMinimum(-90)
         self.horizontalSlider_j_s1.setMaximum(90)
+        self.horizontalSlider_j_s1.setPageStep(5)
         self.horizontalSlider_j_s1.setOrientation(Qt.Horizontal)
         self.horizontalSlider_j_s1.setInvertedAppearance(False)
         self.horizontalSlider_j_s1.setInvertedControls(False)
         self.horizontalSlider_j_s1.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_j_s1.setTickInterval(10)
 
-        self.gridLayout_20.addWidget(self.horizontalSlider_j_s1, 1, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.horizontalSlider_j_s1, 1, 1, 1, 1)
 
         self.label_j_s2 = QLabel(self.tab_manual_joints)
         self.label_j_s2.setObjectName(u"label_j_s2")
@@ -2014,15 +2085,16 @@ class Ui_MainWindow(object):
         self.label_j_s2.setMaximumSize(QSize(16777215, 25))
         self.label_j_s2.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_20.addWidget(self.label_j_s2, 2, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.label_j_s2, 2, 1, 1, 1)
 
         self.lcdNumber_j_s2 = QLCDNumber(self.tab_manual_joints)
         self.lcdNumber_j_s2.setObjectName(u"lcdNumber_j_s2")
         self.lcdNumber_j_s2.setMinimumSize(QSize(30, 30))
         self.lcdNumber_j_s2.setMaximumSize(QSize(50, 50))
         self.lcdNumber_j_s2.setFrameShape(QFrame.NoFrame)
+        self.lcdNumber_j_s2.setProperty("value", 90.000000000000000)
 
-        self.gridLayout_20.addWidget(self.lcdNumber_j_s2, 3, 0, 1, 1)
+        self.gridLayout_17.addWidget(self.lcdNumber_j_s2, 3, 0, 1, 1)
 
         self.horizontalSlider_j_s2 = QSlider(self.tab_manual_joints)
         self.horizontalSlider_j_s2.setObjectName(u"horizontalSlider_j_s2")
@@ -2053,6 +2125,7 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalSlider_j_s2.setMinimum(0)
         self.horizontalSlider_j_s2.setMaximum(180)
+        self.horizontalSlider_j_s2.setPageStep(5)
         self.horizontalSlider_j_s2.setSliderPosition(90)
         self.horizontalSlider_j_s2.setOrientation(Qt.Horizontal)
         self.horizontalSlider_j_s2.setInvertedAppearance(False)
@@ -2060,7 +2133,7 @@ class Ui_MainWindow(object):
         self.horizontalSlider_j_s2.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_j_s2.setTickInterval(10)
 
-        self.gridLayout_20.addWidget(self.horizontalSlider_j_s2, 3, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.horizontalSlider_j_s2, 3, 1, 1, 1)
 
         self.label_j_s3 = QLabel(self.tab_manual_joints)
         self.label_j_s3.setObjectName(u"label_j_s3")
@@ -2070,7 +2143,7 @@ class Ui_MainWindow(object):
         self.label_j_s3.setMaximumSize(QSize(16777215, 25))
         self.label_j_s3.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_20.addWidget(self.label_j_s3, 4, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.label_j_s3, 4, 1, 1, 1)
 
         self.lcdNumber_j_s3 = QLCDNumber(self.tab_manual_joints)
         self.lcdNumber_j_s3.setObjectName(u"lcdNumber_j_s3")
@@ -2078,7 +2151,7 @@ class Ui_MainWindow(object):
         self.lcdNumber_j_s3.setMaximumSize(QSize(50, 50))
         self.lcdNumber_j_s3.setFrameShape(QFrame.NoFrame)
 
-        self.gridLayout_20.addWidget(self.lcdNumber_j_s3, 5, 0, 1, 1)
+        self.gridLayout_17.addWidget(self.lcdNumber_j_s3, 5, 0, 1, 1)
 
         self.horizontalSlider_j_s3 = QSlider(self.tab_manual_joints)
         self.horizontalSlider_j_s3.setObjectName(u"horizontalSlider_j_s3")
@@ -2109,13 +2182,14 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalSlider_j_s3.setMinimum(-90)
         self.horizontalSlider_j_s3.setMaximum(90)
+        self.horizontalSlider_j_s3.setPageStep(5)
         self.horizontalSlider_j_s3.setOrientation(Qt.Horizontal)
         self.horizontalSlider_j_s3.setInvertedAppearance(False)
         self.horizontalSlider_j_s3.setInvertedControls(False)
         self.horizontalSlider_j_s3.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_j_s3.setTickInterval(10)
 
-        self.gridLayout_20.addWidget(self.horizontalSlider_j_s3, 5, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.horizontalSlider_j_s3, 5, 1, 1, 1)
 
         self.label_j_s4 = QLabel(self.tab_manual_joints)
         self.label_j_s4.setObjectName(u"label_j_s4")
@@ -2125,7 +2199,7 @@ class Ui_MainWindow(object):
         self.label_j_s4.setMaximumSize(QSize(16777215, 25))
         self.label_j_s4.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_20.addWidget(self.label_j_s4, 6, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.label_j_s4, 6, 1, 1, 1)
 
         self.lcdNumber_j_s4 = QLCDNumber(self.tab_manual_joints)
         self.lcdNumber_j_s4.setObjectName(u"lcdNumber_j_s4")
@@ -2133,7 +2207,7 @@ class Ui_MainWindow(object):
         self.lcdNumber_j_s4.setMaximumSize(QSize(50, 50))
         self.lcdNumber_j_s4.setFrameShape(QFrame.NoFrame)
 
-        self.gridLayout_20.addWidget(self.lcdNumber_j_s4, 7, 0, 1, 1)
+        self.gridLayout_17.addWidget(self.lcdNumber_j_s4, 7, 0, 1, 1)
 
         self.horizontalSlider_j_s4 = QSlider(self.tab_manual_joints)
         self.horizontalSlider_j_s4.setObjectName(u"horizontalSlider_j_s4")
@@ -2164,13 +2238,14 @@ class Ui_MainWindow(object):
 "}")
         self.horizontalSlider_j_s4.setMinimum(-90)
         self.horizontalSlider_j_s4.setMaximum(90)
+        self.horizontalSlider_j_s4.setPageStep(5)
         self.horizontalSlider_j_s4.setOrientation(Qt.Horizontal)
         self.horizontalSlider_j_s4.setInvertedAppearance(False)
         self.horizontalSlider_j_s4.setInvertedControls(False)
         self.horizontalSlider_j_s4.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_j_s4.setTickInterval(10)
 
-        self.gridLayout_20.addWidget(self.horizontalSlider_j_s4, 7, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.horizontalSlider_j_s4, 7, 1, 1, 1)
 
         self.label_j_s5 = QLabel(self.tab_manual_joints)
         self.label_j_s5.setObjectName(u"label_j_s5")
@@ -2180,7 +2255,7 @@ class Ui_MainWindow(object):
         self.label_j_s5.setMaximumSize(QSize(16777215, 25))
         self.label_j_s5.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_20.addWidget(self.label_j_s5, 8, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.label_j_s5, 8, 1, 1, 1)
 
         self.lcdNumber_j_s5 = QLCDNumber(self.tab_manual_joints)
         self.lcdNumber_j_s5.setObjectName(u"lcdNumber_j_s5")
@@ -2188,7 +2263,7 @@ class Ui_MainWindow(object):
         self.lcdNumber_j_s5.setMaximumSize(QSize(50, 50))
         self.lcdNumber_j_s5.setFrameShape(QFrame.NoFrame)
 
-        self.gridLayout_20.addWidget(self.lcdNumber_j_s5, 9, 0, 1, 1)
+        self.gridLayout_17.addWidget(self.lcdNumber_j_s5, 9, 0, 1, 1)
 
         self.horizontalSlider_j_s5 = QSlider(self.tab_manual_joints)
         self.horizontalSlider_j_s5.setObjectName(u"horizontalSlider_j_s5")
@@ -2217,15 +2292,17 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_j_s5.setMinimum(-90)
-        self.horizontalSlider_j_s5.setMaximum(90)
+        self.horizontalSlider_j_s5.setMinimum(0)
+        self.horizontalSlider_j_s5.setMaximum(180)
+        self.horizontalSlider_j_s5.setPageStep(5)
+        self.horizontalSlider_j_s5.setValue(90)
         self.horizontalSlider_j_s5.setOrientation(Qt.Horizontal)
         self.horizontalSlider_j_s5.setInvertedAppearance(False)
         self.horizontalSlider_j_s5.setInvertedControls(False)
         self.horizontalSlider_j_s5.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_j_s5.setTickInterval(10)
 
-        self.gridLayout_20.addWidget(self.horizontalSlider_j_s5, 9, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.horizontalSlider_j_s5, 9, 1, 1, 1)
 
         self.label_j_s6 = QLabel(self.tab_manual_joints)
         self.label_j_s6.setObjectName(u"label_j_s6")
@@ -2235,7 +2312,7 @@ class Ui_MainWindow(object):
         self.label_j_s6.setMaximumSize(QSize(16777215, 25))
         self.label_j_s6.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_20.addWidget(self.label_j_s6, 10, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.label_j_s6, 10, 1, 1, 1)
 
         self.lcdNumber_j_s6 = QLCDNumber(self.tab_manual_joints)
         self.lcdNumber_j_s6.setObjectName(u"lcdNumber_j_s6")
@@ -2243,7 +2320,7 @@ class Ui_MainWindow(object):
         self.lcdNumber_j_s6.setMaximumSize(QSize(50, 50))
         self.lcdNumber_j_s6.setFrameShape(QFrame.NoFrame)
 
-        self.gridLayout_20.addWidget(self.lcdNumber_j_s6, 11, 0, 1, 1)
+        self.gridLayout_17.addWidget(self.lcdNumber_j_s6, 11, 0, 1, 1)
 
         self.horizontalSlider_j_s6 = QSlider(self.tab_manual_joints)
         self.horizontalSlider_j_s6.setObjectName(u"horizontalSlider_j_s6")
@@ -2272,34 +2349,67 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_j_s6.setMinimum(-90)
-        self.horizontalSlider_j_s6.setMaximum(90)
+        self.horizontalSlider_j_s6.setMinimum(0)
+        self.horizontalSlider_j_s6.setMaximum(180)
+        self.horizontalSlider_j_s6.setPageStep(5)
+        self.horizontalSlider_j_s6.setValue(90)
         self.horizontalSlider_j_s6.setOrientation(Qt.Horizontal)
         self.horizontalSlider_j_s6.setInvertedAppearance(False)
         self.horizontalSlider_j_s6.setInvertedControls(False)
         self.horizontalSlider_j_s6.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_j_s6.setTickInterval(10)
 
-        self.gridLayout_20.addWidget(self.horizontalSlider_j_s6, 11, 1, 1, 1)
+        self.gridLayout_17.addWidget(self.horizontalSlider_j_s6, 11, 1, 1, 1)
+
+        self.btn_manual_reset_1 = QPushButton(self.tab_manual_joints)
+        self.btn_manual_reset_1.setObjectName(u"btn_manual_reset_1")
+        sizePolicy4.setHeightForWidth(self.btn_manual_reset_1.sizePolicy().hasHeightForWidth())
+        self.btn_manual_reset_1.setSizePolicy(sizePolicy4)
+        self.btn_manual_reset_1.setMinimumSize(QSize(30, 30))
+        self.btn_manual_reset_1.setMaximumSize(QSize(30, 30))
+        self.btn_manual_reset_1.setFont(font3)
+        self.btn_manual_reset_1.setLayoutDirection(Qt.LeftToRight)
+        self.btn_manual_reset_1.setAutoFillBackground(False)
+        self.btn_manual_reset_1.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 15px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_manual_reset_1.setCheckable(True)
+        self.btn_manual_reset_1.setChecked(True)
+
+        self.gridLayout_17.addWidget(self.btn_manual_reset_1, 12, 2, 1, 1)
 
         self.horizontalSpacer_5 = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
-        self.gridLayout_20.addItem(self.horizontalSpacer_5, 11, 2, 1, 1)
+        self.gridLayout_17.addItem(self.horizontalSpacer_5, 9, 2, 1, 1)
 
         self.tabWidget_5.addTab(self.tab_manual_joints, icon3, "")
         self.tab_manual_xyz = QWidget()
         self.tab_manual_xyz.setObjectName(u"tab_manual_xyz")
-        self.gridLayout_19 = QGridLayout(self.tab_manual_xyz)
-        self.gridLayout_19.setObjectName(u"gridLayout_19")
-        self.label_manual_orient = QLabel(self.tab_manual_xyz)
-        self.label_manual_orient.setObjectName(u"label_manual_orient")
-        sizePolicy3.setHeightForWidth(self.label_manual_orient.sizePolicy().hasHeightForWidth())
-        self.label_manual_orient.setSizePolicy(sizePolicy3)
-        self.label_manual_orient.setMinimumSize(QSize(200, 25))
-        self.label_manual_orient.setMaximumSize(QSize(16777215, 25))
-        self.label_manual_orient.setAlignment(Qt.AlignCenter)
+        self.gridLayout_8 = QGridLayout(self.tab_manual_xyz)
+        self.gridLayout_8.setObjectName(u"gridLayout_8")
+        self.lcdNumber_manual_x = QLCDNumber(self.tab_manual_xyz)
+        self.lcdNumber_manual_x.setObjectName(u"lcdNumber_manual_x")
+        self.lcdNumber_manual_x.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_manual_x.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_manual_x.setFont(font6)
+        self.lcdNumber_manual_x.setStyleSheet(u"QLCDNumber{\n"
+"  border: none;\n"
+"  color: rgb(255, 255, 255);\n"
+"}")
 
-        self.gridLayout_19.addWidget(self.label_manual_orient, 7, 1, 1, 1)
+        self.gridLayout_8.addWidget(self.lcdNumber_manual_x, 1, 0, 1, 1)
 
         self.horizontalSlider_manual_x = QSlider(self.tab_manual_xyz)
         self.horizontalSlider_manual_x.setObjectName(u"horizontalSlider_manual_x")
@@ -2329,31 +2439,26 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_manual_x.setMinimum(-500)
-        self.horizontalSlider_manual_x.setMaximum(500)
+        self.horizontalSlider_manual_x.setMinimum(-472)
+        self.horizontalSlider_manual_x.setMaximum(472)
+        self.horizontalSlider_manual_x.setPageStep(5)
         self.horizontalSlider_manual_x.setOrientation(Qt.Horizontal)
         self.horizontalSlider_manual_x.setInvertedAppearance(False)
         self.horizontalSlider_manual_x.setInvertedControls(False)
         self.horizontalSlider_manual_x.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_manual_x.setTickInterval(10)
 
-        self.gridLayout_19.addWidget(self.horizontalSlider_manual_x, 1, 1, 1, 1)
+        self.gridLayout_8.addWidget(self.horizontalSlider_manual_x, 1, 1, 1, 1)
 
-        self.lcdNumber_manual_z = QLCDNumber(self.tab_manual_xyz)
-        self.lcdNumber_manual_z.setObjectName(u"lcdNumber_manual_z")
-        self.lcdNumber_manual_z.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_manual_z.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_manual_z.setFrameShape(QFrame.NoFrame)
+        self.label_manual_x = QLabel(self.tab_manual_xyz)
+        self.label_manual_x.setObjectName(u"label_manual_x")
+        sizePolicy3.setHeightForWidth(self.label_manual_x.sizePolicy().hasHeightForWidth())
+        self.label_manual_x.setSizePolicy(sizePolicy3)
+        self.label_manual_x.setMinimumSize(QSize(150, 25))
+        self.label_manual_x.setMaximumSize(QSize(16777215, 25))
+        self.label_manual_x.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_19.addWidget(self.lcdNumber_manual_z, 5, 0, 1, 1)
-
-        self.lcdNumber_imanual_orient = QLCDNumber(self.tab_manual_xyz)
-        self.lcdNumber_imanual_orient.setObjectName(u"lcdNumber_imanual_orient")
-        self.lcdNumber_imanual_orient.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_imanual_orient.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_imanual_orient.setFrameShape(QFrame.NoFrame)
-
-        self.gridLayout_19.addWidget(self.lcdNumber_imanual_orient, 7, 0, 1, 1)
+        self.gridLayout_8.addWidget(self.label_manual_x, 0, 1, 1, 1)
 
         self.label_manual_y = QLabel(self.tab_manual_xyz)
         self.label_manual_y.setObjectName(u"label_manual_y")
@@ -2363,17 +2468,15 @@ class Ui_MainWindow(object):
         self.label_manual_y.setMaximumSize(QSize(16777215, 25))
         self.label_manual_y.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_19.addWidget(self.label_manual_y, 2, 1, 1, 1)
+        self.gridLayout_8.addWidget(self.label_manual_y, 2, 1, 1, 1)
 
-        self.label_manual_z = QLabel(self.tab_manual_xyz)
-        self.label_manual_z.setObjectName(u"label_manual_z")
-        sizePolicy3.setHeightForWidth(self.label_manual_z.sizePolicy().hasHeightForWidth())
-        self.label_manual_z.setSizePolicy(sizePolicy3)
-        self.label_manual_z.setMinimumSize(QSize(150, 25))
-        self.label_manual_z.setMaximumSize(QSize(16777215, 25))
-        self.label_manual_z.setAlignment(Qt.AlignCenter)
+        self.lcdNumber_manual_y = QLCDNumber(self.tab_manual_xyz)
+        self.lcdNumber_manual_y.setObjectName(u"lcdNumber_manual_y")
+        self.lcdNumber_manual_y.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_manual_y.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_manual_y.setFrameShape(QFrame.NoFrame)
 
-        self.gridLayout_19.addWidget(self.label_manual_z, 4, 1, 1, 1)
+        self.gridLayout_8.addWidget(self.lcdNumber_manual_y, 3, 0, 1, 1)
 
         self.horizontalSlider_manual_y = QSlider(self.tab_manual_xyz)
         self.horizontalSlider_manual_y.setObjectName(u"horizontalSlider_manual_y")
@@ -2402,41 +2505,35 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_manual_y.setMinimum(-500)
-        self.horizontalSlider_manual_y.setMaximum(500)
+        self.horizontalSlider_manual_y.setMinimum(-472)
+        self.horizontalSlider_manual_y.setMaximum(472)
+        self.horizontalSlider_manual_y.setPageStep(5)
         self.horizontalSlider_manual_y.setOrientation(Qt.Horizontal)
         self.horizontalSlider_manual_y.setInvertedAppearance(False)
         self.horizontalSlider_manual_y.setInvertedControls(False)
         self.horizontalSlider_manual_y.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_manual_y.setTickInterval(10)
 
-        self.gridLayout_19.addWidget(self.horizontalSlider_manual_y, 3, 1, 1, 1)
+        self.gridLayout_8.addWidget(self.horizontalSlider_manual_y, 3, 1, 1, 1)
 
-        self.horizontalSpacer_4 = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.label_manual_z = QLabel(self.tab_manual_xyz)
+        self.label_manual_z.setObjectName(u"label_manual_z")
+        sizePolicy3.setHeightForWidth(self.label_manual_z.sizePolicy().hasHeightForWidth())
+        self.label_manual_z.setSizePolicy(sizePolicy3)
+        self.label_manual_z.setMinimumSize(QSize(150, 25))
+        self.label_manual_z.setMaximumSize(QSize(16777215, 25))
+        self.label_manual_z.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_19.addItem(self.horizontalSpacer_4, 5, 2, 1, 1)
+        self.gridLayout_8.addWidget(self.label_manual_z, 4, 1, 1, 1)
 
-        self.lcdNumber_manual_x = QLCDNumber(self.tab_manual_xyz)
-        self.lcdNumber_manual_x.setObjectName(u"lcdNumber_manual_x")
-        self.lcdNumber_manual_x.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_manual_x.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_manual_x.setFont(font6)
-        self.lcdNumber_manual_x.setStyleSheet(u"QLCDNumber{\n"
-"  border: none;\n"
-"  color: rgb(255, 255, 255);\n"
-"}")
+        self.lcdNumber_manual_z = QLCDNumber(self.tab_manual_xyz)
+        self.lcdNumber_manual_z.setObjectName(u"lcdNumber_manual_z")
+        self.lcdNumber_manual_z.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_manual_z.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_manual_z.setFrameShape(QFrame.NoFrame)
+        self.lcdNumber_manual_z.setProperty("value", 472.000000000000000)
 
-        self.gridLayout_19.addWidget(self.lcdNumber_manual_x, 1, 0, 1, 1)
-
-        self.label_manual_x = QLabel(self.tab_manual_xyz)
-        self.label_manual_x.setObjectName(u"label_manual_x")
-        sizePolicy3.setHeightForWidth(self.label_manual_x.sizePolicy().hasHeightForWidth())
-        self.label_manual_x.setSizePolicy(sizePolicy3)
-        self.label_manual_x.setMinimumSize(QSize(150, 25))
-        self.label_manual_x.setMaximumSize(QSize(16777215, 25))
-        self.label_manual_x.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_19.addWidget(self.label_manual_x, 0, 1, 1, 1)
+        self.gridLayout_8.addWidget(self.lcdNumber_manual_z, 5, 0, 1, 1)
 
         self.horizontalSlider_manual_z = QSlider(self.tab_manual_xyz)
         self.horizontalSlider_manual_z.setObjectName(u"horizontalSlider_manual_z")
@@ -2465,8 +2562,9 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_manual_z.setMinimum(-500)
-        self.horizontalSlider_manual_z.setMaximum(500)
+        self.horizontalSlider_manual_z.setMinimum(-472)
+        self.horizontalSlider_manual_z.setMaximum(472)
+        self.horizontalSlider_manual_z.setPageStep(5)
         self.horizontalSlider_manual_z.setSliderPosition(472)
         self.horizontalSlider_manual_z.setOrientation(Qt.Horizontal)
         self.horizontalSlider_manual_z.setInvertedAppearance(False)
@@ -2474,15 +2572,30 @@ class Ui_MainWindow(object):
         self.horizontalSlider_manual_z.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_manual_z.setTickInterval(10)
 
-        self.gridLayout_19.addWidget(self.horizontalSlider_manual_z, 5, 1, 1, 1)
+        self.gridLayout_8.addWidget(self.horizontalSlider_manual_z, 5, 1, 1, 1)
 
-        self.lcdNumber_manual_y = QLCDNumber(self.tab_manual_xyz)
-        self.lcdNumber_manual_y.setObjectName(u"lcdNumber_manual_y")
-        self.lcdNumber_manual_y.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_manual_y.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_manual_y.setFrameShape(QFrame.NoFrame)
+        self.horizontalSpacer_4 = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
 
-        self.gridLayout_19.addWidget(self.lcdNumber_manual_y, 3, 0, 1, 1)
+        self.gridLayout_8.addItem(self.horizontalSpacer_4, 5, 2, 1, 1)
+
+        self.lcdNumber_imanual_orient = QLCDNumber(self.tab_manual_xyz)
+        self.lcdNumber_imanual_orient.setObjectName(u"lcdNumber_imanual_orient")
+        self.lcdNumber_imanual_orient.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_imanual_orient.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_imanual_orient.setFrameShape(QFrame.NoFrame)
+        self.lcdNumber_imanual_orient.setProperty("value", 90.000000000000000)
+
+        self.gridLayout_8.addWidget(self.lcdNumber_imanual_orient, 6, 0, 1, 1)
+
+        self.label_manual_orient = QLabel(self.tab_manual_xyz)
+        self.label_manual_orient.setObjectName(u"label_manual_orient")
+        sizePolicy3.setHeightForWidth(self.label_manual_orient.sizePolicy().hasHeightForWidth())
+        self.label_manual_orient.setSizePolicy(sizePolicy3)
+        self.label_manual_orient.setMinimumSize(QSize(200, 25))
+        self.label_manual_orient.setMaximumSize(QSize(16777215, 25))
+        self.label_manual_orient.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_8.addWidget(self.label_manual_orient, 6, 1, 1, 1)
 
         self.verticalSlider_manual_orient = QSlider(self.tab_manual_xyz)
         self.verticalSlider_manual_orient.setObjectName(u"verticalSlider_manual_orient")
@@ -2516,9 +2629,38 @@ class Ui_MainWindow(object):
         self.verticalSlider_manual_orient.setPageStep(5)
         self.verticalSlider_manual_orient.setSliderPosition(90)
         self.verticalSlider_manual_orient.setOrientation(Qt.Vertical)
+        self.verticalSlider_manual_orient.setInvertedAppearance(True)
         self.verticalSlider_manual_orient.setInvertedControls(True)
 
-        self.gridLayout_19.addWidget(self.verticalSlider_manual_orient, 7, 2, 1, 1)
+        self.gridLayout_8.addWidget(self.verticalSlider_manual_orient, 6, 2, 1, 1)
+
+        self.btn_manual_reset_2 = QPushButton(self.tab_manual_xyz)
+        self.btn_manual_reset_2.setObjectName(u"btn_manual_reset_2")
+        sizePolicy4.setHeightForWidth(self.btn_manual_reset_2.sizePolicy().hasHeightForWidth())
+        self.btn_manual_reset_2.setSizePolicy(sizePolicy4)
+        self.btn_manual_reset_2.setMinimumSize(QSize(30, 30))
+        self.btn_manual_reset_2.setMaximumSize(QSize(30, 30))
+        self.btn_manual_reset_2.setFont(font3)
+        self.btn_manual_reset_2.setLayoutDirection(Qt.LeftToRight)
+        self.btn_manual_reset_2.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 15px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_manual_reset_2.setCheckable(True)
+        self.btn_manual_reset_2.setChecked(True)
+
+        self.gridLayout_8.addWidget(self.btn_manual_reset_2, 7, 2, 1, 1)
 
         self.tabWidget_5.addTab(self.tab_manual_xyz, icon3, "")
 
@@ -2576,7 +2718,7 @@ class Ui_MainWindow(object):
         self.label_manual_actual_X.setStyleSheet(u"color: rgb(222, 222, 222);")
         self.label_manual_actual_X.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_22.addWidget(self.label_manual_actual_X, 1, 0, 1, 1)
+        self.gridLayout_22.addWidget(self.label_manual_actual_X, 3, 0, 1, 1)
 
         self.label_manual_actual_Y = QLabel(self.frame_manual_actual)
         self.label_manual_actual_Y.setObjectName(u"label_manual_actual_Y")
@@ -2586,7 +2728,7 @@ class Ui_MainWindow(object):
         self.label_manual_actual_Y.setStyleSheet(u"color: rgb(222, 222, 222);")
         self.label_manual_actual_Y.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_22.addWidget(self.label_manual_actual_Y, 1, 1, 1, 1)
+        self.gridLayout_22.addWidget(self.label_manual_actual_Y, 3, 1, 1, 1)
 
         self.label_manual_actual_Z = QLabel(self.frame_manual_actual)
         self.label_manual_actual_Z.setObjectName(u"label_manual_actual_Z")
@@ -2596,28 +2738,28 @@ class Ui_MainWindow(object):
         self.label_manual_actual_Z.setStyleSheet(u"color: rgb(222, 222, 222);")
         self.label_manual_actual_Z.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_22.addWidget(self.label_manual_actual_Z, 1, 2, 1, 1)
+        self.gridLayout_22.addWidget(self.label_manual_actual_Z, 3, 2, 1, 1)
 
         self.lcdNumber_manual_actual_X = QLCDNumber(self.frame_manual_actual)
         self.lcdNumber_manual_actual_X.setObjectName(u"lcdNumber_manual_actual_X")
         self.lcdNumber_manual_actual_X.setMinimumSize(QSize(100, 50))
         self.lcdNumber_manual_actual_X.setMaximumSize(QSize(100, 50))
 
-        self.gridLayout_22.addWidget(self.lcdNumber_manual_actual_X, 2, 0, 1, 1)
-
-        self.lcdNumber_manual_actual_Y = QLCDNumber(self.frame_manual_actual)
-        self.lcdNumber_manual_actual_Y.setObjectName(u"lcdNumber_manual_actual_Y")
-        self.lcdNumber_manual_actual_Y.setMinimumSize(QSize(100, 50))
-        self.lcdNumber_manual_actual_Y.setMaximumSize(QSize(100, 50))
-
-        self.gridLayout_22.addWidget(self.lcdNumber_manual_actual_Y, 2, 1, 1, 1)
+        self.gridLayout_22.addWidget(self.lcdNumber_manual_actual_X, 4, 0, 1, 1)
 
         self.lcdNumber_manual_actual_Z = QLCDNumber(self.frame_manual_actual)
         self.lcdNumber_manual_actual_Z.setObjectName(u"lcdNumber_manual_actual_Z")
         self.lcdNumber_manual_actual_Z.setMinimumSize(QSize(100, 50))
         self.lcdNumber_manual_actual_Z.setMaximumSize(QSize(100, 50))
 
-        self.gridLayout_22.addWidget(self.lcdNumber_manual_actual_Z, 2, 2, 1, 1)
+        self.gridLayout_22.addWidget(self.lcdNumber_manual_actual_Z, 4, 2, 1, 1)
+
+        self.lcdNumber_manual_actual_Y = QLCDNumber(self.frame_manual_actual)
+        self.lcdNumber_manual_actual_Y.setObjectName(u"lcdNumber_manual_actual_Y")
+        self.lcdNumber_manual_actual_Y.setMinimumSize(QSize(100, 50))
+        self.lcdNumber_manual_actual_Y.setMaximumSize(QSize(100, 50))
+
+        self.gridLayout_22.addWidget(self.lcdNumber_manual_actual_Y, 4, 1, 1, 1)
 
 
         self.gridLayout_15.addWidget(self.frame_manual_actual, 1, 1, 1, 1)
@@ -4441,9 +4583,9 @@ class Ui_MainWindow(object):
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget_4.setCurrentIndex(0)
-        self.tabWidget_5.setCurrentIndex(1)
+        self.tabWidget_5.setCurrentIndex(0)
         self.tabWidget_7.setCurrentIndex(0)
-        self.tabWidget_6.setCurrentIndex(1)
+        self.tabWidget_6.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4496,11 +4638,15 @@ class Ui_MainWindow(object):
         self.label_home_actual_Z.setText(QCoreApplication.translate("MainWindow", u"Z", None))
         self.label_home_actual_X.setText(QCoreApplication.translate("MainWindow", u"X", None))
         self.label_fk_s1.setText(QCoreApplication.translate("MainWindow", u"S1 - BASE", None))
-        self.label_fk_s2.setText(QCoreApplication.translate("MainWindow", u"S2 - LINK 1", None))
         self.label_fk_s4.setText(QCoreApplication.translate("MainWindow", u"S3 - LINK 2", None))
+        self.label_fk_s2.setText(QCoreApplication.translate("MainWindow", u"S2 - LINK 1", None))
         self.label_fk_s3.setText(QCoreApplication.translate("MainWindow", u"S4 - LINK 3", None))
         self.label_fk_s5.setText(QCoreApplication.translate("MainWindow", u"S5 - EFFECTOR MOVE", None))
         self.label_fk_s6.setText(QCoreApplication.translate("MainWindow", u"S6 - EFFECTOR ACTION", None))
+#if QT_CONFIG(tooltip)
+        self.btn_fk_reset.setToolTip(QCoreApplication.translate("MainWindow", u"Reset", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_fk_reset.setText(QCoreApplication.translate("MainWindow", u"R", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_fk_joint), QCoreApplication.translate("MainWindow", u"Joints", None))
         self.label_dh_rys_3.setText("")
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_fk_info), QCoreApplication.translate("MainWindow", u"Info", None))
@@ -4508,10 +4654,14 @@ class Ui_MainWindow(object):
         self.label_dh_wynik_2.setText(QCoreApplication.translate("MainWindow", u"Calculated XYZ end effector position", None))
         self.label_dh_Z_2.setText(QCoreApplication.translate("MainWindow", u"Z", None))
         self.label_dh_Y_2.setText(QCoreApplication.translate("MainWindow", u"Y", None))
-        self.label_ik_orient.setText(QCoreApplication.translate("MainWindow", u"ORIENTATION", None))
+        self.label_ik_x.setText(QCoreApplication.translate("MainWindow", u"X-AXIS", None))
         self.label_ik_y.setText(QCoreApplication.translate("MainWindow", u"Y-AXIS", None))
         self.label_ik_z.setText(QCoreApplication.translate("MainWindow", u"Z-AXIS", None))
-        self.label_ik_x.setText(QCoreApplication.translate("MainWindow", u"X-AXIS", None))
+#if QT_CONFIG(tooltip)
+        self.btn_ik_reset.setToolTip(QCoreApplication.translate("MainWindow", u"Reset", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_ik_reset.setText(QCoreApplication.translate("MainWindow", u"R", None))
+        self.label_ik_orient.setText(QCoreApplication.translate("MainWindow", u"ORIENTATION", None))
         self.tabWidget_3.setTabText(self.tabWidget_3.indexOf(self.tab_ik_joint), QCoreApplication.translate("MainWindow", u"XYZ", None))
         self.label_dh_rys_5.setText("")
         self.label_ik_efektor_2.setText("")
@@ -4534,22 +4684,30 @@ class Ui_MainWindow(object):
         self.label_j_s4.setText(QCoreApplication.translate("MainWindow", u"S4 - LINK 3", None))
         self.label_j_s5.setText(QCoreApplication.translate("MainWindow", u"S5 - EFFECTOR MOVE", None))
         self.label_j_s6.setText(QCoreApplication.translate("MainWindow", u"S6 - EFFECTOR ACTION", None))
+#if QT_CONFIG(tooltip)
+        self.btn_manual_reset_1.setToolTip(QCoreApplication.translate("MainWindow", u"Reset", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_manual_reset_1.setText(QCoreApplication.translate("MainWindow", u"R", None))
         self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_manual_joints), QCoreApplication.translate("MainWindow", u"Joints", None))
-        self.label_manual_orient.setText(QCoreApplication.translate("MainWindow", u"ORIENTATION", None))
+        self.label_manual_x.setText(QCoreApplication.translate("MainWindow", u"X-AXIS", None))
         self.label_manual_y.setText(QCoreApplication.translate("MainWindow", u"Y-AXIS", None))
         self.label_manual_z.setText(QCoreApplication.translate("MainWindow", u"Z-AXIS", None))
-        self.label_manual_x.setText(QCoreApplication.translate("MainWindow", u"X-AXIS", None))
+        self.label_manual_orient.setText(QCoreApplication.translate("MainWindow", u"ORIENTATION", None))
+#if QT_CONFIG(tooltip)
+        self.btn_manual_reset_2.setToolTip(QCoreApplication.translate("MainWindow", u"Reset", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_manual_reset_2.setText(QCoreApplication.translate("MainWindow", u"R", None))
         self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_manual_xyz), QCoreApplication.translate("MainWindow", u"XYZ", None))
         self.label_manual_actual.setText(QCoreApplication.translate("MainWindow", u"Actual xyz robot position", None))
         self.label_manual_actual_X.setText(QCoreApplication.translate("MainWindow", u"X", None))
         self.label_manual_actual_Y.setText(QCoreApplication.translate("MainWindow", u"Y", None))
         self.label_manual_actual_Z.setText(QCoreApplication.translate("MainWindow", u"Z", None))
 #if QT_CONFIG(tooltip)
-        self.btn_auto_add_actual_2.setToolTip(QCoreApplication.translate("MainWindow", u"Dodaj bie\u017c\u0105c\u0105 pozycje", None))
+        self.btn_auto_add_actual_2.setToolTip(QCoreApplication.translate("MainWindow", u"Set home", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_auto_add_actual_2.setText("")
 #if QT_CONFIG(tooltip)
-        self.btn_auto_add_actual.setToolTip(QCoreApplication.translate("MainWindow", u"Dodaj bie\u017c\u0105c\u0105 pozycje", None))
+        self.btn_auto_add_actual.setToolTip(QCoreApplication.translate("MainWindow", u"Add actual pos", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_auto_add_actual.setText("")
         self.label_j_s5_2.setText(QCoreApplication.translate("MainWindow", u"S5 - EFFECTOR MOVE", None))
