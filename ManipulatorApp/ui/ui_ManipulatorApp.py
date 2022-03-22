@@ -16,6 +16,7 @@ from ManipulatorApp.modules.mplwidget import MplWidget
 
 from ManipulatorApp.ui.icons import icons_rc
 
+
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -4544,7 +4545,7 @@ class Ui_MainWindow(object):
         self.frame_foot.setMaximumSize(QSize(16777215, 30))
         self.frame_foot.setStyleSheet(u"background-color: rgb(61, 61, 61);")
         self.frame_foot.setFrameShape(QFrame.NoFrame)
-        self.frame_foot.setFrameShadow(QFrame.Raised)
+        self.frame_foot.setFrameShadow(QFrame.Plain)
         self.horizontalLayout_3 = QHBoxLayout(self.frame_foot)
         self.horizontalLayout_3.setSpacing(0)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
@@ -4552,6 +4553,7 @@ class Ui_MainWindow(object):
         self.foot_label_log = QLabel(self.frame_foot)
         self.foot_label_log.setObjectName(u"foot_label_log")
         self.foot_label_log.setMinimumSize(QSize(50, 0))
+        self.foot_label_log.setMaximumSize(QSize(50, 16777215))
         self.foot_label_log.setLayoutDirection(Qt.LeftToRight)
         self.foot_label_log.setFrameShadow(QFrame.Raised)
         self.foot_label_log.setLineWidth(0)
@@ -4561,29 +4563,36 @@ class Ui_MainWindow(object):
 
         self.horizontalLayout_3.addWidget(self.foot_label_log)
 
-        self.foot_logList = QListView(self.frame_foot)
-        self.foot_logList.setObjectName(u"foot_logList")
-        self.foot_logList.setFrameShape(QFrame.NoFrame)
-        self.foot_logList.setFrameShadow(QFrame.Raised)
-        self.foot_logList.setLineWidth(1)
-        self.foot_logList.setMidLineWidth(1)
-        self.foot_logList.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
-        self.foot_logList.setProperty("showDropIndicator", False)
-        self.foot_logList.setDragDropMode(QAbstractItemView.DragDrop)
-        self.foot_logList.setDefaultDropAction(Qt.CopyAction)
-        self.foot_logList.setSelectionBehavior(QAbstractItemView.SelectItems)
-        self.foot_logList.setMovement(QListView.Snap)
-        self.foot_logList.setResizeMode(QListView.Fixed)
-        self.foot_logList.setLayoutMode(QListView.SinglePass)
-        self.foot_logList.setViewMode(QListView.ListMode)
-        self.foot_logList.setUniformItemSizes(True)
-        self.foot_logList.setWordWrap(True)
+        self.Log = QTextBrowser(self.frame_foot)
+        self.Log.setObjectName(u"Log")
+        self.Log.setEnabled(True)
+        self.Log.setMaximumSize(QSize(16777215, 20))
+        self.Log.setFocusPolicy(Qt.StrongFocus)
+        self.Log.setContextMenuPolicy(Qt.NoContextMenu)
+        self.Log.setLayoutDirection(Qt.LeftToRight)
+        self.Log.setStyleSheet(u"")
+        self.Log.setInputMethodHints(Qt.ImhMultiLine)
+        self.Log.setFrameShape(QFrame.NoFrame)
+        self.Log.setFrameShadow(QFrame.Plain)
+        self.Log.setLineWidth(0)
+        self.Log.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOn)
+        self.Log.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.Log.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContentsOnFirstShow)
+        self.Log.setAutoFormatting(QTextEdit.AutoAll)
+        self.Log.setLineWrapMode(QTextEdit.NoWrap)
+        self.Log.setOverwriteMode(False)
+        self.Log.setTabStopWidth(0)
+        self.Log.setAcceptRichText(True)
+        self.Log.setCursorWidth(0)
+        self.Log.setTextInteractionFlags(Qt.TextBrowserInteraction)
+        self.Log.setOpenLinks(False)
 
-        self.horizontalLayout_3.addWidget(self.foot_logList)
+        self.horizontalLayout_3.addWidget(self.Log, 0, Qt.AlignVCenter)
 
         self.foot_label_ver = QLabel(self.frame_foot)
         self.foot_label_ver.setObjectName(u"foot_label_ver")
         self.foot_label_ver.setMinimumSize(QSize(50, 0))
+        self.foot_label_ver.setMaximumSize(QSize(50, 16777215))
         self.foot_label_ver.setAlignment(Qt.AlignRight|Qt.AlignTrailing|Qt.AlignVCenter)
 
         self.horizontalLayout_3.addWidget(self.foot_label_ver)
@@ -4651,7 +4660,7 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_y.valueChanged.connect(self.lcdNumber_auto_y.display)
         self.horizontalSlider_auto_z.valueChanged.connect(self.lcdNumber_auto_z.display)
 
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget_4.setCurrentIndex(1)
@@ -5007,6 +5016,13 @@ class Ui_MainWindow(object):
         self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_kalibracja2), QCoreApplication.translate("MainWindow", u"Effector", None))
         self.logo.setText("")
         self.foot_label_log.setText("")
+        self.Log.setDocumentTitle("")
+        self.Log.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt;\">Time | Log</span></p></body></html>", None))
+        self.Log.setPlaceholderText("")
         self.foot_label_ver.setText(QCoreApplication.translate("MainWindow", u"ver. 1.0", None))
         self.label_foot_grip.setText(QCoreApplication.translate("MainWindow", u".:", None))
     # retranslateUi
