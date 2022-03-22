@@ -93,7 +93,7 @@ def fk_dh(theta1: int, theta2: int, theta3: int, theta4: int, eff: list):
         # End effector orientation
         z_ef = round(matrix_t1234[2, 3]) - round(z2)
         alpha = math.degrees(math.asin(z_ef / l4))
-        status = "Success"
+        status = "Forward kinematics calculations ended successfully"
         return round(alpha), xyz_pos_link3, xyz_pos_link2, xyz_pos_link1, status
 
     except ZeroDivisionError:
