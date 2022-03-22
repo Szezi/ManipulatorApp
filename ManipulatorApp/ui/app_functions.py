@@ -5,6 +5,7 @@ from ManipulatorApp.modules import FK
 from ManipulatorApp.modules import IK
 from ManipulatorApp.modules import trajectory
 from ManipulatorApp.modules import mplwidget
+from ManipulatorApp.ui.ui_functions import *
 
 
 class AppFunctions(MainWindow):
@@ -12,6 +13,7 @@ class AppFunctions(MainWindow):
         super().__init__()
 
     def page_fk(self):
+        UIFunctions.log_list(self, 'Page changed to forward kinematics')
         eff = [54, 0]
         theta1 = self.ui.horizontalSlider_fk_s1.value()
         theta2 = self.ui.horizontalSlider_fk_s1_2.value()
@@ -23,12 +25,14 @@ class AppFunctions(MainWindow):
         self.ui.lcdNumber_dh_X_2.display(result[1][0])
         self.ui.lcdnumber_dh_Y_2.display(result[1][1])
         self.ui.lcdnumber_dh_Z_2.display(result[1][2])
-        print(result)
+        UIFunctions.log_list(self, result[4])
 
         # Sim
         self.ui.MplWidget_fk.mpl_draw(result[3], result[2], result[1])
+        self.ui.MplWidget_fk.canvas.flush_events()
 
     def page_ik(self):
+        UIFunctions.log_list(self, 'Page changed to inverse kinematics')
         eff = [54, 0]
         value_x = self.ui.horizontalSlider_ik_x.value()
         value_y = self.ui.horizontalSlider_ik_y.value()
@@ -38,7 +42,8 @@ class AppFunctions(MainWindow):
         result = IK.ik_geo(value_x, value_y, value_z, value_alpha, eff)
         result_config1 = result[0]
         result_config2 = result[1]
-        print(result)
+        UIFunctions.log_list(self, result[2][0] + " " + result[2][1])
+
         self.ui.lcdNumber_ik_s1.display((result_config1[0]))
         self.ui.lcdNumber_ik_s2.display((result_config1[1]))
         self.ui.lcdNumber_ik_s3.display((result_config1[2]))
@@ -58,6 +63,8 @@ class AppFunctions(MainWindow):
             self.ui.MplWidget_ik.mpl_draw(calculated[3], calculated[2], calculated[1])
 
     def page_manual(self):
+        UIFunctions.log_list(self, 'Page changed to manual mode')
+
         eff = [54, 0]
         if self.ui.tab_manual_joints.isVisible():
             value_j1 = self.ui.horizontalSlider_j_s1.value()
@@ -65,12 +72,12 @@ class AppFunctions(MainWindow):
             value_j3 = self.ui.horizontalSlider_j_s3.value()
             value_j4 = self.ui.horizontalSlider_j_s4.value()
 
-            value_manual_xyz = FK.fk_dh(int(value_j1), int(value_j2), int(value_j3), int(value_j4), eff)
-            print(value_manual_xyz)
-            self.ui.horizontalSlider_manual_x.setValue(value_manual_xyz[1][0])
-            self.ui.horizontalSlider_manual_y.setValue(value_manual_xyz[1][1])
-            self.ui.horizontalSlider_manual_z.setValue(value_manual_xyz[1][2])
-            self.ui.verticalSlider_manual_orient.setValue(value_manual_xyz[0])
+            value_manual_joints = FK.fk_dh(int(value_j1), int(value_j2), int(value_j3), int(value_j4), eff)
+            UIFunctions.log_list(self, 'Manual mode: ' + value_manual_joints[4])
+            self.ui.horizontalSlider_manual_x.setValue(value_manual_joints[1][0])
+            self.ui.horizontalSlider_manual_y.setValue(value_manual_joints[1][1])
+            self.ui.horizontalSlider_manual_z.setValue(value_manual_joints[1][2])
+            self.ui.verticalSlider_manual_orient.setValue(value_manual_joints[0])
 
         elif self.ui.tab_manual_xyz.isVisible():
             value_x = self.ui.horizontalSlider_manual_x.value()
@@ -78,8 +85,8 @@ class AppFunctions(MainWindow):
             value_z = self.ui.horizontalSlider_manual_z.value()
             value_alpha = self.ui.verticalSlider_manual_orient.value()
 
-            value_manual_joints = IK.ik_geo(value_x, value_y, value_z, value_alpha, eff)
-            print(value_manual_joints)
+            value_manual_xyz = IK.ik_geo(value_x, value_y, value_z, value_alpha, eff)
+            UIFunctions.log_list(self, 'Manual mode: ' + value_manual_xyz[2][0] + " " + value_manual_xyz[2][1])
 
             if self.ui.comboBox_auto_config_2.currentIndex() == 0:
                 index = 0
@@ -88,10 +95,10 @@ class AppFunctions(MainWindow):
             else:
                 raise ValueError
 
-            self.ui.horizontalSlider_j_s1.setValue(value_manual_joints[index][0])
-            self.ui.horizontalSlider_j_s2.setValue(value_manual_joints[index][1])
-            self.ui.horizontalSlider_j_s3.setValue(value_manual_joints[index][2])
-            self.ui.horizontalSlider_j_s4.setValue(value_manual_joints[index][3])
+            self.ui.horizontalSlider_j_s1.setValue(value_manual_xyz[index][0])
+            self.ui.horizontalSlider_j_s2.setValue(value_manual_xyz[index][1])
+            self.ui.horizontalSlider_j_s3.setValue(value_manual_xyz[index][2])
+            self.ui.horizontalSlider_j_s4.setValue(value_manual_xyz[index][3])
 
         servo_1 = self.ui.horizontalSlider_j_s1.value()
         servo_2 = self.ui.horizontalSlider_j_s2.value()
@@ -106,4 +113,9 @@ class AppFunctions(MainWindow):
         self.ui.MplWidget_ik_2.mpl_draw(calculated[3], calculated[2], calculated[1])
 
     def page_automatic(self):
+        UIFunctions.log_list(self, 'Page changed to automatic mode')
+        pass
+
+    def page_settings(self):
+        UIFunctions.log_list(self, 'Page changed to settings')
         pass

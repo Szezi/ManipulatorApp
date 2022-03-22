@@ -1,6 +1,6 @@
 from ManipulatorApp.main import MainWindow
 from ManipulatorApp.main import *
-
+import datetime as dt
 
 GLOBAL_STATE = 0
 
@@ -128,11 +128,15 @@ class UIFunctions(MainWindow):
         self.ui.horizontalSlider_fk_s1_5.setValue(0)
         self.ui.horizontalSlider_fk_s1_6.setValue(0)
 
+        UIFunctions.log_list(self, 'Page FK: Slider values has been reset')
+
     def page_ik_reset(self):
         self.ui.horizontalSlider_ik_x.setValue(0)
         self.ui.horizontalSlider_ik_y.setValue(0)
         self.ui.horizontalSlider_ik_z.setValue(472)
         self.ui.verticalSlider.setValue(90)
+
+        UIFunctions.log_list(self, 'Page IK: Slider values has been reset')
 
     def page_manual_reset(self):
         if self.ui.tab_manual_joints.isVisible():
@@ -147,3 +151,10 @@ class UIFunctions(MainWindow):
             self.ui.horizontalSlider_manual_y.setValue(0)
             self.ui.horizontalSlider_manual_z.setValue(472)
             self.ui.verticalSlider_manual_orient.setValue(90)
+
+        UIFunctions.log_list(self, 'Page Manual mode: Slider values has been reset')
+
+    def log_list(self, log):
+        log_time = dt.datetime.now().strftime("%H:%M:%S")
+        new_text = log_time + " | " + log.upper()
+        self.ui.Log.append(new_text)

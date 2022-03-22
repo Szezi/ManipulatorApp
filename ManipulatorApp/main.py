@@ -30,6 +30,7 @@ class MainWindow(QMainWindow):
         self.ui.btn_home.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_home))
         self.ui.btn_home.clicked.connect(lambda: UIFunctions.label_page(self, "HOME"))
         self.ui.btn_home.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_home"))
+        self.ui.btn_home.clicked.connect(lambda: UIFunctions.log_list(self, 'Page changed to HOME'))
 
         # MENU 2 FK
         self.ui.btn_fk.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_fk))
@@ -55,10 +56,12 @@ class MainWindow(QMainWindow):
         self.ui.btn_auto.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_auto"))
         self.ui.btn_auto.clicked.connect(lambda: AppFunctions.page_automatic(self))
 
+
         # MENU 6 SETTINGS
         self.ui.btn_settings.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_settings))
         self.ui.btn_settings.clicked.connect(lambda: UIFunctions.label_page(self, "SETTINGS"))
         self.ui.btn_settings.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_settings"))
+        self.ui.btn_settings.clicked.connect(lambda: AppFunctions.page_settings(self))
 
         # Pages
         ################################################################################################################
@@ -87,6 +90,7 @@ class MainWindow(QMainWindow):
         self.ui.btn_home_settings.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_settings))
         self.ui.btn_home_settings.clicked.connect(lambda: UIFunctions.label_page(self, "SETTINGS"))
         self.ui.btn_home_settings.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_settings"))
+        self.ui.btn_home_settings.clicked.connect(lambda: AppFunctions.page_settings(self))
 
         self.ui.btn_home_info.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_settings))
         self.ui.btn_home_info.clicked.connect(lambda: self.ui.tabWidget_6.setCurrentIndex(0))
