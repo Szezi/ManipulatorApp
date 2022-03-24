@@ -5,6 +5,7 @@ from ManipulatorApp.modules import FK
 from ManipulatorApp.modules import IK
 from ManipulatorApp.modules import trajectory
 from ManipulatorApp.modules import mplwidget
+from ManipulatorApp.modules import communication
 from ManipulatorApp.ui.ui_functions import *
 
 
@@ -113,12 +114,40 @@ class AppFunctions(MainWindow):
         pass
 
     def page_settings(self):
+        # Effector
+        if self.ui.tabWidget_6.currentIndex() == 3:
+            AppFunctions.calibration_tab(self)
+        elif self.ui.tabWidget_6.currentIndex() == 1:
+            self.ui.radioButton_home_comm_2.clicked.connect(lambda: AppFunctions.communication_tab(self))
+
+    def calibration_tab(self):
         self.ui.btn_kal2_set_1.clicked.connect(lambda: UIFunctions.effector_calibration(self, 103, 0))
-        self.ui.btn_kal2_set_1.clicked.connect(lambda: UIFunctions.log_list(self, 'Effector dim. changed to grippers'))
+        self.ui.btn_kal2_set_1.clicked.connect(
+            lambda: UIFunctions.log_list(self, 'Effector dim. changed to grippers'))
         self.ui.btn_kal2_set_2.clicked.connect(lambda: UIFunctions.effector_calibration(self, 22, 50))
         self.ui.btn_kal2_set_2.clicked.connect(
             lambda: UIFunctions.log_list(self, 'Effector dim. changed to pen holder'))
         self.ui.checkBox_kal2_ef.clicked.connect(lambda: UIFunctions.effector_check(self))
         self.ui.checkBox_kal2_ef.clicked.connect(lambda: UIFunctions.log_list(self,
                                                                               'Effector assembled' if self.ui.checkBox_kal2_ef.checkState() else 'Effector disassembled'))
-        self.ui.checkBox_kal2_ef.clicked.connect(lambda: self.ui.radioButton_home_effector.setChecked(True) if self.ui.checkBox_kal2_ef.checkState() else self.ui.radioButton_home_effector.setChecked(False))
+        self.ui.checkBox_kal2_ef.clicked.connect(lambda: self.ui.radioButton_home_effector.setChecked(
+            True) if self.ui.checkBox_kal2_ef.checkState() else self.ui.radioButton_home_effector.setChecked(False))
+
+    def communication_tab(self):
+        try:
+            self.ui.radioButton_home_comm_2.clicked.connect(lambda: self.ui.radioButton_home_comm.setChecked(
+                True) if self.ui.radioButton_home_comm_2.isChecked() else self.ui.radioButton_home_comm.setChecked(
+                False))
+
+            robot_connection = communication.RobotComm('d:8:s', 'd:9:s', 'd:10:s', 'd:11:s', 'd:12:s', 'd:13:s')
+            self.ui.radioButton_home_comm_2.clicked.connect(
+                lambda: print('start') if self.ui.radioButton_home_comm_2.isChecked() else print('stop'))
+
+            if self.ui.radioButton_home_comm_2.isChecked():
+                port = robot_connection.board
+                self.ui.label_home_port_2.setText('Communication on port COM:' + str(port))
+            else:
+                self.ui.label_home_port_2.setText('Communication on port COM: Disconnected')
+        except:
+            print("Sth went wrong with communication")
+            self.ui.label_home_port_2.setText('Communication on port COM: Non')
