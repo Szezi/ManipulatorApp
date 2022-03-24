@@ -711,7 +711,7 @@ class Ui_MainWindow(object):
         self.gridLayout_3.setContentsMargins(50, 25, 25, 0)
         self.radioButton_home_effector = QRadioButton(self.frame_home_info_top)
         self.radioButton_home_effector.setObjectName(u"radioButton_home_effector")
-        self.radioButton_home_effector.setEnabled(True)
+        self.radioButton_home_effector.setEnabled(False)
         sizePolicy6 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Expanding)
         sizePolicy6.setHorizontalStretch(0)
         sizePolicy6.setVerticalStretch(0)
@@ -744,7 +744,7 @@ class Ui_MainWindow(object):
 
         self.radioButton_home_comm = QRadioButton(self.frame_home_info_top)
         self.radioButton_home_comm.setObjectName(u"radioButton_home_comm")
-        self.radioButton_home_comm.setEnabled(True)
+        self.radioButton_home_comm.setEnabled(False)
         sizePolicy7 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         sizePolicy7.setHorizontalStretch(0)
         sizePolicy7.setVerticalStretch(0)
@@ -766,7 +766,7 @@ class Ui_MainWindow(object):
 "    border:                 2px solid white;\n"
 "	border-radius:          7px;\n"
 "}")
-        self.radioButton_home_comm.setChecked(True)
+        self.radioButton_home_comm.setChecked(False)
         self.radioButton_home_comm.setAutoExclusive(False)
 
         self.gridLayout_3.addWidget(self.radioButton_home_comm, 0, 0, 1, 1)
@@ -4412,7 +4412,7 @@ class Ui_MainWindow(object):
         self.checkBox_kal2_ef.setObjectName(u"checkBox_kal2_ef")
         self.checkBox_kal2_ef.setMinimumSize(QSize(350, 50))
         self.checkBox_kal2_ef.setMaximumSize(QSize(350, 50))
-        self.checkBox_kal2_ef.setChecked(True)
+        self.checkBox_kal2_ef.setChecked(False)
 
         self.gridLayout_26.addWidget(self.checkBox_kal2_ef, 0, 0, 1, 2, Qt.AlignTop)
 
@@ -4660,13 +4660,13 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_y.valueChanged.connect(self.lcdNumber_auto_y.display)
         self.horizontalSlider_auto_z.valueChanged.connect(self.lcdNumber_auto_z.display)
 
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(5)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget_4.setCurrentIndex(1)
         self.tabWidget_5.setCurrentIndex(0)
         self.tabWidget_7.setCurrentIndex(0)
-        self.tabWidget_6.setCurrentIndex(0)
+        self.tabWidget_6.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

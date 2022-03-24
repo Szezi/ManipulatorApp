@@ -13,7 +13,6 @@ class AppFunctions(MainWindow):
         super().__init__()
 
     def page_fk(self):
-        UIFunctions.log_list(self, 'Page changed to forward kinematics')
         eff = [54, 0]
         theta1 = self.ui.horizontalSlider_fk_s1.value()
         theta2 = self.ui.horizontalSlider_fk_s1_2.value()
@@ -25,14 +24,13 @@ class AppFunctions(MainWindow):
         self.ui.lcdNumber_dh_X_2.display(result[1][0])
         self.ui.lcdnumber_dh_Y_2.display(result[1][1])
         self.ui.lcdnumber_dh_Z_2.display(result[1][2])
-        UIFunctions.log_list(self, result[4])
+        UIFunctions.log_list(self, 'Page FK: ' + result[4])
 
         # Sim
         self.ui.MplWidget_fk.mpl_draw(result[3], result[2], result[1])
         self.ui.MplWidget_fk.canvas.flush_events()
 
     def page_ik(self):
-        UIFunctions.log_list(self, 'Page changed to inverse kinematics')
         eff = [54, 0]
         value_x = self.ui.horizontalSlider_ik_x.value()
         value_y = self.ui.horizontalSlider_ik_y.value()
@@ -42,7 +40,7 @@ class AppFunctions(MainWindow):
         result = IK.ik_geo(value_x, value_y, value_z, value_alpha, eff)
         result_config1 = result[0]
         result_config2 = result[1]
-        UIFunctions.log_list(self, result[2][0] + " " + result[2][1])
+        UIFunctions.log_list(self, 'Page IK: ' + result[2][0] + " " + result[2][1] + " " + result[2][2])
 
         self.ui.lcdNumber_ik_s1.display((result_config1[0]))
         self.ui.lcdNumber_ik_s2.display((result_config1[1]))
@@ -63,8 +61,6 @@ class AppFunctions(MainWindow):
             self.ui.MplWidget_ik.mpl_draw(calculated[3], calculated[2], calculated[1])
 
     def page_manual(self):
-        UIFunctions.log_list(self, 'Page changed to manual mode')
-
         eff = [54, 0]
         if self.ui.tab_manual_joints.isVisible():
             value_j1 = self.ui.horizontalSlider_j_s1.value()
@@ -86,7 +82,8 @@ class AppFunctions(MainWindow):
             value_alpha = self.ui.verticalSlider_manual_orient.value()
 
             value_manual_xyz = IK.ik_geo(value_x, value_y, value_z, value_alpha, eff)
-            UIFunctions.log_list(self, 'Manual mode: ' + value_manual_xyz[2][0] + " " + value_manual_xyz[2][1])
+            UIFunctions.log_list(self, 'Manual mode: ' + value_manual_xyz[2][0] + " " + value_manual_xyz[2][1] + " " +
+                                 value_manual_xyz[2][2])
 
             if self.ui.comboBox_auto_config_2.currentIndex() == 0:
                 index = 0
@@ -113,9 +110,15 @@ class AppFunctions(MainWindow):
         self.ui.MplWidget_ik_2.mpl_draw(calculated[3], calculated[2], calculated[1])
 
     def page_automatic(self):
-        UIFunctions.log_list(self, 'Page changed to automatic mode')
         pass
 
     def page_settings(self):
-        UIFunctions.log_list(self, 'Page changed to settings')
-        pass
+        self.ui.btn_kal2_set_1.clicked.connect(lambda: UIFunctions.effector_calibration(self, 103, 0))
+        self.ui.btn_kal2_set_1.clicked.connect(lambda: UIFunctions.log_list(self, 'Effector dim. changed to grippers'))
+        self.ui.btn_kal2_set_2.clicked.connect(lambda: UIFunctions.effector_calibration(self, 22, 50))
+        self.ui.btn_kal2_set_2.clicked.connect(
+            lambda: UIFunctions.log_list(self, 'Effector dim. changed to pen holder'))
+        self.ui.checkBox_kal2_ef.clicked.connect(lambda: UIFunctions.effector_check(self))
+        self.ui.checkBox_kal2_ef.clicked.connect(lambda: UIFunctions.log_list(self,
+                                                                              'Effector assembled' if self.ui.checkBox_kal2_ef.checkState() else 'Effector disassembled'))
+        self.ui.checkBox_kal2_ef.clicked.connect(lambda: self.ui.radioButton_home_effector.setChecked(True) if self.ui.checkBox_kal2_ef.checkState() else self.ui.radioButton_home_effector.setChecked(False))

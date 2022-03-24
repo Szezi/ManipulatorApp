@@ -121,6 +121,7 @@ class UIFunctions(MainWindow):
         return GLOBAL_STATE
 
     def page_fk_reset(self):
+        UIFunctions.log_list(self, 'Page FK: Slider values has been reset')
         self.ui.horizontalSlider_fk_s1.setValue(0)
         self.ui.horizontalSlider_fk_s1_2.setValue(90)
         self.ui.horizontalSlider_fk_s1_3.setValue(0)
@@ -128,17 +129,15 @@ class UIFunctions(MainWindow):
         self.ui.horizontalSlider_fk_s1_5.setValue(0)
         self.ui.horizontalSlider_fk_s1_6.setValue(0)
 
-        UIFunctions.log_list(self, 'Page FK: Slider values has been reset')
-
     def page_ik_reset(self):
+        UIFunctions.log_list(self, 'Page IK: Slider values has been reset')
         self.ui.horizontalSlider_ik_x.setValue(0)
         self.ui.horizontalSlider_ik_y.setValue(0)
         self.ui.horizontalSlider_ik_z.setValue(472)
         self.ui.verticalSlider.setValue(90)
 
-        UIFunctions.log_list(self, 'Page IK: Slider values has been reset')
-
     def page_manual_reset(self):
+        UIFunctions.log_list(self, 'Page Manual mode: Slider values has been reset')
         if self.ui.tab_manual_joints.isVisible():
             self.ui.horizontalSlider_j_s1.setValue(0)
             self.ui.horizontalSlider_j_s2.setValue(90)
@@ -152,9 +151,41 @@ class UIFunctions(MainWindow):
             self.ui.horizontalSlider_manual_z.setValue(472)
             self.ui.verticalSlider_manual_orient.setValue(90)
 
-        UIFunctions.log_list(self, 'Page Manual mode: Slider values has been reset')
-
     def log_list(self, log):
         log_time = dt.datetime.now().strftime("%H:%M:%S")
         new_text = log_time + " | " + log.upper()
         self.ui.Log.append(new_text)
+
+    def calibration(self):
+        servo1 = self.ui.spinBox_kal_s1.value()
+        servo2 = self.ui.spinBox_kal_s2.value()
+        servo3 = self.ui.spinBox_kal_s3.value()
+        servo4 = self.ui.spinBox_kal_s4.value()
+        servo5 = self.ui.spinBox_kal_s5.value()
+        servo6 = self.ui.spinBox_kal_s6.value()
+
+        servo_cal = [servo1, servo2, servo3, servo4, servo5, servo6]
+
+        return servo_cal
+
+    # == > EFFECTOR
+    def effector_calibration(self, L, H):
+        self.ui.spinBox_kal2_ef.setValue(L)
+        self.ui.spinBox_kal2_ef_2.setValue(H)
+        if self.ui.checkBox_kal2_ef.checkState():
+            self.ui.checkBox_kal2_ef.click()
+
+    # CHECK IF EFFECTOR IS ASSEMBLED OR DISASSEMBLED
+    def effector_check(self):
+        if self.ui.checkBox_kal2_ef.checkState():
+            a = int(self.ui.spinBox_kal2_ef.value()) + 54
+            b = int(self.ui.spinBox_kal2_ef_2.value())
+            eff = [a, b]
+        else:
+            eff = [54, 0]
+        print(eff)
+        return eff
+
+    # SETTINGS IF EFFECTOR IS ASSEMBLED OR DISASSEMBLED
+    def effector_settings(self):
+        pass

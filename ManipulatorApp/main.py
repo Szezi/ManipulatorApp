@@ -37,31 +37,35 @@ class MainWindow(QMainWindow):
         self.ui.btn_fk.clicked.connect(lambda: UIFunctions.label_page(self, "FORWARD KINEMATICS"))
         self.ui.btn_fk.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_fk"))
         self.ui.btn_fk.clicked.connect(lambda: AppFunctions.page_fk(self))
+        self.ui.btn_fk.clicked.connect(lambda: UIFunctions.log_list(self, 'Page changed to FK'))
 
         # MENU 3 IK
         self.ui.btn_ik.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_ik))
         self.ui.btn_ik.clicked.connect(lambda: UIFunctions.label_page(self, "INVERSE KINEMATICS"))
         self.ui.btn_ik.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_ik"))
         self.ui.btn_ik.clicked.connect(lambda: AppFunctions.page_ik(self))
+        self.ui.btn_ik.clicked.connect(lambda: UIFunctions.log_list(self, 'Page changed to IK'))
 
         # MENU 4 MANUAL
         self.ui.btn_manual.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_manual))
         self.ui.btn_manual.clicked.connect(lambda: UIFunctions.label_page(self, "MANUAL MODE"))
         self.ui.btn_manual.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_manual"))
         self.ui.btn_manual.clicked.connect(lambda: AppFunctions.page_manual(self))
+        self.ui.btn_manual.clicked.connect(lambda: UIFunctions.log_list(self, 'Page changed to Manual mode'))
 
         # MENU 5 AUTO
         self.ui.btn_auto.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_automatic))
         self.ui.btn_auto.clicked.connect(lambda: UIFunctions.label_page(self, "AUTOMATIC MODE"))
         self.ui.btn_auto.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_auto"))
         self.ui.btn_auto.clicked.connect(lambda: AppFunctions.page_automatic(self))
-
+        self.ui.btn_auto.clicked.connect(lambda: UIFunctions.log_list(self, 'Page changed to automatic mode'))
 
         # MENU 6 SETTINGS
         self.ui.btn_settings.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.page_settings))
         self.ui.btn_settings.clicked.connect(lambda: UIFunctions.label_page(self, "SETTINGS"))
         self.ui.btn_settings.clicked.connect(lambda: UIFunctions.select_standard_menu(self, "btn_settings"))
         self.ui.btn_settings.clicked.connect(lambda: AppFunctions.page_settings(self))
+        self.ui.btn_settings.clicked.connect(lambda: UIFunctions.log_list(self, 'Page changed to settings'))
 
         # Pages
         ################################################################################################################
