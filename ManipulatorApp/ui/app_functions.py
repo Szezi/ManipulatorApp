@@ -5,8 +5,9 @@ from ManipulatorApp.modules import FK
 from ManipulatorApp.modules import IK
 from ManipulatorApp.modules import trajectory
 from ManipulatorApp.modules import mplwidget
-from ManipulatorApp.modules import communication
+from ManipulatorApp.modules import communication as comm
 from ManipulatorApp.ui.ui_functions import *
+from importlib import reload
 
 
 class AppFunctions(MainWindow):
@@ -14,7 +15,7 @@ class AppFunctions(MainWindow):
         super().__init__()
 
     def page_fk(self):
-        eff = [54, 0]
+        eff = UIFunctions.effector_check(self)
         theta1 = self.ui.horizontalSlider_fk_s1.value()
         theta2 = self.ui.horizontalSlider_fk_s1_2.value()
         theta3 = self.ui.horizontalSlider_fk_s1_3.value()
@@ -25,14 +26,14 @@ class AppFunctions(MainWindow):
         self.ui.lcdNumber_dh_X_2.display(result[1][0])
         self.ui.lcdnumber_dh_Y_2.display(result[1][1])
         self.ui.lcdnumber_dh_Z_2.display(result[1][2])
-        UIFunctions.log_list(self, 'Page FK: ' + result[4])
+        UIFunctions.log_list(self, 'Page FK: ' + result[5])
 
         # Sim
-        self.ui.MplWidget_fk.mpl_draw(result[3], result[2], result[1])
+        self.ui.MplWidget_fk.mpl_draw(result[4], result[3], result[2], result[1])
         self.ui.MplWidget_fk.canvas.flush_events()
 
     def page_ik(self):
-        eff = [54, 0]
+        eff = UIFunctions.effector_check(self)
         value_x = self.ui.horizontalSlider_ik_x.value()
         value_y = self.ui.horizontalSlider_ik_y.value()
         value_z = self.ui.horizontalSlider_ik_z.value()
@@ -56,13 +57,13 @@ class AppFunctions(MainWindow):
         # Sim
         if self.ui.tabWidget_4.currentIndex() == 0:
             calculated = FK.fk_dh(result_config1[0], result_config1[1], result_config1[2], result_config1[3], eff)
-            self.ui.MplWidget_ik.mpl_draw(calculated[3], calculated[2], calculated[1])
+            self.ui.MplWidget_ik.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
         elif self.ui.tabWidget_4.currentIndex() == 1:
             calculated = FK.fk_dh(result_config2[0], result_config2[1], result_config2[2], result_config2[3], eff)
-            self.ui.MplWidget_ik.mpl_draw(calculated[3], calculated[2], calculated[1])
+            self.ui.MplWidget_ik.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
 
     def page_manual(self):
-        eff = [54, 0]
+        eff = UIFunctions.effector_check(self)
         if self.ui.tab_manual_joints.isVisible():
             value_j1 = self.ui.horizontalSlider_j_s1.value()
             value_j2 = self.ui.horizontalSlider_j_s2.value()
@@ -70,7 +71,7 @@ class AppFunctions(MainWindow):
             value_j4 = self.ui.horizontalSlider_j_s4.value()
 
             value_manual_joints = FK.fk_dh(int(value_j1), int(value_j2), int(value_j3), int(value_j4), eff)
-            UIFunctions.log_list(self, 'Manual mode: ' + value_manual_joints[4])
+            UIFunctions.log_list(self, 'Manual mode: ' + value_manual_joints[5])
             self.ui.horizontalSlider_manual_x.setValue(value_manual_joints[1][0])
             self.ui.horizontalSlider_manual_y.setValue(value_manual_joints[1][1])
             self.ui.horizontalSlider_manual_z.setValue(value_manual_joints[1][2])
@@ -108,19 +109,17 @@ class AppFunctions(MainWindow):
 
         # Sim
         calculated = FK.fk_dh(servo_1, servo_2, servo_3, servo_4, eff)
-        self.ui.MplWidget_ik_2.mpl_draw(calculated[3], calculated[2], calculated[1])
+        self.ui.MplWidget_ik_2.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
 
     def page_automatic(self):
         pass
 
     def page_settings(self):
         # Effector
-        if self.ui.tabWidget_6.currentIndex() == 3:
-            AppFunctions.calibration_tab(self)
-        elif self.ui.tabWidget_6.currentIndex() == 1:
-            self.ui.radioButton_home_comm_2.clicked.connect(lambda: AppFunctions.communication_tab(self))
+        AppFunctions.effector_tab(self)
+        AppFunctions.communication_tab(self)
 
-    def calibration_tab(self):
+    def effector_tab(self):
         self.ui.btn_kal2_set_1.clicked.connect(lambda: UIFunctions.effector_calibration(self, 103, 0))
         self.ui.btn_kal2_set_1.clicked.connect(
             lambda: UIFunctions.log_list(self, 'Effector dim. changed to grippers'))
@@ -134,20 +133,30 @@ class AppFunctions(MainWindow):
             True) if self.ui.checkBox_kal2_ef.checkState() else self.ui.radioButton_home_effector.setChecked(False))
 
     def communication_tab(self):
-        try:
-            self.ui.radioButton_home_comm_2.clicked.connect(lambda: self.ui.radioButton_home_comm.setChecked(
-                True) if self.ui.radioButton_home_comm_2.isChecked() else self.ui.radioButton_home_comm.setChecked(
-                False))
+        if comm.status:
+            self.ui.radioButton_home_comm.setChecked(True)
+            self.ui.radioButton_home_comm_2.setChecked(True)
+        else:
+            self.ui.radioButton_home_comm.setChecked(False)
+            self.ui.radioButton_home_comm_2.setChecked(False)
 
-            robot_connection = communication.RobotComm('d:8:s', 'd:9:s', 'd:10:s', 'd:11:s', 'd:12:s', 'd:13:s')
-            self.ui.radioButton_home_comm_2.clicked.connect(
-                lambda: print('start') if self.ui.radioButton_home_comm_2.isChecked() else print('stop'))
+    def communication_radiobutton(self):
+        try:
+            if not self.ui.radioButton_home_comm_2.isChecked():
+                comm.board.exit()
+                self.ui.label_home_port_2.setText('Communication on port: Disconnected')
 
             if self.ui.radioButton_home_comm_2.isChecked():
-                port = robot_connection.board
-                self.ui.label_home_port_2.setText('Communication on port COM:' + str(port))
-            else:
-                self.ui.label_home_port_2.setText('Communication on port COM: Disconnected')
+                reload(comm)
+                if comm.status:
+                    port = str(comm.board)
+                else:
+                    port = 'No connection'
+
+                self.ui.label_home_port_2.setText('Communication on port:' + port)
+                UIFunctions.log_list(self, comm.status_log)
         except:
-            print("Sth went wrong with communication")
-            self.ui.label_home_port_2.setText('Communication on port COM: Non')
+            self.ui.label_home_port_2.setText('Communication on port: No connection/Disconnected')
+
+
+
