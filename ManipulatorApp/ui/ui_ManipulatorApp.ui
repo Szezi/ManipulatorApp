@@ -8871,7 +8871,7 @@ QPushButton:pressed {
                     <enum>QTabWidget::Triangular</enum>
                    </property>
                    <property name="currentIndex">
-                    <number>3</number>
+                    <number>1</number>
                    </property>
                    <property name="usesScrollButtons">
                     <bool>true</bool>
@@ -9016,137 +9016,8 @@ p, li { white-space: pre-wrap; }
                     <attribute name="title">
                      <string>Communication</string>
                     </attribute>
-                    <layout class="QGridLayout" name="gridLayout_24">
-                     <item row="2" column="1" colspan="7">
-                      <widget class="QLabel" name="label_com_rys">
-                       <property name="sizePolicy">
-                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize">
-                        <size>
-                         <width>500</width>
-                         <height>300</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>1333</width>
-                         <height>800</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="textFormat">
-                        <enum>Qt::PlainText</enum>
-                       </property>
-                       <property name="pixmap">
-                        <pixmap resource="icons/icons.qrc">:/others/others/vis_arduino.jpg</pixmap>
-                       </property>
-                       <property name="scaledContents">
-                        <bool>true</bool>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="4">
-                      <widget class="QLabel" name="logo_home_arduino_4">
-                       <property name="minimumSize">
-                        <size>
-                         <width>50</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>50</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="pixmap">
-                        <pixmap resource="icons/icons.qrc">:/50x50/50x50/icons8-usb-micro-b-50.png</pixmap>
-                       </property>
-                       <property name="scaledContents">
-                        <bool>true</bool>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="5" colspan="2">
-                      <widget class="QLabel" name="label_home_port_2">
-                       <property name="minimumSize">
-                        <size>
-                         <width>250</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>400</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="font">
-                        <font>
-                         <pointsize>10</pointsize>
-                        </font>
-                       </property>
-                       <property name="text">
-                        <string>Communication on port COM: 'COM3'</string>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignJustify|Qt::AlignVCenter</set>
-                       </property>
-                      </widget>
-                     </item>
+                    <layout class="QGridLayout" name="gridLayout_19">
                      <item row="0" column="1">
-                      <widget class="QLabel" name="logo_home_arduino_3">
-                       <property name="minimumSize">
-                        <size>
-                         <width>50</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="maximumSize">
-                        <size>
-                         <width>50</width>
-                         <height>50</height>
-                        </size>
-                       </property>
-                       <property name="styleSheet">
-                        <string notr="true"/>
-                       </property>
-                       <property name="text">
-                        <string/>
-                       </property>
-                       <property name="pixmap">
-                        <pixmap resource="icons/icons.qrc">:/50x50/50x50/icons8-arduino-uno-board-50.png</pixmap>
-                       </property>
-                       <property name="scaledContents">
-                        <bool>true</bool>
-                       </property>
-                       <property name="alignment">
-                        <set>Qt::AlignCenter</set>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="2">
                       <widget class="QRadioButton" name="radioButton_home_comm_2">
                        <property name="enabled">
                         <bool>true</bool>
@@ -9197,15 +9068,170 @@ QRadioButton::indicator:unchecked {
 }</string>
                        </property>
                        <property name="text">
-                        <string>Communication with board start / exit</string>
+                        <string>Communication</string>
                        </property>
                        <property name="checked">
-                        <bool>true</bool>
+                        <bool>false</bool>
                        </property>
                        <property name="autoExclusive">
                         <bool>false</bool>
                        </property>
                       </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="logo_home_arduino_3">
+                       <property name="minimumSize">
+                        <size>
+                         <width>50</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>50</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="pixmap">
+                        <pixmap resource="icons/icons.qrc">:/50x50/50x50/icons8-arduino-uno-board-50.png</pixmap>
+                       </property>
+                       <property name="scaledContents">
+                        <bool>true</bool>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0" colspan="8">
+                      <widget class="QLabel" name="label_com_rys">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize">
+                        <size>
+                         <width>500</width>
+                         <height>300</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>1333</width>
+                         <height>800</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="textFormat">
+                        <enum>Qt::PlainText</enum>
+                       </property>
+                       <property name="pixmap">
+                        <pixmap resource="icons/icons.qrc">:/others/others/vis_arduino.jpg</pixmap>
+                       </property>
+                       <property name="scaledContents">
+                        <bool>true</bool>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="6">
+                      <widget class="QLabel" name="label_home_port_2">
+                       <property name="minimumSize">
+                        <size>
+                         <width>300</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>400</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>10</pointsize>
+                        </font>
+                       </property>
+                       <property name="text">
+                        <string>Communication on port: 'COM3'</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="3">
+                      <spacer name="horizontalSpacer_6">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="0" column="4">
+                      <widget class="QLabel" name="logo_home_arduino_4">
+                       <property name="minimumSize">
+                        <size>
+                         <width>50</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>50</width>
+                         <height>50</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                       <property name="pixmap">
+                        <pixmap resource="icons/icons.qrc">:/50x50/50x50/icons8-usb-micro-b-50.png</pixmap>
+                       </property>
+                       <property name="scaledContents">
+                        <bool>true</bool>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="8">
+                      <spacer name="horizontalSpacer_7">
+                       <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
                      </item>
                     </layout>
                    </widget>

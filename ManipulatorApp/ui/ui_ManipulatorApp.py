@@ -4033,53 +4033,8 @@ class Ui_MainWindow(object):
         self.tabWidget_6.addTab(self.tab_info, "")
         self.tab_com = QWidget()
         self.tab_com.setObjectName(u"tab_com")
-        self.gridLayout_24 = QGridLayout(self.tab_com)
-        self.gridLayout_24.setObjectName(u"gridLayout_24")
-        self.label_com_rys = QLabel(self.tab_com)
-        self.label_com_rys.setObjectName(u"label_com_rys")
-        sizePolicy4.setHeightForWidth(self.label_com_rys.sizePolicy().hasHeightForWidth())
-        self.label_com_rys.setSizePolicy(sizePolicy4)
-        self.label_com_rys.setMinimumSize(QSize(500, 300))
-        self.label_com_rys.setMaximumSize(QSize(1333, 800))
-        self.label_com_rys.setStyleSheet(u"")
-        self.label_com_rys.setTextFormat(Qt.PlainText)
-        self.label_com_rys.setPixmap(QPixmap(u":/others/others/vis_arduino.jpg"))
-        self.label_com_rys.setScaledContents(True)
-        self.label_com_rys.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_24.addWidget(self.label_com_rys, 2, 1, 1, 7)
-
-        self.logo_home_arduino_4 = QLabel(self.tab_com)
-        self.logo_home_arduino_4.setObjectName(u"logo_home_arduino_4")
-        self.logo_home_arduino_4.setMinimumSize(QSize(50, 50))
-        self.logo_home_arduino_4.setMaximumSize(QSize(50, 50))
-        self.logo_home_arduino_4.setStyleSheet(u"")
-        self.logo_home_arduino_4.setPixmap(QPixmap(u":/50x50/50x50/icons8-usb-micro-b-50.png"))
-        self.logo_home_arduino_4.setScaledContents(True)
-        self.logo_home_arduino_4.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_24.addWidget(self.logo_home_arduino_4, 0, 4, 1, 1)
-
-        self.label_home_port_2 = QLabel(self.tab_com)
-        self.label_home_port_2.setObjectName(u"label_home_port_2")
-        self.label_home_port_2.setMinimumSize(QSize(250, 50))
-        self.label_home_port_2.setMaximumSize(QSize(400, 50))
-        self.label_home_port_2.setFont(font4)
-        self.label_home_port_2.setAlignment(Qt.AlignJustify|Qt.AlignVCenter)
-
-        self.gridLayout_24.addWidget(self.label_home_port_2, 0, 5, 1, 2)
-
-        self.logo_home_arduino_3 = QLabel(self.tab_com)
-        self.logo_home_arduino_3.setObjectName(u"logo_home_arduino_3")
-        self.logo_home_arduino_3.setMinimumSize(QSize(50, 50))
-        self.logo_home_arduino_3.setMaximumSize(QSize(50, 50))
-        self.logo_home_arduino_3.setStyleSheet(u"")
-        self.logo_home_arduino_3.setPixmap(QPixmap(u":/50x50/50x50/icons8-arduino-uno-board-50.png"))
-        self.logo_home_arduino_3.setScaledContents(True)
-        self.logo_home_arduino_3.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_24.addWidget(self.logo_home_arduino_3, 0, 1, 1, 1)
-
+        self.gridLayout_19 = QGridLayout(self.tab_com)
+        self.gridLayout_19.setObjectName(u"gridLayout_19")
         self.radioButton_home_comm_2 = QRadioButton(self.tab_com)
         self.radioButton_home_comm_2.setObjectName(u"radioButton_home_comm_2")
         self.radioButton_home_comm_2.setEnabled(True)
@@ -4101,10 +4056,63 @@ class Ui_MainWindow(object):
 "    border:                 2px solid white;\n"
 "	border-radius:          7px;\n"
 "}")
-        self.radioButton_home_comm_2.setChecked(True)
+        self.radioButton_home_comm_2.setChecked(False)
         self.radioButton_home_comm_2.setAutoExclusive(False)
 
-        self.gridLayout_24.addWidget(self.radioButton_home_comm_2, 0, 2, 1, 1)
+        self.gridLayout_19.addWidget(self.radioButton_home_comm_2, 0, 1, 1, 1)
+
+        self.logo_home_arduino_3 = QLabel(self.tab_com)
+        self.logo_home_arduino_3.setObjectName(u"logo_home_arduino_3")
+        self.logo_home_arduino_3.setMinimumSize(QSize(50, 50))
+        self.logo_home_arduino_3.setMaximumSize(QSize(50, 50))
+        self.logo_home_arduino_3.setStyleSheet(u"")
+        self.logo_home_arduino_3.setPixmap(QPixmap(u":/50x50/50x50/icons8-arduino-uno-board-50.png"))
+        self.logo_home_arduino_3.setScaledContents(True)
+        self.logo_home_arduino_3.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_19.addWidget(self.logo_home_arduino_3, 0, 0, 1, 1)
+
+        self.label_com_rys = QLabel(self.tab_com)
+        self.label_com_rys.setObjectName(u"label_com_rys")
+        sizePolicy4.setHeightForWidth(self.label_com_rys.sizePolicy().hasHeightForWidth())
+        self.label_com_rys.setSizePolicy(sizePolicy4)
+        self.label_com_rys.setMinimumSize(QSize(500, 300))
+        self.label_com_rys.setMaximumSize(QSize(1333, 800))
+        self.label_com_rys.setStyleSheet(u"")
+        self.label_com_rys.setTextFormat(Qt.PlainText)
+        self.label_com_rys.setPixmap(QPixmap(u":/others/others/vis_arduino.jpg"))
+        self.label_com_rys.setScaledContents(True)
+        self.label_com_rys.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_19.addWidget(self.label_com_rys, 1, 0, 1, 8)
+
+        self.label_home_port_2 = QLabel(self.tab_com)
+        self.label_home_port_2.setObjectName(u"label_home_port_2")
+        self.label_home_port_2.setMinimumSize(QSize(300, 50))
+        self.label_home_port_2.setMaximumSize(QSize(400, 50))
+        self.label_home_port_2.setFont(font4)
+        self.label_home_port_2.setAlignment(Qt.AlignJustify|Qt.AlignVCenter)
+
+        self.gridLayout_19.addWidget(self.label_home_port_2, 0, 6, 1, 1)
+
+        self.horizontalSpacer_6 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_19.addItem(self.horizontalSpacer_6, 0, 3, 1, 1)
+
+        self.logo_home_arduino_4 = QLabel(self.tab_com)
+        self.logo_home_arduino_4.setObjectName(u"logo_home_arduino_4")
+        self.logo_home_arduino_4.setMinimumSize(QSize(50, 50))
+        self.logo_home_arduino_4.setMaximumSize(QSize(50, 50))
+        self.logo_home_arduino_4.setStyleSheet(u"")
+        self.logo_home_arduino_4.setPixmap(QPixmap(u":/50x50/50x50/icons8-usb-micro-b-50.png"))
+        self.logo_home_arduino_4.setScaledContents(True)
+        self.logo_home_arduino_4.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_19.addWidget(self.logo_home_arduino_4, 0, 4, 1, 1)
+
+        self.horizontalSpacer_7 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_19.addItem(self.horizontalSpacer_7, 0, 8, 1, 1)
 
         self.tabWidget_6.addTab(self.tab_com, "")
         self.tab_kalibracja = QWidget()
@@ -4666,7 +4674,7 @@ class Ui_MainWindow(object):
         self.tabWidget_4.setCurrentIndex(1)
         self.tabWidget_5.setCurrentIndex(0)
         self.tabWidget_7.setCurrentIndex(0)
-        self.tabWidget_6.setCurrentIndex(3)
+        self.tabWidget_6.setCurrentIndex(1)
 
 
         QMetaObject.connectSlotsByName(MainWindow)
@@ -4974,14 +4982,14 @@ class Ui_MainWindow(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>", None))
         self.label_3.setText("")
         self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_info), QCoreApplication.translate("MainWindow", u"About", None))
-        self.label_com_rys.setText("")
-        self.logo_home_arduino_4.setText("")
-        self.label_home_port_2.setText(QCoreApplication.translate("MainWindow", u"Communication on port COM: 'COM3'", None))
-        self.logo_home_arduino_3.setText("")
 #if QT_CONFIG(tooltip)
         self.radioButton_home_comm_2.setToolTip(QCoreApplication.translate("MainWindow", u"Comm. PC <-> Arduino", None))
 #endif // QT_CONFIG(tooltip)
-        self.radioButton_home_comm_2.setText(QCoreApplication.translate("MainWindow", u"Communication with board start / exit", None))
+        self.radioButton_home_comm_2.setText(QCoreApplication.translate("MainWindow", u"Communication", None))
+        self.logo_home_arduino_3.setText("")
+        self.label_com_rys.setText("")
+        self.label_home_port_2.setText(QCoreApplication.translate("MainWindow", u"Communication on port: 'COM3'", None))
+        self.logo_home_arduino_4.setText("")
         self.tabWidget_6.setTabText(self.tabWidget_6.indexOf(self.tab_com), QCoreApplication.translate("MainWindow", u"Communication", None))
         self.label_kal_kal.setText(QCoreApplication.translate("MainWindow", u"Robotic Arm Calibration", None))
 #if QT_CONFIG(tooltip)
