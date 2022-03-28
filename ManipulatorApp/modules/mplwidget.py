@@ -23,12 +23,13 @@ class MplWidget(QWidget):
         self.canvas.axes.set_ylabel('y')
         self.canvas.axes.set_zlabel('z')
 
-    def mpl_draw(self, xyz_1=[0, 0, 268], xyz_2=[0, 0, 418], xyz_3=[0, 0, 472]):
+    def mpl_draw(self, xyz_1=[0, 0, 268], xyz_2=[0, 0, 418], xyz_3=[0, 0, 472], xyz_4=[0, 0, 472]):
         n = 2
         base = trajectory.cp_linear([0.0, 0.0, 0.0], [0.0, 0.0, 118.0], n)
         link1 = trajectory.cp_linear([0.0, 0.0, 118.0], xyz_1, n)
         link2 = trajectory.cp_linear(xyz_1, xyz_2, n)
         link3 = trajectory.cp_linear(xyz_2, xyz_3, n)
+        link4 = trajectory.cp_linear(xyz_3, xyz_4, n)
 
         self.canvas.axes.clear()
         self.canvas.axes.plot(base[:, 0], base[:, 1], base[:, 2], color='green', marker='o',
@@ -40,6 +41,9 @@ class MplWidget(QWidget):
         self.canvas.axes.plot(link3[:, 0], link3[:, 1], link3[:, 2], color='purple', marker="h",
                               linestyle='solid', linewidth=5,
                               markersize=5)
+        self.canvas.axes.plot(link4[:, 0], link4[:, 1], link4[:, 2], color='purple', marker="h",
+                                           linestyle='solid', linewidth=5,
+                                           markersize=5)
         self.Canvas()
 
         self.canvas.draw()

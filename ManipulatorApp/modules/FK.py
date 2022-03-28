@@ -75,18 +75,24 @@ def fk_dh(theta1: int, theta2: int, theta3: int, theta4: int, eff: list):
         xyz_pos_link2 = [float(round(x2, 2)), float(round(y2, 2)), float(round(z2, 2))]
 
         # 3rd link XYZ position
+        x3 = matrix_t1234[0, 3]
+        y3 = matrix_t1234[1, 3]
+        z3 = matrix_t1234[2, 3]
+        xyz_pos_link3 = [float(round(x3, 2)), float(round(y3, 2)), float(round(z3, 2))]
+
+        # 4th link XYZ position
         if eff[1] == 0:
             # Position without end effector
-            x3 = matrix_t1234[0, 3]
-            y3 = matrix_t1234[1, 3]
-            z3 = matrix_t1234[2, 3]
-            xyz_pos_link3 = [float(round(x3, 2)), float(round(y3, 2)), float(round(z3, 2))]
+            x4 = matrix_t1234[0, 3]
+            y4 = matrix_t1234[1, 3]
+            z4 = matrix_t1234[2, 3]
+            xyz_pos_link4 = [float(round(x4, 2)), float(round(y4, 2)), float(round(z4, 2))]
         elif eff[1] != 0:
             # Position with end effector
             x4 = matrix_t12345[0, 3]
             y4 = matrix_t12345[1, 3]
             z4 = matrix_t12345[2, 3]
-            xyz_pos_link3 = [float(round(x4, 2)), float(round(y4, 2)), float(round(z4, 2))]
+            xyz_pos_link4 = [float(round(x4, 2)), float(round(y4, 2)), float(round(z4, 2))]
         else:
             raise ValueError('Unexpected value xyz_pos_link3')
 
@@ -94,15 +100,15 @@ def fk_dh(theta1: int, theta2: int, theta3: int, theta4: int, eff: list):
         z_ef = round(matrix_t1234[2, 3]) - round(z2)
         alpha = math.degrees(math.asin(z_ef / l4))
         status = "Forward kinematics calculations ended successfully"
-        return round(alpha), xyz_pos_link3, xyz_pos_link2, xyz_pos_link1, status
+        return round(alpha), xyz_pos_link4, xyz_pos_link3, xyz_pos_link2, xyz_pos_link1, status
 
     except ZeroDivisionError:
         status = 'L4 dimension needs to be greater then 0'
-        return 0, [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], status
+        return 0, [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], status
 
     except:
         status = 'Something went wrong.'
-        return 0, [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], status
+        return 0, [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], status
 
     finally:
         print('Forward kinematics calculations ended')
