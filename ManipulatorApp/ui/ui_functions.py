@@ -1,6 +1,7 @@
 from ManipulatorApp.main import MainWindow
 from ManipulatorApp.main import *
 import datetime as dt
+from ManipulatorApp.modules import communication as comm
 
 GLOBAL_STATE = 0
 
