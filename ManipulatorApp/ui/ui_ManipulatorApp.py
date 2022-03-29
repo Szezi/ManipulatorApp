@@ -1101,8 +1101,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_fk_s1_3.setMinimum(-90)
-        self.horizontalSlider_fk_s1_3.setMaximum(90)
+        self.horizontalSlider_fk_s1_3.setMinimum(-120)
+        self.horizontalSlider_fk_s1_3.setMaximum(60)
         self.horizontalSlider_fk_s1_3.setPageStep(5)
         self.horizontalSlider_fk_s1_3.setOrientation(Qt.Horizontal)
         self.horizontalSlider_fk_s1_3.setInvertedAppearance(False)
@@ -1534,7 +1534,7 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_ik_z.setMinimum(-472)
+        self.horizontalSlider_ik_z.setMinimum(0)
         self.horizontalSlider_ik_z.setMaximum(472)
         self.horizontalSlider_ik_z.setPageStep(5)
         self.horizontalSlider_ik_z.setValue(472)
@@ -1667,7 +1667,7 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_ik_x.setMinimum(-472)
+        self.horizontalSlider_ik_x.setMinimum(0)
         self.horizontalSlider_ik_x.setMaximum(472)
         self.horizontalSlider_ik_x.setPageStep(5)
         self.horizontalSlider_ik_x.setOrientation(Qt.Horizontal)
@@ -2244,8 +2244,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_j_s3.setMinimum(-90)
-        self.horizontalSlider_j_s3.setMaximum(90)
+        self.horizontalSlider_j_s3.setMinimum(-120)
+        self.horizontalSlider_j_s3.setMaximum(60)
         self.horizontalSlider_j_s3.setPageStep(5)
         self.horizontalSlider_j_s3.setOrientation(Qt.Horizontal)
         self.horizontalSlider_j_s3.setInvertedAppearance(False)
@@ -2513,7 +2513,7 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_manual_x.setMinimum(-472)
+        self.horizontalSlider_manual_x.setMinimum(0)
         self.horizontalSlider_manual_x.setMaximum(472)
         self.horizontalSlider_manual_x.setPageStep(5)
         self.horizontalSlider_manual_x.setOrientation(Qt.Horizontal)
@@ -2626,7 +2626,7 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_manual_z.setMinimum(-472)
+        self.horizontalSlider_manual_z.setMinimum(0)
         self.horizontalSlider_manual_z.setMaximum(472)
         self.horizontalSlider_manual_z.setPageStep(5)
         self.horizontalSlider_manual_z.setSliderPosition(472)
@@ -3167,8 +3167,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s3.setMinimum(-90)
-        self.horizontalSlider_auto_s3.setMaximum(90)
+        self.horizontalSlider_auto_s3.setMinimum(-120)
+        self.horizontalSlider_auto_s3.setMaximum(60)
         self.horizontalSlider_auto_s3.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_s3.setInvertedAppearance(False)
         self.horizontalSlider_auto_s3.setInvertedControls(False)
@@ -3204,8 +3204,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_z.setMinimum(-90)
-        self.horizontalSlider_auto_z.setMaximum(90)
+        self.horizontalSlider_auto_z.setMinimum(0)
+        self.horizontalSlider_auto_z.setMaximum(472)
         self.horizontalSlider_auto_z.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_z.setInvertedAppearance(False)
         self.horizontalSlider_auto_z.setInvertedControls(False)
@@ -3251,8 +3251,9 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s2.setMinimum(-90)
-        self.horizontalSlider_auto_s2.setMaximum(90)
+        self.horizontalSlider_auto_s2.setMinimum(0)
+        self.horizontalSlider_auto_s2.setMaximum(180)
+        self.horizontalSlider_auto_s2.setValue(90)
         self.horizontalSlider_auto_s2.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_s2.setInvertedAppearance(False)
         self.horizontalSlider_auto_s2.setInvertedControls(False)
@@ -3424,8 +3425,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_x.setMinimum(-90)
-        self.horizontalSlider_auto_x.setMaximum(90)
+        self.horizontalSlider_auto_x.setMinimum(0)
+        self.horizontalSlider_auto_x.setMaximum(472)
         self.horizontalSlider_auto_x.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_x.setInvertedAppearance(False)
         self.horizontalSlider_auto_x.setInvertedControls(False)
@@ -3469,8 +3470,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_y.setMinimum(-90)
-        self.horizontalSlider_auto_y.setMaximum(90)
+        self.horizontalSlider_auto_y.setMinimum(-472)
+        self.horizontalSlider_auto_y.setMaximum(472)
         self.horizontalSlider_auto_y.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_y.setInvertedAppearance(False)
         self.horizontalSlider_auto_y.setInvertedControls(False)
@@ -4668,13 +4669,13 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_y.valueChanged.connect(self.lcdNumber_auto_y.display)
         self.horizontalSlider_auto_z.valueChanged.connect(self.lcdNumber_auto_z.display)
 
-        self.stackedWidget.setCurrentIndex(5)
+        self.stackedWidget.setCurrentIndex(4)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget_4.setCurrentIndex(1)
-        self.tabWidget_5.setCurrentIndex(0)
+        self.tabWidget_5.setCurrentIndex(1)
         self.tabWidget_7.setCurrentIndex(0)
-        self.tabWidget_6.setCurrentIndex(1)
+        self.tabWidget_6.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

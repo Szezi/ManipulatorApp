@@ -2,6 +2,7 @@ from ManipulatorApp.main import MainWindow
 from ManipulatorApp.main import *
 import datetime as dt
 from ManipulatorApp.modules import communication as comm
+from ManipulatorApp.modules import FK
 
 GLOBAL_STATE = 0
 
@@ -189,4 +190,30 @@ class UIFunctions(MainWindow):
 
     # SETTINGS IF EFFECTOR IS ASSEMBLED OR DISASSEMBLED
     def effector_settings(self):
-        pass
+        eff = UIFunctions.effector_check(self)
+        # FK
+        fk_eff = FK.fk_dh(self.ui.horizontalSlider_fk_s1.value(), self.ui.horizontalSlider_fk_s1_2.value(),
+                          self.ui.horizontalSlider_fk_s1_3.value(), self.ui.horizontalSlider_fk_s1_4.value(),
+                          eff)
+        self.ui.lcdNumber_dh_X_2.display(round(fk_eff[1][0]))
+        self.ui.lcdnumber_dh_Y_2.display(round(fk_eff[1][1]))
+        self.ui.lcdnumber_dh_Z_2.display(round(fk_eff[1][2]))
+
+        # IK
+        self.ui.horizontalSlider_ik_z.setMaximum(418 + eff[0])
+        self.ui.horizontalSlider_ik_x.setMaximum(300 + eff[0])
+        self.ui.horizontalSlider_ik_y.setMaximum(300 + eff[0])
+        self.ui.horizontalSlider_ik_y.setMinimum(-1 * (300 + eff[0]))
+
+        # Manual XYZ
+        self.ui.horizontalSlider_manual_z.setMaximum(418 + eff[0])
+        self.ui.horizontalSlider_manual_x.setMaximum(300 + eff[0])
+        self.ui.horizontalSlider_manual_y.setMaximum(300 + eff[0])
+        self.ui.horizontalSlider_manual_y.setMinimum(-1 * (300 + eff[0]))
+
+        # AUTO
+        self.ui.horizontalSlider_auto_z.setMaximum(418 + eff[0])
+        self.ui.horizontalSlider_auto_x.setMaximum(300 + eff[0])
+        self.ui.horizontalSlider_auto_y.setMaximum(300 + eff[0])
+        self.ui.horizontalSlider_auto_y.setMinimum(-1 * (300 + eff[0]))
+
