@@ -76,6 +76,7 @@ class AppFunctions(MainWindow):
             self.ui.horizontalSlider_manual_y.setValue(value_manual_joints[1][1])
             self.ui.horizontalSlider_manual_z.setValue(value_manual_joints[1][2])
             self.ui.verticalSlider_manual_orient.setValue(value_manual_joints[0])
+            comm.servos_write(value_j1, value_j2, value_j3, value_j4, 0, 0)
 
         elif self.ui.tab_manual_xyz.isVisible():
             value_x = self.ui.horizontalSlider_manual_x.value()
@@ -127,6 +128,7 @@ class AppFunctions(MainWindow):
         self.ui.btn_kal2_set_2.clicked.connect(
             lambda: UIFunctions.log_list(self, 'Effector dim. changed to pen holder'))
         self.ui.checkBox_kal2_ef.clicked.connect(lambda: UIFunctions.effector_check(self))
+        self.ui.checkBox_kal2_ef.clicked.connect(lambda: UIFunctions.effector_settings(self))
         self.ui.checkBox_kal2_ef.clicked.connect(lambda: UIFunctions.log_list(self,
                                                                               'Effector assembled' if self.ui.checkBox_kal2_ef.checkState() else 'Effector disassembled'))
         self.ui.checkBox_kal2_ef.clicked.connect(lambda: self.ui.radioButton_home_effector.setChecked(
