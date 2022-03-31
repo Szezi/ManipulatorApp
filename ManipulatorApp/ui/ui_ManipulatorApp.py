@@ -23,9 +23,15 @@ class Ui_MainWindow(object):
             MainWindow.setObjectName(u"MainWindow")
         MainWindow.resize(1000, 680)
         MainWindow.setMinimumSize(QSize(1000, 680))
-        MainWindow.setStyleSheet(u"background-color: rgb(45, 45, 45);")
+        MainWindow.setStyleSheet(u"background-color: rgb(45, 45, 45);\n"
+"\n"
+"")
         self.centralwidget = QWidget(MainWindow)
         self.centralwidget.setObjectName(u"centralwidget")
+        self.centralwidget.setStyleSheet(u" QToolTip {\n"
+"     padding: 5px;\n"
+"     border-radius: 3px;\n"
+" }")
         self.verticalLayout = QVBoxLayout(self.centralwidget)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName(u"verticalLayout")
@@ -3576,6 +3582,7 @@ class Ui_MainWindow(object):
         sizePolicy4.setHeightForWidth(self.tableWidget.sizePolicy().hasHeightForWidth())
         self.tableWidget.setSizePolicy(sizePolicy4)
         self.tableWidget.setMinimumSize(QSize(440, 300))
+        self.tableWidget.setInputMethodHints(Qt.ImhNone)
         self.tableWidget.setFrameShape(QFrame.Panel)
         self.tableWidget.setEditTriggers(QAbstractItemView.AllEditTriggers)
         self.tableWidget.setDragEnabled(True)
@@ -3829,7 +3836,8 @@ class Ui_MainWindow(object):
 "}\n"
 "QPushButton:pressed {	\n"
 "	background-color: rgb(85, 170, 255);\n"
-"}")
+"}\n"
+"")
 
         self.gridLayout_7.addWidget(self.btn_auto_add_empty, 0, 10, 1, 1)
 
@@ -4674,7 +4682,7 @@ class Ui_MainWindow(object):
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget_4.setCurrentIndex(1)
         self.tabWidget_5.setCurrentIndex(1)
-        self.tabWidget_7.setCurrentIndex(0)
+        self.tabWidget_7.setCurrentIndex(1)
         self.tabWidget_6.setCurrentIndex(3)
 
 
@@ -4683,6 +4691,9 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         MainWindow.setWindowTitle(QCoreApplication.translate("MainWindow", u"MainWindow", None))
+#if QT_CONFIG(tooltip)
+        self.centralwidget.setToolTip("")
+#endif // QT_CONFIG(tooltip)
         self.btn_lista.setText("")
         self.label_name.setText(QCoreApplication.translate("MainWindow", u"ManipulatorApp", None))
 #if QT_CONFIG(tooltip)
@@ -4937,7 +4948,7 @@ class Ui_MainWindow(object):
         self.comboBox_auto_config.setToolTip(QCoreApplication.translate("MainWindow", u"Robot config", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
-        self.btn_auto_add_actual_3.setToolTip(QCoreApplication.translate("MainWindow", u"Dodaj bie\u017c\u0105c\u0105 pozycje", None))
+        self.btn_auto_add_actual_3.setToolTip(QCoreApplication.translate("MainWindow", u"Open", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_auto_add_actual_3.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"Path", None))

@@ -21,9 +21,20 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(45, 45, 45);</string>
+   <string notr="true">background-color: rgb(45, 45, 45);
+
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="toolTip">
+    <string/>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"> QToolTip {
+     padding: 5px;
+     border-radius: 3px;
+ }</string>
+   </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <property name="spacing">
      <number>0</number>
@@ -6333,7 +6344,7 @@ QPushButton:pressed {
                        <enum>QTabWidget::Triangular</enum>
                       </property>
                       <property name="currentIndex">
-                       <number>0</number>
+                       <number>1</number>
                       </property>
                       <property name="documentMode">
                        <bool>true</bool>
@@ -7710,6 +7721,9 @@ QSlider::handle:horizontal:pressed {
                             <height>300</height>
                            </size>
                           </property>
+                          <property name="inputMethodHints">
+                           <set>Qt::ImhNone</set>
+                          </property>
                           <property name="frameShape">
                            <enum>QFrame::Panel</enum>
                           </property>
@@ -8503,7 +8517,8 @@ QPushButton:hover {
 }
 QPushButton:pressed {	
 	background-color: rgb(85, 170, 255);
-}</string>
+}
+</string>
                       </property>
                       <property name="text">
                        <string/>
@@ -8800,7 +8815,7 @@ QPushButton:pressed {
                        </font>
                       </property>
                       <property name="toolTip">
-                       <string>Dodaj bieżącą pozycje</string>
+                       <string>Open</string>
                       </property>
                       <property name="layoutDirection">
                        <enum>Qt::LeftToRight</enum>
