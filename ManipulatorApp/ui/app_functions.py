@@ -76,7 +76,6 @@ class AppFunctions(MainWindow):
             self.ui.horizontalSlider_manual_y.setValue(value_manual_joints[1][1])
             self.ui.horizontalSlider_manual_z.setValue(value_manual_joints[1][2])
             self.ui.verticalSlider_manual_orient.setValue(value_manual_joints[0])
-            comm.servos_write(value_j1, value_j2, value_j3, value_j4, 0, 0)
 
         elif self.ui.tab_manual_xyz.isVisible():
             value_x = self.ui.horizontalSlider_manual_x.value()
@@ -106,7 +105,13 @@ class AppFunctions(MainWindow):
         servo_4 = self.ui.horizontalSlider_j_s4.value()
         servo_5 = self.ui.horizontalSlider_j_s5.value()
         servo_6 = self.ui.horizontalSlider_j_s6.value()
-        # send values to servos
+
+        try:
+            comm.servos_write(servo_1, servo_2, servo_3, servo_4, servo_5, servo_6)
+        except:
+            status = 'Error: Robotic Arm not connected'
+            print(status)
+            UIFunctions.log_list(self, 'Manual mode: ' + status)
 
         # Sim
         calculated = FK.fk_dh(servo_1, servo_2, servo_3, servo_4, eff)
