@@ -265,7 +265,11 @@ class RoboticMove(object):
         self.list_len = len(generated_path)
         self.generated_path = iter(generated_path)
         self.index = -1
+        self.last_index = -1
         self.history = []
+
+    def __del__(self):
+        del self.generated_path
 
     def __iter__(self):
         return self
@@ -274,9 +278,12 @@ class RoboticMove(object):
         self.index += 1
         if self.index >= self.list_len:
             raise StopIteration
+        elif self.index <= self.last_index:
+            return self.history[self.index]
         else:
             line = next(self.generated_path)
             self.history.append(line)
+            self.last_index += 1
             return line
 
     def prev(self):
