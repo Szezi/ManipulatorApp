@@ -6,13 +6,17 @@ from ManipulatorApp.modules import IK
 from ManipulatorApp.modules import trajectory
 from ManipulatorApp.modules import mplwidget
 from ManipulatorApp.modules import communication as comm
+from ManipulatorApp.modules.trajectory import RoboticMove
 from ManipulatorApp.ui.ui_functions import *
 from importlib import reload
+import time
 
 
 class AppFunctions(MainWindow):
+
     def __init__(self):
         super().__init__()
+        self.stop = None
 
     def page_fk(self):
         eff = UIFunctions.effector_check(self)
@@ -118,7 +122,65 @@ class AppFunctions(MainWindow):
         self.ui.MplWidget_ik_2.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
 
     def page_automatic(self):
-        pass
+        self.ui.btn_auto_Add_path_gen.clicked.connect(lambda: UIFunctions.generate_path(self))
+        self.ui.btn_auto_Add_path_read.clicked.connect(lambda: UIFunctions.read_path(self))
+        self.ui.btn_auto_init.clicked.connect(lambda: AppFunctions.automatic_mode_init(self))
+        self.ui.btn_auto_break.clicked.connect(lambda: AppFunctions.automatic_mode_break(self))
+        self.ui.btn_auto_stop.clicked.connect(lambda: AppFunctions.automatic_stop(self))
+        self.ui.btn_auto_start.clicked.connect(lambda: AppFunctions.automatic_start(self))
+        self.ui.btn_auto_prev.clicked.connect(lambda: AppFunctions.automatic_step_prev(self))
+        self.ui.btn_auto_next.clicked.connect(lambda: AppFunctions.automatic_step_next(self))
+
+    def automatic_stop(self):
+        self.stop = True
+        status = 'Stop robotic program'
+        UIFunctions.log_list(self, status)
+
+    def automatic_start(self):
+        self.stop = False
+        status = 'Executing robotic program'
+        UIFunctions.log_list(self, status)
+
+        while not self.stop:
+            print(self.robotic_arm.next())
+            QApplication.processEvents()
+            time.sleep(0.25)
+
+    def automatic_step_next(self):
+        try:
+            print(self.robotic_arm.next())
+            status = 'Step forward'
+        except AttributeError:
+            status = 'Automatic mode not initialized'
+
+        UIFunctions.log_list(self, status)
+
+    def automatic_step_prev(self):
+        try:
+            print(self.robotic_arm.prev())
+            status = 'Stop backward'
+        except AttributeError:
+            status = 'Automatic mode not initialized'
+
+        UIFunctions.log_list(self, status)
+
+    def automatic_mode_init(self):
+        self.robotic_path = self.read_robotic_path
+        self.robotic_arm = trajectory.RoboticMove(self.robotic_path)
+
+        status = 'Automatic mode initialized'
+        UIFunctions.log_list(self, status)
+
+    def automatic_mode_break(self):
+        try:
+            if self.robotic_arm is None:
+                pass
+            else:
+                del self.robotic_path
+                del self.robotic_arm
+        except AttributeError:
+            status = 'Automatic mode not initialized'
+            UIFunctions.log_list(self, status)
 
     def page_settings(self):
         # Effector
@@ -164,6 +226,3 @@ class AppFunctions(MainWindow):
                 UIFunctions.log_list(self, comm.status_log)
         except:
             self.ui.label_home_port_2.setText('Communication on port: No connection/Disconnected')
-
-
-
