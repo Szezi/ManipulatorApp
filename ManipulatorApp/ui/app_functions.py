@@ -10,6 +10,7 @@ from ManipulatorApp.modules.trajectory import RoboticMove
 from ManipulatorApp.ui.ui_functions import *
 from importlib import reload
 import time
+import itertools
 
 
 class AppFunctions(MainWindow):
@@ -166,6 +167,12 @@ class AppFunctions(MainWindow):
 
     def automatic_mode_init(self):
         self.robotic_path = self.read_robotic_path
+        robotic_path_copy = self.robotic_path.copy()
+
+        repeat = self.ui.spinBox.value()
+        for _ in range(1, repeat):
+            self.robotic_path.extend(robotic_path_copy)
+
         self.robotic_arm = trajectory.RoboticMove(self.robotic_path)
 
         status = 'Automatic mode initialized'
