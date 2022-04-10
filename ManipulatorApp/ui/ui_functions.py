@@ -3,6 +3,7 @@ from ManipulatorApp.main import *
 import datetime as dt
 from ManipulatorApp.modules import communication as comm
 from ManipulatorApp.modules import FK
+from ManipulatorApp.modules import trajectory
 
 GLOBAL_STATE = 0
 
@@ -216,4 +217,114 @@ class UIFunctions(MainWindow):
         self.ui.horizontalSlider_auto_x.setMaximum(300 + eff[0])
         self.ui.horizontalSlider_auto_y.setMaximum(300 + eff[0])
         self.ui.horizontalSlider_auto_y.setMinimum(-1 * (300 + eff[0]))
+
+    # == > QTABLEWIDGET AUTO MODE
+    # ADD / DELETE ROW
+    def AddRow(self):
+        self.ui.tableWidget.insertRow(self.ui.tableWidget.currentRow()+1)
+
+    def RemoveRow(self):
+        if self.ui.tableWidget.rowCount() > 0:
+            self.ui.tableWidget.removeRow(self.ui.tableWidget.currentRow())
+
+    def add_pos(self):
+        try:
+            position_values = [self.ui.comboBox_auto_command.currentText(),
+                               self.ui.comboBox_auto_traj.currentText(),
+                               self.ui.comboBox_auto_config.currentText(),
+                               self.ui.horizontalSlider_auto_x.value(),
+                               self.ui.horizontalSlider_auto_y.value(),
+                               self.ui.horizontalSlider_auto_z.value(),
+                               self.ui.horizontalSlider_auto_orient.value(),
+                               self.ui.horizontalSlider_auto_time_2.value()]
+
+            self.ui.tableWidget.insertRow(self.ui.tableWidget.rowCount())
+            for i in range(0, self.ui.tableWidget.columnCount()):
+                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount() - 1, i,
+                                            QTableWidgetItem(str(position_values[i])))
+        except:
+            status = 'Error: Position can not be added'
+
+        else:
+            status = 'Position added'
+        UIFunctions.log_list(self, status)
+
+    def add_safe(self):
+        try:
+            home = self.home_position
+            for i in range(0, self.ui.tableWidget.columnCount()):
+                self.ui.tableWidget.setItem(self.ui.tableWidget.currentRow(), i,
+                                            QTableWidgetItem(str(home[i])))
+        except:
+            status = 'Error: Home pos can not be added'
+
+        else:
+            status = 'Home position added'
+        UIFunctions.log_list(self, status)
+
+    def add_wait(self):
+        try:
+            position_values = ['wait',
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 1).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 2).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 3).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 4).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 5).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 6).text(),
+                               self.ui.horizontalSlider_auto_time_2.value()]
+            for i in range(0, self.ui.tableWidget.columnCount()):
+                self.ui.tableWidget.setItem(self.ui.tableWidget.currentRow(), i,
+                                            QTableWidgetItem(str(position_values[i])))
+        except:
+            status = 'Error: Wait pos can not be added'
+
+        else:
+            status = 'Wait position added'
+        UIFunctions.log_list(self, status)
+
+    def set_home(self):
+        try:
+            self.home_position = ['home',
+                                  self.ui.comboBox_auto_traj.currentText(),
+                                  self.ui.comboBox_auto_config.currentText(),
+                                  self.ui.horizontalSlider_auto_x.value(),
+                                  self.ui.horizontalSlider_auto_y.value(),
+                                  self.ui.horizontalSlider_auto_z.value(),
+                                  self.ui.horizontalSlider_auto_orient.value(),
+                                  5.0]
+        except:
+            status = 'Error: Home can not be set'
+            UIFunctions.log_list(self, status)
+        else:
+            status = 'Home position created'
+            UIFunctions.log_list(self, status)
+            return self.home_position
+
+    def generate_path(self):
+        eff = UIFunctions.effector_check(self)
+        table = []
+        for i in range(0, self.ui.tableWidget.rowCount()):
+            table_row = [self.ui.tableWidget.item(i, 0).text(),
+                         self.ui.tableWidget.item(i, 1).text(),
+                         self.ui.tableWidget.item(i, 2).text(),
+                         self.ui.tableWidget.item(i, 3).text(),
+                         self.ui.tableWidget.item(i, 4).text(),
+                         self.ui.tableWidget.item(i, 5).text(),
+                         self.ui.tableWidget.item(i, 6).text(),
+                         self.ui.tableWidget.item(i, 7).text(),
+                         eff]
+            table.append(table_row)
+        file_path_write = 'r' + "'" + self.ui.lineEdit.text() + "'"
+        # file_path_write = r'C:\Users\SZILING\Desktop\ManipulatorApp\data'
+        file_name_write = 'generated_path_'
+        file_format_write = '.txt'
+        trajectory.write_generated_path_to_file(table, file_path_write, file_name_write, file_format_write)
+
+    def read_path(self):
+        print(self.ui.lineEdit.text())
+        file_path_read = self.ui.lineEdit.text()
+        # file_path_read = r'C:\Users\SZILING\Desktop\ManipulatorApp\data\test_path.txt'
+        self.read_robotic_path = trajectory.read_generated_path_from_file(file_path_read)
+        print(self.read_robotic_path)
+
 
