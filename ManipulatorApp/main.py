@@ -133,6 +133,15 @@ class MainWindow(QMainWindow):
         self.ui.verticalSlider_manual_orient.valueChanged.connect(lambda: AppFunctions.page_manual(self))
         self.ui.btn_manual_reset_1.clicked.connect(lambda: UIFunctions.page_manual_reset(self))
         self.ui.btn_manual_reset_2.clicked.connect(lambda: UIFunctions.page_manual_reset(self))
+
+        # Automatic_mode
+        self.ui.btn_auto_add_empty.clicked.connect(lambda: UIFunctions.AddRow(self))
+        self.ui.btn_auto_delete.clicked.connect(lambda: UIFunctions.RemoveRow(self))
+        self.ui.btn_auto_add_actual.clicked.connect(lambda: UIFunctions.add_pos(self))
+        self.ui.btn_auto_add_actual_2.clicked.connect(lambda: UIFunctions.set_home(self))
+        self.ui.btn_auto_Add_safe.clicked.connect(lambda: UIFunctions.add_safe(self))
+        self.ui.btn_auto_Add_wait.clicked.connect(lambda: UIFunctions.add_wait(self))
+
         ################################################################################################################
 
         # MOVE WINDOW
