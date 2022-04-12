@@ -236,6 +236,8 @@ class UIFunctions(MainWindow):
                                self.ui.horizontalSlider_auto_y.value(),
                                self.ui.horizontalSlider_auto_z.value(),
                                self.ui.horizontalSlider_auto_orient.value(),
+                               self.ui.horizontalSlider_auto_s5.value(),
+                               self.ui.horizontalSlider_auto_s6.value(),
                                self.ui.horizontalSlider_auto_time_2.value()]
 
             self.ui.tableWidget.insertRow(self.ui.tableWidget.rowCount())
@@ -271,6 +273,8 @@ class UIFunctions(MainWindow):
                                self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 4).text(),
                                self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 5).text(),
                                self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 6).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 7).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 8).text(),
                                self.ui.horizontalSlider_auto_time_2.value()]
             for i in range(0, self.ui.tableWidget.columnCount()):
                 self.ui.tableWidget.setItem(self.ui.tableWidget.currentRow(), i,
@@ -291,6 +295,8 @@ class UIFunctions(MainWindow):
                                   self.ui.horizontalSlider_auto_y.value(),
                                   self.ui.horizontalSlider_auto_z.value(),
                                   self.ui.horizontalSlider_auto_orient.value(),
+                                  self.ui.horizontalSlider_auto_s5.value(),
+                                  self.ui.horizontalSlider_auto_s6.value(),
                                   5.0]
         except:
             status = 'Error: Home can not be set'
@@ -312,6 +318,7 @@ class UIFunctions(MainWindow):
                          self.ui.tableWidget.item(i, 5).text(),
                          self.ui.tableWidget.item(i, 6).text(),
                          self.ui.tableWidget.item(i, 7).text(),
+                         self.ui.tableWidget.item(i, 8).text(),
                          eff]
             table.append(table_row)
         file_path_write = 'r' + "'" + self.ui.lineEdit.text() + "'"
@@ -321,10 +328,10 @@ class UIFunctions(MainWindow):
         trajectory.write_generated_path_to_file(table, file_path_write, file_name_write, file_format_write)
 
     def read_path(self):
-        print(self.ui.lineEdit.text())
-        file_path_read = self.ui.lineEdit.text()
-        # file_path_read = r'C:\Users\SZILING\Desktop\ManipulatorApp\data\test_path.txt'
+        # file_path_read = self.ui.lineEdit.text()
+        file_path_read = r'C:\Users\SZILING\Desktop\ManipulatorApp\data\test_path.txt'
         self.read_robotic_path = trajectory.read_generated_path_from_file(file_path_read)
+        self.read_robotic_path.pop(0)
         print(self.read_robotic_path)
 
 
