@@ -25,20 +25,21 @@ def path_generator(table: list):
     traj - cp_linear, p2p \n
     config - config_1, config_2 \n
     Parameters can not be empty \n
-    :param table: Array of [command, traj, config, end_points[x, y, z, alfa], time, eff]; table[0] = home position
-    :return: generated_path - Array of [command, [theta0, theta1, theta2, theta3], time]
+    :param table: Array of [command, traj, config, x, y, z, alfa, Servo5, Servo6, time, eff]; table[0] = home position
+    :return: generated_path - Array of [command, traj, config, x, y, z , alfa, theta0, theta1, theta2, theta3, Servo5, Servo6, time, eff]
     """
 
     try:
         print('Generating path - started')
 
         home_position = table[0]
+        # [command, traj, config, x, y, z , alfa, Servo5, Servo6, time, eff]
         # print(home_position)
 
         # Calculating inverse kinematics of home position and adding at 0 index of return arg generated_path
-        home_values = IK.ik_geo(home_position[3][0], home_position[3][1], home_position[3][2], home_position[3][3],
-                                home_position[5])
-
+        home_values = IK.ik_geo(home_position[3], home_position[4], home_position[5], home_position[6],
+                                home_position[10])
+        print(home_values)
         if home_position[2] == 'config_1':
             generated_path_home = home_values[0]
         elif home_position[2] == 'config_2':
@@ -47,27 +48,31 @@ def path_generator(table: list):
             status = 'Unexpected value of config param'
             raise ValueError(status)
 
-        index = 0
+        index = 1
         generated_path = [
-            [index, 'home', generated_path_home[0], generated_path_home[1], generated_path_home[2], generated_path_home[3],
-             float(home_position[4])]]
+            [index, 'home', home_position[1], home_position[2],
+             home_position[3], home_position[4], home_position[5], home_position[6],
+             generated_path_home[0], generated_path_home[1], generated_path_home[2], generated_path_home[3],
+             home_position[7], home_position[8], float(home_position[9]), home_position[10]]]
 
         for row_index in range(1, len(table)):
-            # [index, command, traj, config, end_points, time, eff]
+            # [command, traj, config, x, y, z , alfa, theta0, theta1, theta2, theta3, Servo5, Servo6, time, eff]
             command = table[row_index][0]
             traj = table[row_index][1]
             config = table[row_index][2]
-            end_points = table[row_index][3]
-            time = table[row_index][4]
-            eff = table[row_index][5]
+            end_points = [table[row_index][3], table[row_index][4], table[row_index][5], table[row_index][6]]
+            servo5 = table[row_index][7]
+            servo6 = table[row_index][8]
+            time = table[row_index][9]
+            eff = table[row_index][10]
 
             # Initialing start_points - [x, y, z, alfa, config]
             if row_index == 1:
-                start_points = [home_position[3][0], home_position[3][1], home_position[3][2], home_position[3][3],
+                start_points = [home_position[3], home_position[4], home_position[5], home_position[6],
                                 home_position[2]]
             else:
-                start_points = [table[row_index - 1][3][0], table[row_index - 1][3][1], table[row_index - 1][3][2],
-                                table[row_index - 1][3][3], table[row_index - 1][2]]
+                start_points = [table[row_index - 1][3], table[row_index - 1][4], table[row_index - 1][5],
+                                table[row_index - 1][6], table[row_index - 1][2]]
 
             alfa = end_points[3]
             alfa_start = start_points[3]
@@ -102,13 +107,21 @@ def path_generator(table: list):
                             # Checking position config and generating path
                             if config == 'config_1':
                                 # print(path_to_servos[0])
-                                path_to_append = [index, command, path_to_servos[0][0], path_to_servos[0][1],
-                                                  path_to_servos[0][2], path_to_servos[0][3], float(time / sample)]
+                                path_to_append = [index, command, traj, config,
+                                                  end_points[0], end_points[1], end_points[2], end_points[3],
+                                                  path_to_servos[0][0], path_to_servos[0][1],
+                                                  path_to_servos[0][2], path_to_servos[0][3],
+                                                  servo5, servo6, float(time / sample), eff]
+
                                 generated_path.append(path_to_append)
                             elif config == 'config_2':
                                 # print(path_to_servos[1])
-                                path_to_append = [index, command, path_to_servos[1][0], path_to_servos[1][1],
-                                                  path_to_servos[1][2], path_to_servos[1][3], float(time / sample)]
+                                path_to_append = [index, command, traj, config,
+                                                  end_points[0], end_points[1], end_points[2], end_points[3],
+                                                  path_to_servos[1][0], path_to_servos[1][1],
+                                                  path_to_servos[1][2], path_to_servos[1][3],
+                                                  servo5, servo6, float(time / sample), eff]
+
                                 generated_path.append(path_to_append)
                             else:
                                 status = 'Unexpected value of config param'
@@ -166,8 +179,11 @@ def path_generator(table: list):
 
                             start_pos_values = path_to_servos
 
-                            path_to_append = [index, command, path_to_servos[0], path_to_servos[1], path_to_servos[2],
-                                              path_to_servos[3], float(time / sample)]
+                            path_to_append = [index, command, traj, config,
+                                              end_points[0], end_points[1], end_points[2], end_points[3],
+                                              path_to_servos[0], path_to_servos[1], path_to_servos[2],
+                                              path_to_servos[3], servo5, servo6, float(time / sample), eff]
+
                             generated_path.append(path_to_append)
                     else:
                         status = 'Error: Path outside the working Area. Line %d' % row_index
@@ -181,7 +197,9 @@ def path_generator(table: list):
                 index += 1
 
                 path_to_append = [index, command, generated_path[-1][2], generated_path[-1][3], generated_path[-1][4],
-                                  generated_path[-1][4], float(time)]
+                                  generated_path[-1][5], generated_path[-1][6], generated_path[-1][7],
+                                  generated_path[-1][8], generated_path[-1][9], generated_path[-1][10],
+                                  generated_path[-1][11], generated_path[-1][12], generated_path[-1][13], float(time), eff]
                 generated_path.append(path_to_append)
 
             else:
@@ -192,11 +210,11 @@ def path_generator(table: list):
         return generated_path, status
 
     except ValueError as status:
-        return [0, 'error', 0.0, 0.0, 0.0, 0.0, 0.0], str(status)
+        return [0, 'errorr', 'error', 'error', 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'error'], str(status)
 
     except:
         status = 'Something went wrong'
-        return [0, 'error', 0.0, 0.0, 0.0, 0.0, 0.0], status
+        return [0, 'error', 'error', 'error', 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'error'], status
 
     finally:
         print('Generating path - Ended')
@@ -221,7 +239,7 @@ def write_generated_path_to_file(array: list, file_path: str, file_name: str, fi
     try:
         # Opening file using contex manager and write each element from generated path to file.
         with open(os.path.join(file_path, file_name + file_date + file_format), 'w', encoding='utf-8') as file:
-            file.write("[index, 'command', theta0, theta1, theta2, theta3, time]" + '\n')
+            file.write("[command, traj, config, x, y, z , alfa, theta0, theta1, theta2, theta3, Servo5, Servo6, time, eff]" + '\n')
             for element in path_data:
                 file.write(str(element) + '\n')
             file.write(path_status)
@@ -242,13 +260,15 @@ def read_generated_path_from_file(file_path: str):
     path_from_file = []
     try:
         # Opening file using contex manager and write read lines from file into list.
-        # Line styling of file.txt ['command', 'theta0', 'theta1', 'theta2', 'theta3', 'time']
+        # Line styling of file.txt [command, traj, config, x, y, z , alfa, theta0, theta1, theta2, theta3, Servo5, Servo6, time, eff]
         with open(os.path.join(file_path), 'r', encoding='utf-8') as file:
             path = [line.rstrip() for line in file]
             for elem in path[:-1]:
                 element = elem.split(', ')
                 element[0] = element[0][1:]
                 element[1] = element[1][1:-1]
+                element[2] = element[2][1:-1]
+                element[3] = element[3][1:-1]
                 element[-1] = element[-1][:-1]
                 path_from_file.append(element)
     except FileNotFoundError:
