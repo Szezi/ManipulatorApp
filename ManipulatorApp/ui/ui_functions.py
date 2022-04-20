@@ -221,7 +221,7 @@ class UIFunctions(MainWindow):
     # == > QTABLEWIDGET AUTO MODE
     # ADD / DELETE ROW
     def AddRow(self):
-        self.ui.tableWidget.insertRow(self.ui.tableWidget.currentRow()+1)
+        self.ui.tableWidget.insertRow(self.ui.tableWidget.currentRow() + 1)
 
     def RemoveRow(self):
         if self.ui.tableWidget.rowCount() > 0:
@@ -267,12 +267,12 @@ class UIFunctions(MainWindow):
     def add_wait(self):
         try:
             position_values = ['wait',
-                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 1).text(),
-                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 2).text(),
-                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 3).text(),
-                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 4).text(),
-                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 5).text(),
-                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow()-1, 6).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 1).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 2).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 3).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 4).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 5).text(),
+                               self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 6).text(),
                                self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 7).text(),
                                self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 8).text(),
                                self.ui.horizontalSlider_auto_time_2.value()]
@@ -333,5 +333,36 @@ class UIFunctions(MainWindow):
         self.read_robotic_path = trajectory.read_generated_path_from_file(file_path_read)
         self.read_robotic_path.pop(0)
         print(self.read_robotic_path)
+        UIFunctions.write_read_path_to_table(self, self.read_robotic_path)
 
-
+    def write_read_path_to_table(self, robotic_path):
+        table_ui = self.ui.tableWidget
+        # Copy columns headers names
+        header = []
+        for i in range(0, self.ui.tableWidget.columnCount()):
+            header.append(table_ui.horizontalHeaderItem(i).text())
+        # Clear table and set columns headers names
+        table_ui.clear()
+        for i in range(0, self.ui.tableWidget.columnCount()):
+            table_ui.setHorizontalHeaderItem(i, QTableWidgetItem(header[i]))
+        # Add items from robotic_path to table
+        for j in range(0, len(robotic_path)):
+            index = int(robotic_path[j][0])
+            print(index)
+            values = [robotic_path[j][1],
+                      robotic_path[j][2],
+                      robotic_path[j][3],
+                      robotic_path[j][4],
+                      robotic_path[j][5],
+                      robotic_path[j][6],
+                      robotic_path[j][7],
+                      robotic_path[j][12],
+                      robotic_path[j][13],
+                      robotic_path[j][14]]
+            if index > table_ui.rowCount():
+                self.ui.tableWidget.insertRow(self.ui.tableWidget.rowCount())
+            else:
+                pass
+            for i in range(0, self.ui.tableWidget.columnCount()):
+                self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount() - 1, i,
+                                            QTableWidgetItem(str(values[i])))
