@@ -2,7 +2,7 @@ import numpy as np
 import math
 
 
-def fk_dh(theta1: int, theta2: int, theta3: int, theta4: int, eff: list):
+def fk_dh(theta1: float, theta2: float, theta3: float, theta4: float, eff: list):
     """
     Function calculate forward kinematics of the robotic arm with given parameters and specified length of robotic arm links.
     Forward kinematics is being calculated using Denavit–Hartenberg notation.
