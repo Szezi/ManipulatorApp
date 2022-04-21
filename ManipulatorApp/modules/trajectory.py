@@ -33,7 +33,7 @@ def path_generator(table: list):
         print('Generating path - started')
 
         home_position = table[0]
-        # [command, traj, config, x, y, z , alfa, Servo5, Servo6, time, eff]
+        # [command, traj, config, x, y, z , alfa, theta0, theta1, theta2, theta3, Servo5, Servo6, time, eff]
         # print(home_position)
 
         # Calculating inverse kinematics of home position and adding at 0 index of return arg generated_path
