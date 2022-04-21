@@ -147,13 +147,13 @@ class AppFunctions(MainWindow):
                 eff2 = step_values_next[16][:1]
                 eff = [int(eff1), int(eff2)]
                 print(step_values_next)
-                calculated = FK.fk_dh(int(float(step_values_next[8])),
-                                      int(float(step_values_next[9])),
-                                      int(float(step_values_next[10])),
-                                      int(float(step_values_next[11])), eff)
+                calculated = FK.fk_dh(float(step_values_next[8]),
+                                      float(step_values_next[9]),
+                                      float(step_values_next[10]),
+                                      float(step_values_next[11]), eff)
                 self.ui.MplWidget_auto.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
                 QApplication.processEvents()
-                time.sleep(int(float(step_values_next[14])))
+                time.sleep(float(step_values_next[14]))
         else:
             status = 'Executing robotic program - SERVO'
             #     Send to servos
@@ -163,14 +163,14 @@ class AppFunctions(MainWindow):
             #     eff2 = step_values_next[16][:1]
             #     eff = [int(eff1), int(eff2)]
             #     print(step_values_next)
-            #     comm.servos_write(int(float(step_values_next[8])),
-            #                       int(float(step_values_next[9])),
-            #                       int(float(step_values_next[10])),
-            #                       int(float(step_values_next[11])),
-            #                       int(float(step_values_next[12])),
-            #                       int(float(step_values_next[13])))
+            #     comm.servos_write(float(step_values_next[8]),
+            #                       float(step_values_next[9]),
+            #                       float(step_values_next[10]),
+            #                       float(step_values_next[11]),
+            #                       float(step_values_next[12]),
+            #                       float(step_values_next[13]))
             #     QApplication.processEvents()
-            #     time.sleep(int(float(step_values_next[14])))
+            #     time.sleep(float(step_values_next[14]))
 
         UIFunctions.log_list(self, status)
 
@@ -183,10 +183,10 @@ class AppFunctions(MainWindow):
             print(step_values_next)
             if self.ui.comboBox_auto_sim_servo.currentText() == 'SIM':
                 status = 'Step forward SIM'
-                calculated = FK.fk_dh(int(float(step_values_next[8])),
-                                      int(float(step_values_next[9])),
-                                      int(float(step_values_next[10])),
-                                      int(float(step_values_next[11])), eff)
+                calculated = FK.fk_dh(float(step_values_next[8]),
+                                      float(step_values_next[9]),
+                                      float(step_values_next[10]),
+                                      float(step_values_next[11]), eff)
                 print(calculated)
                 self.ui.MplWidget_auto.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
             else:
@@ -194,14 +194,13 @@ class AppFunctions(MainWindow):
                 #     Send to servos
                 #     step_values_next = self.robotic_arm.next()
                 #     print(step_values_next)
-                #     comm.servos_write(int(float(step_values_next[8])),
-                #                       int(float(step_values_next[9])),
-                #                       int(float(step_values_next[10])),
-                #                       int(float(step_values_next[11])),
-                #                       int(float(step_values_next[12])),
-                #                       int(float(step_values_next[13])))
+                #     comm.servos_write(float(step_values_next[8]),
+                #                       float(step_values_next[9]),
+                #                       float(step_values_next[10]),
+                #                       float(step_values_next[11]),
+                #                       float(step_values_next[12]),
+                #                       float(step_values_next[13]))
                 #     QApplication.processEvents()
-                #     time.sleep(int(float(step_values_next[14])))
         except AttributeError:
             status = 'Automatic mode not initialized'
 
@@ -216,24 +215,23 @@ class AppFunctions(MainWindow):
             print(step_values_prev)
             if self.ui.comboBox_auto_sim_servo.currentText() == 'SIM':
                 status = 'Step backward SIM'
-                calculated = FK.fk_dh(int(float(step_values_prev[8])),
-                                      int(float(step_values_prev[9])),
-                                      int(float(step_values_prev[10])),
-                                      int(float(step_values_prev[11])), eff)
+                calculated = FK.fk_dh(float(step_values_prev[8]),
+                                      float(step_values_prev[9]),
+                                      float(step_values_prev[10]),
+                                      float(step_values_prev[11]), eff)
                 self.ui.MplWidget_auto.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
             else:
                 status = 'Step backward SERVO'
                 #     Send to servos
                 #     step_values_next = self.robotic_arm.next()
                 #     print(step_values_next)
-                #     comm.servos_write(int(float(step_values_next[8])),
-                #                       int(float(step_values_next[9])),
-                #                       int(float(step_values_next[10])),
-                #                       int(float(step_values_next[11])),
-                #                       int(float(step_values_next[12])),
-                #                       int(float(step_values_next[13])))
+                #     comm.servos_write(float(step_values_next[8]),
+                #                       float(step_values_next[9]),
+                #                       float(step_values_next[10]),
+                #                       float(step_values_next[11]),
+                #                       float(step_values_next[12]),
+                #                       float(step_values_next[13]))
                 #     QApplication.processEvents()
-                #     time.sleep(int(float(step_values_next[14])))
         except AttributeError:
             status = 'Automatic mode not initialized'
 
