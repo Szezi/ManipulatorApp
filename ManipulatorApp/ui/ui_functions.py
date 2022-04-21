@@ -309,20 +309,23 @@ class UIFunctions(MainWindow):
     def generate_path(self):
         eff = UIFunctions.effector_check(self)
         table = []
+
         for i in range(0, self.ui.tableWidget.rowCount()):
-            table_row = [self.ui.tableWidget.item(i, 0).text(),
-                         self.ui.tableWidget.item(i, 1).text(),
-                         self.ui.tableWidget.item(i, 2).text(),
-                         self.ui.tableWidget.item(i, 3).text(),
-                         self.ui.tableWidget.item(i, 4).text(),
-                         self.ui.tableWidget.item(i, 5).text(),
-                         self.ui.tableWidget.item(i, 6).text(),
-                         self.ui.tableWidget.item(i, 7).text(),
-                         self.ui.tableWidget.item(i, 8).text(),
+            table_row = [str(self.ui.tableWidget.item(i, 0).text()),
+                         str(self.ui.tableWidget.item(i, 1).text()),
+                         str(self.ui.tableWidget.item(i, 2).text()),
+                         int(self.ui.tableWidget.item(i, 3).text()),
+                         int(self.ui.tableWidget.item(i, 4).text()),
+                         int(self.ui.tableWidget.item(i, 5).text()),
+                         int(self.ui.tableWidget.item(i, 6).text()),
+                         int(self.ui.tableWidget.item(i, 7).text()),
+                         int(self.ui.tableWidget.item(i, 8).text()),
+                         float(self.ui.tableWidget.item(i, 9).text()),
                          eff]
+            print(table_row)
             table.append(table_row)
-        file_path_write = 'r' + "'" + self.ui.lineEdit.text() + "'"
-        # file_path_write = r'C:\Users\SZILING\Desktop\ManipulatorApp\data'
+        # file_path_write = 'r' + "'" + self.ui.lineEdit.text() + "'"
+        file_path_write = r'C:\Users\SZILING\Desktop\ManipulatorApp\data'
         file_name_write = 'generated_path_'
         file_format_write = '.txt'
         trajectory.write_generated_path_to_file(table, file_path_write, file_name_write, file_format_write)
@@ -348,7 +351,6 @@ class UIFunctions(MainWindow):
         # Add items from robotic_path to table
         for j in range(0, len(robotic_path)):
             index = int(robotic_path[j][0])
-            print(index)
             values = [robotic_path[j][1],
                       robotic_path[j][2],
                       robotic_path[j][3],
