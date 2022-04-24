@@ -4020,20 +4020,20 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.btn_auto_Add_safe, 1, 12, 3, 1)
 
-        self.btn_auto_add_actual_3 = QPushButton(self.frame)
-        self.btn_auto_add_actual_3.setObjectName(u"btn_auto_add_actual_3")
-        sizePolicy4.setHeightForWidth(self.btn_auto_add_actual_3.sizePolicy().hasHeightForWidth())
-        self.btn_auto_add_actual_3.setSizePolicy(sizePolicy4)
-        self.btn_auto_add_actual_3.setMinimumSize(QSize(20, 20))
-        self.btn_auto_add_actual_3.setMaximumSize(QSize(20, 20))
+        self.btn_auto_file_dialog = QPushButton(self.frame)
+        self.btn_auto_file_dialog.setObjectName(u"btn_auto_file_dialog")
+        sizePolicy4.setHeightForWidth(self.btn_auto_file_dialog.sizePolicy().hasHeightForWidth())
+        self.btn_auto_file_dialog.setSizePolicy(sizePolicy4)
+        self.btn_auto_file_dialog.setMinimumSize(QSize(20, 20))
+        self.btn_auto_file_dialog.setMaximumSize(QSize(20, 20))
         font10 = QFont()
         font10.setFamily(u"Segoe UI")
         font10.setPointSize(6)
         font10.setBold(False)
         font10.setWeight(50)
-        self.btn_auto_add_actual_3.setFont(font10)
-        self.btn_auto_add_actual_3.setLayoutDirection(Qt.LeftToRight)
-        self.btn_auto_add_actual_3.setStyleSheet(u"QPushButton {	\n"
+        self.btn_auto_file_dialog.setFont(font10)
+        self.btn_auto_file_dialog.setLayoutDirection(Qt.LeftToRight)
+        self.btn_auto_file_dialog.setStyleSheet(u"QPushButton {	\n"
 "	color: rgb(222, 222, 222);\n"
 "    border-style: outset;\n"
 "	background-color: transparent;\n"
@@ -4045,10 +4045,10 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgb(85, 170, 255);\n"
 "}")
-        self.btn_auto_add_actual_3.setCheckable(True)
-        self.btn_auto_add_actual_3.setChecked(True)
+        self.btn_auto_file_dialog.setCheckable(True)
+        self.btn_auto_file_dialog.setChecked(True)
 
-        self.gridLayout_7.addWidget(self.btn_auto_add_actual_3, 3, 3, 1, 1)
+        self.gridLayout_7.addWidget(self.btn_auto_file_dialog, 3, 3, 1, 1)
 
         self.lineEdit = QLineEdit(self.frame)
         self.lineEdit.setObjectName(u"lineEdit")
@@ -5086,9 +5086,9 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_auto_Add_safe.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
 #if QT_CONFIG(tooltip)
-        self.btn_auto_add_actual_3.setToolTip(QCoreApplication.translate("MainWindow", u"Open", None))
+        self.btn_auto_file_dialog.setToolTip(QCoreApplication.translate("MainWindow", u"Open", None))
 #endif // QT_CONFIG(tooltip)
-        self.btn_auto_add_actual_3.setText(QCoreApplication.translate("MainWindow", u"...", None))
+        self.btn_auto_file_dialog.setText(QCoreApplication.translate("MainWindow", u"...", None))
         self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"Path", None))
         self.comboBox_auto_config.setItemText(0, QCoreApplication.translate("MainWindow", u"config_1", None))
         self.comboBox_auto_config.setItemText(1, QCoreApplication.translate("MainWindow", u"config_2", None))

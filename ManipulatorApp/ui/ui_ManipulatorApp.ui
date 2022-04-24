@@ -8935,7 +8935,7 @@ QPushButton:pressed {
                      </widget>
                     </item>
                     <item row="3" column="3">
-                     <widget class="QPushButton" name="btn_auto_add_actual_3">
+                     <widget class="QPushButton" name="btn_auto_file_dialog">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                         <horstretch>0</horstretch>
