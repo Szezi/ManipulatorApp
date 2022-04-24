@@ -141,6 +141,7 @@ class MainWindow(QMainWindow):
         self.ui.btn_auto_add_actual_2.clicked.connect(lambda: UIFunctions.set_home(self))
         self.ui.btn_auto_Add_safe.clicked.connect(lambda: UIFunctions.add_safe(self))
         self.ui.btn_auto_Add_wait.clicked.connect(lambda: UIFunctions.add_wait(self))
+        self.ui.btn_auto_file_dialog.clicked.connect(lambda: UIFunctions.directory_path(self))
 
         ################################################################################################################
 

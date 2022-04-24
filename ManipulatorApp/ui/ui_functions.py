@@ -1,3 +1,5 @@
+import os
+
 from ManipulatorApp.main import MainWindow
 from ManipulatorApp.main import *
 import datetime as dt
@@ -324,15 +326,14 @@ class UIFunctions(MainWindow):
                          eff]
             print(table_row)
             table.append(table_row)
-        # file_path_write = 'r' + "'" + self.ui.lineEdit.text() + "'"
-        file_path_write = r'C:\Users\SZILING\Desktop\ManipulatorApp\data'
+
+        file_path_write = UIFunctions.directory_path(self)
         file_name_write = 'generated_path_'
         file_format_write = '.txt'
         trajectory.write_generated_path_to_file(table, file_path_write, file_name_write, file_format_write)
 
     def read_path(self):
-        # file_path_read = self.ui.lineEdit.text()
-        file_path_read = r'C:\Users\SZILING\Desktop\ManipulatorApp\data\test_path.txt'
+        file_path_read = UIFunctions.file_path(self)
         self.read_robotic_path = trajectory.read_generated_path_from_file(file_path_read)
         self.read_robotic_path.pop(0)
         print(self.read_robotic_path)
@@ -368,3 +369,24 @@ class UIFunctions(MainWindow):
             for i in range(0, self.ui.tableWidget.columnCount()):
                 self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount() - 1, i,
                                             QTableWidgetItem(str(values[i])))
+
+    def file_path(self):
+        file_filter = 'Text file (*.txt);; All files (*.*)'
+        response = QFileDialog.getOpenFileName(
+            parent=self,
+            caption='Get Path',
+            directory=os.getcwd(),
+            filter=file_filter,
+            initialFilter='Text File (*.txt);; All files (*.*)'
+        )
+        self.ui.lineEdit.setText(response[0])
+        return response[0]
+
+    def directory_path(self):
+        response = QFileDialog.getExistingDirectory(
+            self,
+            caption='Get Path',
+            options=QFileDialog.ShowDirsOnly
+        )
+        self.ui.lineEdit.setText(response)
+        return response
