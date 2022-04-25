@@ -1,5 +1,7 @@
 import os
 
+from PySide2.QtWidgets import QSlider
+
 from ManipulatorApp.main import MainWindow
 from ManipulatorApp.main import *
 import datetime as dt
@@ -219,6 +221,34 @@ class UIFunctions(MainWindow):
         self.ui.horizontalSlider_auto_x.setMaximum(300 + eff[0])
         self.ui.horizontalSlider_auto_y.setMaximum(300 + eff[0])
         self.ui.horizontalSlider_auto_y.setMinimum(-1 * (300 + eff[0]))
+
+    # SLIDER COLOR SET
+    # def set_slider_color(self):
+    #     if self.ui.horizontalSlider_fk_s1.value() == 0:
+    #         self.ui.horizontalSlider_fk_s1.setStyleSheet('background-color: rgb(170, 0, 255)')
+    #     else:
+    #         self.ui.horizontalSlider_fk_s1.setStyleSheet('background-color: rgb(85, 170, 255)')
+
+    def slider_color_warning(getStyle, color):
+        set_color = getStyle.replace("rgb(61, 61, 61);", color)
+        return set_color
+
+    def slider_color_standard(getStyle, actual, color):
+        set_color = getStyle.replace(actual, color)
+        return set_color
+
+    def set_slider_color(self, widget):
+        left = "qlineargradient(spread:pad, x1:-1, y1:0.0163043, x2:1, y2:0, stop:0 rgba(54, 0, 70, 255), stop:1 rgba(61, 61, 61, 255));"
+        right = "qlineargradient(spread:pad, x1:0, y1:0.0163043, x2:2, y2:0, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(54, 0, 70, 255));"
+        for slider in self.ui.tab_fk_joint.findChildren(QSlider):
+            if slider.objectName() == widget:
+                if slider.value() <= slider.minimum() + 10:
+                    slider.setStyleSheet(UIFunctions.slider_color_warning(slider.styleSheet(), left))
+                elif slider.value() >= slider.maximum() - 10:
+                    slider.setStyleSheet(UIFunctions.slider_color_warning(slider.styleSheet(), right))
+                else:
+                    slider.setStyleSheet(UIFunctions.slider_color_standard(slider.styleSheet(), left, "rgb(61, 61, 61);"))
+                    slider.setStyleSheet(UIFunctions.slider_color_standard(slider.styleSheet(), right, "rgb(61, 61, 61);"))
 
     # == > QTABLEWIDGET AUTO MODE
     # ADD / DELETE ROW

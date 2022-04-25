@@ -110,6 +110,12 @@ class MainWindow(QMainWindow):
         self.ui.horizontalSlider_fk_s1_5.valueChanged.connect(lambda: AppFunctions.page_fk(self))
         self.ui.horizontalSlider_fk_s1_6.valueChanged.connect(lambda: AppFunctions.page_fk(self))
         self.ui.btn_fk_reset.clicked.connect(lambda: UIFunctions.page_fk_reset(self))
+        self.ui.horizontalSlider_fk_s1.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_fk_s1"))
+        self.ui.horizontalSlider_fk_s1_2.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_fk_s1_2"))
+        self.ui.horizontalSlider_fk_s1_3.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_fk_s1_3"))
+        self.ui.horizontalSlider_fk_s1_4.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_fk_s1_4"))
+        self.ui.horizontalSlider_fk_s1_5.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_fk_s1_5"))
+        self.ui.horizontalSlider_fk_s1_6.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_fk_s1_6"))
 
         # IK
         self.ui.horizontalSlider_ik_x.valueChanged.connect(lambda: AppFunctions.page_ik(self))
