@@ -237,14 +237,14 @@ class UIFunctions(MainWindow):
         set_color = getStyle.replace(actual, color)
         return set_color
 
-    def set_slider_color(self, widget):
-        left = "qlineargradient(spread:pad, x1:-1, y1:0.0163043, x2:1, y2:0, stop:0 rgba(54, 0, 70, 255), stop:1 rgba(61, 61, 61, 255));"
-        right = "qlineargradient(spread:pad, x1:0, y1:0.0163043, x2:2, y2:0, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(54, 0, 70, 255));"
-        for slider in self.ui.tab_fk_joint.findChildren(QSlider):
+    def set_slider_color(self, widget, range):
+        left = "qlineargradient(spread:pad, x1:-2, y1:0.0163043, x2:1, y2:0, stop:0 rgba(54, 0, 70, 255), stop:1 rgba(61, 61, 61, 255));"
+        right = "qlineargradient(spread:pad, x1:0, y1:0.0163043, x2:3, y2:0, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(54, 0, 70, 255));"
+        for slider in self.ui.frame_stackedWidget.findChildren(QSlider):
             if slider.objectName() == widget:
-                if slider.value() <= slider.minimum() + 10:
+                if slider.value() <= slider.minimum() + range:
                     slider.setStyleSheet(UIFunctions.slider_color_warning(slider.styleSheet(), left))
-                elif slider.value() >= slider.maximum() - 10:
+                elif slider.value() >= slider.maximum() - range:
                     slider.setStyleSheet(UIFunctions.slider_color_warning(slider.styleSheet(), right))
                 else:
                     slider.setStyleSheet(UIFunctions.slider_color_standard(slider.styleSheet(), left, "rgb(61, 61, 61);"))
