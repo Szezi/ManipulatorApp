@@ -10,7 +10,6 @@ from ManipulatorApp.modules.trajectory import RoboticMove
 from ManipulatorApp.ui.ui_functions import *
 from importlib import reload
 import time
-import itertools
 
 
 class AppFunctions(MainWindow):
@@ -187,7 +186,6 @@ class AppFunctions(MainWindow):
                                       float(step_values_next[9]),
                                       float(step_values_next[10]),
                                       float(step_values_next[11]), eff)
-                print(calculated)
                 self.ui.MplWidget_auto.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
             else:
                 status = 'Step forward SERVO'
@@ -238,16 +236,26 @@ class AppFunctions(MainWindow):
         UIFunctions.log_list(self, status)
 
     def automatic_mode_init(self):
-        self.robotic_path = self.read_robotic_path
-        robotic_path_copy = self.robotic_path.copy()
+        # Checking if installed effector is the same as in read robotic path
+        effector_installed = UIFunctions.effector_check(self)
+        eff1 = self.read_robotic_path[0][15][1:]
+        eff2 = self.read_robotic_path[0][16][:1]
+        effector_path = [int(eff1), int(eff2)]
 
-        repeat = self.ui.spinBox.value()
-        for _ in range(1, repeat):
-            self.robotic_path.extend(robotic_path_copy)
+        if effector_installed == effector_path:
+            self.robotic_path = self.read_robotic_path
+            robotic_path_copy = self.robotic_path.copy()
 
-        self.robotic_arm = trajectory.RoboticMove(self.robotic_path)
+            repeat = self.ui.spinBox.value()
+            for _ in range(1, repeat):
+                self.robotic_path.extend(robotic_path_copy)
 
-        status = 'Automatic mode initialized'
+            self.robotic_arm = trajectory.RoboticMove(self.robotic_path)
+
+            status = 'Automatic mode initialized'
+        else:
+            status = ' Installed effector is different as in robotic path'
+
         UIFunctions.log_list(self, status)
 
     def automatic_mode_break(self):
