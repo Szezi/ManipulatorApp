@@ -127,6 +127,7 @@ class UIFunctions(MainWindow):
     def returnStatus():
         return GLOBAL_STATE
 
+    # RESET SLIDER VALUES - PAGE FK
     def page_fk_reset(self):
         UIFunctions.log_list(self, 'Page FK: Slider values has been reset')
         self.ui.horizontalSlider_fk_s1.setValue(0)
@@ -136,6 +137,7 @@ class UIFunctions(MainWindow):
         self.ui.horizontalSlider_fk_s1_5.setValue(0)
         self.ui.horizontalSlider_fk_s1_6.setValue(0)
 
+    # RESET SLIDER VALUES - PAGE IK
     def page_ik_reset(self):
         UIFunctions.log_list(self, 'Page IK: Slider values has been reset')
         self.ui.horizontalSlider_ik_x.setValue(0)
@@ -143,6 +145,7 @@ class UIFunctions(MainWindow):
         self.ui.horizontalSlider_ik_z.setValue(472)
         self.ui.verticalSlider.setValue(90)
 
+    # RESET SLIDER VALUES - PAGE MANUAL
     def page_manual_reset(self):
         UIFunctions.log_list(self, 'Page Manual mode: Slider values has been reset')
         if self.ui.tab_manual_joints.isVisible():
@@ -158,11 +161,13 @@ class UIFunctions(MainWindow):
             self.ui.horizontalSlider_manual_z.setValue(472)
             self.ui.verticalSlider_manual_orient.setValue(90)
 
+    # STATUS DISPLAY
     def log_list(self, log):
         log_time = dt.datetime.now().strftime("%H:%M:%S")
         new_text = log_time + " | " + log.upper()
         self.ui.Log.append(new_text)
 
+    # CALIBRATION OF ROBOTIC ARM
     def calibration(self):
         servo1 = self.ui.spinBox_kal_s1.value()
         servo2 = self.ui.spinBox_kal_s2.value()
@@ -175,7 +180,7 @@ class UIFunctions(MainWindow):
 
         return servo_cal
 
-    # == > EFFECTOR
+    # EFFECTOR CALIBRATION
     def effector_calibration(self, L, H):
         self.ui.spinBox_kal2_ef.setValue(L)
         self.ui.spinBox_kal2_ef_2.setValue(H)
@@ -222,13 +227,7 @@ class UIFunctions(MainWindow):
         self.ui.horizontalSlider_auto_y.setMaximum(300 + eff[0])
         self.ui.horizontalSlider_auto_y.setMinimum(-1 * (300 + eff[0]))
 
-    # SLIDER COLOR SET
-    # def set_slider_color(self):
-    #     if self.ui.horizontalSlider_fk_s1.value() == 0:
-    #         self.ui.horizontalSlider_fk_s1.setStyleSheet('background-color: rgb(170, 0, 255)')
-    #     else:
-    #         self.ui.horizontalSlider_fk_s1.setStyleSheet('background-color: rgb(85, 170, 255)')
-
+    # SETTING COLOR OF SLIDERS
     def slider_color_warning(getStyle, color):
         set_color = getStyle.replace("rgb(61, 61, 61);", color)
         return set_color
@@ -253,14 +252,18 @@ class UIFunctions(MainWindow):
     # == > QTABLEWIDGET AUTO MODE
     # ADD / DELETE ROW
     def AddRow(self):
+        # Create empty row
         self.ui.tableWidget.insertRow(self.ui.tableWidget.currentRow() + 1)
 
     def RemoveRow(self):
+        # Remove selected row
         if self.ui.tableWidget.rowCount() > 0:
             self.ui.tableWidget.removeRow(self.ui.tableWidget.currentRow())
 
+    # ADD POSITION WITH GIVEN PARAMETERS
     def add_pos(self):
         try:
+            # Get values from user
             position_values = [self.ui.comboBox_auto_command.currentText(),
                                self.ui.comboBox_auto_traj.currentText(),
                                self.ui.comboBox_auto_config.currentText(),
@@ -272,7 +275,10 @@ class UIFunctions(MainWindow):
                                self.ui.horizontalSlider_auto_s6.value(),
                                self.ui.horizontalSlider_auto_time_2.value()]
 
+            # Insert empty row
             self.ui.tableWidget.insertRow(self.ui.tableWidget.rowCount())
+
+            # Add values to last row
             for i in range(0, self.ui.tableWidget.columnCount()):
                 self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount() - 1, i,
                                             QTableWidgetItem(str(position_values[i])))
@@ -281,10 +287,14 @@ class UIFunctions(MainWindow):
 
         else:
             status = 'Position added'
+
+        # Print the status
         UIFunctions.log_list(self, status)
 
+    # ADD HOME POSITION
     def add_safe(self):
         try:
+            # Get values from saved parameter and add to table
             home = self.home_position
             for i in range(0, self.ui.tableWidget.columnCount()):
                 self.ui.tableWidget.setItem(self.ui.tableWidget.currentRow(), i,
@@ -294,10 +304,14 @@ class UIFunctions(MainWindow):
 
         else:
             status = 'Home position added'
+
+        # Print the status
         UIFunctions.log_list(self, status)
 
+    # ADD WAIT POSITION
     def add_wait(self):
         try:
+            # Get values from previous row in table
             position_values = ['wait',
                                self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 1).text(),
                                self.ui.tableWidget.item(self.ui.tableWidget.currentRow() - 1, 2).text(),
@@ -316,10 +330,14 @@ class UIFunctions(MainWindow):
 
         else:
             status = 'Wait position added'
+
+        # Print the status
         UIFunctions.log_list(self, status)
 
+    # CREATE/SET HOME POSITION
     def set_home(self):
         try:
+            # Get values from user
             self.home_position = ['home',
                                   self.ui.comboBox_auto_traj.currentText(),
                                   self.ui.comboBox_auto_config.currentText(),
@@ -332,16 +350,25 @@ class UIFunctions(MainWindow):
                                   5.0]
         except:
             status = 'Error: Home can not be set'
+
+            # Print the status
             UIFunctions.log_list(self, status)
         else:
             status = 'Home position created'
+
+            # Print the status
             UIFunctions.log_list(self, status)
             return self.home_position
 
+    # GENERATE AND SAVE ROBOTIC PATH
     def generate_path(self):
+        # Check the effector dimensions
         eff = UIFunctions.effector_check(self)
+
+        # Create empty table
         table = []
 
+        # Get data from QTable and add to table
         for i in range(0, self.ui.tableWidget.rowCount()):
             table_row = [str(self.ui.tableWidget.item(i, 0).text()),
                          str(self.ui.tableWidget.item(i, 1).text()),
@@ -357,18 +384,29 @@ class UIFunctions(MainWindow):
             print(table_row)
             table.append(table_row)
 
+        # Generate robotic path and write to file
         file_path_write = UIFunctions.directory_path(self)
         file_name_write = 'generated_path_'
         file_format_write = '.txt'
         trajectory.write_generated_path_to_file(table, file_path_write, file_name_write, file_format_write)
 
+    # READ ROBOTIC PATH FROM FILE
     def read_path(self):
+        # Get path of file with robotic path to read
         file_path_read = UIFunctions.file_path(self)
+
+        # Get robotic path
         self.read_robotic_path = trajectory.read_generated_path_from_file(file_path_read)
+
+        # Delete first row with headers
         self.read_robotic_path.pop(0)
+
         print(self.read_robotic_path)
+
+        # Print the status
         UIFunctions.write_read_path_to_table(self, self.read_robotic_path)
 
+    # FILL TABLE WITH READ ROBOTIC PATH
     def write_read_path_to_table(self, robotic_path):
         table_ui = self.ui.tableWidget
         # Copy columns headers names
@@ -400,6 +438,7 @@ class UIFunctions(MainWindow):
                 self.ui.tableWidget.setItem(self.ui.tableWidget.rowCount() - 1, i,
                                             QTableWidgetItem(str(values[i])))
 
+    # GET PATH OF FILE TO READ
     def file_path(self):
         file_filter = 'Text file (*.txt);; All files (*.*)'
         response = QFileDialog.getOpenFileName(
@@ -412,6 +451,7 @@ class UIFunctions(MainWindow):
         self.ui.lineEdit.setText(response[0])
         return response[0]
 
+    # GET PATH OF DIRECTORY TO SAVE FILE
     def directory_path(self):
         response = QFileDialog.getExistingDirectory(
             self,
