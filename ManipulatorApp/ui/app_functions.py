@@ -19,6 +19,8 @@ class AppFunctions(MainWindow):
         self.stop = None
 
     def page_fk(self):
+        """ Page - Forward kinematics calculations of robotic arm """
+
         # Check the effector dimensions
         eff = UIFunctions.effector_check(self)
 
@@ -43,6 +45,8 @@ class AppFunctions(MainWindow):
         self.ui.MplWidget_fk.canvas.flush_events()
 
     def page_ik(self):
+        """ Page - Inverse kinematics calculations of robotic arm """
+
         # Check the effector dimensions
         eff = UIFunctions.effector_check(self)
 
@@ -79,6 +83,8 @@ class AppFunctions(MainWindow):
             self.ui.MplWidget_ik.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
 
     def page_manual(self):
+        """ Page - Manual mode of controlling robotic arm """
+
         # Check the effector dimensions
         eff = UIFunctions.effector_check(self)
 
@@ -148,7 +154,8 @@ class AppFunctions(MainWindow):
         self.ui.MplWidget_ik_2.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
 
     def page_automatic(self):
-        # Buttons functions
+        """ Page - Auto mode of controlling robotic arm """
+
         self.ui.btn_auto_Add_path_gen.clicked.connect(lambda: UIFunctions.generate_path(self))
         self.ui.btn_auto_Add_path_read.clicked.connect(lambda: UIFunctions.read_path(self))
         self.ui.btn_auto_init.clicked.connect(lambda: AppFunctions.automatic_mode_init(self))
@@ -159,13 +166,15 @@ class AppFunctions(MainWindow):
         self.ui.btn_auto_next.clicked.connect(lambda: AppFunctions.automatic_step_next(self))
 
     def automatic_stop(self):
-        # Stopping executing robotic program
+        """ Stopping executing robotic program """
+
         self.stop = True
         status = 'Stop robotic program'
         UIFunctions.log_list(self, status)
 
     def automatic_start(self):
-        # Start executing robotic program
+        """ Start executing robotic program till end of program or stopping the program """
+
         self.stop = False
 
         # Check the selected mode
@@ -220,7 +229,8 @@ class AppFunctions(MainWindow):
         UIFunctions.log_list(self, status)
 
     def automatic_step_next(self):
-        # Execute one next line of robotic program
+        """ Execute one next line of robotic program """
+
         try:
             # Take next line of robotic program
             step_values_next = self.robotic_arm.next()
@@ -267,7 +277,8 @@ class AppFunctions(MainWindow):
         UIFunctions.log_list(self, status)
 
     def automatic_step_prev(self):
-        # Execute one previous line of robotic program
+        """ Execute one previous line of robotic program """
+
         try:
             # Take previous line of robotic program
             step_values_prev = self.robotic_arm.prev()
@@ -312,6 +323,12 @@ class AppFunctions(MainWindow):
         UIFunctions.log_list(self, status)
 
     def automatic_mode_init(self):
+        """
+        Create robotic program from read file.
+        Function checks if installed effector is the same as in read robotic path.
+        :return: self.robotic_arm
+        """
+
         # Checking if installed effector is the same as in read robotic path
         effector_installed = UIFunctions.effector_check(self)
         eff1 = self.read_robotic_path[0][15][1:]
@@ -338,7 +355,8 @@ class AppFunctions(MainWindow):
         UIFunctions.log_list(self, status)
 
     def automatic_mode_break(self):
-        # Delete initialized robotic_arm object
+        """ Delete initialized robotic_arm object """
+
         try:
             if self.robotic_arm is None:
                 pass
@@ -352,11 +370,14 @@ class AppFunctions(MainWindow):
             UIFunctions.log_list(self, status)
 
     def page_settings(self):
+        """ Page - Settings (checks effector and communication) """
+
         AppFunctions.effector_tab(self)
         AppFunctions.communication_tab(self)
 
     def effector_tab(self):
-        # Button functions in effector tab in settings page
+        """ Button functions in effector tab in settings page """
+
         self.ui.btn_kal2_set_1.clicked.connect(lambda: UIFunctions.effector_calibration(self, 103, 0))
         self.ui.btn_kal2_set_1.clicked.connect(
             lambda: UIFunctions.log_list(self, 'Effector dim. changed to grippers'))
@@ -371,7 +392,7 @@ class AppFunctions(MainWindow):
             True) if self.ui.checkBox_kal2_ef.checkState() else self.ui.radioButton_home_effector.setChecked(False))
 
     def communication_tab(self):
-        # Set status of communication green/red
+        """ Set status of communication green/red """
         if comm.status:
             self.ui.radioButton_home_comm.setChecked(True)
             self.ui.radioButton_home_comm_2.setChecked(True)
@@ -380,7 +401,8 @@ class AppFunctions(MainWindow):
             self.ui.radioButton_home_comm_2.setChecked(False)
 
     def communication_radiobutton(self):
-        # Set/check the communication with robotic arm (Arduino)
+        """ Set/check the communication with robotic arm (Arduino) """
+
         try:
             if not self.ui.radioButton_home_comm_2.isChecked():
                 comm.board.exit()
