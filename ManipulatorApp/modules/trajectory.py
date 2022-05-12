@@ -210,7 +210,7 @@ def path_generator(table: list):
         return generated_path, status
 
     except ValueError as status:
-        return [0, 'errorr', 'error', 'error', 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'error'], str(status)
+        return [0, 'error', 'error', 'error', 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'error'], str(status)
 
     except:
         status = 'Something went wrong'

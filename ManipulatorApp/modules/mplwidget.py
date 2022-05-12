@@ -42,10 +42,11 @@ class MplWidget(QWidget):
                               linestyle='solid', linewidth=5,
                               markersize=5)
         self.canvas.axes.plot(link4[:, 0], link4[:, 1], link4[:, 2], color='purple', marker="h",
-                                           linestyle='solid', linewidth=5,
-                                           markersize=5)
-        self.canvas.axes.text(xyz_4[0], xyz_4[1], xyz_4[2], '({:.2f}, {:.2f}, {:.2f})'.format(xyz_4[0], xyz_4[1], xyz_4[2]), weight='bold',
-                                                fontsize=10)
+                              linestyle='solid', linewidth=5,
+                              markersize=5)
+        self.canvas.axes.text(xyz_4[0], xyz_4[1], xyz_4[2],
+                              '({:.2f}, {:.2f}, {:.2f})'.format(xyz_4[0], xyz_4[1], xyz_4[2]), weight='bold',
+                              fontsize=10)
         self.Canvas()
 
         self.canvas.draw()

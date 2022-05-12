@@ -128,7 +128,7 @@ def ik_geo(px: int, py: int, pz: int, alfa: int, eff: list):
     finally:
         print('Inverse kinematics calculations ended')
 
-#test
+# test
 # test = ik_geo(0, 0, 472, 90, [54, 0])
 # print(test[0])
 # print(test[1])

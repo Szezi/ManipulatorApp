@@ -1,15 +1,12 @@
 # ==> GUI FILE
-from ManipulatorApp.main import MainWindow
-from ManipulatorApp.main import *
-from ManipulatorApp.modules import FK
-from ManipulatorApp.modules import IK
-from ManipulatorApp.modules import trajectory
-from ManipulatorApp.modules import mplwidget
-from ManipulatorApp.modules import communication as comm
-from ManipulatorApp.modules.trajectory import RoboticMove
-from ManipulatorApp.ui.ui_functions import *
-from importlib import reload
 import time
+from importlib import reload
+
+from ManipulatorApp.main import *
+from ManipulatorApp.main import MainWindow
+from ManipulatorApp.modules import IK
+from ManipulatorApp.modules import communication as comm
+from ManipulatorApp.ui.ui_functions import *
 
 
 class AppFunctions(MainWindow):

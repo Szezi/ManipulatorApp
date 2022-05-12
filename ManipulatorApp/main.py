@@ -163,7 +163,7 @@ class MainWindow(QMainWindow):
         self.ui.horizontalSlider_auto_x.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_auto_x", 25))
         self.ui.horizontalSlider_auto_y.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_auto_y", 25))
         self.ui.horizontalSlider_auto_z.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_auto_z", 25))
-        self.ui.horizontalSlider_auto_s1.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_auto_s1",10))
+        self.ui.horizontalSlider_auto_s1.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_auto_s1", 10))
         self.ui.horizontalSlider_auto_s2.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_auto_s2", 10))
         self.ui.horizontalSlider_auto_s3.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_auto_s3", 10))
         self.ui.horizontalSlider_auto_s4.valueChanged.connect(lambda: UIFunctions.set_slider_color(self, "horizontalSlider_auto_s4", 10))

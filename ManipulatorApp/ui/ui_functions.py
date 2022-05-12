@@ -1,11 +1,9 @@
 import os
-
-from PySide2.QtWidgets import QSlider
+import datetime as dt
 
 from ManipulatorApp.main import MainWindow
 from ManipulatorApp.main import *
-import datetime as dt
-from ManipulatorApp.modules import communication as comm
+
 from ManipulatorApp.modules import FK
 from ManipulatorApp.modules import trajectory
 
@@ -97,7 +95,7 @@ class UIFunctions(MainWindow):
             self.ui.frame_top.setContentsMargins(0, 0, 0, 0)
             self.ui.btn_max.setToolTip("Maximize")
 
-    # ==> CLOSE APP AND END COMMUNICATION
+    # ==> CLOSE APP
     @staticmethod
     def close_app():
         """Close app"""
@@ -512,7 +510,10 @@ class UIFunctions(MainWindow):
 
     # GET PATH OF FILE TO READ
     def file_path(self):
-        """ Get path of selected file"""
+        """
+        Get path of selected file
+        :return: response
+        """
 
         file_filter = 'Text file (*.txt);; All files (*.*)'
         response = QFileDialog.getOpenFileName(
@@ -527,7 +528,10 @@ class UIFunctions(MainWindow):
 
     # GET PATH OF DIRECTORY TO SAVE FILE
     def directory_path(self):
-        """ Get path of selected directory """
+        """
+        Get path of selected directory
+        :return: response
+        """
 
         response = QFileDialog.getExistingDirectory(
             self,
