@@ -21,6 +21,8 @@ class UIFunctions(MainWindow):
         self.animation = None
 
     def toggleMenu(self, max_width, enable):
+        """Left toggle menu properties"""
+
         if enable:
 
             # GET WIDTH
@@ -44,16 +46,22 @@ class UIFunctions(MainWindow):
 
     # ==> SELECT
     def select_menu(getStyle):
+        """Select menu page"""
+
         menu_select = getStyle + "QPushButton { border-right: 5px solid rgb(71, 71, 71); }"
         return menu_select
 
     # ==> DESELECT
     def deselect_menu(getStyle):
+        """Deselect menu page"""
+
         menu_deselect = getStyle.replace("QPushButton { border-right: 5px solid rgb(71, 71, 71); }", "")
         return menu_deselect
 
     # ==> START/RESET SELECTION
     def select_standard_menu(self, widget):
+        """Start/reset menu page selection"""
+
         for menu in self.ui.frame_menu.findChildren(QPushButton):
             if menu.objectName() != widget:
                 menu.setStyleSheet(UIFunctions.deselect_menu(menu.styleSheet()))
@@ -62,6 +70,8 @@ class UIFunctions(MainWindow):
 
     # ==> CHANGE PAGE LABEL TEXT
     def label_page(self, text):
+        """ Change page label text"""
+
         new_text = '| ' + text.upper()
         self.ui.label_top_info_2.setText(new_text)
 
@@ -90,6 +100,7 @@ class UIFunctions(MainWindow):
     # ==> CLOSE APP AND END COMMUNICATION
     @staticmethod
     def close_app():
+        """Close app"""
         sys.exit()
 
     # ==> UI DEFINITIONS
@@ -130,6 +141,7 @@ class UIFunctions(MainWindow):
     # RESET SLIDER VALUES - PAGE FK
     def page_fk_reset(self):
         """ Page Forward Kinematics - reset sliders values"""
+
         UIFunctions.log_list(self, 'Page FK: Slider values has been reset')
         self.ui.horizontalSlider_fk_s1.setValue(0)
         self.ui.horizontalSlider_fk_s1_2.setValue(90)
@@ -141,6 +153,7 @@ class UIFunctions(MainWindow):
     # RESET SLIDER VALUES - PAGE IK
     def page_ik_reset(self):
         """ Page Inverse Kinematics - reset sliders values"""
+
         UIFunctions.log_list(self, 'Page IK: Slider values has been reset')
         self.ui.horizontalSlider_ik_x.setValue(0)
         self.ui.horizontalSlider_ik_y.setValue(0)
@@ -150,6 +163,7 @@ class UIFunctions(MainWindow):
     # RESET SLIDER VALUES - PAGE MANUAL
     def page_manual_reset(self):
         """ Page Manual - reset sliders values"""
+
         UIFunctions.log_list(self, 'Page Manual mode: Slider values has been reset')
         if self.ui.tab_manual_joints.isVisible():
             self.ui.horizontalSlider_j_s1.setValue(0)
@@ -167,6 +181,7 @@ class UIFunctions(MainWindow):
     # STATUS DISPLAY
     def log_list(self, log):
         """ Print given string in log"""
+
         log_time = dt.datetime.now().strftime("%H:%M:%S")
         new_text = log_time + " | " + log.upper()
         self.ui.Log.append(new_text)
@@ -177,6 +192,7 @@ class UIFunctions(MainWindow):
         Calibrate robotic arms servos.
         :return: servo_cal
         """
+
         servo1 = self.ui.spinBox_kal_s1.value()
         servo2 = self.ui.spinBox_kal_s2.value()
         servo3 = self.ui.spinBox_kal_s3.value()
@@ -191,6 +207,7 @@ class UIFunctions(MainWindow):
     # EFFECTOR CALIBRATION
     def effector_calibration(self, L, H):
         """ Set values of spinbox with given effector dim."""
+
         self.ui.spinBox_kal2_ef.setValue(L)
         self.ui.spinBox_kal2_ef_2.setValue(H)
         if self.ui.checkBox_kal2_ef.checkState():
@@ -202,18 +219,20 @@ class UIFunctions(MainWindow):
         Check effector dimensions. Without set effector eff = [54,0]
         :return: eff = [a,b]
         """
+
         if self.ui.checkBox_kal2_ef.checkState():
             a = int(self.ui.spinBox_kal2_ef.value()) + 54
             b = int(self.ui.spinBox_kal2_ef_2.value())
             eff = [a, b]
         else:
             eff = [54, 0]
-        print(eff)
+        # print(eff)
         return eff
 
     # SETTINGS IF EFFECTOR IS ASSEMBLED OR DISASSEMBLED
     def effector_settings(self):
         """ Set slides range and lcd display values with set effector dimensions"""
+
         eff = UIFunctions.effector_check(self)
         # FK
         fk_eff = FK.fk_dh(self.ui.horizontalSlider_fk_s1.value(), self.ui.horizontalSlider_fk_s1_2.value(),
@@ -244,6 +263,7 @@ class UIFunctions(MainWindow):
     # SETTING COLOR OF SLIDERS
     def slider_color_warning(getStyle, color):
         """ Set sliders warning color rgb(61, 61, 61)"""
+
         set_color = getStyle.replace("rgb(61, 61, 61);", color)
         return set_color
 
@@ -258,6 +278,7 @@ class UIFunctions(MainWindow):
         :param widget: widget name
         :param warning_range: warning value
         """
+
         left = "qlineargradient(spread:pad, x1:-2, y1:0.0163043, x2:1, y2:0, stop:0 rgba(54, 0, 70, 255), stop:1 rgba(61, 61, 61, 255));"
         right = "qlineargradient(spread:pad, x1:0, y1:0.0163043, x2:3, y2:0, stop:0 rgba(61, 61, 61, 255), stop:1 rgba(54, 0, 70, 255));"
         for slider in self.ui.frame_stackedWidget.findChildren(QSlider):
@@ -274,16 +295,19 @@ class UIFunctions(MainWindow):
     # ADD / DELETE ROW
     def AddRow(self):
         """ Create empty row """
+
         self.ui.tableWidget.insertRow(self.ui.tableWidget.currentRow() + 1)
 
     def RemoveRow(self):
         """ Remove selected row """
+
         if self.ui.tableWidget.rowCount() > 0:
             self.ui.tableWidget.removeRow(self.ui.tableWidget.currentRow())
 
     # ADD POSITION WITH GIVEN PARAMETERS
     def add_pos(self):
         """ Add position with users input param."""
+
         try:
             # Get values from user
             position_values = [self.ui.comboBox_auto_command.currentText(),
@@ -366,6 +390,7 @@ class UIFunctions(MainWindow):
         Create/set home position
         :return: self.home_position
         """
+
         try:
             # Get values from user
             self.home_position = ['home',
@@ -397,6 +422,7 @@ class UIFunctions(MainWindow):
         Save program to file .txt in selected directory.
         :return: generated_path_DATETIME.txt
         """
+
         # Check the effector dimensions
         eff = UIFunctions.effector_check(self)
 
@@ -431,6 +457,7 @@ class UIFunctions(MainWindow):
         Read robotic path from selected file to param.
         :return: self.robotic_path
         """
+
         # Get path of file with robotic path to read
         file_path_read = UIFunctions.file_path(self)
 
@@ -452,6 +479,7 @@ class UIFunctions(MainWindow):
         :param robotic_path:
         :return: Filled table
         """
+
         table_ui = self.ui.tableWidget
         # Copy columns headers names
         header = []
@@ -485,6 +513,7 @@ class UIFunctions(MainWindow):
     # GET PATH OF FILE TO READ
     def file_path(self):
         """ Get path of selected file"""
+
         file_filter = 'Text file (*.txt);; All files (*.*)'
         response = QFileDialog.getOpenFileName(
             parent=self,
@@ -499,6 +528,7 @@ class UIFunctions(MainWindow):
     # GET PATH OF DIRECTORY TO SAVE FILE
     def directory_path(self):
         """ Get path of selected directory """
+
         response = QFileDialog.getExistingDirectory(
             self,
             caption='Get Path',
