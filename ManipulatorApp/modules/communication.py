@@ -36,7 +36,7 @@ try:
 
     def servos_write(s1, s2, s3, s4, s5, s6):
         servo1.write(int(90 + s1))
-        servo2.write(int(s2))
+        servo2.write(int(180 - s2))
         servo3.write(int(120 + s3))
         servo4.write(int(90 - s4))
         servo5.write(int(90 - s5))
