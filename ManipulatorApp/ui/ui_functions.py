@@ -6,6 +6,7 @@ from ManipulatorApp.main import *
 
 from ManipulatorApp.modules import FK
 from ManipulatorApp.modules import trajectory
+from ManipulatorApp.modules import communication as comm
 
 GLOBAL_STATE = 0
 
@@ -98,8 +99,12 @@ class UIFunctions(MainWindow):
     # ==> CLOSE APP
     @staticmethod
     def close_app():
-        """Close app"""
+        """Close app and and communication"""
         sys.exit()
+        try:
+            comm.board.exit()
+        except:
+            Print('No comm')
 
     # ==> UI DEFINITIONS
     def uiDefinitions(self):
@@ -165,7 +170,7 @@ class UIFunctions(MainWindow):
         UIFunctions.log_list(self, 'Page Manual mode: Slider values has been reset')
         if self.ui.tab_manual_joints.isVisible():
             self.ui.horizontalSlider_j_s1.setValue(0)
-            self.ui.horizontalSlider_j_s2.setValue(90)
+            self.ui.horizontalSlider_j_s2.setValue(9000)
             self.ui.horizontalSlider_j_s3.setValue(0)
             self.ui.horizontalSlider_j_s4.setValue(0)
             self.ui.horizontalSlider_j_s5.setValue(0)
