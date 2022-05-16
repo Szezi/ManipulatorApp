@@ -87,12 +87,12 @@ class AppFunctions(MainWindow):
 
         # Set values of sliders in different control modes
         if self.ui.tab_manual_joints.isVisible():
-            value_j1 = self.ui.horizontalSlider_j_s1.value()
-            value_j2 = self.ui.horizontalSlider_j_s2.value()
-            value_j3 = self.ui.horizontalSlider_j_s3.value()
-            value_j4 = self.ui.horizontalSlider_j_s4.value()
+            value_j1 = self.ui.horizontalSlider_j_s1.value() / 100
+            value_j2 = self.ui.horizontalSlider_j_s2.value() / 100
+            value_j3 = self.ui.horizontalSlider_j_s3.value() / 100
+            value_j4 = self.ui.horizontalSlider_j_s4.value() / 100
 
-            value_manual_joints = FK.fk_dh(int(value_j1), int(value_j2), int(value_j3), int(value_j4), eff)
+            value_manual_joints = FK.fk_dh(value_j1, value_j2, value_j3, value_j4, eff)
 
             # Set values of sliders
             self.ui.horizontalSlider_manual_x.setValue(value_manual_joints[1][0])
@@ -122,21 +122,21 @@ class AppFunctions(MainWindow):
             else:
                 raise ValueError
 
-            self.ui.horizontalSlider_j_s1.setValue(value_manual_xyz[index][0])
-            self.ui.horizontalSlider_j_s2.setValue(value_manual_xyz[index][1])
-            self.ui.horizontalSlider_j_s3.setValue(value_manual_xyz[index][2])
-            self.ui.horizontalSlider_j_s4.setValue(value_manual_xyz[index][3])
+            self.ui.horizontalSlider_j_s1.setValue(value_manual_xyz[index][0]*100)
+            self.ui.horizontalSlider_j_s2.setValue(value_manual_xyz[index][1]*100)
+            self.ui.horizontalSlider_j_s3.setValue(value_manual_xyz[index][2]*100)
+            self.ui.horizontalSlider_j_s4.setValue(value_manual_xyz[index][3]*100)
 
         else:
             status = 'Something went wrong'
 
         # Control robotic arm with given parameters
-        servo_1 = self.ui.horizontalSlider_j_s1.value()
-        servo_2 = self.ui.horizontalSlider_j_s2.value()
-        servo_3 = self.ui.horizontalSlider_j_s3.value()
-        servo_4 = self.ui.horizontalSlider_j_s4.value()
-        servo_5 = self.ui.horizontalSlider_j_s5.value()
-        servo_6 = self.ui.horizontalSlider_j_s6.value()
+        servo_1 = self.ui.horizontalSlider_j_s1.value() / 100
+        servo_2 = self.ui.horizontalSlider_j_s2.value() / 100
+        servo_3 = self.ui.horizontalSlider_j_s3.value() / 100
+        servo_4 = self.ui.horizontalSlider_j_s4.value() / 100
+        servo_5 = self.ui.horizontalSlider_j_s5.value() / 100
+        servo_6 = self.ui.horizontalSlider_j_s6.value() / 100
 
         try:
             comm.servos_write(servo_1, servo_2, servo_3, servo_4, servo_5, servo_6)
@@ -202,25 +202,25 @@ class AppFunctions(MainWindow):
             # Execute program with robotic arm
             status = 'Executing robotic program - SERVO'
             # Control robotic arm with given parameters
-            # while not self.stop:
-            # Take next line of robotic program
-            #     step_values_next = self.robotic_arm.next()
+            while not self.stop:
+                # Take next line of robotic program
+                step_values_next = self.robotic_arm.next()
 
-            # Take effector dimensions
-            #     eff1 = step_values_next[15][1:]
-            #     eff2 = step_values_next[16][:1]
-            #     eff = [int(eff1), int(eff2)]
-            #     print(step_values_next)
+                # Take effector dimensions
+                eff1 = step_values_next[15][1:]
+                eff2 = step_values_next[16][:1]
+                eff = [int(eff1), int(eff2)]
+                print(step_values_next)
 
-            #     Control robotic arm with given parameters
-            #     comm.servos_write(float(step_values_next[8]),
-            #                       float(step_values_next[9]),
-            #                       float(step_values_next[10]),
-            #                       float(step_values_next[11]),
-            #                       float(step_values_next[12]),
-            #                       float(step_values_next[13]))
-            #     QApplication.processEvents()
-            #     time.sleep(float(step_values_next[14]))
+                # Control robotic arm with given parameters
+                comm.servos_write(float(step_values_next[8]),
+                                  float(step_values_next[9]),
+                                  float(step_values_next[10]),
+                                  float(step_values_next[11]),
+                                  float(step_values_next[12]),
+                                  float(step_values_next[13]))
+                QApplication.processEvents()
+                time.sleep(float(step_values_next[14]))
 
         # Print the status
         UIFunctions.log_list(self, status)
@@ -255,18 +255,18 @@ class AppFunctions(MainWindow):
                 # Execute program with robotic arm
                 status = 'Step forward SERVO'
 
-                #     # Send to servos
-                #     step_values_next = self.robotic_arm.next()
-                #     print(step_values_next)
+                # Send to servos
+                step_values_next = self.robotic_arm.next()
+                print(step_values_next)
 
                 #     Control robotic arm with given parameters
-                #     comm.servos_write(float(step_values_next[8]),
-                #                       float(step_values_next[9]),
-                #                       float(step_values_next[10]),
-                #                       float(step_values_next[11]),
-                #                       float(step_values_next[12]),
-                #                       float(step_values_next[13]))
-                #     QApplication.processEvents()
+                comm.servos_write(float(step_values_next[8]),
+                                  float(step_values_next[9]),
+                                  float(step_values_next[10]),
+                                  float(step_values_next[11]),
+                                  float(step_values_next[12]),
+                                  float(step_values_next[13]))
+                QApplication.processEvents()
         except AttributeError:
             status = 'Automatic mode not initialized'
 
@@ -301,18 +301,18 @@ class AppFunctions(MainWindow):
             else:
                 # Execute program with robotic arm
                 status = 'Step backward SERVO'
-                #     Send to servos
-                #     step_values_next = self.robotic_arm.next()
-                #     print(step_values_next)
+                # Send to servos
+                step_values_next = self.robotic_arm.next()
+                print(step_values_next)
 
-                #     Control robotic arm with given parameters
-                #     comm.servos_write(float(step_values_next[8]),
-                #                       float(step_values_next[9]),
-                #                       float(step_values_next[10]),
-                #                       float(step_values_next[11]),
-                #                       float(step_values_next[12]),
-                #                       float(step_values_next[13]))
-                #     QApplication.processEvents()
+                # Control robotic arm with given parameters
+                comm.servos_write(float(step_values_next[8]),
+                                  float(step_values_next[9]),
+                                  float(step_values_next[10]),
+                                  float(step_values_next[11]),
+                                  float(step_values_next[12]),
+                                  float(step_values_next[13]))
+                QApplication.processEvents()
         except AttributeError:
             status = 'Automatic mode not initialized'
 
