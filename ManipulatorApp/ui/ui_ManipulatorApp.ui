@@ -994,7 +994,7 @@ QPushButton:pressed {
              <item>
               <widget class="QStackedWidget" name="stackedWidget">
                <property name="currentIndex">
-                <number>4</number>
+                <number>3</number>
                </property>
                <widget class="QWidget" name="page_home">
                 <property name="layoutDirection">
@@ -4733,13 +4733,16 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>-9000</number>
                           </property>
                           <property name="maximum">
-                           <number>90</number>
+                           <number>9000</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>100</number>
                           </property>
                           <property name="pageStep">
-                           <number>5</number>
+                           <number>500</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -4855,13 +4858,19 @@ QSlider::handle:horizontal:pressed {
                            <number>0</number>
                           </property>
                           <property name="maximum">
-                           <number>180</number>
+                           <number>18000</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>100</number>
                           </property>
                           <property name="pageStep">
-                           <number>5</number>
+                           <number>500</number>
+                          </property>
+                          <property name="value">
+                           <number>9000</number>
                           </property>
                           <property name="sliderPosition">
-                           <number>90</number>
+                           <number>9000</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -4971,13 +4980,16 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-120</number>
+                           <number>-12000</number>
                           </property>
                           <property name="maximum">
-                           <number>60</number>
+                           <number>6000</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>100</number>
                           </property>
                           <property name="pageStep">
-                           <number>5</number>
+                           <number>500</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -5087,13 +5099,16 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>-9000</number>
                           </property>
                           <property name="maximum">
-                           <number>90</number>
+                           <number>9000</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>100</number>
                           </property>
                           <property name="pageStep">
-                           <number>5</number>
+                           <number>500</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -5206,13 +5221,16 @@ QSlider::handle:horizontal:pressed {
                            <number>0</number>
                           </property>
                           <property name="maximum">
-                           <number>180</number>
+                           <number>18000</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>100</number>
                           </property>
                           <property name="pageStep">
-                           <number>5</number>
+                           <number>500</number>
                           </property>
                           <property name="value">
-                           <number>90</number>
+                           <number>9000</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -5325,13 +5343,16 @@ QSlider::handle:horizontal:pressed {
                            <number>0</number>
                           </property>
                           <property name="maximum">
-                           <number>180</number>
+                           <number>18000</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>100</number>
                           </property>
                           <property name="pageStep">
-                           <number>5</number>
+                           <number>500</number>
                           </property>
                           <property name="value">
-                           <number>90</number>
+                           <number>9000</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -5953,6 +5974,9 @@ QSlider::handle:vertical:pressed {
                           </property>
                           <property name="toolTip">
                            <string>Robot config</string>
+                          </property>
+                          <property name="currentIndex">
+                           <number>1</number>
                           </property>
                           <item>
                            <property name="text">
