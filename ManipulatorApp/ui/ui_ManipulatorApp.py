@@ -14,7 +14,8 @@ from PySide2.QtWidgets import *
 
 from ManipulatorApp.modules.mplwidget import MplWidget
 
-from  ManipulatorApp.ui.icons import icons_rc
+from ManipulatorApp.ui.icons import icons_rc
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -2934,8 +2935,10 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s1.setMinimum(-90)
-        self.horizontalSlider_auto_s1.setMaximum(90)
+        self.horizontalSlider_auto_s1.setMinimum(-9000)
+        self.horizontalSlider_auto_s1.setMaximum(9000)
+        self.horizontalSlider_auto_s1.setSingleStep(100)
+        self.horizontalSlider_auto_s1.setPageStep(1000)
         self.horizontalSlider_auto_s1.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_s1.setInvertedAppearance(False)
         self.horizontalSlider_auto_s1.setInvertedControls(False)
@@ -3051,8 +3054,10 @@ class Ui_MainWindow(object):
 "    background-color: rgb(65, 130, 195);\n"
 "}")
         self.horizontalSlider_auto_s2.setMinimum(0)
-        self.horizontalSlider_auto_s2.setMaximum(180)
-        self.horizontalSlider_auto_s2.setValue(90)
+        self.horizontalSlider_auto_s2.setMaximum(18000)
+        self.horizontalSlider_auto_s2.setSingleStep(100)
+        self.horizontalSlider_auto_s2.setPageStep(1000)
+        self.horizontalSlider_auto_s2.setValue(9000)
         self.horizontalSlider_auto_s2.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_s2.setInvertedAppearance(False)
         self.horizontalSlider_auto_s2.setInvertedControls(False)
@@ -3162,8 +3167,10 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s3.setMinimum(-120)
-        self.horizontalSlider_auto_s3.setMaximum(60)
+        self.horizontalSlider_auto_s3.setMinimum(-12000)
+        self.horizontalSlider_auto_s3.setMaximum(6000)
+        self.horizontalSlider_auto_s3.setSingleStep(100)
+        self.horizontalSlider_auto_s3.setPageStep(1000)
         self.horizontalSlider_auto_s3.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_s3.setInvertedAppearance(False)
         self.horizontalSlider_auto_s3.setInvertedControls(False)
@@ -3274,8 +3281,10 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s4.setMinimum(-90)
-        self.horizontalSlider_auto_s4.setMaximum(90)
+        self.horizontalSlider_auto_s4.setMinimum(-9000)
+        self.horizontalSlider_auto_s4.setMaximum(9000)
+        self.horizontalSlider_auto_s4.setSingleStep(100)
+        self.horizontalSlider_auto_s4.setPageStep(1000)
         self.horizontalSlider_auto_s4.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_s4.setInvertedAppearance(False)
         self.horizontalSlider_auto_s4.setInvertedControls(False)
@@ -3329,16 +3338,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_20.addWidget(self.horizontalSlider_auto_orient, 7, 3, 1, 1)
 
-        self.label_j_s5_2 = QLabel(self.Frame_auto_movement)
-        self.label_j_s5_2.setObjectName(u"label_j_s5_2")
-        sizePolicy3.setHeightForWidth(self.label_j_s5_2.sizePolicy().hasHeightForWidth())
-        self.label_j_s5_2.setSizePolicy(sizePolicy3)
-        self.label_j_s5_2.setMinimumSize(QSize(150, 25))
-        self.label_j_s5_2.setMaximumSize(QSize(16777215, 25))
-        self.label_j_s5_2.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_20.addWidget(self.label_j_s5_2, 8, 1, 1, 1)
-
         self.label_auto_orient_2 = QLabel(self.Frame_auto_movement)
         self.label_auto_orient_2.setObjectName(u"label_auto_orient_2")
         sizePolicy3.setHeightForWidth(self.label_auto_orient_2.sizePolicy().hasHeightForWidth())
@@ -3348,60 +3347,6 @@ class Ui_MainWindow(object):
         self.label_auto_orient_2.setAlignment(Qt.AlignCenter)
 
         self.gridLayout_20.addWidget(self.label_auto_orient_2, 8, 3, 1, 1)
-
-        self.lcdNumber_auto_s5 = QLCDNumber(self.Frame_auto_movement)
-        self.lcdNumber_auto_s5.setObjectName(u"lcdNumber_auto_s5")
-        self.lcdNumber_auto_s5.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_auto_s5.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_auto_s5.setFrameShape(QFrame.NoFrame)
-
-        self.gridLayout_20.addWidget(self.lcdNumber_auto_s5, 9, 0, 1, 1)
-
-        self.horizontalSlider_auto_s5 = QSlider(self.Frame_auto_movement)
-        self.horizontalSlider_auto_s5.setObjectName(u"horizontalSlider_auto_s5")
-        sizePolicy8.setHeightForWidth(self.horizontalSlider_auto_s5.sizePolicy().hasHeightForWidth())
-        self.horizontalSlider_auto_s5.setSizePolicy(sizePolicy8)
-        self.horizontalSlider_auto_s5.setMinimumSize(QSize(200, 0))
-        self.horizontalSlider_auto_s5.setMaximumSize(QSize(16777215, 16777215))
-        self.horizontalSlider_auto_s5.setStyleSheet(u"QSlider::groove:horizontal {\n"
-"    border-radius: 9px;  \n"
-"	height: 18px;\n"
-"	margin: 0px;\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"\n"
-"QSlider::handle:horizontal {\n"
-"    background-color: rgb(85, 170, 255);\n"
-"    border: none;\n"
-"    height: 18px;\n"
-"    width: 18px;\n"
-"    margin: 0px;\n"
-"	border-radius: 9px;\n"
-"}\n"
-"QSlider::handle:horizontal:hover {\n"
-"    background-color: rgb(105, 180, 255);\n"
-"}\n"
-"QSlider::handle:horizontal:pressed {\n"
-"    background-color: rgb(65, 130, 195);\n"
-"}")
-        self.horizontalSlider_auto_s5.setMinimum(-90)
-        self.horizontalSlider_auto_s5.setMaximum(90)
-        self.horizontalSlider_auto_s5.setOrientation(Qt.Horizontal)
-        self.horizontalSlider_auto_s5.setInvertedAppearance(False)
-        self.horizontalSlider_auto_s5.setInvertedControls(False)
-        self.horizontalSlider_auto_s5.setTickPosition(QSlider.NoTicks)
-        self.horizontalSlider_auto_s5.setTickInterval(10)
-
-        self.gridLayout_20.addWidget(self.horizontalSlider_auto_s5, 9, 1, 1, 1)
-
-        self.lcdNumber_auto_time = QLCDNumber(self.Frame_auto_movement)
-        self.lcdNumber_auto_time.setObjectName(u"lcdNumber_auto_time")
-        self.lcdNumber_auto_time.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_auto_time.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_auto_time.setFrameShape(QFrame.NoFrame)
-        self.lcdNumber_auto_time.setProperty("value", 1000.000000000000000)
-
-        self.gridLayout_20.addWidget(self.lcdNumber_auto_time, 9, 2, 1, 1)
 
         self.horizontalSlider_auto_time_2 = QSlider(self.Frame_auto_movement)
         self.horizontalSlider_auto_time_2.setObjectName(u"horizontalSlider_auto_time_2")
@@ -3452,7 +3397,7 @@ class Ui_MainWindow(object):
         self.label_j_s6_2.setMaximumSize(QSize(16777215, 25))
         self.label_j_s6_2.setAlignment(Qt.AlignCenter)
 
-        self.gridLayout_20.addWidget(self.label_j_s6_2, 10, 1, 1, 1)
+        self.gridLayout_20.addWidget(self.label_j_s6_2, 11, 1, 1, 1)
 
         self.btn_auto_add_actual_2 = QPushButton(self.Frame_auto_movement)
         self.btn_auto_add_actual_2.setObjectName(u"btn_auto_add_actual_2")
@@ -3480,7 +3425,7 @@ class Ui_MainWindow(object):
         self.btn_auto_add_actual_2.setCheckable(True)
         self.btn_auto_add_actual_2.setChecked(True)
 
-        self.gridLayout_20.addWidget(self.btn_auto_add_actual_2, 10, 2, 1, 1, Qt.AlignRight)
+        self.gridLayout_20.addWidget(self.btn_auto_add_actual_2, 11, 2, 1, 1)
 
         self.label_auto_home = QLabel(self.Frame_auto_movement)
         self.label_auto_home.setObjectName(u"label_auto_home")
@@ -3490,7 +3435,7 @@ class Ui_MainWindow(object):
         self.label_auto_home.setMaximumSize(QSize(16777215, 25))
         self.label_auto_home.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.gridLayout_20.addWidget(self.label_auto_home, 10, 3, 1, 1)
+        self.gridLayout_20.addWidget(self.label_auto_home, 11, 3, 1, 1)
 
         self.lcdNumber_auto_s6 = QLCDNumber(self.Frame_auto_movement)
         self.lcdNumber_auto_s6.setObjectName(u"lcdNumber_auto_s6")
@@ -3498,7 +3443,7 @@ class Ui_MainWindow(object):
         self.lcdNumber_auto_s6.setMaximumSize(QSize(50, 50))
         self.lcdNumber_auto_s6.setFrameShape(QFrame.NoFrame)
 
-        self.gridLayout_20.addWidget(self.lcdNumber_auto_s6, 11, 0, 1, 1)
+        self.gridLayout_20.addWidget(self.lcdNumber_auto_s6, 12, 0, 1, 1)
 
         self.horizontalSlider_auto_s6 = QSlider(self.Frame_auto_movement)
         self.horizontalSlider_auto_s6.setObjectName(u"horizontalSlider_auto_s6")
@@ -3535,7 +3480,7 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_s6.setTickPosition(QSlider.NoTicks)
         self.horizontalSlider_auto_s6.setTickInterval(10)
 
-        self.gridLayout_20.addWidget(self.horizontalSlider_auto_s6, 11, 1, 1, 1)
+        self.gridLayout_20.addWidget(self.horizontalSlider_auto_s6, 12, 1, 1, 1)
 
         self.btn_auto_add_actual = QPushButton(self.Frame_auto_movement)
         self.btn_auto_add_actual.setObjectName(u"btn_auto_add_actual")
@@ -3563,7 +3508,7 @@ class Ui_MainWindow(object):
         self.btn_auto_add_actual.setCheckable(True)
         self.btn_auto_add_actual.setChecked(True)
 
-        self.gridLayout_20.addWidget(self.btn_auto_add_actual, 11, 2, 1, 1, Qt.AlignRight)
+        self.gridLayout_20.addWidget(self.btn_auto_add_actual, 12, 2, 1, 1)
 
         self.label_autoadd = QLabel(self.Frame_auto_movement)
         self.label_autoadd.setObjectName(u"label_autoadd")
@@ -3573,7 +3518,71 @@ class Ui_MainWindow(object):
         self.label_autoadd.setMaximumSize(QSize(16777215, 25))
         self.label_autoadd.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
 
-        self.gridLayout_20.addWidget(self.label_autoadd, 11, 3, 1, 1)
+        self.gridLayout_20.addWidget(self.label_autoadd, 12, 3, 1, 1)
+
+        self.label_j_s5_2 = QLabel(self.Frame_auto_movement)
+        self.label_j_s5_2.setObjectName(u"label_j_s5_2")
+        sizePolicy3.setHeightForWidth(self.label_j_s5_2.sizePolicy().hasHeightForWidth())
+        self.label_j_s5_2.setSizePolicy(sizePolicy3)
+        self.label_j_s5_2.setMinimumSize(QSize(150, 25))
+        self.label_j_s5_2.setMaximumSize(QSize(16777215, 25))
+        self.label_j_s5_2.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_20.addWidget(self.label_j_s5_2, 8, 1, 1, 1)
+
+        self.horizontalSlider_auto_s5 = QSlider(self.Frame_auto_movement)
+        self.horizontalSlider_auto_s5.setObjectName(u"horizontalSlider_auto_s5")
+        sizePolicy8.setHeightForWidth(self.horizontalSlider_auto_s5.sizePolicy().hasHeightForWidth())
+        self.horizontalSlider_auto_s5.setSizePolicy(sizePolicy8)
+        self.horizontalSlider_auto_s5.setMinimumSize(QSize(200, 0))
+        self.horizontalSlider_auto_s5.setMaximumSize(QSize(16777215, 16777215))
+        self.horizontalSlider_auto_s5.setStyleSheet(u"QSlider::groove:horizontal {\n"
+"    border-radius: 9px;  \n"
+"	height: 18px;\n"
+"	margin: 0px;\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"\n"
+"QSlider::handle:horizontal {\n"
+"    background-color: rgb(85, 170, 255);\n"
+"    border: none;\n"
+"    height: 18px;\n"
+"    width: 18px;\n"
+"    margin: 0px;\n"
+"	border-radius: 9px;\n"
+"}\n"
+"QSlider::handle:horizontal:hover {\n"
+"    background-color: rgb(105, 180, 255);\n"
+"}\n"
+"QSlider::handle:horizontal:pressed {\n"
+"    background-color: rgb(65, 130, 195);\n"
+"}")
+        self.horizontalSlider_auto_s5.setMinimum(-90)
+        self.horizontalSlider_auto_s5.setMaximum(90)
+        self.horizontalSlider_auto_s5.setOrientation(Qt.Horizontal)
+        self.horizontalSlider_auto_s5.setInvertedAppearance(False)
+        self.horizontalSlider_auto_s5.setInvertedControls(False)
+        self.horizontalSlider_auto_s5.setTickPosition(QSlider.NoTicks)
+        self.horizontalSlider_auto_s5.setTickInterval(10)
+
+        self.gridLayout_20.addWidget(self.horizontalSlider_auto_s5, 9, 1, 1, 1)
+
+        self.lcdNumber_auto_s5 = QLCDNumber(self.Frame_auto_movement)
+        self.lcdNumber_auto_s5.setObjectName(u"lcdNumber_auto_s5")
+        self.lcdNumber_auto_s5.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_auto_s5.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_auto_s5.setFrameShape(QFrame.NoFrame)
+
+        self.gridLayout_20.addWidget(self.lcdNumber_auto_s5, 9, 0, 1, 1)
+
+        self.lcdNumber_auto_time = QLCDNumber(self.Frame_auto_movement)
+        self.lcdNumber_auto_time.setObjectName(u"lcdNumber_auto_time")
+        self.lcdNumber_auto_time.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_auto_time.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_auto_time.setFrameShape(QFrame.NoFrame)
+        self.lcdNumber_auto_time.setProperty("value", 1000.000000000000000)
+
+        self.gridLayout_20.addWidget(self.lcdNumber_auto_time, 9, 2, 1, 1)
 
         self.tabWidget_7.addTab(self.Frame_auto_movement, "")
         self.Frame_auto_table = QWidget()
@@ -3707,6 +3716,15 @@ class Ui_MainWindow(object):
         self.frame.setFrameShadow(QFrame.Raised)
         self.gridLayout_7 = QGridLayout(self.frame)
         self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.comboBox_auto_command_2 = QComboBox(self.frame)
+        self.comboBox_auto_command_2.addItem("")
+        self.comboBox_auto_command_2.addItem("")
+        self.comboBox_auto_command_2.setObjectName(u"comboBox_auto_command_2")
+        self.comboBox_auto_command_2.setMinimumSize(QSize(100, 25))
+        self.comboBox_auto_command_2.setMaximumSize(QSize(16777215, 25))
+
+        self.gridLayout_7.addWidget(self.comboBox_auto_command_2, 0, 9, 1, 1)
+
         self.btn_auto_prev = QPushButton(self.frame)
         self.btn_auto_prev.setObjectName(u"btn_auto_prev")
         sizePolicy4.setHeightForWidth(self.btn_auto_prev.sizePolicy().hasHeightForWidth())
@@ -3762,32 +3780,35 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.btn_auto_start, 0, 1, 4, 1)
 
-        self.btn_auto_next = QPushButton(self.frame)
-        self.btn_auto_next.setObjectName(u"btn_auto_next")
-        sizePolicy4.setHeightForWidth(self.btn_auto_next.sizePolicy().hasHeightForWidth())
-        self.btn_auto_next.setSizePolicy(sizePolicy4)
-        self.btn_auto_next.setMinimumSize(QSize(50, 50))
-        self.btn_auto_next.setMaximumSize(QSize(50, 50))
-        self.btn_auto_next.setFont(font3)
-        self.btn_auto_next.setLayoutDirection(Qt.LeftToRight)
-        self.btn_auto_next.setStyleSheet(u"QPushButton {	\n"
+        self.btn_auto_init = QPushButton(self.frame)
+        self.btn_auto_init.setObjectName(u"btn_auto_init")
+        sizePolicy4.setHeightForWidth(self.btn_auto_init.sizePolicy().hasHeightForWidth())
+        self.btn_auto_init.setSizePolicy(sizePolicy4)
+        self.btn_auto_init.setMinimumSize(QSize(40, 40))
+        self.btn_auto_init.setMaximumSize(QSize(40, 40))
+        font9 = QFont()
+        font9.setFamily(u"Segoe UI")
+        font9.setPointSize(8)
+        self.btn_auto_init.setFont(font9)
+        self.btn_auto_init.setLayoutDirection(Qt.LeftToRight)
+        self.btn_auto_init.setStyleSheet(u"QPushButton {	\n"
 "	color: rgb(222, 222, 222);\n"
 "    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
+"    border-radius: 20px;\n"
 "    border-style: outset;\n"
 "	background-color: rgb(35, 35, 35);\n"
 "    padding: 5px;\n"
 "}\n"
 "QPushButton:hover {\n"
-"	background-color: rgb(85, 170, 255);\n"
+"	background-color: rgb(61, 61, 61);\n"
 "}\n"
 "QPushButton:pressed {	\n"
-"	background-color: rgb(114, 255, 144);\n"
+"	background-color: rgb(85, 170, 255);\n"
 "}")
-        self.btn_auto_next.setCheckable(True)
-        self.btn_auto_next.setChecked(True)
+        self.btn_auto_init.setCheckable(True)
+        self.btn_auto_init.setChecked(True)
 
-        self.gridLayout_7.addWidget(self.btn_auto_next, 0, 2, 2, 1)
+        self.gridLayout_7.addWidget(self.btn_auto_init, 0, 5, 1, 1)
 
         self.btn_auto_stop = QPushButton(self.frame)
         self.btn_auto_stop.setObjectName(u"btn_auto_stop")
@@ -3820,6 +3841,33 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.btn_auto_stop, 0, 3, 2, 1)
 
+        self.btn_auto_next = QPushButton(self.frame)
+        self.btn_auto_next.setObjectName(u"btn_auto_next")
+        sizePolicy4.setHeightForWidth(self.btn_auto_next.sizePolicy().hasHeightForWidth())
+        self.btn_auto_next.setSizePolicy(sizePolicy4)
+        self.btn_auto_next.setMinimumSize(QSize(50, 50))
+        self.btn_auto_next.setMaximumSize(QSize(50, 50))
+        self.btn_auto_next.setFont(font3)
+        self.btn_auto_next.setLayoutDirection(Qt.LeftToRight)
+        self.btn_auto_next.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 25px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(114, 255, 144);\n"
+"}")
+        self.btn_auto_next.setCheckable(True)
+        self.btn_auto_next.setChecked(True)
+
+        self.gridLayout_7.addWidget(self.btn_auto_next, 0, 2, 2, 1)
+
         self.comboBox_auto_sim_servo = QComboBox(self.frame)
         self.comboBox_auto_sim_servo.addItem("")
         self.comboBox_auto_sim_servo.addItem("")
@@ -3828,73 +3876,6 @@ class Ui_MainWindow(object):
         self.comboBox_auto_sim_servo.setMaximumSize(QSize(100, 25))
 
         self.gridLayout_7.addWidget(self.comboBox_auto_sim_servo, 0, 4, 1, 1)
-
-        self.btn_auto_init = QPushButton(self.frame)
-        self.btn_auto_init.setObjectName(u"btn_auto_init")
-        sizePolicy4.setHeightForWidth(self.btn_auto_init.sizePolicy().hasHeightForWidth())
-        self.btn_auto_init.setSizePolicy(sizePolicy4)
-        self.btn_auto_init.setMinimumSize(QSize(40, 40))
-        self.btn_auto_init.setMaximumSize(QSize(40, 40))
-        font9 = QFont()
-        font9.setFamily(u"Segoe UI")
-        font9.setPointSize(8)
-        self.btn_auto_init.setFont(font9)
-        self.btn_auto_init.setLayoutDirection(Qt.LeftToRight)
-        self.btn_auto_init.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 20px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_init.setCheckable(True)
-        self.btn_auto_init.setChecked(True)
-
-        self.gridLayout_7.addWidget(self.btn_auto_init, 0, 5, 1, 1)
-
-        self.btn_auto_break = QPushButton(self.frame)
-        self.btn_auto_break.setObjectName(u"btn_auto_break")
-        sizePolicy4.setHeightForWidth(self.btn_auto_break.sizePolicy().hasHeightForWidth())
-        self.btn_auto_break.setSizePolicy(sizePolicy4)
-        self.btn_auto_break.setMinimumSize(QSize(40, 40))
-        self.btn_auto_break.setMaximumSize(QSize(40, 40))
-        self.btn_auto_break.setFont(font9)
-        self.btn_auto_break.setLayoutDirection(Qt.LeftToRight)
-        self.btn_auto_break.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 20px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_break.setCheckable(True)
-        self.btn_auto_break.setChecked(True)
-
-        self.gridLayout_7.addWidget(self.btn_auto_break, 0, 6, 1, 2)
-
-        self.comboBox_auto_command = QComboBox(self.frame)
-        self.comboBox_auto_command.addItem("")
-        self.comboBox_auto_command.addItem("")
-        self.comboBox_auto_command.addItem("")
-        self.comboBox_auto_command.setObjectName(u"comboBox_auto_command")
-        self.comboBox_auto_command.setMinimumSize(QSize(100, 25))
-        self.comboBox_auto_command.setMaximumSize(QSize(16777215, 25))
-
-        self.gridLayout_7.addWidget(self.comboBox_auto_command, 0, 10, 1, 1)
 
         self.btn_auto_add_empty = QPushButton(self.frame)
         self.btn_auto_add_empty.setObjectName(u"btn_auto_add_empty")
@@ -3949,28 +3930,42 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.btn_auto_delete, 0, 12, 1, 1)
 
-        self.spinBox = QSpinBox(self.frame)
-        self.spinBox.setObjectName(u"spinBox")
-        sizePolicy13 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-        sizePolicy13.setHorizontalStretch(0)
-        sizePolicy13.setVerticalStretch(0)
-        sizePolicy13.setHeightForWidth(self.spinBox.sizePolicy().hasHeightForWidth())
-        self.spinBox.setSizePolicy(sizePolicy13)
-        self.spinBox.setMinimumSize(QSize(100, 25))
-        self.spinBox.setMaximumSize(QSize(100, 16777215))
-        self.spinBox.setAlignment(Qt.AlignCenter)
-        self.spinBox.setMinimum(1)
+        self.comboBox_auto_command = QComboBox(self.frame)
+        self.comboBox_auto_command.addItem("")
+        self.comboBox_auto_command.addItem("")
+        self.comboBox_auto_command.addItem("")
+        self.comboBox_auto_command.setObjectName(u"comboBox_auto_command")
+        self.comboBox_auto_command.setMinimumSize(QSize(100, 25))
+        self.comboBox_auto_command.setMaximumSize(QSize(16777215, 25))
 
-        self.gridLayout_7.addWidget(self.spinBox, 1, 4, 2, 1)
+        self.gridLayout_7.addWidget(self.comboBox_auto_command, 0, 10, 1, 1)
 
-        self.comboBox_auto_traj = QComboBox(self.frame)
-        self.comboBox_auto_traj.addItem("")
-        self.comboBox_auto_traj.addItem("")
-        self.comboBox_auto_traj.setObjectName(u"comboBox_auto_traj")
-        self.comboBox_auto_traj.setMinimumSize(QSize(100, 25))
-        self.comboBox_auto_traj.setMaximumSize(QSize(16777215, 25))
+        self.btn_auto_break = QPushButton(self.frame)
+        self.btn_auto_break.setObjectName(u"btn_auto_break")
+        sizePolicy4.setHeightForWidth(self.btn_auto_break.sizePolicy().hasHeightForWidth())
+        self.btn_auto_break.setSizePolicy(sizePolicy4)
+        self.btn_auto_break.setMinimumSize(QSize(40, 40))
+        self.btn_auto_break.setMaximumSize(QSize(40, 40))
+        self.btn_auto_break.setFont(font9)
+        self.btn_auto_break.setLayoutDirection(Qt.LeftToRight)
+        self.btn_auto_break.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_auto_break.setCheckable(True)
+        self.btn_auto_break.setChecked(True)
 
-        self.gridLayout_7.addWidget(self.comboBox_auto_traj, 1, 10, 2, 1)
+        self.gridLayout_7.addWidget(self.btn_auto_break, 0, 6, 1, 2)
 
         self.btn_auto_Add_wait = QPushButton(self.frame)
         self.btn_auto_Add_wait.setObjectName(u"btn_auto_Add_wait")
@@ -3999,32 +3994,28 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.btn_auto_Add_wait, 1, 11, 3, 1)
 
-        self.btn_auto_Add_safe = QPushButton(self.frame)
-        self.btn_auto_Add_safe.setObjectName(u"btn_auto_Add_safe")
-        sizePolicy4.setHeightForWidth(self.btn_auto_Add_safe.sizePolicy().hasHeightForWidth())
-        self.btn_auto_Add_safe.setSizePolicy(sizePolicy4)
-        self.btn_auto_Add_safe.setMinimumSize(QSize(50, 50))
-        self.btn_auto_Add_safe.setMaximumSize(QSize(50, 50))
-        self.btn_auto_Add_safe.setFont(font3)
-        self.btn_auto_Add_safe.setLayoutDirection(Qt.LeftToRight)
-        self.btn_auto_Add_safe.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 25px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_Add_safe.setCheckable(True)
-        self.btn_auto_Add_safe.setChecked(True)
+        self.comboBox_auto_traj = QComboBox(self.frame)
+        self.comboBox_auto_traj.addItem("")
+        self.comboBox_auto_traj.addItem("")
+        self.comboBox_auto_traj.setObjectName(u"comboBox_auto_traj")
+        self.comboBox_auto_traj.setMinimumSize(QSize(100, 25))
+        self.comboBox_auto_traj.setMaximumSize(QSize(16777215, 25))
 
-        self.gridLayout_7.addWidget(self.btn_auto_Add_safe, 1, 12, 3, 1)
+        self.gridLayout_7.addWidget(self.comboBox_auto_traj, 1, 10, 2, 1)
+
+        self.spinBox = QSpinBox(self.frame)
+        self.spinBox.setObjectName(u"spinBox")
+        sizePolicy13 = QSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+        sizePolicy13.setHorizontalStretch(0)
+        sizePolicy13.setVerticalStretch(0)
+        sizePolicy13.setHeightForWidth(self.spinBox.sizePolicy().hasHeightForWidth())
+        self.spinBox.setSizePolicy(sizePolicy13)
+        self.spinBox.setMinimumSize(QSize(100, 25))
+        self.spinBox.setMaximumSize(QSize(100, 16777215))
+        self.spinBox.setAlignment(Qt.AlignCenter)
+        self.spinBox.setMinimum(1)
+
+        self.gridLayout_7.addWidget(self.spinBox, 1, 4, 2, 1)
 
         self.btn_auto_file_dialog = QPushButton(self.frame)
         self.btn_auto_file_dialog.setObjectName(u"btn_auto_file_dialog")
@@ -4056,15 +4047,65 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.btn_auto_file_dialog, 3, 3, 1, 1)
 
+        self.btn_auto_Add_safe = QPushButton(self.frame)
+        self.btn_auto_Add_safe.setObjectName(u"btn_auto_Add_safe")
+        sizePolicy4.setHeightForWidth(self.btn_auto_Add_safe.sizePolicy().hasHeightForWidth())
+        self.btn_auto_Add_safe.setSizePolicy(sizePolicy4)
+        self.btn_auto_Add_safe.setMinimumSize(QSize(50, 50))
+        self.btn_auto_Add_safe.setMaximumSize(QSize(50, 50))
+        self.btn_auto_Add_safe.setFont(font3)
+        self.btn_auto_Add_safe.setLayoutDirection(Qt.LeftToRight)
+        self.btn_auto_Add_safe.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 25px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_auto_Add_safe.setCheckable(True)
+        self.btn_auto_Add_safe.setChecked(True)
+
+        self.gridLayout_7.addWidget(self.btn_auto_Add_safe, 1, 12, 3, 1)
+
         self.lineEdit = QLineEdit(self.frame)
         self.lineEdit.setObjectName(u"lineEdit")
         self.lineEdit.setMinimumSize(QSize(200, 0))
 
         self.gridLayout_7.addWidget(self.lineEdit, 3, 4, 1, 3)
 
-        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+        self.btn_auto_Add_path_read = QPushButton(self.frame)
+        self.btn_auto_Add_path_read.setObjectName(u"btn_auto_Add_path_read")
+        sizePolicy4.setHeightForWidth(self.btn_auto_Add_path_read.sizePolicy().hasHeightForWidth())
+        self.btn_auto_Add_path_read.setSizePolicy(sizePolicy4)
+        self.btn_auto_Add_path_read.setMinimumSize(QSize(40, 40))
+        self.btn_auto_Add_path_read.setMaximumSize(QSize(40, 40))
+        self.btn_auto_Add_path_read.setFont(font9)
+        self.btn_auto_Add_path_read.setLayoutDirection(Qt.LeftToRight)
+        self.btn_auto_Add_path_read.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 20px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_auto_Add_path_read.setCheckable(True)
+        self.btn_auto_Add_path_read.setChecked(True)
 
-        self.gridLayout_7.addItem(self.horizontalSpacer_2, 3, 9, 1, 1)
+        self.gridLayout_7.addWidget(self.btn_auto_Add_path_read, 1, 6, 1, 1)
 
         self.comboBox_auto_config = QComboBox(self.frame)
         self.comboBox_auto_config.addItem("")
@@ -4102,32 +4143,13 @@ class Ui_MainWindow(object):
 
         self.gridLayout_7.addWidget(self.btn_auto_Add_path_gen, 1, 5, 1, 1)
 
-        self.btn_auto_Add_path_read = QPushButton(self.frame)
-        self.btn_auto_Add_path_read.setObjectName(u"btn_auto_Add_path_read")
-        sizePolicy4.setHeightForWidth(self.btn_auto_Add_path_read.sizePolicy().hasHeightForWidth())
-        self.btn_auto_Add_path_read.setSizePolicy(sizePolicy4)
-        self.btn_auto_Add_path_read.setMinimumSize(QSize(40, 40))
-        self.btn_auto_Add_path_read.setMaximumSize(QSize(40, 40))
-        self.btn_auto_Add_path_read.setFont(font9)
-        self.btn_auto_Add_path_read.setLayoutDirection(Qt.LeftToRight)
-        self.btn_auto_Add_path_read.setStyleSheet(u"QPushButton {	\n"
-"	color: rgb(222, 222, 222);\n"
-"    border: 2px solid #555;\n"
-"    border-radius: 20px;\n"
-"    border-style: outset;\n"
-"	background-color: rgb(35, 35, 35);\n"
-"    padding: 5px;\n"
-"}\n"
-"QPushButton:hover {\n"
-"	background-color: rgb(61, 61, 61);\n"
-"}\n"
-"QPushButton:pressed {	\n"
-"	background-color: rgb(85, 170, 255);\n"
-"}")
-        self.btn_auto_Add_path_read.setCheckable(True)
-        self.btn_auto_Add_path_read.setChecked(True)
+        self.horizontalSpacer_8 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
-        self.gridLayout_7.addWidget(self.btn_auto_Add_path_read, 1, 6, 1, 1)
+        self.gridLayout_7.addItem(self.horizontalSpacer_8, 0, 8, 1, 1)
+
+        self.horizontalSpacer_2 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
+
+        self.gridLayout_7.addItem(self.horizontalSpacer_2, 3, 9, 1, 1)
 
 
         self.verticalLayout_12.addWidget(self.frame)
@@ -4818,13 +4840,13 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_z.valueChanged.connect(self.lcdNumber_auto_z.display)
         self.horizontalSlider_auto_time_2.valueChanged.connect(self.lcdNumber_auto_time.display)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(4)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget_4.setCurrentIndex(1)
         self.tabWidget_5.setCurrentIndex(1)
         self.comboBox_auto_config_2.setCurrentIndex(1)
-        self.tabWidget_7.setCurrentIndex(1)
+        self.tabWidget_7.setCurrentIndex(0)
         self.tabWidget_6.setCurrentIndex(3)
 
 
@@ -4967,7 +4989,6 @@ class Ui_MainWindow(object):
         self.label_auto_z.setText(QCoreApplication.translate("MainWindow", u"Z-AXIS", None))
         self.label_j_s4_2.setText(QCoreApplication.translate("MainWindow", u"S4 - LINK 3", None))
         self.label_auto_orient.setText(QCoreApplication.translate("MainWindow", u"ORIENTATION", None))
-        self.label_j_s5_2.setText(QCoreApplication.translate("MainWindow", u"S5 - EFFECTOR MOVE", None))
         self.label_auto_orient_2.setText(QCoreApplication.translate("MainWindow", u"Time", None))
         self.label_j_s6_2.setText(QCoreApplication.translate("MainWindow", u"S6 - EFFECTOR ACTION", None))
 #if QT_CONFIG(tooltip)
@@ -4980,6 +5001,7 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_auto_add_actual.setText("")
         self.label_autoadd.setText(QCoreApplication.translate("MainWindow", u"ADD POSITION", None))
+        self.label_j_s5_2.setText(QCoreApplication.translate("MainWindow", u"S5 - EFFECTOR MOVE", None))
         self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.Frame_auto_movement), QCoreApplication.translate("MainWindow", u"Movement", None))
         ___qtablewidgetitem = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("MainWindow", u"Command", None));
@@ -5030,6 +5052,12 @@ class Ui_MainWindow(object):
 
         self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.Frame_auto_table), QCoreApplication.translate("MainWindow", u"Table", None))
         self.tabWidget_7.setTabText(self.tabWidget_7.indexOf(self.Frame_auto_visu), QCoreApplication.translate("MainWindow", u"Visualisation", None))
+        self.comboBox_auto_command_2.setItemText(0, QCoreApplication.translate("MainWindow", u"xyz", None))
+        self.comboBox_auto_command_2.setItemText(1, QCoreApplication.translate("MainWindow", u"joints", None))
+
+#if QT_CONFIG(tooltip)
+        self.comboBox_auto_command_2.setToolTip(QCoreApplication.translate("MainWindow", u"Command", None))
+#endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.btn_auto_prev.setToolTip(QCoreApplication.translate("MainWindow", u"Prev", None))
 #endif // QT_CONFIG(tooltip)
@@ -5039,33 +5067,22 @@ class Ui_MainWindow(object):
 #endif // QT_CONFIG(tooltip)
         self.btn_auto_start.setText("")
 #if QT_CONFIG(tooltip)
-        self.btn_auto_next.setToolTip(QCoreApplication.translate("MainWindow", u"Next", None))
+        self.btn_auto_init.setToolTip(QCoreApplication.translate("MainWindow", u"Init automatic mode", None))
 #endif // QT_CONFIG(tooltip)
-        self.btn_auto_next.setText(QCoreApplication.translate("MainWindow", u">", None))
+        self.btn_auto_init.setText(QCoreApplication.translate("MainWindow", u"Init", None))
 #if QT_CONFIG(tooltip)
         self.btn_auto_stop.setToolTip(QCoreApplication.translate("MainWindow", u"STOP", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_auto_stop.setText("")
+#if QT_CONFIG(tooltip)
+        self.btn_auto_next.setToolTip(QCoreApplication.translate("MainWindow", u"Next", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_auto_next.setText(QCoreApplication.translate("MainWindow", u">", None))
         self.comboBox_auto_sim_servo.setItemText(0, QCoreApplication.translate("MainWindow", u"SIM", None))
         self.comboBox_auto_sim_servo.setItemText(1, QCoreApplication.translate("MainWindow", u"SERVOS", None))
 
 #if QT_CONFIG(tooltip)
         self.comboBox_auto_sim_servo.setToolTip(QCoreApplication.translate("MainWindow", u"Sim / Servos", None))
-#endif // QT_CONFIG(tooltip)
-#if QT_CONFIG(tooltip)
-        self.btn_auto_init.setToolTip(QCoreApplication.translate("MainWindow", u"Init automatic mode", None))
-#endif // QT_CONFIG(tooltip)
-        self.btn_auto_init.setText(QCoreApplication.translate("MainWindow", u"Init", None))
-#if QT_CONFIG(tooltip)
-        self.btn_auto_break.setToolTip(QCoreApplication.translate("MainWindow", u"Break automatic mode", None))
-#endif // QT_CONFIG(tooltip)
-        self.btn_auto_break.setText(QCoreApplication.translate("MainWindow", u"Break", None))
-        self.comboBox_auto_command.setItemText(0, QCoreApplication.translate("MainWindow", u"move", None))
-        self.comboBox_auto_command.setItemText(1, QCoreApplication.translate("MainWindow", u"home", None))
-        self.comboBox_auto_command.setItemText(2, QCoreApplication.translate("MainWindow", u"wait", None))
-
-#if QT_CONFIG(tooltip)
-        self.comboBox_auto_command.setToolTip(QCoreApplication.translate("MainWindow", u"Command", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
         self.btn_auto_add_empty.setToolTip(QCoreApplication.translate("MainWindow", u"Add row", None))
@@ -5075,9 +5092,21 @@ class Ui_MainWindow(object):
         self.btn_auto_delete.setToolTip(QCoreApplication.translate("MainWindow", u"Delete row", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_auto_delete.setText("")
+        self.comboBox_auto_command.setItemText(0, QCoreApplication.translate("MainWindow", u"move", None))
+        self.comboBox_auto_command.setItemText(1, QCoreApplication.translate("MainWindow", u"home", None))
+        self.comboBox_auto_command.setItemText(2, QCoreApplication.translate("MainWindow", u"wait", None))
+
 #if QT_CONFIG(tooltip)
-        self.spinBox.setToolTip(QCoreApplication.translate("MainWindow", u"Loop", None))
+        self.comboBox_auto_command.setToolTip(QCoreApplication.translate("MainWindow", u"Command", None))
 #endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(tooltip)
+        self.btn_auto_break.setToolTip(QCoreApplication.translate("MainWindow", u"Break automatic mode", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_auto_break.setText(QCoreApplication.translate("MainWindow", u"Break", None))
+#if QT_CONFIG(tooltip)
+        self.btn_auto_Add_wait.setToolTip(QCoreApplication.translate("MainWindow", u"Add Wait position", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_auto_Add_wait.setText(QCoreApplication.translate("MainWindow", u"WAIT", None))
         self.comboBox_auto_traj.setItemText(0, QCoreApplication.translate("MainWindow", u"p2p", None))
         self.comboBox_auto_traj.setItemText(1, QCoreApplication.translate("MainWindow", u"cp_linear", None))
 
@@ -5085,18 +5114,21 @@ class Ui_MainWindow(object):
         self.comboBox_auto_traj.setToolTip(QCoreApplication.translate("MainWindow", u"Trajectory", None))
 #endif // QT_CONFIG(tooltip)
 #if QT_CONFIG(tooltip)
-        self.btn_auto_Add_wait.setToolTip(QCoreApplication.translate("MainWindow", u"Add Wait position", None))
+        self.spinBox.setToolTip(QCoreApplication.translate("MainWindow", u"Loop", None))
 #endif // QT_CONFIG(tooltip)
-        self.btn_auto_Add_wait.setText(QCoreApplication.translate("MainWindow", u"WAIT", None))
-#if QT_CONFIG(tooltip)
-        self.btn_auto_Add_safe.setToolTip(QCoreApplication.translate("MainWindow", u"Add Home position", None))
-#endif // QT_CONFIG(tooltip)
-        self.btn_auto_Add_safe.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
 #if QT_CONFIG(tooltip)
         self.btn_auto_file_dialog.setToolTip(QCoreApplication.translate("MainWindow", u"Open", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_auto_file_dialog.setText(QCoreApplication.translate("MainWindow", u"...", None))
+#if QT_CONFIG(tooltip)
+        self.btn_auto_Add_safe.setToolTip(QCoreApplication.translate("MainWindow", u"Add Home position", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_auto_Add_safe.setText(QCoreApplication.translate("MainWindow", u"HOME", None))
         self.lineEdit.setText(QCoreApplication.translate("MainWindow", u"Path", None))
+#if QT_CONFIG(tooltip)
+        self.btn_auto_Add_path_read.setToolTip(QCoreApplication.translate("MainWindow", u"Read path from file .txt", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_auto_Add_path_read.setText(QCoreApplication.translate("MainWindow", u"Read", None))
         self.comboBox_auto_config.setItemText(0, QCoreApplication.translate("MainWindow", u"config_1", None))
         self.comboBox_auto_config.setItemText(1, QCoreApplication.translate("MainWindow", u"config_2", None))
 
@@ -5107,10 +5139,6 @@ class Ui_MainWindow(object):
         self.btn_auto_Add_path_gen.setToolTip(QCoreApplication.translate("MainWindow", u"Generate path", None))
 #endif // QT_CONFIG(tooltip)
         self.btn_auto_Add_path_gen.setText(QCoreApplication.translate("MainWindow", u"Gen.", None))
-#if QT_CONFIG(tooltip)
-        self.btn_auto_Add_path_read.setToolTip(QCoreApplication.translate("MainWindow", u"Read path from file .txt", None))
-#endif // QT_CONFIG(tooltip)
-        self.btn_auto_Add_path_read.setText(QCoreApplication.translate("MainWindow", u"Read", None))
         self.info.setHtml(QCoreApplication.translate("MainWindow", u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"

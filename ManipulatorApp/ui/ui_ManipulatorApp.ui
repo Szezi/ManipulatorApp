@@ -994,7 +994,7 @@ QPushButton:pressed {
              <item>
               <widget class="QStackedWidget" name="stackedWidget">
                <property name="currentIndex">
-                <number>3</number>
+                <number>4</number>
                </property>
                <widget class="QWidget" name="page_home">
                 <property name="layoutDirection">
@@ -6368,7 +6368,7 @@ QPushButton:pressed {
                        <enum>QTabWidget::Triangular</enum>
                       </property>
                       <property name="currentIndex">
-                       <number>1</number>
+                       <number>0</number>
                       </property>
                       <property name="documentMode">
                        <bool>true</bool>
@@ -6511,10 +6511,16 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>-9000</number>
                           </property>
                           <property name="maximum">
-                           <number>90</number>
+                           <number>9000</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>100</number>
+                          </property>
+                          <property name="pageStep">
+                           <number>1000</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -6754,10 +6760,16 @@ QSlider::handle:horizontal:pressed {
                            <number>0</number>
                           </property>
                           <property name="maximum">
-                           <number>180</number>
+                           <number>18000</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>100</number>
+                          </property>
+                          <property name="pageStep">
+                           <number>1000</number>
                           </property>
                           <property name="value">
-                           <number>90</number>
+                           <number>9000</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -6983,10 +6995,16 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-120</number>
+                           <number>-12000</number>
                           </property>
                           <property name="maximum">
-                           <number>60</number>
+                           <number>6000</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>100</number>
+                          </property>
+                          <property name="pageStep">
+                           <number>1000</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -7215,10 +7233,16 @@ QSlider::handle:horizontal:pressed {
 }</string>
                           </property>
                           <property name="minimum">
-                           <number>-90</number>
+                           <number>-9000</number>
                           </property>
                           <property name="maximum">
-                           <number>90</number>
+                           <number>9000</number>
+                          </property>
+                          <property name="singleStep">
+                           <number>100</number>
+                          </property>
+                          <property name="pageStep">
+                           <number>1000</number>
                           </property>
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
@@ -7322,34 +7346,6 @@ QSlider::handle:horizontal:pressed {
                           </property>
                          </widget>
                         </item>
-                        <item row="8" column="1">
-                         <widget class="QLabel" name="label_j_s5_2">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="minimumSize">
-                           <size>
-                            <width>150</width>
-                            <height>25</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>16777215</width>
-                            <height>25</height>
-                           </size>
-                          </property>
-                          <property name="text">
-                           <string>S5 - EFFECTOR MOVE</string>
-                          </property>
-                          <property name="alignment">
-                           <set>Qt::AlignCenter</set>
-                          </property>
-                         </widget>
-                        </item>
                         <item row="8" column="3">
                          <widget class="QLabel" name="label_auto_orient_2">
                           <property name="sizePolicy">
@@ -7375,113 +7371,6 @@ QSlider::handle:horizontal:pressed {
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignCenter</set>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="9" column="0">
-                         <widget class="QLCDNumber" name="lcdNumber_auto_s5">
-                          <property name="minimumSize">
-                           <size>
-                            <width>30</width>
-                            <height>30</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="frameShape">
-                           <enum>QFrame::NoFrame</enum>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="9" column="1">
-                         <widget class="QSlider" name="horizontalSlider_auto_s5">
-                          <property name="sizePolicy">
-                           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-                            <horstretch>0</horstretch>
-                            <verstretch>0</verstretch>
-                           </sizepolicy>
-                          </property>
-                          <property name="minimumSize">
-                           <size>
-                            <width>200</width>
-                            <height>0</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>16777215</width>
-                            <height>16777215</height>
-                           </size>
-                          </property>
-                          <property name="styleSheet">
-                           <string notr="true">QSlider::groove:horizontal {
-    border-radius: 9px;  
-	height: 18px;
-	margin: 0px;
-	background-color: rgb(61, 61, 61);
-}
-
-QSlider::handle:horizontal {
-    background-color: rgb(85, 170, 255);
-    border: none;
-    height: 18px;
-    width: 18px;
-    margin: 0px;
-	border-radius: 9px;
-}
-QSlider::handle:horizontal:hover {
-    background-color: rgb(105, 180, 255);
-}
-QSlider::handle:horizontal:pressed {
-    background-color: rgb(65, 130, 195);
-}</string>
-                          </property>
-                          <property name="minimum">
-                           <number>-90</number>
-                          </property>
-                          <property name="maximum">
-                           <number>90</number>
-                          </property>
-                          <property name="orientation">
-                           <enum>Qt::Horizontal</enum>
-                          </property>
-                          <property name="invertedAppearance">
-                           <bool>false</bool>
-                          </property>
-                          <property name="invertedControls">
-                           <bool>false</bool>
-                          </property>
-                          <property name="tickPosition">
-                           <enum>QSlider::NoTicks</enum>
-                          </property>
-                          <property name="tickInterval">
-                           <number>10</number>
-                          </property>
-                         </widget>
-                        </item>
-                        <item row="9" column="2">
-                         <widget class="QLCDNumber" name="lcdNumber_auto_time">
-                          <property name="minimumSize">
-                           <size>
-                            <width>30</width>
-                            <height>30</height>
-                           </size>
-                          </property>
-                          <property name="maximumSize">
-                           <size>
-                            <width>50</width>
-                            <height>50</height>
-                           </size>
-                          </property>
-                          <property name="frameShape">
-                           <enum>QFrame::NoFrame</enum>
-                          </property>
-                          <property name="value" stdset="0">
-                           <double>1000.000000000000000</double>
                           </property>
                          </widget>
                         </item>
@@ -7563,7 +7452,7 @@ QSlider::handle:horizontal:pressed {
                           </property>
                          </widget>
                         </item>
-                        <item row="10" column="1">
+                        <item row="11" column="1">
                          <widget class="QLabel" name="label_j_s6_2">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
@@ -7591,7 +7480,7 @@ QSlider::handle:horizontal:pressed {
                           </property>
                          </widget>
                         </item>
-                        <item row="10" column="2" alignment="Qt::AlignRight">
+                        <item row="11" column="2">
                          <widget class="QPushButton" name="btn_auto_add_actual_2">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -7651,7 +7540,7 @@ QPushButton:pressed {
                           </property>
                          </widget>
                         </item>
-                        <item row="10" column="3">
+                        <item row="11" column="3">
                          <widget class="QLabel" name="label_auto_home">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
@@ -7679,7 +7568,7 @@ QPushButton:pressed {
                           </property>
                          </widget>
                         </item>
-                        <item row="11" column="0">
+                        <item row="12" column="0">
                          <widget class="QLCDNumber" name="lcdNumber_auto_s6">
                           <property name="minimumSize">
                            <size>
@@ -7698,7 +7587,7 @@ QPushButton:pressed {
                           </property>
                          </widget>
                         </item>
-                        <item row="11" column="1">
+                        <item row="12" column="1">
                          <widget class="QSlider" name="horizontalSlider_auto_s6">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -7764,7 +7653,7 @@ QSlider::handle:horizontal:pressed {
                           </property>
                          </widget>
                         </item>
-                        <item row="11" column="2" alignment="Qt::AlignRight">
+                        <item row="12" column="2">
                          <widget class="QPushButton" name="btn_auto_add_actual">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -7824,7 +7713,7 @@ QPushButton:pressed {
                           </property>
                          </widget>
                         </item>
-                        <item row="11" column="3">
+                        <item row="12" column="3">
                          <widget class="QLabel" name="label_autoadd">
                           <property name="sizePolicy">
                            <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
@@ -7849,6 +7738,141 @@ QPushButton:pressed {
                           </property>
                           <property name="alignment">
                            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="8" column="1">
+                         <widget class="QLabel" name="label_j_s5_2">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>150</width>
+                            <height>25</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>25</height>
+                           </size>
+                          </property>
+                          <property name="text">
+                           <string>S5 - EFFECTOR MOVE</string>
+                          </property>
+                          <property name="alignment">
+                           <set>Qt::AlignCenter</set>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="9" column="1">
+                         <widget class="QSlider" name="horizontalSlider_auto_s5">
+                          <property name="sizePolicy">
+                           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                           </sizepolicy>
+                          </property>
+                          <property name="minimumSize">
+                           <size>
+                            <width>200</width>
+                            <height>0</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>16777215</width>
+                            <height>16777215</height>
+                           </size>
+                          </property>
+                          <property name="styleSheet">
+                           <string notr="true">QSlider::groove:horizontal {
+    border-radius: 9px;  
+	height: 18px;
+	margin: 0px;
+	background-color: rgb(61, 61, 61);
+}
+
+QSlider::handle:horizontal {
+    background-color: rgb(85, 170, 255);
+    border: none;
+    height: 18px;
+    width: 18px;
+    margin: 0px;
+	border-radius: 9px;
+}
+QSlider::handle:horizontal:hover {
+    background-color: rgb(105, 180, 255);
+}
+QSlider::handle:horizontal:pressed {
+    background-color: rgb(65, 130, 195);
+}</string>
+                          </property>
+                          <property name="minimum">
+                           <number>-90</number>
+                          </property>
+                          <property name="maximum">
+                           <number>90</number>
+                          </property>
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="invertedAppearance">
+                           <bool>false</bool>
+                          </property>
+                          <property name="invertedControls">
+                           <bool>false</bool>
+                          </property>
+                          <property name="tickPosition">
+                           <enum>QSlider::NoTicks</enum>
+                          </property>
+                          <property name="tickInterval">
+                           <number>10</number>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="9" column="0">
+                         <widget class="QLCDNumber" name="lcdNumber_auto_s5">
+                          <property name="minimumSize">
+                           <size>
+                            <width>30</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>50</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="9" column="2">
+                         <widget class="QLCDNumber" name="lcdNumber_auto_time">
+                          <property name="minimumSize">
+                           <size>
+                            <width>30</width>
+                            <height>30</height>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
+                            <width>50</width>
+                            <height>50</height>
+                           </size>
+                          </property>
+                          <property name="frameShape">
+                           <enum>QFrame::NoFrame</enum>
+                          </property>
+                          <property name="value" stdset="0">
+                           <double>1000.000000000000000</double>
                           </property>
                          </widget>
                         </item>
@@ -8243,6 +8267,35 @@ QPushButton:pressed {
                     <enum>QFrame::Raised</enum>
                    </property>
                    <layout class="QGridLayout" name="gridLayout_7">
+                    <item row="0" column="9">
+                     <widget class="QComboBox" name="comboBox_auto_command_2">
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Command</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>xyz</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>joints</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
                     <item row="0" column="0" rowspan="2">
                      <widget class="QPushButton" name="btn_auto_prev">
                       <property name="sizePolicy">
@@ -8362,8 +8415,8 @@ QPushButton:pressed {
                       </property>
                      </widget>
                     </item>
-                    <item row="0" column="2" rowspan="2">
-                     <widget class="QPushButton" name="btn_auto_next">
+                    <item row="0" column="5">
+                     <widget class="QPushButton" name="btn_auto_init">
                       <property name="sizePolicy">
                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                         <horstretch>0</horstretch>
@@ -8372,24 +8425,24 @@ QPushButton:pressed {
                       </property>
                       <property name="minimumSize">
                        <size>
-                        <width>50</width>
-                        <height>50</height>
+                        <width>40</width>
+                        <height>40</height>
                        </size>
                       </property>
                       <property name="maximumSize">
                        <size>
-                        <width>50</width>
-                        <height>50</height>
+                        <width>40</width>
+                        <height>40</height>
                        </size>
                       </property>
                       <property name="font">
                        <font>
                         <family>Segoe UI</family>
-                        <pointsize>10</pointsize>
+                        <pointsize>8</pointsize>
                        </font>
                       </property>
                       <property name="toolTip">
-                       <string>Next</string>
+                       <string>Init automatic mode</string>
                       </property>
                       <property name="layoutDirection">
                        <enum>Qt::LeftToRight</enum>
@@ -8398,20 +8451,20 @@ QPushButton:pressed {
                        <string notr="true">QPushButton {	
 	color: rgb(222, 222, 222);
     border: 2px solid #555;
-    border-radius: 25px;
+    border-radius: 20px;
     border-style: outset;
 	background-color: rgb(35, 35, 35);
     padding: 5px;
 }
 QPushButton:hover {
-	background-color: rgb(85, 170, 255);
+	background-color: rgb(61, 61, 61);
 }
 QPushButton:pressed {	
-	background-color: rgb(114, 255, 144);
+	background-color: rgb(85, 170, 255);
 }</string>
                       </property>
                       <property name="text">
-                       <string>&gt;</string>
+                       <string>Init</string>
                       </property>
                       <property name="checkable">
                        <bool>true</bool>
@@ -8490,6 +8543,65 @@ QPushButton:pressed {
                       </property>
                      </widget>
                     </item>
+                    <item row="0" column="2" rowspan="2">
+                     <widget class="QPushButton" name="btn_auto_next">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>50</width>
+                        <height>50</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>50</width>
+                        <height>50</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Segoe UI</family>
+                        <pointsize>10</pointsize>
+                       </font>
+                      </property>
+                      <property name="toolTip">
+                       <string>Next</string>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {	
+	color: rgb(222, 222, 222);
+    border: 2px solid #555;
+    border-radius: 25px;
+    border-style: outset;
+	background-color: rgb(35, 35, 35);
+    padding: 5px;
+}
+QPushButton:hover {
+	background-color: rgb(85, 170, 255);
+}
+QPushButton:pressed {	
+	background-color: rgb(114, 255, 144);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>&gt;</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="checked">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
                     <item row="0" column="4">
                      <widget class="QComboBox" name="comboBox_auto_sim_servo">
                       <property name="minimumSize">
@@ -8515,158 +8627,6 @@ QPushButton:pressed {
                       <item>
                        <property name="text">
                         <string>SERVOS</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                    <item row="0" column="5">
-                     <widget class="QPushButton" name="btn_auto_init">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="minimumSize">
-                       <size>
-                        <width>40</width>
-                        <height>40</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>40</width>
-                        <height>40</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>8</pointsize>
-                       </font>
-                      </property>
-                      <property name="toolTip">
-                       <string>Init automatic mode</string>
-                      </property>
-                      <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton {	
-	color: rgb(222, 222, 222);
-    border: 2px solid #555;
-    border-radius: 20px;
-    border-style: outset;
-	background-color: rgb(35, 35, 35);
-    padding: 5px;
-}
-QPushButton:hover {
-	background-color: rgb(61, 61, 61);
-}
-QPushButton:pressed {	
-	background-color: rgb(85, 170, 255);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Init</string>
-                      </property>
-                      <property name="checkable">
-                       <bool>true</bool>
-                      </property>
-                      <property name="checked">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="6" colspan="2">
-                     <widget class="QPushButton" name="btn_auto_break">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="minimumSize">
-                       <size>
-                        <width>40</width>
-                        <height>40</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>40</width>
-                        <height>40</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>8</pointsize>
-                       </font>
-                      </property>
-                      <property name="toolTip">
-                       <string>Break automatic mode</string>
-                      </property>
-                      <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton {	
-	color: rgb(222, 222, 222);
-    border: 2px solid #555;
-    border-radius: 20px;
-    border-style: outset;
-	background-color: rgb(35, 35, 35);
-    padding: 5px;
-}
-QPushButton:hover {
-	background-color: rgb(61, 61, 61);
-}
-QPushButton:pressed {	
-	background-color: rgb(85, 170, 255);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Break</string>
-                      </property>
-                      <property name="checkable">
-                       <bool>true</bool>
-                      </property>
-                      <property name="checked">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="0" column="10">
-                     <widget class="QComboBox" name="comboBox_auto_command">
-                      <property name="minimumSize">
-                       <size>
-                        <width>100</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>16777215</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="toolTip">
-                       <string>Command</string>
-                      </property>
-                      <item>
-                       <property name="text">
-                        <string>move</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>home</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>wait</string>
                        </property>
                       </item>
                      </widget>
@@ -8780,39 +8740,8 @@ QPushButton:pressed {
                       </property>
                      </widget>
                     </item>
-                    <item row="1" column="4" rowspan="2">
-                     <widget class="QSpinBox" name="spinBox">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="minimumSize">
-                       <size>
-                        <width>100</width>
-                        <height>25</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>100</width>
-                        <height>16777215</height>
-                       </size>
-                      </property>
-                      <property name="toolTip">
-                       <string>Loop</string>
-                      </property>
-                      <property name="alignment">
-                       <set>Qt::AlignCenter</set>
-                      </property>
-                      <property name="minimum">
-                       <number>1</number>
-                      </property>
-                     </widget>
-                    </item>
-                    <item row="1" column="10" rowspan="2">
-                     <widget class="QComboBox" name="comboBox_auto_traj">
+                    <item row="0" column="10">
+                     <widget class="QComboBox" name="comboBox_auto_command">
                       <property name="minimumSize">
                        <size>
                         <width>100</width>
@@ -8826,18 +8755,82 @@ QPushButton:pressed {
                        </size>
                       </property>
                       <property name="toolTip">
-                       <string>Trajectory</string>
+                       <string>Command</string>
                       </property>
                       <item>
                        <property name="text">
-                        <string>p2p</string>
+                        <string>move</string>
                        </property>
                       </item>
                       <item>
                        <property name="text">
-                        <string>cp_linear</string>
+                        <string>home</string>
                        </property>
                       </item>
+                      <item>
+                       <property name="text">
+                        <string>wait</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="0" column="6" colspan="2">
+                     <widget class="QPushButton" name="btn_auto_break">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>40</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>40</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Segoe UI</family>
+                        <pointsize>8</pointsize>
+                       </font>
+                      </property>
+                      <property name="toolTip">
+                       <string>Break automatic mode</string>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {	
+	color: rgb(222, 222, 222);
+    border: 2px solid #555;
+    border-radius: 20px;
+    border-style: outset;
+	background-color: rgb(35, 35, 35);
+    padding: 5px;
+}
+QPushButton:hover {
+	background-color: rgb(61, 61, 61);
+}
+QPushButton:pressed {	
+	background-color: rgb(85, 170, 255);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Break</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="checked">
+                       <bool>true</bool>
+                      </property>
                      </widget>
                     </item>
                     <item row="1" column="11" rowspan="3">
@@ -8890,6 +8883,125 @@ QPushButton:pressed {
                       </property>
                       <property name="text">
                        <string>WAIT</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="checked">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="10" rowspan="2">
+                     <widget class="QComboBox" name="comboBox_auto_traj">
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>16777215</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Trajectory</string>
+                      </property>
+                      <item>
+                       <property name="text">
+                        <string>p2p</string>
+                       </property>
+                      </item>
+                      <item>
+                       <property name="text">
+                        <string>cp_linear</string>
+                       </property>
+                      </item>
+                     </widget>
+                    </item>
+                    <item row="1" column="4" rowspan="2">
+                     <widget class="QSpinBox" name="spinBox">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>100</width>
+                        <height>25</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>100</width>
+                        <height>16777215</height>
+                       </size>
+                      </property>
+                      <property name="toolTip">
+                       <string>Loop</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                      <property name="minimum">
+                       <number>1</number>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="3" column="3">
+                     <widget class="QPushButton" name="btn_auto_file_dialog">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
+                      </property>
+                      <property name="minimumSize">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="maximumSize">
+                       <size>
+                        <width>20</width>
+                        <height>20</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Segoe UI</family>
+                        <pointsize>6</pointsize>
+                        <weight>50</weight>
+                        <bold>false</bold>
+                       </font>
+                      </property>
+                      <property name="toolTip">
+                       <string>Open</string>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {	
+	color: rgb(222, 222, 222);
+    border-style: outset;
+	background-color: transparent;
+	image: url(:/50x50/50x50/icons8-application-window-50.png);
+}
+QPushButton:hover {
+	background-color: rgb(61, 61, 61);
+}
+QPushButton:pressed {	
+	background-color: rgb(85, 170, 255);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>...</string>
                       </property>
                       <property name="checkable">
                        <bool>true</bool>
@@ -8958,65 +9070,6 @@ QPushButton:pressed {
                       </property>
                      </widget>
                     </item>
-                    <item row="3" column="3">
-                     <widget class="QPushButton" name="btn_auto_file_dialog">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
-                      </property>
-                      <property name="minimumSize">
-                       <size>
-                        <width>20</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                      <property name="maximumSize">
-                       <size>
-                        <width>20</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>6</pointsize>
-                        <weight>50</weight>
-                        <bold>false</bold>
-                       </font>
-                      </property>
-                      <property name="toolTip">
-                       <string>Open</string>
-                      </property>
-                      <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton {	
-	color: rgb(222, 222, 222);
-    border-style: outset;
-	background-color: transparent;
-	image: url(:/50x50/50x50/icons8-application-window-50.png);
-}
-QPushButton:hover {
-	background-color: rgb(61, 61, 61);
-}
-QPushButton:pressed {	
-	background-color: rgb(85, 170, 255);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>...</string>
-                      </property>
-                      <property name="checkable">
-                       <bool>true</bool>
-                      </property>
-                      <property name="checked">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="3" column="4" colspan="3">
                      <widget class="QLineEdit" name="lineEdit">
                       <property name="minimumSize">
@@ -9030,18 +9083,64 @@ QPushButton:pressed {
                       </property>
                      </widget>
                     </item>
-                    <item row="3" column="9">
-                     <spacer name="horizontalSpacer_2">
-                      <property name="orientation">
-                       <enum>Qt::Horizontal</enum>
+                    <item row="1" column="6">
+                     <widget class="QPushButton" name="btn_auto_Add_path_read">
+                      <property name="sizePolicy">
+                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                        <horstretch>0</horstretch>
+                        <verstretch>0</verstretch>
+                       </sizepolicy>
                       </property>
-                      <property name="sizeHint" stdset="0">
+                      <property name="minimumSize">
                        <size>
                         <width>40</width>
-                        <height>20</height>
+                        <height>40</height>
                        </size>
                       </property>
-                     </spacer>
+                      <property name="maximumSize">
+                       <size>
+                        <width>40</width>
+                        <height>40</height>
+                       </size>
+                      </property>
+                      <property name="font">
+                       <font>
+                        <family>Segoe UI</family>
+                        <pointsize>8</pointsize>
+                       </font>
+                      </property>
+                      <property name="toolTip">
+                       <string>Read path from file .txt</string>
+                      </property>
+                      <property name="layoutDirection">
+                       <enum>Qt::LeftToRight</enum>
+                      </property>
+                      <property name="styleSheet">
+                       <string notr="true">QPushButton {	
+	color: rgb(222, 222, 222);
+    border: 2px solid #555;
+    border-radius: 20px;
+    border-style: outset;
+	background-color: rgb(35, 35, 35);
+    padding: 5px;
+}
+QPushButton:hover {
+	background-color: rgb(61, 61, 61);
+}
+QPushButton:pressed {	
+	background-color: rgb(85, 170, 255);
+}</string>
+                      </property>
+                      <property name="text">
+                       <string>Read</string>
+                      </property>
+                      <property name="checkable">
+                       <bool>true</bool>
+                      </property>
+                      <property name="checked">
+                       <bool>true</bool>
+                      </property>
+                     </widget>
                     </item>
                     <item row="3" column="10">
                      <widget class="QComboBox" name="comboBox_auto_config">
@@ -9131,64 +9230,31 @@ QPushButton:pressed {
                       </property>
                      </widget>
                     </item>
-                    <item row="1" column="6">
-                     <widget class="QPushButton" name="btn_auto_Add_path_read">
-                      <property name="sizePolicy">
-                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                        <horstretch>0</horstretch>
-                        <verstretch>0</verstretch>
-                       </sizepolicy>
+                    <item row="0" column="8">
+                     <spacer name="horizontalSpacer_8">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
                       </property>
-                      <property name="minimumSize">
+                      <property name="sizeHint" stdset="0">
                        <size>
                         <width>40</width>
-                        <height>40</height>
+                        <height>20</height>
                        </size>
                       </property>
-                      <property name="maximumSize">
+                     </spacer>
+                    </item>
+                    <item row="3" column="9">
+                     <spacer name="horizontalSpacer_2">
+                      <property name="orientation">
+                       <enum>Qt::Horizontal</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
                        <size>
                         <width>40</width>
-                        <height>40</height>
+                        <height>20</height>
                        </size>
                       </property>
-                      <property name="font">
-                       <font>
-                        <family>Segoe UI</family>
-                        <pointsize>8</pointsize>
-                       </font>
-                      </property>
-                      <property name="toolTip">
-                       <string>Read path from file .txt</string>
-                      </property>
-                      <property name="layoutDirection">
-                       <enum>Qt::LeftToRight</enum>
-                      </property>
-                      <property name="styleSheet">
-                       <string notr="true">QPushButton {	
-	color: rgb(222, 222, 222);
-    border: 2px solid #555;
-    border-radius: 20px;
-    border-style: outset;
-	background-color: rgb(35, 35, 35);
-    padding: 5px;
-}
-QPushButton:hover {
-	background-color: rgb(61, 61, 61);
-}
-QPushButton:pressed {	
-	background-color: rgb(85, 170, 255);
-}</string>
-                      </property>
-                      <property name="text">
-                       <string>Read</string>
-                      </property>
-                      <property name="checkable">
-                       <bool>true</bool>
-                      </property>
-                      <property name="checked">
-                       <bool>true</bool>
-                      </property>
-                     </widget>
+                     </spacer>
                     </item>
                    </layout>
                   </widget>
