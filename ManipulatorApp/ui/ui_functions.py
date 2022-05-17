@@ -4,7 +4,7 @@ import datetime as dt
 from ManipulatorApp.main import MainWindow
 from ManipulatorApp.main import *
 
-from ManipulatorApp.modules import FK
+from ManipulatorApp.modules import FK, IK
 from ManipulatorApp.modules import trajectory
 from ManipulatorApp.modules import communication as comm
 
@@ -100,11 +100,12 @@ class UIFunctions(MainWindow):
     @staticmethod
     def close_app():
         """Close app and and communication"""
-        sys.exit()
         try:
             comm.board.exit()
         except:
-            Print('No comm')
+            print('No comm')
+
+        sys.exit()
 
     # ==> UI DEFINITIONS
     def uiDefinitions(self):
@@ -291,8 +292,10 @@ class UIFunctions(MainWindow):
                 elif slider.value() >= slider.maximum() - warning_range:
                     slider.setStyleSheet(UIFunctions.slider_color_warning(slider.styleSheet(), right))
                 else:
-                    slider.setStyleSheet(UIFunctions.slider_color_standard(slider.styleSheet(), left, "rgb(61, 61, 61);"))
-                    slider.setStyleSheet(UIFunctions.slider_color_standard(slider.styleSheet(), right, "rgb(61, 61, 61);"))
+                    slider.setStyleSheet(
+                        UIFunctions.slider_color_standard(slider.styleSheet(), left, "rgb(61, 61, 61);"))
+                    slider.setStyleSheet(
+                        UIFunctions.slider_color_standard(slider.styleSheet(), right, "rgb(61, 61, 61);"))
 
     # == > QTABLEWIDGET AUTO MODE
     # ADD / DELETE ROW
@@ -306,6 +309,44 @@ class UIFunctions(MainWindow):
 
         if self.ui.tableWidget.rowCount() > 0:
             self.ui.tableWidget.removeRow(self.ui.tableWidget.currentRow())
+
+    # SET XYZ SLIDERS IN AUTOMATIC MODE
+    def set_sliders_auto(self):
+        """ Set sliders values if other sliders changed in automatic mode"""
+
+        eff = UIFunctions.effector_check(self)
+
+        value_j1 = self.ui.horizontalSlider_auto_s1.value() / 100
+        value_j2 = self.ui.horizontalSlider_auto_s2.value() / 100
+        value_j3 = self.ui.horizontalSlider_auto_s3.value() / 100
+        value_j4 = self.ui.horizontalSlider_auto_s4.value() / 100
+        value_manual_joints = FK.fk_dh(value_j1, value_j2, value_j3, value_j4, eff)
+
+        value_x = self.ui.horizontalSlider_auto_x.value()
+        value_y = self.ui.horizontalSlider_auto_y.value()
+        value_z = self.ui.horizontalSlider_auto_z.value()
+        value_alpha = self.ui.horizontalSlider_auto_orient.value()
+
+        value_auto_xyz = IK.ik_geo(value_x, value_y, value_z, value_alpha, eff)
+
+        # Set values of sliders
+        if self.ui.comboBox_auto_command_2.currentText() == 'joints':
+            self.ui.horizontalSlider_auto_x.setValue(value_manual_joints[1][0])
+            self.ui.horizontalSlider_auto_y.setValue(value_manual_joints[1][1])
+            self.ui.horizontalSlider_auto_z.setValue(value_manual_joints[1][2])
+            self.ui.horizontalSlider_auto_orient.setValue(value_manual_joints[0])
+        elif self.ui.comboBox_auto_command_2.currentText() == 'xyz':
+            if self.ui.comboBox_auto_config.currentIndex() == 0:
+                index = 0
+            elif self.ui.comboBox_auto_config.currentIndex() == 1:
+                index = 1
+            else:
+                raise ValueError
+
+            self.ui.horizontalSlider_auto_s1.setValue(value_auto_xyz[index][0] * 100)
+            self.ui.horizontalSlider_auto_s2.setValue(value_auto_xyz[index][1] * 100)
+            self.ui.horizontalSlider_auto_s3.setValue(value_auto_xyz[index][2] * 100)
+            self.ui.horizontalSlider_auto_s4.setValue(value_auto_xyz[index][3] * 100)
 
     # ADD POSITION WITH GIVEN PARAMETERS
     def add_pos(self):
