@@ -2226,6 +2226,16 @@ class Ui_MainWindow(object):
 
         self.gridLayout_17.addWidget(self.lcdNumber_j_s3, 5, 0, 1, 1)
 
+        self.label_j_s4 = QLabel(self.tab_manual_joints)
+        self.label_j_s4.setObjectName(u"label_j_s4")
+        sizePolicy3.setHeightForWidth(self.label_j_s4.sizePolicy().hasHeightForWidth())
+        self.label_j_s4.setSizePolicy(sizePolicy3)
+        self.label_j_s4.setMinimumSize(QSize(150, 25))
+        self.label_j_s4.setMaximumSize(QSize(16777215, 25))
+        self.label_j_s4.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_17.addWidget(self.label_j_s4, 6, 1, 1, 1)
+
         self.horizontalSlider_j_s3 = QSlider(self.tab_manual_joints)
         self.horizontalSlider_j_s3.setObjectName(u"horizontalSlider_j_s3")
         sizePolicy8.setHeightForWidth(self.horizontalSlider_j_s3.sizePolicy().hasHeightForWidth())
@@ -2264,16 +2274,6 @@ class Ui_MainWindow(object):
         self.horizontalSlider_j_s3.setTickInterval(10)
 
         self.gridLayout_17.addWidget(self.horizontalSlider_j_s3, 5, 1, 1, 1)
-
-        self.label_j_s4 = QLabel(self.tab_manual_joints)
-        self.label_j_s4.setObjectName(u"label_j_s4")
-        sizePolicy3.setHeightForWidth(self.label_j_s4.sizePolicy().hasHeightForWidth())
-        self.label_j_s4.setSizePolicy(sizePolicy3)
-        self.label_j_s4.setMinimumSize(QSize(150, 25))
-        self.label_j_s4.setMaximumSize(QSize(16777215, 25))
-        self.label_j_s4.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_17.addWidget(self.label_j_s4, 6, 1, 1, 1)
 
         self.lcdNumber_j_s4 = QLCDNumber(self.tab_manual_joints)
         self.lcdNumber_j_s4.setObjectName(u"lcdNumber_j_s4")
@@ -2332,14 +2332,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_17.addWidget(self.label_j_s5, 8, 1, 1, 1)
 
-        self.lcdNumber_j_s5 = QLCDNumber(self.tab_manual_joints)
-        self.lcdNumber_j_s5.setObjectName(u"lcdNumber_j_s5")
-        self.lcdNumber_j_s5.setMinimumSize(QSize(30, 30))
-        self.lcdNumber_j_s5.setMaximumSize(QSize(50, 50))
-        self.lcdNumber_j_s5.setFrameShape(QFrame.NoFrame)
-
-        self.gridLayout_17.addWidget(self.lcdNumber_j_s5, 9, 0, 1, 1)
-
         self.horizontalSlider_j_s5 = QSlider(self.tab_manual_joints)
         self.horizontalSlider_j_s5.setObjectName(u"horizontalSlider_j_s5")
         sizePolicy8.setHeightForWidth(self.horizontalSlider_j_s5.sizePolicy().hasHeightForWidth())
@@ -2380,6 +2372,18 @@ class Ui_MainWindow(object):
 
         self.gridLayout_17.addWidget(self.horizontalSlider_j_s5, 9, 1, 1, 1)
 
+        self.lcdNumber_j_s5 = QLCDNumber(self.tab_manual_joints)
+        self.lcdNumber_j_s5.setObjectName(u"lcdNumber_j_s5")
+        self.lcdNumber_j_s5.setMinimumSize(QSize(30, 30))
+        self.lcdNumber_j_s5.setMaximumSize(QSize(50, 50))
+        self.lcdNumber_j_s5.setFrameShape(QFrame.NoFrame)
+
+        self.gridLayout_17.addWidget(self.lcdNumber_j_s5, 9, 0, 1, 1)
+
+        self.horizontalSpacer_5 = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
+
+        self.gridLayout_17.addItem(self.horizontalSpacer_5, 9, 2, 1, 1)
+
         self.label_j_s6 = QLabel(self.tab_manual_joints)
         self.label_j_s6.setObjectName(u"label_j_s6")
         sizePolicy3.setHeightForWidth(self.label_j_s6.sizePolicy().hasHeightForWidth())
@@ -2397,6 +2401,35 @@ class Ui_MainWindow(object):
         self.lcdNumber_j_s6.setFrameShape(QFrame.NoFrame)
 
         self.gridLayout_17.addWidget(self.lcdNumber_j_s6, 11, 0, 1, 1)
+
+        self.btn_manual_reset_1 = QPushButton(self.tab_manual_joints)
+        self.btn_manual_reset_1.setObjectName(u"btn_manual_reset_1")
+        sizePolicy4.setHeightForWidth(self.btn_manual_reset_1.sizePolicy().hasHeightForWidth())
+        self.btn_manual_reset_1.setSizePolicy(sizePolicy4)
+        self.btn_manual_reset_1.setMinimumSize(QSize(50, 30))
+        self.btn_manual_reset_1.setMaximumSize(QSize(50, 30))
+        self.btn_manual_reset_1.setFont(font3)
+        self.btn_manual_reset_1.setLayoutDirection(Qt.LeftToRight)
+        self.btn_manual_reset_1.setAutoFillBackground(False)
+        self.btn_manual_reset_1.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 15px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_manual_reset_1.setCheckable(True)
+        self.btn_manual_reset_1.setChecked(True)
+
+        self.gridLayout_17.addWidget(self.btn_manual_reset_1, 12, 2, 1, 1)
 
         self.horizontalSlider_j_s6 = QSlider(self.tab_manual_joints)
         self.horizontalSlider_j_s6.setObjectName(u"horizontalSlider_j_s6")
@@ -2438,16 +2471,16 @@ class Ui_MainWindow(object):
 
         self.gridLayout_17.addWidget(self.horizontalSlider_j_s6, 11, 1, 1, 1)
 
-        self.btn_manual_reset_1 = QPushButton(self.tab_manual_joints)
-        self.btn_manual_reset_1.setObjectName(u"btn_manual_reset_1")
-        sizePolicy4.setHeightForWidth(self.btn_manual_reset_1.sizePolicy().hasHeightForWidth())
-        self.btn_manual_reset_1.setSizePolicy(sizePolicy4)
-        self.btn_manual_reset_1.setMinimumSize(QSize(30, 30))
-        self.btn_manual_reset_1.setMaximumSize(QSize(30, 30))
-        self.btn_manual_reset_1.setFont(font3)
-        self.btn_manual_reset_1.setLayoutDirection(Qt.LeftToRight)
-        self.btn_manual_reset_1.setAutoFillBackground(False)
-        self.btn_manual_reset_1.setStyleSheet(u"QPushButton {	\n"
+        self.btn_manual_home = QPushButton(self.tab_manual_joints)
+        self.btn_manual_home.setObjectName(u"btn_manual_home")
+        sizePolicy4.setHeightForWidth(self.btn_manual_home.sizePolicy().hasHeightForWidth())
+        self.btn_manual_home.setSizePolicy(sizePolicy4)
+        self.btn_manual_home.setMinimumSize(QSize(50, 30))
+        self.btn_manual_home.setMaximumSize(QSize(50, 30))
+        self.btn_manual_home.setFont(font3)
+        self.btn_manual_home.setLayoutDirection(Qt.LeftToRight)
+        self.btn_manual_home.setAutoFillBackground(False)
+        self.btn_manual_home.setStyleSheet(u"QPushButton {	\n"
 "	color: rgb(222, 222, 222);\n"
 "    border: 2px solid #555;\n"
 "    border-radius: 15px;\n"
@@ -2462,14 +2495,39 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgb(85, 170, 255);\n"
 "}")
-        self.btn_manual_reset_1.setCheckable(True)
-        self.btn_manual_reset_1.setChecked(True)
+        self.btn_manual_home.setCheckable(True)
+        self.btn_manual_home.setChecked(True)
 
-        self.gridLayout_17.addWidget(self.btn_manual_reset_1, 12, 2, 1, 1)
+        self.gridLayout_17.addWidget(self.btn_manual_home, 12, 1, 1, 1, Qt.AlignHCenter)
 
-        self.horizontalSpacer_5 = QSpacerItem(50, 25, QSizePolicy.Fixed, QSizePolicy.Minimum)
+        self.btn_manual_pistol = QPushButton(self.tab_manual_joints)
+        self.btn_manual_pistol.setObjectName(u"btn_manual_pistol")
+        sizePolicy4.setHeightForWidth(self.btn_manual_pistol.sizePolicy().hasHeightForWidth())
+        self.btn_manual_pistol.setSizePolicy(sizePolicy4)
+        self.btn_manual_pistol.setMinimumSize(QSize(50, 30))
+        self.btn_manual_pistol.setMaximumSize(QSize(50, 30))
+        self.btn_manual_pistol.setFont(font3)
+        self.btn_manual_pistol.setLayoutDirection(Qt.LeftToRight)
+        self.btn_manual_pistol.setAutoFillBackground(False)
+        self.btn_manual_pistol.setStyleSheet(u"QPushButton {	\n"
+"	color: rgb(222, 222, 222);\n"
+"    border: 2px solid #555;\n"
+"    border-radius: 15px;\n"
+"    border-style: outset;\n"
+"	background-color: rgb(35, 35, 35);\n"
+"    padding: 5px;\n"
+"\n"
+"}\n"
+"QPushButton:hover {\n"
+"	background-color: rgb(61, 61, 61);\n"
+"}\n"
+"QPushButton:pressed {	\n"
+"	background-color: rgb(85, 170, 255);\n"
+"}")
+        self.btn_manual_pistol.setCheckable(True)
+        self.btn_manual_pistol.setChecked(True)
 
-        self.gridLayout_17.addItem(self.horizontalSpacer_5, 9, 2, 1, 1)
+        self.gridLayout_17.addWidget(self.btn_manual_pistol, 12, 0, 1, 1)
 
         self.tabWidget_5.addTab(self.tab_manual_joints, icon3, "")
         self.tab_manual_xyz = QWidget()
@@ -4840,11 +4898,11 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_z.valueChanged.connect(self.lcdNumber_auto_z.display)
         self.horizontalSlider_auto_time_2.valueChanged.connect(self.lcdNumber_auto_time.display)
 
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(3)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget_4.setCurrentIndex(1)
-        self.tabWidget_5.setCurrentIndex(1)
+        self.tabWidget_5.setCurrentIndex(0)
         self.comboBox_auto_config_2.setCurrentIndex(1)
         self.tabWidget_7.setCurrentIndex(0)
         self.tabWidget_6.setCurrentIndex(3)
@@ -4960,7 +5018,15 @@ class Ui_MainWindow(object):
 #if QT_CONFIG(tooltip)
         self.btn_manual_reset_1.setToolTip(QCoreApplication.translate("MainWindow", u"Reset", None))
 #endif // QT_CONFIG(tooltip)
-        self.btn_manual_reset_1.setText(QCoreApplication.translate("MainWindow", u"R", None))
+        self.btn_manual_reset_1.setText(QCoreApplication.translate("MainWindow", u"Reset", None))
+#if QT_CONFIG(tooltip)
+        self.btn_manual_home.setToolTip(QCoreApplication.translate("MainWindow", u"Reset", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_manual_home.setText(QCoreApplication.translate("MainWindow", u"Home", None))
+#if QT_CONFIG(tooltip)
+        self.btn_manual_pistol.setToolTip(QCoreApplication.translate("MainWindow", u"Reset", None))
+#endif // QT_CONFIG(tooltip)
+        self.btn_manual_pistol.setText(QCoreApplication.translate("MainWindow", u"Pistol", None))
         self.tabWidget_5.setTabText(self.tabWidget_5.indexOf(self.tab_manual_joints), QCoreApplication.translate("MainWindow", u"Joints", None))
         self.label_manual_x.setText(QCoreApplication.translate("MainWindow", u"X-AXIS", None))
         self.label_manual_y.setText(QCoreApplication.translate("MainWindow", u"Y-AXIS", None))
