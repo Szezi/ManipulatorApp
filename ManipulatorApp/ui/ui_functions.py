@@ -182,6 +182,39 @@ class UIFunctions(MainWindow):
             self.ui.horizontalSlider_manual_z.setValue(472)
             self.ui.verticalSlider_manual_orient.setValue(90)
 
+        # Set automatic sliders values
+        self.ui.comboBox_auto_command_2.setCurrentIndex(1)
+
+    # RESET SLIDER VALUES TO PISTOL POS - PAGE MANUAL
+    def page_manual_pistol(self):
+        """ Page Manual - Set to pistol position"""
+
+        UIFunctions.log_list(self, 'Page Manual: Pistol position')
+        self.ui.horizontalSlider_j_s1.setValue(0)
+        self.ui.horizontalSlider_j_s2.setValue(9000)
+        self.ui.horizontalSlider_j_s3.setValue(-9000)
+        self.ui.horizontalSlider_j_s4.setValue(0)
+        self.ui.horizontalSlider_j_s5.setValue(0)
+        self.ui.horizontalSlider_j_s6.setValue(0)
+
+        # Set automatic sliders values
+        self.ui.comboBox_auto_command_2.setCurrentIndex(1)
+
+    # RESET SLIDER VALUES TO PISTOL POS - PAGE MANUAL
+    def page_manual_home(self):
+        """ Page Manual - Set to initial home position"""
+
+        UIFunctions.log_list(self, 'Page Manual: Initial home position')
+        self.ui.horizontalSlider_j_s1.setValue(0)
+        self.ui.horizontalSlider_j_s2.setValue(12000)
+        self.ui.horizontalSlider_j_s3.setValue(-12000)
+        self.ui.horizontalSlider_j_s4.setValue(-9000)
+        self.ui.horizontalSlider_j_s5.setValue(0)
+        self.ui.horizontalSlider_j_s6.setValue(0)
+
+        # Set automatic sliders values
+        self.ui.comboBox_auto_command_2.setCurrentIndex(1)
+
     # STATUS DISPLAY
     def log_list(self, log):
         """ Print given string in log"""

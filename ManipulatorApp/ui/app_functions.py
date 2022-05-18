@@ -100,6 +100,16 @@ class AppFunctions(MainWindow):
             self.ui.horizontalSlider_manual_z.setValue(value_manual_joints[1][2])
             self.ui.verticalSlider_manual_orient.setValue(value_manual_joints[0])
 
+            # Set values of sliders in automatic mode
+            value_j5 = self.ui.horizontalSlider_j_s5.value()
+            value_j6 = self.ui.horizontalSlider_j_s6.value()
+            self.ui.horizontalSlider_auto_s1.setValue(value_j1*100)
+            self.ui.horizontalSlider_auto_s2.setValue(value_j2*100)
+            self.ui.horizontalSlider_auto_s3.setValue(value_j3*100)
+            self.ui.horizontalSlider_auto_s4.setValue(value_j4*100)
+            self.ui.horizontalSlider_auto_s5.setValue(value_j5)
+            self.ui.horizontalSlider_auto_s6.setValue(value_j6)
+
             # Set the status with parameters sending to robotic arm
             status = value_manual_joints[5]
 
