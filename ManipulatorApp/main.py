@@ -18,6 +18,25 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
 
+        # Logging to file
+
+        self.logger = logging.getLogger()
+        self.logger.setLevel(logging.INFO)
+        self.formatter = logging.Formatter('%(asctime)s | %(levelname)s | %(message)s')
+
+        self.stdout_handler = logging.StreamHandler(sys.stdout)
+        self.stdout_handler.setLevel(logging.DEBUG)
+        self.stdout_handler.setFormatter(self.formatter)
+
+        self.file_handler = logging.FileHandler(r'data\logs.log', mode='w')
+        self.file_handler.setLevel(logging.DEBUG)
+        self.file_handler.setFormatter(self.formatter)
+
+        self.logger.addHandler(self.file_handler)
+        self.logger.addHandler(self.stdout_handler)
+
+        self.logger.info('Start app')
+
         # ==> START PAGE
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
         UIFunctions.select_standard_menu(self, "btn_home")

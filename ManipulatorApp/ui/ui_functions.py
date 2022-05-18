@@ -99,7 +99,7 @@ class UIFunctions(MainWindow):
     # ==> CLOSE APP
     @staticmethod
     def close_app():
-        """Close app and and communication"""
+        """Close app and communication"""
         try:
             comm.board.exit()
         except:
@@ -130,8 +130,9 @@ class UIFunctions(MainWindow):
         self.ui.btn_min.clicked.connect(lambda: self.showMinimized())
 
         # CLOSE
-        self.ui.btn_close.clicked.connect(lambda: self.close())
+        self.ui.btn_close.clicked.connect(lambda: self.logger.info('Close app'))
         self.ui.btn_close.clicked.connect(lambda: UIFunctions.close_app())
+        self.ui.btn_close.clicked.connect(lambda: self.close())
 
         # ==> RESIZE WINDOW
         self.sizegrip = QSizeGrip(self.ui.frame_grip)
@@ -222,6 +223,9 @@ class UIFunctions(MainWindow):
         log_time = dt.datetime.now().strftime("%H:%M:%S")
         new_text = log_time + " | " + log.upper()
         self.ui.Log.append(new_text)
+
+        # write status to logs file
+        self.logger.info(log)
 
     # CALIBRATION OF ROBOTIC ARM
     def calibration(self):

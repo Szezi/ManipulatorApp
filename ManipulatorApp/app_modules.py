@@ -1,3 +1,6 @@
+import logging
+import sys
+
 # GUI FILE
 from ManipulatorApp.ui.ui_ManipulatorApp import Ui_MainWindow
 
