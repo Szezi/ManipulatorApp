@@ -94,7 +94,7 @@ def fk_dh(theta1: float, theta2: float, theta3: float, theta4: float, eff: list)
             z4 = matrix_t12345[2, 3]
             xyz_pos_link4 = [float(round(x4, 2)), float(round(y4, 2)), float(round(z4, 2))]
         else:
-            raise ValueError('Unexpected value xyz_pos_link3')
+            raise ValueError('Error: Unexpected value xyz_pos_link3')
 
         # End effector orientation
         z_ef = round(matrix_t1234[2, 3]) - round(z2)
@@ -103,11 +103,11 @@ def fk_dh(theta1: float, theta2: float, theta3: float, theta4: float, eff: list)
         return round(alpha), xyz_pos_link4, xyz_pos_link3, xyz_pos_link2, xyz_pos_link1, status
 
     except ZeroDivisionError:
-        status = 'L4 dimension needs to be greater then 0'
+        status = 'Error: L4 dimension needs to be greater then 0'
         return 0, [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], status
 
     except:
-        status = 'Something went wrong.'
+        status = 'Error: Something went wrong.'
         return 0, [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], [0.0, 0.0, 0.0], status
 
     finally:

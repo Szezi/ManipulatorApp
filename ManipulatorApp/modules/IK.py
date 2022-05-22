@@ -104,25 +104,25 @@ def ik_geo(px: int, py: int, pz: int, alfa: int, eff: list):
 
         else:
             config_1 = [0.0, 0.0, 0.0, 0.0]
-            status_config_1 = "Config_1: No results"
+            status_config_1 = "Warning: Config_1: No results"
 
         if -90 <= theta0 <= 90 and 0 <= theta11 <= 180 and -120 <= theta22 <= 60 and -90 <= theta33 <= 90:
             status_config_2 = "Config_2: Success"
             config_2 = [round(theta0, 2), round(theta11, 2), round(theta22, 2), round(theta33, 2)]
 
         else:
-            status_config_2 = "Config_2: No results"
+            status_config_2 = "Warning: Config_2: No results"
             config_2 = [0.0, 0.0, 0.0, 0.0]
 
         status = [status_config_1, status_config_2, 'Calculations ended successfully']
         return list(config_1), list(config_2), status
 
     except ValueError:
-        status = ['', '', 'Something went wrong']
+        status = ['', '', 'Error: Something went wrong']
         return [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], status
 
     except:
-        status = ['', '', 'The entered data is incorrect ']
+        status = ['', '', 'Error: The entered data is incorrect ']
         return [0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0], status
 
     finally:

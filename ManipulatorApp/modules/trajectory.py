@@ -45,7 +45,7 @@ def path_generator(table: list):
         elif home_position[2] == 'config_2':
             generated_path_home = home_values[1]
         else:
-            status = 'Unexpected value of config param'
+            status = 'Error: Unexpected value of config param'
             raise ValueError(status)
 
         index = 1
@@ -124,7 +124,7 @@ def path_generator(table: list):
 
                                 generated_path.append(path_to_append)
                             else:
-                                status = 'Unexpected value of config param'
+                                status = 'Error: Unexpected value of config param'
                                 raise ValueError(status)
                         else:
                             status = 'Error: Path outside the working Area. Line %d' % row_index
@@ -148,7 +148,7 @@ def path_generator(table: list):
                         elif config_start == 'config_2':
                             start_pos_values = start_values[1].copy()
                         else:
-                            status = 'Unexpected value of config param'
+                            status = 'Error: Unexpected value of config param'
                             raise ValueError(status)
                         # print(start_pos_values)
                         # Checking end position config
@@ -163,7 +163,7 @@ def path_generator(table: list):
                                                  end_values[1][2] - start_pos_values[2],
                                                  end_values[1][3] - start_pos_values[3]]
                         else:
-                            status = 'Unexpected value of config param.'
+                            status = 'Error: Unexpected value of config param.'
                             raise ValueError(status)
                         # print(values_difference)
                         values_step = [x / sample for x in values_difference]
@@ -189,7 +189,7 @@ def path_generator(table: list):
                         status = 'Error: Path outside the working Area. Line %d' % row_index
                         raise ValueError(status)
                 else:
-                    status = 'Unexpected value of trajectory param.'
+                    status = 'Error: Unexpected value of trajectory param.'
                     raise ValueError(status)
 
             elif command == 'wait':
@@ -203,7 +203,7 @@ def path_generator(table: list):
                 generated_path.append(path_to_append)
 
             else:
-                status = 'Unexpected value of command param.'
+                status = 'Error: Unexpected value of command param.'
                 raise ValueError(status)
 
         status = 'Generating path - Success'
@@ -213,7 +213,7 @@ def path_generator(table: list):
         return [0, 'error', 'error', 'error', 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'error'], str(status)
 
     except:
-        status = 'Something went wrong'
+        status = 'Error: Something went wrong'
         return [0, 'error', 'error', 'error', 0, 0, 0, 0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 'error'], status
 
     finally:

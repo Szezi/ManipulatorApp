@@ -225,7 +225,12 @@ class UIFunctions(MainWindow):
         self.ui.Log.append(new_text)
 
         # write status to logs file
-        self.logger.info(log)
+        if 'Error' in log:
+            self.logger.error(log)
+        elif 'Warning' in log:
+            self.logger.warning(log)
+        else:
+            self.logger.info(log)
 
     # CALIBRATION OF ROBOTIC ARM
     def calibration(self):

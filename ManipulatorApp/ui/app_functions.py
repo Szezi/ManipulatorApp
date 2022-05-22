@@ -138,7 +138,7 @@ class AppFunctions(MainWindow):
             self.ui.horizontalSlider_j_s4.setValue(value_manual_xyz[index][3]*100)
 
         else:
-            status = 'Something went wrong'
+            status = 'Error: Something went wrong'
 
         # Control robotic arm with given parameters
         servo_1 = self.ui.horizontalSlider_j_s1.value() / 100
@@ -278,7 +278,7 @@ class AppFunctions(MainWindow):
                                   float(step_values_next[13]))
                 QApplication.processEvents()
         except AttributeError:
-            status = 'Automatic mode not initialized'
+            status = 'Error: Automatic mode not initialized'
 
         # Print the status
         UIFunctions.log_list(self, status)
@@ -324,7 +324,7 @@ class AppFunctions(MainWindow):
                                   float(step_values_next[13]))
                 QApplication.processEvents()
         except AttributeError:
-            status = 'Automatic mode not initialized'
+            status = 'Error: Automatic mode not initialized'
 
         # Print the status
         UIFunctions.log_list(self, status)
@@ -356,7 +356,7 @@ class AppFunctions(MainWindow):
 
             status = 'Automatic mode initialized'
         else:
-            status = ' Installed effector is different as in robotic path'
+            status = 'Warning: Installed effector is different as in robotic path'
 
         # Print the status
         UIFunctions.log_list(self, status)
@@ -371,7 +371,7 @@ class AppFunctions(MainWindow):
                 del self.robotic_path
                 del self.robotic_arm
         except AttributeError:
-            status = 'Automatic mode not initialized'
+            status = 'Error: Automatic mode not initialized'
 
             # Print the status
             UIFunctions.log_list(self, status)
