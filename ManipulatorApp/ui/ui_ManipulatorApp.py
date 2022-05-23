@@ -16,7 +16,6 @@ from ManipulatorApp.modules.mplwidget import MplWidget
 
 from ManipulatorApp.ui.icons import icons_rc
 
-
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if not MainWindow.objectName():
@@ -991,8 +990,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_fk_s1.setMinimum(-90)
-        self.horizontalSlider_fk_s1.setMaximum(90)
+        self.horizontalSlider_fk_s1.setMinimum(-80)
+        self.horizontalSlider_fk_s1.setMaximum(80)
         self.horizontalSlider_fk_s1.setPageStep(5)
         self.horizontalSlider_fk_s1.setOrientation(Qt.Horizontal)
         self.horizontalSlider_fk_s1.setInvertedAppearance(False)
@@ -1067,8 +1066,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_fk_s1_2.setMinimum(0)
-        self.horizontalSlider_fk_s1_2.setMaximum(180)
+        self.horizontalSlider_fk_s1_2.setMinimum(5)
+        self.horizontalSlider_fk_s1_2.setMaximum(175)
         self.horizontalSlider_fk_s1_2.setPageStep(5)
         self.horizontalSlider_fk_s1_2.setValue(90)
         self.horizontalSlider_fk_s1_2.setSliderPosition(90)
@@ -1107,8 +1106,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_fk_s1_3.setMinimum(-120)
-        self.horizontalSlider_fk_s1_3.setMaximum(60)
+        self.horizontalSlider_fk_s1_3.setMinimum(-115)
+        self.horizontalSlider_fk_s1_3.setMaximum(55)
         self.horizontalSlider_fk_s1_3.setPageStep(5)
         self.horizontalSlider_fk_s1_3.setOrientation(Qt.Horizontal)
         self.horizontalSlider_fk_s1_3.setInvertedAppearance(False)
@@ -1190,8 +1189,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_fk_s1_5.setMinimum(-90)
-        self.horizontalSlider_fk_s1_5.setMaximum(90)
+        self.horizontalSlider_fk_s1_5.setMinimum(-85)
+        self.horizontalSlider_fk_s1_5.setMaximum(85)
         self.horizontalSlider_fk_s1_5.setPageStep(5)
         self.horizontalSlider_fk_s1_5.setOrientation(Qt.Horizontal)
         self.horizontalSlider_fk_s1_5.setInvertedAppearance(False)
@@ -1228,8 +1227,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_fk_s1_4.setMinimum(-90)
-        self.horizontalSlider_fk_s1_4.setMaximum(90)
+        self.horizontalSlider_fk_s1_4.setMinimum(-85)
+        self.horizontalSlider_fk_s1_4.setMaximum(85)
         self.horizontalSlider_fk_s1_4.setPageStep(5)
         self.horizontalSlider_fk_s1_4.setOrientation(Qt.Horizontal)
         self.horizontalSlider_fk_s1_4.setInvertedAppearance(False)
@@ -1276,8 +1275,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_fk_s1_6.setMinimum(-90)
-        self.horizontalSlider_fk_s1_6.setMaximum(90)
+        self.horizontalSlider_fk_s1_6.setMinimum(-85)
+        self.horizontalSlider_fk_s1_6.setMaximum(85)
         self.horizontalSlider_fk_s1_6.setPageStep(5)
         self.horizontalSlider_fk_s1_6.setOrientation(Qt.Horizontal)
         self.horizontalSlider_fk_s1_6.setInvertedAppearance(False)
@@ -2136,8 +2135,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_j_s1.setMinimum(-9000)
-        self.horizontalSlider_j_s1.setMaximum(9000)
+        self.horizontalSlider_j_s1.setMinimum(-8000)
+        self.horizontalSlider_j_s1.setMaximum(8000)
         self.horizontalSlider_j_s1.setSingleStep(100)
         self.horizontalSlider_j_s1.setPageStep(500)
         self.horizontalSlider_j_s1.setOrientation(Qt.Horizontal)
@@ -2194,8 +2193,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_j_s2.setMinimum(0)
-        self.horizontalSlider_j_s2.setMaximum(18000)
+        self.horizontalSlider_j_s2.setMinimum(500)
+        self.horizontalSlider_j_s2.setMaximum(17500)
         self.horizontalSlider_j_s2.setSingleStep(100)
         self.horizontalSlider_j_s2.setPageStep(500)
         self.horizontalSlider_j_s2.setValue(9000)
@@ -2263,8 +2262,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_j_s3.setMinimum(-12000)
-        self.horizontalSlider_j_s3.setMaximum(6000)
+        self.horizontalSlider_j_s3.setMinimum(-11500)
+        self.horizontalSlider_j_s3.setMaximum(5500)
         self.horizontalSlider_j_s3.setSingleStep(100)
         self.horizontalSlider_j_s3.setPageStep(500)
         self.horizontalSlider_j_s3.setOrientation(Qt.Horizontal)
@@ -2310,8 +2309,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_j_s4.setMinimum(-9000)
-        self.horizontalSlider_j_s4.setMaximum(9000)
+        self.horizontalSlider_j_s4.setMinimum(-8500)
+        self.horizontalSlider_j_s4.setMaximum(8500)
         self.horizontalSlider_j_s4.setSingleStep(100)
         self.horizontalSlider_j_s4.setPageStep(500)
         self.horizontalSlider_j_s4.setOrientation(Qt.Horizontal)
@@ -2359,11 +2358,11 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_j_s5.setMinimum(0)
-        self.horizontalSlider_j_s5.setMaximum(18000)
+        self.horizontalSlider_j_s5.setMinimum(5)
+        self.horizontalSlider_j_s5.setMaximum(175)
         self.horizontalSlider_j_s5.setSingleStep(100)
         self.horizontalSlider_j_s5.setPageStep(500)
-        self.horizontalSlider_j_s5.setValue(9000)
+        self.horizontalSlider_j_s5.setValue(90)
         self.horizontalSlider_j_s5.setOrientation(Qt.Horizontal)
         self.horizontalSlider_j_s5.setInvertedAppearance(False)
         self.horizontalSlider_j_s5.setInvertedControls(False)
@@ -2458,11 +2457,11 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_j_s6.setMinimum(0)
-        self.horizontalSlider_j_s6.setMaximum(18000)
+        self.horizontalSlider_j_s6.setMinimum(5)
+        self.horizontalSlider_j_s6.setMaximum(175)
         self.horizontalSlider_j_s6.setSingleStep(100)
         self.horizontalSlider_j_s6.setPageStep(500)
-        self.horizontalSlider_j_s6.setValue(9000)
+        self.horizontalSlider_j_s6.setValue(90)
         self.horizontalSlider_j_s6.setOrientation(Qt.Horizontal)
         self.horizontalSlider_j_s6.setInvertedAppearance(False)
         self.horizontalSlider_j_s6.setInvertedControls(False)
@@ -2993,8 +2992,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s1.setMinimum(-9000)
-        self.horizontalSlider_auto_s1.setMaximum(9000)
+        self.horizontalSlider_auto_s1.setMinimum(-8000)
+        self.horizontalSlider_auto_s1.setMaximum(8000)
         self.horizontalSlider_auto_s1.setSingleStep(100)
         self.horizontalSlider_auto_s1.setPageStep(1000)
         self.horizontalSlider_auto_s1.setOrientation(Qt.Horizontal)
@@ -3111,8 +3110,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s2.setMinimum(0)
-        self.horizontalSlider_auto_s2.setMaximum(18000)
+        self.horizontalSlider_auto_s2.setMinimum(500)
+        self.horizontalSlider_auto_s2.setMaximum(17500)
         self.horizontalSlider_auto_s2.setSingleStep(100)
         self.horizontalSlider_auto_s2.setPageStep(1000)
         self.horizontalSlider_auto_s2.setValue(9000)
@@ -3225,8 +3224,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s3.setMinimum(-12000)
-        self.horizontalSlider_auto_s3.setMaximum(6000)
+        self.horizontalSlider_auto_s3.setMinimum(-11500)
+        self.horizontalSlider_auto_s3.setMaximum(5500)
         self.horizontalSlider_auto_s3.setSingleStep(100)
         self.horizontalSlider_auto_s3.setPageStep(1000)
         self.horizontalSlider_auto_s3.setOrientation(Qt.Horizontal)
@@ -3339,8 +3338,8 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s4.setMinimum(-9000)
-        self.horizontalSlider_auto_s4.setMaximum(9000)
+        self.horizontalSlider_auto_s4.setMinimum(-8500)
+        self.horizontalSlider_auto_s4.setMaximum(8500)
         self.horizontalSlider_auto_s4.setSingleStep(100)
         self.horizontalSlider_auto_s4.setPageStep(1000)
         self.horizontalSlider_auto_s4.setOrientation(Qt.Horizontal)
@@ -3530,8 +3529,9 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s6.setMinimum(-90)
-        self.horizontalSlider_auto_s6.setMaximum(90)
+        self.horizontalSlider_auto_s6.setMinimum(0)
+        self.horizontalSlider_auto_s6.setMaximum(175)
+        self.horizontalSlider_auto_s6.setValue(90)
         self.horizontalSlider_auto_s6.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_s6.setInvertedAppearance(False)
         self.horizontalSlider_auto_s6.setInvertedControls(False)
@@ -3615,8 +3615,9 @@ class Ui_MainWindow(object):
 "QSlider::handle:horizontal:pressed {\n"
 "    background-color: rgb(65, 130, 195);\n"
 "}")
-        self.horizontalSlider_auto_s5.setMinimum(-90)
-        self.horizontalSlider_auto_s5.setMaximum(90)
+        self.horizontalSlider_auto_s5.setMinimum(5)
+        self.horizontalSlider_auto_s5.setMaximum(175)
+        self.horizontalSlider_auto_s5.setValue(90)
         self.horizontalSlider_auto_s5.setOrientation(Qt.Horizontal)
         self.horizontalSlider_auto_s5.setInvertedAppearance(False)
         self.horizontalSlider_auto_s5.setInvertedControls(False)
@@ -4426,7 +4427,7 @@ class Ui_MainWindow(object):
         self.spinBox_kal_s1.setAlignment(Qt.AlignCenter)
         self.spinBox_kal_s1.setMinimum(-10)
         self.spinBox_kal_s1.setMaximum(10)
-        self.spinBox_kal_s1.setValue(0)
+        self.spinBox_kal_s1.setValue(-10)
 
         self.gridLayout_25.addWidget(self.spinBox_kal_s1, 1, 1, 1, 1)
 
@@ -4898,14 +4899,14 @@ class Ui_MainWindow(object):
         self.horizontalSlider_auto_z.valueChanged.connect(self.lcdNumber_auto_z.display)
         self.horizontalSlider_auto_time_2.valueChanged.connect(self.lcdNumber_auto_time.display)
 
-        self.stackedWidget.setCurrentIndex(3)
+        self.stackedWidget.setCurrentIndex(4)
         self.tabWidget.setCurrentIndex(0)
         self.tabWidget_3.setCurrentIndex(0)
         self.tabWidget_4.setCurrentIndex(1)
         self.tabWidget_5.setCurrentIndex(0)
         self.comboBox_auto_config_2.setCurrentIndex(1)
         self.tabWidget_7.setCurrentIndex(0)
-        self.tabWidget_6.setCurrentIndex(3)
+        self.tabWidget_6.setCurrentIndex(2)
 
 
         QMetaObject.connectSlotsByName(MainWindow)

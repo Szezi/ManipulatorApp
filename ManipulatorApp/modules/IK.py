@@ -98,7 +98,7 @@ def ik_geo(px: int, py: int, pz: int, alfa: int, eff: list):
         theta22 = math.degrees(theta22)
         theta33 = math.degrees(theta33)
 
-        if -90 <= theta0 <= 90 and 0 <= theta1 <= 180 and -120 <= theta2 <= 60 and -90 <= theta3 <= 90:
+        if -80 <= theta0 <= 80 and 5 <= theta1 <= 175 and -115 <= theta2 <= 55 and -85 <= theta3 <= 85:
             status_config_1 = "Config_1: Success"
             config_1 = [round(theta0, 2), round(theta1, 2), round(theta2, 2), round(theta3, 2)]
 
@@ -106,7 +106,7 @@ def ik_geo(px: int, py: int, pz: int, alfa: int, eff: list):
             config_1 = [0.0, 0.0, 0.0, 0.0]
             status_config_1 = "Warning: Config_1: No results"
 
-        if -90 <= theta0 <= 90 and 0 <= theta11 <= 180 and -120 <= theta22 <= 60 and -90 <= theta33 <= 90:
+        if -80 <= theta0 <= 80 and 5 <= theta11 <= 175 and -115 <= theta22 <= 55 and -85 <= theta33 <= 85:
             status_config_2 = "Config_2: Success"
             config_2 = [round(theta0, 2), round(theta11, 2), round(theta22, 2), round(theta33, 2)]
 
