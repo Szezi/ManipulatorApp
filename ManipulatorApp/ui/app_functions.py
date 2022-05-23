@@ -85,6 +85,9 @@ class AppFunctions(MainWindow):
         # Check the effector dimensions
         eff = UIFunctions.effector_check(self)
 
+        # Check calibration
+        servo_cal = UIFunctions.calibration(self)
+
         # Set values of sliders in different control modes
         if self.ui.tab_manual_joints.isVisible():
             value_j1 = self.ui.horizontalSlider_j_s1.value() / 100
@@ -149,7 +152,7 @@ class AppFunctions(MainWindow):
         servo_6 = self.ui.horizontalSlider_j_s6.value() / 100
 
         try:
-            comm.servos_write(servo_1, servo_2, servo_3, servo_4, servo_5, servo_6)
+            comm.servos_write(servo_1, servo_2, servo_3, servo_4, servo_5, servo_6, servo_cal)
         except:
             status = 'Error: Robotic Arm not connected'
 
@@ -183,6 +186,9 @@ class AppFunctions(MainWindow):
         """ Start executing robotic program till end of program or stopping the program """
 
         self.stop = False
+
+        # Check calibration
+        servo_cal = UIFunctions.calibration(self)
 
         # Check the selected mode
         if self.ui.comboBox_auto_sim_servo.currentText() == 'SIM':
@@ -228,7 +234,8 @@ class AppFunctions(MainWindow):
                                   float(step_values_next[10]),
                                   float(step_values_next[11]),
                                   float(step_values_next[12]),
-                                  float(step_values_next[13]))
+                                  float(step_values_next[13]),
+                                  servo_cal)
                 QApplication.processEvents()
                 time.sleep(float(step_values_next[14]))
 
@@ -237,6 +244,9 @@ class AppFunctions(MainWindow):
 
     def automatic_step_next(self):
         """ Execute one next line of robotic program """
+
+        # Check calibration
+        servo_cal = UIFunctions.calibration(self)
 
         try:
             # Take next line of robotic program
@@ -275,7 +285,8 @@ class AppFunctions(MainWindow):
                                   float(step_values_next[10]),
                                   float(step_values_next[11]),
                                   float(step_values_next[12]),
-                                  float(step_values_next[13]))
+                                  float(step_values_next[13]),
+                                  servo_cal)
                 QApplication.processEvents()
         except AttributeError:
             status = 'Error: Automatic mode not initialized'
@@ -285,6 +296,8 @@ class AppFunctions(MainWindow):
 
     def automatic_step_prev(self):
         """ Execute one previous line of robotic program """
+        # Check calibration
+        servo_cal = UIFunctions.calibration(self)
 
         try:
             # Take previous line of robotic program
@@ -321,7 +334,8 @@ class AppFunctions(MainWindow):
                                   float(step_values_next[10]),
                                   float(step_values_next[11]),
                                   float(step_values_next[12]),
-                                  float(step_values_next[13]))
+                                  float(step_values_next[13]),
+                                  servo_cal)
                 QApplication.processEvents()
         except AttributeError:
             status = 'Error: Automatic mode not initialized'

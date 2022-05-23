@@ -250,6 +250,10 @@ class UIFunctions(MainWindow):
 
         return servo_cal
 
+    def calibration_set(self):
+        servo_cal = UIFunctions.calibration(self)
+        comm.servos_write(0, 90, 0, 0, 0, 0, servo_cal)
+
     # EFFECTOR CALIBRATION
     def effector_calibration(self, L, H):
         """ Set values of spinbox with given effector dim."""

@@ -86,6 +86,7 @@ class MainWindow(QMainWindow):
         self.ui.btn_settings.clicked.connect(lambda: AppFunctions.page_settings(self))
         self.ui.btn_settings.clicked.connect(lambda: UIFunctions.log_list(self, 'Page changed to settings'))
         self.ui.radioButton_home_comm_2.clicked.connect(lambda: AppFunctions.communication_radiobutton(self))
+        self.ui.btn_kal_set_0.clicked.connect(lambda: UIFunctions.calibration_set(self))
 
         # Pages
         ################################################################################################################
