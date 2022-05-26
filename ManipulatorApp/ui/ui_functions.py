@@ -540,6 +540,7 @@ class UIFunctions(MainWindow):
         file_name_write = 'generated_path_'
         file_format_write = '.txt'
         trajectory.write_generated_path_to_file(table, file_path_write, file_name_write, file_format_write)
+        self.read_robotic_path = ' '
 
     # READ ROBOTIC PATH FROM FILE
     def read_path(self):
