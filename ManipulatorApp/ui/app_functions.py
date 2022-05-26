@@ -106,10 +106,10 @@ class AppFunctions(MainWindow):
             # Set values of sliders in automatic mode
             value_j5 = self.ui.horizontalSlider_j_s5.value()
             value_j6 = self.ui.horizontalSlider_j_s6.value()
-            self.ui.horizontalSlider_auto_s1.setValue(value_j1*100)
-            self.ui.horizontalSlider_auto_s2.setValue(value_j2*100)
-            self.ui.horizontalSlider_auto_s3.setValue(value_j3*100)
-            self.ui.horizontalSlider_auto_s4.setValue(value_j4*100)
+            self.ui.horizontalSlider_auto_s1.setValue(value_j1 * 100)
+            self.ui.horizontalSlider_auto_s2.setValue(value_j2 * 100)
+            self.ui.horizontalSlider_auto_s3.setValue(value_j3 * 100)
+            self.ui.horizontalSlider_auto_s4.setValue(value_j4 * 100)
             self.ui.horizontalSlider_auto_s5.setValue(value_j5)
             self.ui.horizontalSlider_auto_s6.setValue(value_j6)
 
@@ -135,10 +135,10 @@ class AppFunctions(MainWindow):
             else:
                 raise ValueError
 
-            self.ui.horizontalSlider_j_s1.setValue(value_manual_xyz[index][0]*100)
-            self.ui.horizontalSlider_j_s2.setValue(value_manual_xyz[index][1]*100)
-            self.ui.horizontalSlider_j_s3.setValue(value_manual_xyz[index][2]*100)
-            self.ui.horizontalSlider_j_s4.setValue(value_manual_xyz[index][3]*100)
+            self.ui.horizontalSlider_j_s1.setValue(value_manual_xyz[index][0] * 100)
+            self.ui.horizontalSlider_j_s2.setValue(value_manual_xyz[index][1] * 100)
+            self.ui.horizontalSlider_j_s3.setValue(value_manual_xyz[index][2] * 100)
+            self.ui.horizontalSlider_j_s4.setValue(value_manual_xyz[index][3] * 100)
 
         else:
             status = 'Error: Something went wrong'
@@ -349,28 +349,35 @@ class AppFunctions(MainWindow):
         Function checks if installed effector is the same as in read robotic path.
         :return: self.robotic_arm
         """
+        try:
+            # Checking if installed effector is the same as in read robotic path
+            effector_installed = UIFunctions.effector_check(self)
+            eff1 = self.read_robotic_path[0][15][1:]
+            eff2 = self.read_robotic_path[0][16][:-1]
+            effector_path = [int(eff1), int(eff2)]
 
-        # Checking if installed effector is the same as in read robotic path
-        effector_installed = UIFunctions.effector_check(self)
-        eff1 = self.read_robotic_path[0][15][1:]
-        eff2 = self.read_robotic_path[0][16][:1]
-        effector_path = [int(eff1), int(eff2)]
+            if effector_installed == effector_path:
+                self.robotic_path = self.read_robotic_path
+                robotic_path_copy = self.robotic_path.copy()
 
-        if effector_installed == effector_path:
-            self.robotic_path = self.read_robotic_path
-            robotic_path_copy = self.robotic_path.copy()
+                # Executing robotic arm in loop
+                repeat = self.ui.spinBox.value()
+                for _ in range(1, repeat):
+                    self.robotic_path.extend(robotic_path_copy)
 
-            # Executing robotic arm in loop
-            repeat = self.ui.spinBox.value()
-            for _ in range(1, repeat):
-                self.robotic_path.extend(robotic_path_copy)
+                # Create robotic arm program
+                self.robotic_arm = trajectory.RoboticMove(self.robotic_path)
 
-            # Create robotic arm program
-            self.robotic_arm = trajectory.RoboticMove(self.robotic_path)
+                status = 'Automatic mode initialized'
+            else:
+                raise NameError('Warning: Installed effector is different as in robotic path')
 
-            status = 'Automatic mode initialized'
-        else:
-            status = 'Warning: Installed effector is different as in robotic path'
+        except IndexError:
+            status = 'Error: Wrong path - read file path'
+        except NameError as effector_error:
+            status = effector_error
+        except AttributeError:
+            status = 'Error: No file path - read file path'
 
         # Print the status
         UIFunctions.log_list(self, status)
