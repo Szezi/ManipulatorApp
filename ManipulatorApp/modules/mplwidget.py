@@ -1,3 +1,5 @@
+""" Module contains class MplWidget to simulation of robotic movement"""
+
 from PySide2.QtWidgets import *
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
@@ -5,7 +7,7 @@ from ManipulatorApp.modules import trajectory
 
 
 class MplWidget(QWidget):
-    """ MplWidget for simulation robotic movement"""
+    """ MplWidget for simulation of robotic movement"""
 
     def __init__(self, parent=None):
         QWidget.__init__(self, parent)
@@ -16,6 +18,8 @@ class MplWidget(QWidget):
         self.setLayout(vertical_layout)
 
     def Canvas(self):
+        """ Set Qwidget parametres"""
+
         self.canvas.axes.set_ylim([500, -500])
         self.canvas.axes.set_xlim([-50, 500])
         self.canvas.axes.set_zlim([0, 600])
@@ -24,6 +28,17 @@ class MplWidget(QWidget):
         self.canvas.axes.set_zlabel('z')
 
     def mpl_draw(self, xyz_1=[0, 0, 268], xyz_2=[0, 0, 418], xyz_3=[0, 0, 472], xyz_4=[0, 0, 472]):
+        """
+        Draw robotic_arm with given parameters.
+
+        :param xyz_1: End position of 1st joint
+        :param xyz_2: End position of 2nd joint
+        :param xyz_3: End position of 3rd joint
+        :param xyz_4: End position of 4th joint
+
+        :return: Simulated robotic arm
+        """
+
         n = 2
         base = trajectory.cp_linear([0.0, 0.0, 0.0], [0.0, 0.0, 118.0], n)
         link1 = trajectory.cp_linear([0.0, 0.0, 118.0], xyz_1, n)

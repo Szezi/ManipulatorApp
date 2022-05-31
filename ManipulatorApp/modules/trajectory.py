@@ -1,3 +1,5 @@
+""" Module contains functions to control robotic_arm trajectory"""
+
 import os
 import datetime as dt
 import numpy as np
@@ -7,9 +9,11 @@ from ManipulatorApp.modules import IK
 def cp_linear(p_start: list, p_finish: list, n=10):
     """
     Produces linear interpolation between two 3D points
-    :param p_start: list of 3 floats (x, y, z)
-    :param p_finish: list of 3 floats (x, y, z)
-    :param n: Number of points to sample; default n=10
+
+    :param: p_start: list of 3 floats (x, y, z)
+    :param: p_finish: list of 3 floats (x, y, z)
+    :param: n: Number of points to sample; default n=10
+
     :return:  np.array: Interpolated points
     """
 
@@ -25,7 +29,9 @@ def path_generator(table: list):
     traj - cp_linear, p2p \n
     config - config_1, config_2 \n
     Parameters can not be empty \n
+
     :param table: Array of [command, traj, config, x, y, z, alfa, Servo5, Servo6, time, eff]; table[0] = home position
+
     :return: generated_path - Array of [command, traj, config, x, y, z , alfa, theta0, theta1, theta2, theta3, Servo5, Servo6, time, eff]
     """
 
@@ -223,10 +229,12 @@ def path_generator(table: list):
 def write_generated_path_to_file(array: list, file_path: str, file_name: str, file_format: str):
     """
     Function writes robotic path generated using trajectory.path_generator() to file in specified location and name with date and time of creation.
+
     :param array: Array of xyz points to generate path
     :param file_path: Path of file
     :param file_name: Name of file
     :param file_format: Format of file e.g. (.txt)
+
     :return: File written in specified location
     """
 
@@ -252,7 +260,9 @@ def write_generated_path_to_file(array: list, file_path: str, file_name: str, fi
 def read_generated_path_from_file(file_path: str):
     """
     Function reads robotic path from file in specified location.
+
     :param file_path: Path of file
+
     :return: path_from_file - list
     """
 
@@ -295,6 +305,8 @@ class RoboticMove(object):
         return self
 
     def next(self):
+        """ Next line of robotic program"""
+
         self.index += 1
         if self.index >= self.list_len:
             raise StopIteration
@@ -307,6 +319,8 @@ class RoboticMove(object):
             return line
 
     def prev(self):
+        """ Prev line of robotic program"""
+
         self.index -= 1
         if self.index == -1:
             raise StopIteration

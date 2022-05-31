@@ -1,3 +1,5 @@
+""" Module contains class UIFunctions that contains created functions to control application"""
+
 import os
 import datetime as dt
 
@@ -12,6 +14,8 @@ GLOBAL_STATE = 0
 
 
 class UIFunctions(MainWindow):
+    """ Class contains functions to control application GUI depending on users actions """
+
     # ==> TOGGLE MENU
     def __init__(self):
         super().__init__()
@@ -45,14 +49,22 @@ class UIFunctions(MainWindow):
 
     # ==> SELECT
     def select_menu(getStyle):
-        """Select menu page"""
+        """
+        Select menu page
+
+        :return: menu_select
+        """
 
         menu_select = getStyle + "QPushButton { border-right: 5px solid rgb(71, 71, 71); }"
         return menu_select
 
     # ==> DESELECT
     def deselect_menu(getStyle):
-        """Deselect menu page"""
+        """
+        Deselect menu page
+
+        :return: menu_deselect
+        """
 
         menu_deselect = getStyle.replace("QPushButton { border-right: 5px solid rgb(71, 71, 71); }", "")
         return menu_deselect
@@ -76,6 +88,8 @@ class UIFunctions(MainWindow):
 
     # ==> MAXIMIZE RESTORE FUNCTION
     def maximize_restore(self):
+        """ Maximize and restore app window"""
+
         global GLOBAL_STATE
         status = GLOBAL_STATE
 
@@ -99,7 +113,7 @@ class UIFunctions(MainWindow):
     # ==> CLOSE APP
     @staticmethod
     def close_app():
-        """Close app and communication"""
+        """Close app and end communication"""
         try:
             comm.board.exit()
         except:
@@ -236,6 +250,7 @@ class UIFunctions(MainWindow):
     def calibration(self):
         """
         Calibrate robotic arms servos.
+
         :return: servo_cal
         """
 
@@ -267,6 +282,7 @@ class UIFunctions(MainWindow):
     def effector_check(self):
         """
         Check effector dimensions. Without set effector eff = [54,0]
+
         :return: eff = [a,b]
         """
 
@@ -325,6 +341,7 @@ class UIFunctions(MainWindow):
     def set_slider_color(self, widget, warning_range):
         """
         Set slider color
+
         :param widget: widget name
         :param warning_range: warning value
         """
@@ -478,6 +495,7 @@ class UIFunctions(MainWindow):
     def set_home(self):
         """
         Create/set home position
+
         :return: self.home_position
         """
 
@@ -508,8 +526,9 @@ class UIFunctions(MainWindow):
     # GENERATE AND SAVE ROBOTIC PATH
     def generate_path(self):
         """
-        Generate robotic path(program).
-        Save program to file .txt in selected directory.
+        Generate robotic path(program).\n
+        Save program to file .txt in selected directory.\n
+
         :return: generated_path_DATETIME.txt
         """
 
@@ -546,6 +565,7 @@ class UIFunctions(MainWindow):
     def read_path(self):
         """
         Read robotic path from selected file to param.
+
         :return: self.robotic_path
         """
 
@@ -566,8 +586,10 @@ class UIFunctions(MainWindow):
     # FILL TABLE WITH READ ROBOTIC PATH
     def write_read_path_to_table(self, robotic_path):
         """
-        Fill table with robotic path info from read file
+        Fill table with robotic path info from read file.
+
         :param robotic_path:
+
         :return: Filled table
         """
 
@@ -605,6 +627,7 @@ class UIFunctions(MainWindow):
     def file_path(self):
         """
         Get path of selected file
+
         :return: response
         """
 
@@ -623,6 +646,7 @@ class UIFunctions(MainWindow):
     def directory_path(self):
         """
         Get path of selected directory
+
         :return: response
         """
 

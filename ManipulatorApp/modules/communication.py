@@ -1,3 +1,5 @@
+""" Module contains functions to control robotic arm via Arduino"""
+
 from pyfirmata2 import Arduino, util
 
 try:
@@ -23,6 +25,19 @@ try:
 
 
     def servos_write_initial(s1, s2, s3, s4, s5, s6):
+        """
+        Set servos values without calibration.
+
+        :param s1: Servo_1
+        :param s2: Servo_2
+        :param s3: Servo_3
+        :param s4: Servo_4
+        :param s5: Servo_5
+        :param s6: Servo_6
+
+        :return: Values sent to arduino
+        """
+
         servo1.write(int(s1))
         servo2.write(int(s2))
         servo3.write(int(s3))
@@ -35,6 +50,20 @@ try:
 
 
     def servos_write(s1, s2, s3, s4, s5, s6, servo_cal):
+        """
+        Set servos values withcalibration.
+
+        :param s1: Servo_1
+        :param s2: Servo_2
+        :param s3: Servo_3
+        :param s4: Servo_4
+        :param s5: Servo_5
+        :param s6: Servo_6
+        :param servo_cal: List of servos calibration values
+
+        :return: Values sent to arduino
+        """
+
         servo1.write(int(90 + s1 - servo_cal[0]))
         servo2.write(int(180 - s2 - servo_cal[1]))
         servo3.write(int(120 + s3 + servo_cal[2]))
@@ -44,6 +73,12 @@ try:
 
 
     def servos_read():
+        """
+        Read servos values
+
+        :return: s1, s2, s3, s4, s5, s6
+        """
+
         s1 = servo1.read()
         s2 = servo2.read()
         s3 = servo3.read()

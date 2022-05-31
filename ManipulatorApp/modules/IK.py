@@ -1,15 +1,19 @@
+""" Module contains functions to calculate inverse kinematics"""
+
 import math
 
 
 def ik_geo(px: int, py: int, pz: int, alfa: int, eff: list):
     """
-    Function calculate inverse kinematics of the robotic arm with given parameters and specified length of robotic arm links.
-    Inverse kinematics is being calculated using geometrical method.
+    Function calculate inverse kinematics of the robotic arm with given parameters and specified length of robotic arm links.\n
+    Inverse kinematics is being calculated using geometrical method.\n
+
     :param px: X value of target position
     :param py: Y value of target position
     :param pz: Z value of target position
     :param alfa: End effector orientation
     :param eff: End effector dimensions
+
     :return: config_1[theta0, theta1, theta2, theta3], config_2[theta0, theta11, theta22, theta33], Kom(kom_config_1, kom_config_2, Success/Sth. wrong)
     """
 

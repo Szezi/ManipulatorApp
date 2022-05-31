@@ -1,3 +1,5 @@
+""" Module contains class AppFunctions that contains created functions to control application"""
+
 # ==> GUI FILE
 import time
 from importlib import reload
@@ -10,13 +12,20 @@ from ManipulatorApp.ui.ui_functions import *
 
 
 class AppFunctions(MainWindow):
+    """ Class contains functions to control application depending on users actions """
 
     def __init__(self):
         super().__init__()
         self.stop = None
 
     def page_fk(self):
-        """ Page - Forward kinematics calculations of robotic arm """
+        """
+        Page - Forward kinematics calculations of robotic arm.\n
+        Function checks effector dimensions,takes values from sliders and calculate forward kinematics.\n
+        Calculation results are displayed, simulated and status is printed in log file and bar.\n
+
+        :return: Forward kinematics
+        """
 
         # Check the effector dimensions
         eff = UIFunctions.effector_check(self)
@@ -42,7 +51,13 @@ class AppFunctions(MainWindow):
         self.ui.MplWidget_fk.canvas.flush_events()
 
     def page_ik(self):
-        """ Page - Inverse kinematics calculations of robotic arm """
+        """
+        Page - Inverse kinematics calculations of robotic arm\n
+        Function checks effector dimensions,takes values from sliders and calculate forward kinematics.\n
+        Calculation results are displayed, simulated and status is printed in log file and bar.\n
+
+        :return: Inverse kinematics
+        """
 
         # Check the effector dimensions
         eff = UIFunctions.effector_check(self)
@@ -80,7 +95,12 @@ class AppFunctions(MainWindow):
             self.ui.MplWidget_ik.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
 
     def page_manual(self):
-        """ Page - Manual mode of controlling robotic arm """
+        """
+        Page - Manual mode of controlling robotic arm.\n
+        Function checks effector dimensions and robotic arm calibration.\n
+        Function calculates servo values from sliders values in servo/xyz mode.\n
+        Calculation results are displayed, simulated, send to Arduino and status is printed in log file and bar.\n
+        """
 
         # Check the effector dimensions
         eff = UIFunctions.effector_check(self)
@@ -164,7 +184,10 @@ class AppFunctions(MainWindow):
         self.ui.MplWidget_ik_2.mpl_draw(calculated[4], calculated[3], calculated[2], calculated[1])
 
     def page_automatic(self):
-        """ Page - Auto mode of controlling robotic arm """
+        """
+        Page - Auto mode of controlling robotic arm \n
+        Function handles users actions in automatic mode page\n
+        """
 
         self.ui.btn_auto_Add_path_gen.clicked.connect(lambda: UIFunctions.generate_path(self))
         self.ui.btn_auto_Add_path_read.clicked.connect(lambda: UIFunctions.read_path(self))
@@ -176,14 +199,22 @@ class AppFunctions(MainWindow):
         self.ui.btn_auto_next.clicked.connect(lambda: AppFunctions.automatic_step_next(self))
 
     def automatic_stop(self):
-        """ Stopping executing robotic program """
+        """
+        Stop executing robotic program and print status in log file/bar.\n
+
+        :return: self.stop = True
+        """
 
         self.stop = True
         status = 'Stop robotic program'
         UIFunctions.log_list(self, status)
 
     def automatic_start(self):
-        """ Start executing robotic program till end of program or stopping the program """
+        """
+        Start executing robotic program till end of program or stop flag. \n
+        Function checks robotic arms calibration and execute program depends on set mode- servo/sim.\n
+        Status is printed in log file/bar.\n
+        """
 
         self.stop = False
 
@@ -243,7 +274,11 @@ class AppFunctions(MainWindow):
         UIFunctions.log_list(self, status)
 
     def automatic_step_next(self):
-        """ Execute one next line of robotic program """
+        """
+        Execute one next line of robotic program\n
+        Function checks robotic arms calibration and execute one line of program.\n
+        Status is printed in log file/bar.\n
+        """
 
         # Check calibration
         servo_cal = UIFunctions.calibration(self)
@@ -295,7 +330,12 @@ class AppFunctions(MainWindow):
         UIFunctions.log_list(self, status)
 
     def automatic_step_prev(self):
-        """ Execute one previous line of robotic program """
+        """
+        Execute one previous line of robotic program\n
+        Function checks robotic arms calibration and execute one line of program.\n
+        Status is printed in log file/bar.\n
+        """
+
         # Check calibration
         servo_cal = UIFunctions.calibration(self)
 
@@ -345,10 +385,13 @@ class AppFunctions(MainWindow):
 
     def automatic_mode_init(self):
         """
-        Create robotic program from read file.
-        Function checks if installed effector is the same as in read robotic path.
+        Create robotic program from read file.\n
+        Function checks if installed effector is the same as in read robotic path.\n
+        Status is printed in log file/bar.\n
+
         :return: self.robotic_arm
         """
+
         try:
             # Checking if installed effector is the same as in read robotic path
             effector_installed = UIFunctions.effector_check(self)
@@ -421,6 +464,7 @@ class AppFunctions(MainWindow):
 
     def communication_tab(self):
         """ Set status of communication green/red """
+
         if comm.status:
             self.ui.radioButton_home_comm.setChecked(True)
             self.ui.radioButton_home_comm_2.setChecked(True)
