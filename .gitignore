@@ -132,3 +132,4 @@ dmypy.json
 .idea
 >>>>>>> b7dd8a6 (Creating new project)
 /temp/
+!/docs/build/
