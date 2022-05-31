@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>modules package &mdash; ManipulatorApp 1.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ui package" href="ui.html" />
+    <link rel="prev" title="Welcome to ManipulatorApp’s documentation!" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> ManipulatorApp
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">modules package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modules.FK">modules.FK module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modules.IK">modules.IK module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modules.communication">modules.communication module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modules.mplwidget">modules.mplwidget module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-modules.trajectory">modules.trajectory module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">ui package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="app_modules.html">app_modules module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">ManipulatorApp</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>modules package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="modules-package">
+<h1>modules package<a class="headerlink" href="#modules-package" title="Permalink to this headline"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline"></a></h2>
+</section>
+<section id="module-modules.FK">
+<span id="modules-fk-module"></span><h2>modules.FK module<a class="headerlink" href="#module-modules.FK" title="Permalink to this headline"></a></h2>
+<p>Module contains functions to calculate forward kinematics</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="modules.FK.fk_dh">
+<span class="sig-prename descclassname"><span class="pre">modules.FK.</span></span><span class="sig-name descname"><span class="pre">fk_dh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta3</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta4</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.FK.fk_dh" title="Permalink to this definition"></a></dt>
+<dd><p>Function calculate forward kinematics of the robotic arm with given parameters and specified length of robotic arm links.
+Forward kinematics is being calculated using Denavit–Hartenberg notation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>theta1</strong> – Base rotation angle</p></li>
+<li><p><strong>theta2</strong> – 1st link rotation angle</p></li>
+<li><p><strong>theta3</strong> – 2nd link rotation angle</p></li>
+<li><p><strong>theta4</strong> – 3rd link rotation angle</p></li>
+<li><p><strong>eff</strong> – End effector dimensions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>alpha; xyz_pos_link3; xyz_pos_link2; xyz_pos_link1; status: Orientation and list of xyz positions of each link end</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-modules.IK">
+<span id="modules-ik-module"></span><h2>modules.IK module<a class="headerlink" href="#module-modules.IK" title="Permalink to this headline"></a></h2>
+<p>Module contains functions to calculate inverse kinematics</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="modules.IK.ik_geo">
+<span class="sig-prename descclassname"><span class="pre">modules.IK.</span></span><span class="sig-name descname"><span class="pre">ik_geo</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">px</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">py</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pz</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alfa</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eff</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.IK.ik_geo" title="Permalink to this definition"></a></dt>
+<dd><p>Function calculate inverse kinematics of the robotic arm with given parameters and specified length of robotic arm links.</p>
+<p>Inverse kinematics is being calculated using geometrical method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>px</strong> – X value of target position</p></li>
+<li><p><strong>py</strong> – Y value of target position</p></li>
+<li><p><strong>pz</strong> – Z value of target position</p></li>
+<li><p><strong>alfa</strong> – End effector orientation</p></li>
+<li><p><strong>eff</strong> – End effector dimensions</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>config_1[theta0, theta1, theta2, theta3], config_2[theta0, theta11, theta22, theta33], Kom(kom_config_1, kom_config_2, Success/Sth. wrong)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-modules.communication">
+<span id="modules-communication-module"></span><h2>modules.communication module<a class="headerlink" href="#module-modules.communication" title="Permalink to this headline"></a></h2>
+<p>Module contains functions to control robotic arm via Arduino</p>
+</section>
+<section id="module-modules.mplwidget">
+<span id="modules-mplwidget-module"></span><h2>modules.mplwidget module<a class="headerlink" href="#module-modules.mplwidget" title="Permalink to this headline"></a></h2>
+<p>Module contains class MplWidget to simulation of robotic movement</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="modules.mplwidget.MplWidget">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.mplwidget.</span></span><span class="sig-name descname"><span class="pre">MplWidget</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.mplwidget.MplWidget" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">PySide2.QtWidgets.QWidget</span></code></p>
+<p>MplWidget for simulation of robotic movement</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.mplwidget.MplWidget.Canvas">
+<span class="sig-name descname"><span class="pre">Canvas</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.mplwidget.MplWidget.Canvas" title="Permalink to this definition"></a></dt>
+<dd><p>Set Qwidget parametres</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.mplwidget.MplWidget.mpl_draw">
+<span class="sig-name descname"><span class="pre">mpl_draw</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xyz_1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">268]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyz_2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">418]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyz_3</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">472]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xyz_4</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[0,</span> <span class="pre">0,</span> <span class="pre">472]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.mplwidget.MplWidget.mpl_draw" title="Permalink to this definition"></a></dt>
+<dd><p>Draw robotic_arm with given parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>xyz_1</strong> – End position of 1st joint</p></li>
+<li><p><strong>xyz_2</strong> – End position of 2nd joint</p></li>
+<li><p><strong>xyz_3</strong> – End position of 3rd joint</p></li>
+<li><p><strong>xyz_4</strong> – End position of 4th joint</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Simulated robotic arm</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="modules.mplwidget.MplWidget.staticMetaObject">
+<span class="sig-name descname"><span class="pre">staticMetaObject</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;PySide2.QtCore.QMetaObject</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#modules.mplwidget.MplWidget.staticMetaObject" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-modules.trajectory">
+<span id="modules-trajectory-module"></span><h2>modules.trajectory module<a class="headerlink" href="#module-modules.trajectory" title="Permalink to this headline"></a></h2>
+<p>Module contains functions to control robotic_arm trajectory</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="modules.trajectory.RoboticMove">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">modules.trajectory.</span></span><span class="sig-name descname"><span class="pre">RoboticMove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">generated_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.trajectory.RoboticMove" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>The class contains methods that generate the next and previous lines from a file with robotic path.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.trajectory.RoboticMove.next">
+<span class="sig-name descname"><span class="pre">next</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.trajectory.RoboticMove.next" title="Permalink to this definition"></a></dt>
+<dd><p>Next line of robotic program</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="modules.trajectory.RoboticMove.prev">
+<span class="sig-name descname"><span class="pre">prev</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#modules.trajectory.RoboticMove.prev" title="Permalink to this definition"></a></dt>
+<dd><p>Prev line of robotic program</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modules.trajectory.cp_linear">
+<span class="sig-prename descclassname"><span class="pre">modules.trajectory.</span></span><span class="sig-name descname"><span class="pre">cp_linear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p_start</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p_finish</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.trajectory.cp_linear" title="Permalink to this definition"></a></dt>
+<dd><p>Produces linear interpolation between two 3D points</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>p_start: list of 3 floats (x, y, z)</p>
+</dd>
+<dt class="field-even">Param</dt>
+<dd class="field-even"><p>p_finish: list of 3 floats (x, y, z)</p>
+</dd>
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>n: Number of points to sample; default n=10</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>np.array: Interpolated points</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modules.trajectory.path_generator">
+<span class="sig-prename descclassname"><span class="pre">modules.trajectory.</span></span><span class="sig-name descname"><span class="pre">path_generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.trajectory.path_generator" title="Permalink to this definition"></a></dt>
+<dd><p>Generates robotics arm parameters from path of given 3D points.</p>
+<p>Commands - home, move, wait</p>
+<p>traj - cp_linear, p2p</p>
+<p>config - config_1, config_2</p>
+<p>Parameters can not be empty</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>table</strong> – Array of [command, traj, config, x, y, z, alfa, Servo5, Servo6, time, eff]; table[0] = home position</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>generated_path - Array of [command, traj, config, x, y, z , alfa, theta0, theta1, theta2, theta3, Servo5, Servo6, time, eff]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modules.trajectory.read_generated_path_from_file">
+<span class="sig-prename descclassname"><span class="pre">modules.trajectory.</span></span><span class="sig-name descname"><span class="pre">read_generated_path_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.trajectory.read_generated_path_from_file" title="Permalink to this definition"></a></dt>
+<dd><p>Function reads robotic path from file in specified location.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_path</strong> – Path of file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>path_from_file - list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="modules.trajectory.write_generated_path_to_file">
+<span class="sig-prename descclassname"><span class="pre">modules.trajectory.</span></span><span class="sig-name descname"><span class="pre">write_generated_path_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_format</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#modules.trajectory.write_generated_path_to_file" title="Permalink to this definition"></a></dt>
+<dd><p>Function writes robotic path generated using trajectory.path_generator() to file in specified location and name with date and time of creation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>array</strong> – Array of xyz points to generate path</p></li>
+<li><p><strong>file_path</strong> – Path of file</p></li>
+<li><p><strong>file_name</strong> – Name of file</p></li>
+<li><p><strong>file_format</strong> – Format of file e.g. (.txt)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>File written in specified location</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to ManipulatorApp’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ui.html" class="btn btn-neutral float-right" title="ui package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Daniel Sziling.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
