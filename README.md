@@ -103,7 +103,7 @@ The printed elements with purchase items are shown below.
 
 Assembly of designed robotic arm is shown below:
 <div align="center">
-<img src="data\images\robotic_arm.png" alt="Robotic_Arm">
+<img src="data\images\robotic_arm.PNG" alt="Robotic_Arm">
 </div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -115,7 +115,7 @@ After calibration of robotic arm 2 test paths were prepared and saved to:
 
 1. Test_path_01
 <div align="center">
-<img src="data\images\test_1.png" alt="test_1">
+<img src="data\images\test_1.PNG" alt="test_1">
 </div>
 
 ```
@@ -123,7 +123,7 @@ After calibration of robotic arm 2 test paths were prepared and saved to:
    ```
 2. Test_path_02
 <div align="center">
-<img src="data\images\test_1.png" alt="test_1">
+<img src="data\images\test_1.PNG" alt="test_1">
 </div>
 
 ```
