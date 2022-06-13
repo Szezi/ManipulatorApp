@@ -19,18 +19,27 @@ ManipulatorApp is a desktop application that allows to control the robotic arm p
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
       </ul>
+      <ul>
+        <li><a href="#arduino">Arduino</a></li>
+      </ul>
+      <ul>
+        <li><a href="#technologies">Technologies</a></li>
+      </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
+    <li><a href="#about-yhe-project">About the project</a></li>
+      <ul>
+        <li><a href="#desktop-app">Desktop App</a></li>
+      </ul>
+      <ul>
+        <li><a href="#robotic-arm-prototype">Robotic arm prototype</a></li>
+      </ul>
+      <ul>
+        <li><a href="#repeatability-test-of-the-robot's-movements">Repeatability test of the robot's movements</a></li>
+      </ul>
     <li><a href="#todo">Todo</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -89,8 +98,6 @@ Robotic arm with five degrees of freedom was designed, which was made with the u
 ### Desktop app
 ManipulatorApp is a desktop application that allows to control the robotic arm powered by Arduino in both manual and automatic mode with the possibility of selecting the type of the trajectory being carried out. It also allows to calibrate the system, perform forward and inverse kinematics calculations as well as simulate the programmed sequence of movements.
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
 The desktop application consists of several screens with different functionality. Switching between the selected screens is done with the use of the pull-down side menu. In the upper bar there is information about the currently selected screen, while in the lower part of the screen there is a bar with application operation messages. These logs are also saved in the appropriate file.
 
 <div align="center">
@@ -125,7 +132,7 @@ The automatic mode screen consists of 3 tabs. The first tab contains sliders for
 The second tab contains a table containing the sequences of the robots movements. After completing it,  it is possible with the appropriate button to generate the robots path and save it to disk.
 
 <div align="center">
-<img src="data\images\page_auto_save.PNG" alt="page_auto_save">
+<img src="data\images\page_auto_save.png" alt="page_auto_save">
 </div>
 
 Robotic program is being saved with name "generated_path_ + actual date and time" to selected folder in format .txt.
@@ -154,7 +161,7 @@ It was also decided to use servo modeling motors and to leave the manipulator 5 
 It was decided that the designed robot will have a monolithic structure with an anthropomorphic structure.
 
 <div align="center">
-<img src="data\images\prototype_project.jpg" alt="prototype_project">
+<img src="data\images\prototype_project.JPG" alt="prototype_project">
 </div>
 
 The necessary elements have been specially designed for 3D printing and then printed using this technology. 
